@@ -7,7 +7,7 @@ import FeaturedProjects from "@/app/components/FeaturedProjects";
 import ServiceFAQ from "@/app/components/ServiceFAQ";
 import Testimonials from "@/app/components/Testimonials";
 
-export default function 3dRenderingPage() {
+export default function ThreeDRenderingPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section with Stats */}
