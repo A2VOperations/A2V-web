@@ -97,7 +97,7 @@ export default function ContactForm({ source = "homepage" }) {
       
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div className="flex flex-col gap-1.5">
-          <label className="text-[11px] font-bold text-black uppercase tracking-wider">
+          <label className="text-[14px] font-bold text-black uppercase tracking-wider">
             Full Name
           </label>
           <input
@@ -112,7 +112,7 @@ export default function ContactForm({ source = "homepage" }) {
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label className="text-[11px] font-bold text-black uppercase tracking-wider">
+          <label className="text-[14px] font-bold text-black uppercase tracking-wider">
             Email Address
           </label>
           <input
@@ -127,7 +127,7 @@ export default function ContactForm({ source = "homepage" }) {
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label className="text-[11px] font-bold text-black uppercase tracking-wider">
+          <label className="text-[14px] font-bold text-black uppercase tracking-wider">
             Phone Number
           </label>
           <input
@@ -140,7 +140,7 @@ export default function ContactForm({ source = "homepage" }) {
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label className="text-[11px] font-bold text-black uppercase tracking-wider">
+          <label className="text-[14px] font-bold text-black uppercase tracking-wider">
             Subject
           </label>
           <select
@@ -163,7 +163,7 @@ export default function ContactForm({ source = "homepage" }) {
         </div>
 
         <div className="flex flex-col gap-1.5 sm:col-span-2">
-          <label className="text-[11px] font-bold text-black uppercase tracking-wider">
+          <label className="text-[14px] font-bold text-black uppercase tracking-wider">
             Message
           </label>
           <textarea

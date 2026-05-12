@@ -86,7 +86,7 @@ function Page() {
       <section className="grid min-h-[520px] grid-cols-1 bg-white md:grid-cols-2">
         <div className="relative min-h-[420px] overflow-hidden">
           <Image
-            src="https://teckko.vercel.app/image/section/img-section-form-1.jpg"
+            src="/home/a2vgroups_teamwork.jpg"
             alt="Team working together"
             width={1400}
             height={1000}

@@ -14,7 +14,7 @@ function page() {
             {/* Image card */}
             <div className="relative overflow-hidden bg-[#f6f6f1]">
               <Image
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80"
+                src="/home/a2vgroups_team.jpg"
                 alt="A2V Groups team collaborating in an office"
                 width={1400}
                 height={1000}
