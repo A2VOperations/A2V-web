@@ -18,9 +18,9 @@ function page() {
       <SoftwareDev />
       <InnovateSoft />
       <ExploreOur />
-      <PlanCards />
+      {/* <PlanCards /> */}
       <Contact />
-      <Blogs />
+      {/* <Blogs /> */}
     </div>
   );
 }

@@ -27,7 +27,7 @@ const timelineData = [
     isActive: false,
   },
   {
-    year: "2023",
+    year: " Today",
     title: "Industry Leadership",
     isActive: false,
   },

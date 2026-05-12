@@ -379,7 +379,7 @@ export default function Navbar() {
       </div>
 
       {/* ── Mobile Slide-in Drawer ── */}
-      <div className={`lg:hidden fixed inset-0 bg-white z-10000 flex flex-col transition-all duration-300 ease-in-out ${mobileOpen ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 translate-x-full pointer-events-none"}`}>
+      <div className={`lg:hidden fixed inset-0 bg-white z-[10001] flex flex-col transition-all duration-300 ease-in-out ${mobileOpen ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 translate-x-full pointer-events-none"}`}>
 
         {/* Drawer header */}
         <div className="flex items-center justify-between px-4 h-[72px] border-b border-gray-100 shrink-0">
@@ -403,42 +403,50 @@ export default function Navbar() {
         {/* Scrollable nav links */}
         <div className="flex-1 overflow-y-auto overscroll-contain">
           <div className="px-4 pt-2 pb-6">
-            {navLinks.map((link) => (
-              <div key={link} className="border-b border-gray-100 last:border-none">
-                <button
-                  onClick={() => {
-                    if (hasDropdown.includes(link))
-                      setMobileExpanded(mobileExpanded === link ? null : link);
-                    else setMobileOpen(false);
-                  }}
-                  className={`w-full flex items-center justify-between px-2 py-4 text-[15px] font-semibold bg-transparent border-none cursor-pointer text-left transition-colors duration-200 ${(() => {
-                    const href = navItems.find((i) => i.label === link)?.href;
-                    if (!href) return "text-gray-900 hover:text-orange-500";
-                    return href === "/"
-                      ? pathname === "/" ? "text-orange-500" : "text-gray-900 hover:text-orange-500"
-                      : pathname.startsWith(href) ? "text-orange-500" : "text-gray-900 hover:text-orange-500";
-                  })()}`}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className={`w-1.5 h-1.5 rounded-full shrink-0 transition-colors duration-200 ${(() => {
-                      const href = navItems.find((i) => i.label === link)?.href;
-                      if (!href) return "bg-gray-200";
-                      return href === "/"
-                        ? pathname === "/" ? "bg-orange-500" : "bg-gray-200"
-                        : pathname.startsWith(href) ? "bg-orange-500" : "bg-gray-200";
-                    })()}`} />
-                    {link}
-                  </div>
-                  {hasDropdown.includes(link) && (
-                    <ChevronIcon className={`text-gray-400 ${mobileExpanded === link ? "rotate-180" : ""}`} />
-                  )}
-                </button>
+            {navItems.map((item) => (
+              <div key={item.label} className="border-b border-gray-100 last:border-none">
+                {item.hasDropdown ? (
+                  <button
+                    onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
+                    className={`w-full flex items-center justify-between px-2 py-4 text-[15px] font-semibold bg-transparent border-none cursor-pointer text-left transition-colors duration-200 ${
+                      pathname.startsWith(item.href ?? "") ? "text-orange-500" : "text-gray-900 hover:text-orange-500"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${
+                        pathname.startsWith(item.href ?? "") ? "bg-orange-500" : "bg-gray-200"
+                      }`} />
+                      {item.label}
+                    </div>
+                    <ChevronIcon className={`text-gray-400 ${mobileExpanded === item.label ? "rotate-180" : ""}`} />
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className={`flex items-center justify-between px-2 py-4 text-[15px] font-semibold no-underline transition-colors duration-200 ${
+                      (item.href === "/" ? pathname === "/" : pathname.startsWith(item.href))
+                        ? "text-orange-500"
+                        : "text-gray-900 hover:text-orange-500"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${
+                        (item.href === "/" ? pathname === "/" : pathname.startsWith(item.href))
+                          ? "bg-orange-500" : "bg-gray-200"
+                      }`} />
+                      {item.label}
+                    </div>
+                  </Link>
+                )}
 
                 {/* Mobile sub-menu */}
-                {menuData[link]?.columns?.length > 0 && (
-                  <div className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${mobileExpanded === link ? "max-h-[2500px] opacity-100" : "max-h-0 opacity-0"}`}>
+                {item.hasDropdown && menuData[item.label]?.columns?.length > 0 && (
+                  <div className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${mobileExpanded === item.label ? "max-h-[2500px] opacity-100" : "max-h-0 opacity-0"}`}>
                     <div className="pb-6 px-2 space-y-4">
-                      {menuData[link].columns.map((col) => {
+                      {menuData[item.label].columns.map((col) => {
                         const { Icon } = col;
                         return (
                           <div key={col.heading} className="bg-gray-50/50 rounded-2xl p-4">
@@ -521,7 +529,7 @@ export default function Navbar() {
 
       {/* Backdrops */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-[9999]" onClick={() => setMobileOpen(false)} />
+        <div className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-[10000]" onClick={() => setMobileOpen(false)} />
       )}
       {openMenu && (
         <div className="hidden lg:block fixed inset-0 bg-black/40 backdrop-blur-[2px] z-[90] transition-all duration-300" onClick={() => setOpenMenu(null)} />
