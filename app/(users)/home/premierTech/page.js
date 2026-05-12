@@ -7,7 +7,7 @@ import CountUp from "react-countup";
 function page() {
   return (
     <>
-      <section className="relative z-10 bg-white px-4 py-16 md:px-8 md:py-10">
+      <section className="relative z-10 bg-white px-4 pt-4 pb-16 md:px-8 md:pt-4 md:pb-10">
         <div className="mx-auto flex max-w-7xl flex-col gap-14">
           {/* ── ROW 2: Image + Stats ── */}
           <div className="grid items-end gap-10 lg:grid-cols-[1.15fr_0.85fr]">
@@ -47,7 +47,7 @@ function page() {
 
                 <div className="m-3 bg-white px-5 py-4 shadow-2xl sm:mb-8 sm:mr-8">
                   <div className="flex items-center gap-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-100 text-xl font-bold text-sky-500">
+                    <span className="flex h-10 w-10 items-center justify-center bg-sky-100 text-xl font-bold text-sky-500">
                       S
                     </span>
                     <div>

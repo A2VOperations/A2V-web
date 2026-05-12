@@ -11,7 +11,7 @@ function Page() {
 
   return (
     <>
-      <section className="relative z-10 bg-white px-4 py-16 md:px-8 md:py-10 transition-all duration-500">
+      <section className="relative z-10 bg-white px-4 pt-4 pb-16 md:px-8 md:pt-4 md:pb-10 transition-all duration-500">
         <div className="mx-auto flex max-w-7xl flex-col gap-14">
           {/* ── ROW 1: Spinner + Headline ── */}
           <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -83,7 +83,7 @@ function Page() {
                       From custom software development to advanced digital marketing, we bridge the gap between complex technology and intuitive user experiences.
                     </p>
                   </div>
-                  <div className="col-span-full mt-4 rounded-2xl bg-orange-50 p-6">
+                  <div className="col-span-full mt-4 bg-orange-50 p-6">
                     <p className="text-sm font-medium italic text-orange-800">
                       "We don't just build software; we build the future of your business. Join us on a journey of innovation and excellence."
                     </p>

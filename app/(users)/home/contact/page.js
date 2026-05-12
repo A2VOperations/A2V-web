@@ -104,7 +104,7 @@ function Page() {
             </h2>
             <Link
               href={"/contact"}
-              className="inline-flex items-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-bold text-gray-900 transition hover:bg-gray-100"
+              className="inline-flex items-center gap-2 bg-white px-6 py-3 text-sm font-bold text-gray-900 transition hover:bg-gray-100"
             >
               Contact Us <span>&rsaquo;</span>
             </Link>
@@ -130,7 +130,7 @@ function Page() {
                     onChange={(event) =>
                       updateField("name", event.target.value)
                     }
-                    className={`w-full rounded-md border bg-white px-4 py-3 pr-10 text-sm text-gray-900 outline-none placeholder:text-gray-400 focus:border-orange-500 ${
+                    className={`w-full border bg-white px-4 py-3 pr-10 text-sm text-gray-900 outline-none placeholder:text-gray-400 focus:border-orange-500 ${
                       errors.name ? "border-red-500" : "border-gray-200"
                     }`}
                   />
@@ -164,7 +164,7 @@ function Page() {
                     onChange={(event) =>
                       updateField("email", event.target.value)
                     }
-                    className={`w-full rounded-md border bg-white px-4 py-3 pr-10 text-sm text-gray-900 outline-none placeholder:text-gray-400 focus:border-orange-500 ${
+                    className={`w-full border bg-white px-4 py-3 pr-10 text-sm text-gray-900 outline-none placeholder:text-gray-400 focus:border-orange-500 ${
                       errors.email ? "border-red-500" : "border-gray-200"
                     }`}
                   />
@@ -197,7 +197,7 @@ function Page() {
                   onChange={(event) =>
                     updateField("service", event.target.value)
                   }
-                  className={`w-full appearance-none rounded-md border bg-white px-4 py-3 pr-10 text-sm outline-none focus:border-orange-500 ${
+                  className={`w-full appearance-none border bg-white px-4 py-3 pr-10 text-sm outline-none focus:border-orange-500 ${
                     errors.service
                       ? "border-red-500 text-gray-500"
                       : "border-gray-200 text-gray-500"
@@ -238,7 +238,7 @@ function Page() {
                 rows={5}
                 value={form.message}
                 onChange={(event) => updateField("message", event.target.value)}
-                className={`w-full resize-y rounded-md border bg-white px-4 py-3 text-sm text-gray-900 outline-none placeholder:text-gray-400 focus:border-orange-500 ${
+                className={`w-full resize-y border bg-white px-4 py-3 text-sm text-gray-900 outline-none placeholder:text-gray-400 focus:border-orange-500 ${
                   errors.message ? "border-red-500" : "border-gray-200"
                 }`}
               />
@@ -261,7 +261,7 @@ function Page() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="font-syne mt-1 flex w-full items-center justify-center gap-2 rounded-md bg-orange-500 py-4 text-sm font-bold text-white transition hover:bg-orange-600 disabled:cursor-not-allowed disabled:bg-orange-300"
+                className="font-syne mt-1 flex w-full items-center justify-center gap-2 bg-orange-500 py-4 text-sm font-bold text-white transition hover:bg-orange-600 disabled:cursor-not-allowed disabled:bg-orange-300"
               >
                 {status === "loading" ? "Sending..." : "Send Message Us"}
                 <svg
