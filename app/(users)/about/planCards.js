@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { siteConfig } from "@/app/config";
 
 const plans = [
   {
@@ -182,14 +183,18 @@ function PricingCard({ plan, billing, index }) {
       {/* CTA */}
       {plan.popular ? (
         <a
-          href="#"
+          href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'm interested in the ${plan.name} (${plan.label}) AI-Perfected package at $${plan.monthly}/month.`}
+          target="_blank"
+          rel="noopener noreferrer"
           className="group flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-sm font-semibold bg-[#e05a2b] border-[1.5px] border-[#e05a2b] text-white transition-all duration-200 hover:bg-[#c94d22] hover:border-[#c94d22] hover:shadow-[0_8px_24px_rgba(224,90,43,0.35)] no-underline mt-auto"
         >
           Choose Package <ArrowIcon />
         </a>
       ) : (
         <a
-          href="#"
+          href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'm interested in the ${plan.name} (${plan.label}) AI-Perfected package at $${plan.monthly}/month.`}
+          target="_blank"
+          rel="noopener noreferrer"
           className="group flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-sm font-semibold bg-transparent border-[1.5px] border-[#e0dbd5] text-[#111] transition-all duration-200 hover:border-[#e05a2b] hover:text-[#e05a2b] hover:bg-[rgba(224,90,43,0.04)] no-underline mt-auto"
         >
           Choose Package <ArrowIcon />

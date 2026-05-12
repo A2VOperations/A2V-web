@@ -3,6 +3,7 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { siteConfig } from "@/app/config";
 
 function page() {
   const cases = [
@@ -12,6 +13,7 @@ function page() {
       desc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque seeney laudantium totam",
       img: "https://teckko.vercel.app/image/project-item/project-item-1.jpg",
       active: true,
+      wa: `Hi, I'm interested in your Mobile Application Design (Software Development) services at A2V.`,
     },
     {
       tag: "Software Development",
@@ -19,6 +21,7 @@ function page() {
       desc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque seeney laudantium totam",
       img: "https://teckko.vercel.app/image/project-item/project-item-2.jpg",
       active: false,
+      wa: `Hi, I'm interested in your UI/UX Design (Software Development) services at A2V.`,
     },
     {
       tag: "Web Development",
@@ -26,6 +29,7 @@ function page() {
       desc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque seeney laudantium totam",
       img: "https://teckko.vercel.app/image/project-item/project-item-3.jpg",
       active: false,
+      wa: `Hi, I'm interested in your E-Commerce Platform (Web Development) services at A2V.`,
     },
     {
       tag: "Cloud Solutions",
@@ -33,6 +37,7 @@ function page() {
       desc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque seeney laudantium totam",
       img: "https://teckko.vercel.app/image/project-item/project-item-4.jpg",
       active: false,
+      wa: `Hi, I'm interested in your Enterprise Cloud Migration (Cloud Solutions) services at A2V.`,
     },
   ];
 
@@ -117,7 +122,8 @@ function page() {
             {cases.map((c, i) => (
               <div
                 key={i}
-                className="group flex w-[min(92vw,850px)] shrink-0 flex-col-reverse overflow-hidden border border-white/10 bg-[#132120] md:h-105 md:flex-row-reverse"
+                onClick={() => window.open(`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(c.wa)}`, "_blank")}
+                className="group flex w-[min(92vw,850px)] shrink-0 flex-col-reverse overflow-hidden border border-white/10 bg-[#132120] md:h-105 md:flex-row-reverse cursor-pointer"
               >
                 <Image
                   src={c.img}
@@ -141,10 +147,13 @@ function page() {
                     {c.desc}
                   </p>
 
-                  <button className="flex h-11 w-11 items-center justify-center gap-2 overflow-hidden rounded-full border border-white/35 px-0 text-sm font-light text-white transition-all duration-300 group-hover:w-36 group-hover:px-5 hover:border-[#29aae2] hover:bg-[#29aae2]/10">
+                  <button
+                    onClick={(e) => { e.stopPropagation(); window.open(`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(c.wa)}`, "_blank"); }}
+                    className="flex h-11 w-11 items-center justify-center gap-2 overflow-hidden rounded-full border border-white/35 px-0 text-sm font-light text-white transition-all duration-300 group-hover:w-36 group-hover:px-5 hover:border-[#29aae2] hover:bg-[#29aae2]/10"
+                  >
                     <span className="text-xl leading-none">+</span>
                     <span className="max-w-0 whitespace-nowrap opacity-0 transition-all duration-300 group-hover:max-w-24 group-hover:opacity-100">
-                      Read More
+                      Whatsapp
                     </span>
                   </button>
                 </div>

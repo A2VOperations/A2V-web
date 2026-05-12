@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Topbar from "./topBar";
 import Image from "next/image";
+import { siteConfig } from "./config";
 
 // ── Icons ──────────────────────────────────────────────────────────────────
 
@@ -61,21 +62,21 @@ const menuData = {
         hoverText: "group-hover/item:text-orange-500",
         Icon: WebDevIcon,
         items: [
-          { title: "Custom Web Solutions",   href: "/services/web-development/custom-web-solutions" },
-          { title: "E-commerce Development", href: "/services/web-development/ecommerce-development" },
-          { title: "CMS Development",        href: "/services/web-development/cms-development" },
-          { title: "Progressive Web Apps",   href: "/services/web-development/pwa-development" },
-          { title: "Web Portal Development", href: "/services/web-development/portal-development" },
-          { title: "API Integration",        href: "/services/web-development/api-integration" },
-          { title: "Maintenance & Support",  href: "/services/web-development/maintenance" },
-          { title: "SPA Development",        href: "/services/web-development/spa-development" },
-          { title: "Cloud Solutions",        href: "/services/web-development/cloud-solutions" },
-          { title: "Web Security",           href: "/services/web-development/web-security" },
+          { title: "Custom Web Solutions",   href: siteConfig.socialLinks.whatsapp },
+          { title: "E-commerce Development", href: siteConfig.socialLinks.whatsapp },
+          { title: "CMS Development",        href: siteConfig.socialLinks.whatsapp },
+          { title: "Progressive Web Apps",   href: siteConfig.socialLinks.whatsapp },
+          { title: "Web Portal Development", href: siteConfig.socialLinks.whatsapp },
+          { title: "API Integration",        href: siteConfig.socialLinks.whatsapp },
+          { title: "Maintenance & Support",  href: siteConfig.socialLinks.whatsapp },
+          { title: "SPA Development",        href: siteConfig.socialLinks.whatsapp },
+          { title: "Cloud Solutions",        href: siteConfig.socialLinks.whatsapp },
+          { title: "Web Security",           href: siteConfig.socialLinks.whatsapp },
         ],
       },
       {
         heading: "Graphic Designing",
-        categoryHref: "/services/graphic-designing",
+        categoryHref: siteConfig.socialLinks.whatsapp,
         subtitle: "Visual identity & creative",
         iconBg: "bg-blue-100",
         iconColor: "text-blue-600",
@@ -85,21 +86,21 @@ const menuData = {
         hoverText: "group-hover/item:text-blue-600",
         Icon: GraphicIcon,
         items: [
-          { title: "Brand Identity",       href: "/services/graphic-designing/brand-identity" },
-          { title: "UI/UX Design",         href: "/services/graphic-designing/ui-ux-design" },
-          { title: "Print & Social Media", href: "/services/graphic-designing/print-social-media" },
-          { title: "Motion Graphics",      href: "/services/graphic-designing/motion-graphics" },
-          { title: "Package Design",       href: "/services/graphic-designing/package-design" },
-          { title: "Illustration Art",     href: "/services/graphic-designing/illustration" },
-          { title: "Presentation Design",  href: "/services/graphic-designing/presentation-design" },
-          { title: "Infographic Design",   href: "/services/graphic-designing/infographics" },
-          { title: "3D Rendering",         href: "/services/graphic-designing/3d-rendering" },
-          { title: "Logo Animation",       href: "/services/graphic-designing/logo-animation" },
+          { title: "Brand Identity",       href: siteConfig.socialLinks.whatsapp },
+          { title: "UI/UX Design",         href: siteConfig.socialLinks.whatsapp },
+          { title: "Print & Social Media", href: siteConfig.socialLinks.whatsapp },
+          { title: "Motion Graphics",      href: siteConfig.socialLinks.whatsapp },
+          { title: "Package Design",       href: siteConfig.socialLinks.whatsapp },
+          { title: "Illustration Art",     href: siteConfig.socialLinks.whatsapp },
+          { title: "Presentation Design",  href: siteConfig.socialLinks.whatsapp },
+          { title: "Infographic Design",   href: siteConfig.socialLinks.whatsapp },
+          { title: "3D Rendering",         href: siteConfig.socialLinks.whatsapp },
+          { title: "Logo Animation",       href: siteConfig.socialLinks.whatsapp },
         ],
       },
       {
         heading: "Digital Marketing",
-        categoryHref: "/services/digital-marketing",
+        categoryHref: siteConfig.socialLinks.whatsapp,
         subtitle: "Growth & online visibility",
         iconBg: "bg-green-100",
         iconColor: "text-green-600",
@@ -109,21 +110,21 @@ const menuData = {
         hoverText: "group-hover/item:text-green-600",
         Icon: MarketingIcon,
         items: [
-          { title: "SEO Optimization",       href: "/services/digital-marketing/seo-optimization" },
-          { title: "Social Media Marketing", href: "/services/digital-marketing/social-media-marketing" },
-          { title: "PPC & Paid Ads",         href: "/services/digital-marketing/ppc-paid-ads" },
-          { title: "Content Marketing",      href: "/services/digital-marketing/content-marketing" },
-          { title: "Email Marketing",        href: "/services/digital-marketing/email-marketing" },
-          { title: "Influencer Marketing",   href: "/services/digital-marketing/influencer-marketing" },
-          { title: "ORM Services",           href: "/services/digital-marketing/online-reputation-management" },
-          { title: "E-Commerce Marketing",   href: "/services/digital-marketing/ecommerce-marketing" },
-          { title: "Marketing Automation",   href: "/services/digital-marketing/marketing-automation" },
-          { title: "Conversion Optimization",href: "/services/digital-marketing/conversion-rate-optimization" },
+          { title: "SEO Optimization",       href: siteConfig.socialLinks.whatsapp },
+          { title: "Social Media Marketing", href: siteConfig.socialLinks.whatsapp },
+          { title: "PPC & Paid Ads",         href: siteConfig.socialLinks.whatsapp },
+          { title: "Content Marketing",      href: siteConfig.socialLinks.whatsapp },
+          { title: "Email Marketing",        href: siteConfig.socialLinks.whatsapp },
+          { title: "Influencer Marketing",   href: siteConfig.socialLinks.whatsapp },
+          { title: "ORM Services",           href: siteConfig.socialLinks.whatsapp },
+          { title: "E-Commerce Marketing",   href: siteConfig.socialLinks.whatsapp },
+          { title: "Marketing Automation",   href: siteConfig.socialLinks.whatsapp },
+          { title: "Conversion Optimization",href: siteConfig.socialLinks.whatsapp },
         ],
       },
       {
         heading: "Artificial Intelligence",
-        categoryHref: "/services/ai",
+        categoryHref: siteConfig.socialLinks.whatsapp,
         subtitle: "Smart automation & ML",
         iconBg: "bg-purple-100",
         iconColor: "text-purple-600",
@@ -133,16 +134,16 @@ const menuData = {
         hoverText: "group-hover/item:text-purple-600",
         Icon: AIIcon,
         items: [
-          { title: "AI Consulting",        href: "/services/ai/consulting" },
-          { title: "AI Development",       href: "/services/ai/development" },
-          { title: "Machine Learning",     href: "/services/ai/machine-learning" },
-          { title: "NLP Solutions",        href: "/services/ai/nlp" },
-          { title: "Computer Vision",      href: "/services/ai/computer-vision" },
-          { title: "AI Automation",        href: "/services/ai/automation" },
-          { title: "Chatbot Development",  href: "/services/ai/chatbots" },
-          { title: "Data Science",         href: "/services/ai/data-science" },
-          { title: "Predictive Analytics", href: "/services/ai/predictive-analytics" },
-          { title: "AI Modernization",     href: "/services/ai/modernization" },
+          { title: "AI Consulting",        href: siteConfig.socialLinks.whatsapp },
+          { title: "AI Development",       href: siteConfig.socialLinks.whatsapp },
+          { title: "Machine Learning",     href: siteConfig.socialLinks.whatsapp },
+          { title: "NLP Solutions",        href: siteConfig.socialLinks.whatsapp },
+          { title: "Computer Vision",      href: siteConfig.socialLinks.whatsapp },
+          { title: "AI Automation",        href: siteConfig.socialLinks.whatsapp },
+          { title: "Chatbot Development",  href: siteConfig.socialLinks.whatsapp },
+          { title: "Data Science",         href: siteConfig.socialLinks.whatsapp },
+          { title: "Predictive Analytics", href: siteConfig.socialLinks.whatsapp },
+          { title: "AI Modernization",     href: siteConfig.socialLinks.whatsapp },
         ],
       },
     ],
@@ -156,7 +157,8 @@ const navItems = [
   { label: "Home",       href: "/" },
   { label: "About Us",   href: "/about" },
   { label: "Portfolio",  href: "/portfolio" },
-  { label: "Services",   href: "/services", hasDropdown: true },
+  // { label: "Services",   href: "/services", hasDropdown: true },
+  { label: "WhatsApp",   href: siteConfig.socialLinks.whatsapp },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -180,8 +182,6 @@ const CloseIcon = () => (
     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
   </svg>
 );
-
-import { siteConfig } from "./config";
 
 // ── Navbar ─────────────────────────────────────────────────────────────────
 
@@ -363,11 +363,11 @@ export default function Navbar() {
                     40+ services across 4 categories
                   </p>
                   <Link
-                    href="/services"
+                    href={siteConfig.socialLinks.whatsapp}
                     onClick={() => setOpenMenu(null)}
                     className="flex items-center gap-1.5 text-[13px] font-semibold text-orange-500 no-underline hover:text-orange-600 transition-colors duration-200 group/all"
                   >
-                    View all services
+                    Contact on WhatsApp
                     <ArrowIcon className="transition-transform duration-200 group-hover/all:translate-x-0.5" />
                   </Link>
                 </div>
@@ -389,7 +389,7 @@ export default function Navbar() {
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span className="text-xl font-black text-gray-900 tracking-tight">2V</span>
+            <span className="text-xl font-black text-gray-900 tracking-tight">A2V AI</span>
           </a>
           <button
             onClick={() => setMobileOpen(false)}
@@ -477,12 +477,12 @@ export default function Navbar() {
                       <div className="mx-1 mt-1 bg-gray-900 rounded-2xl p-4 flex items-center justify-between">
                         <div>
                           <p className="text-sm font-black text-white leading-tight">
-                            THE <span className="text-orange-500">GROWTH</span> STACK
+                            THE <span className="text-orange-500">AI-PERFECTED</span> STACK
                           </p>
                           <p className="text-[11px] text-gray-400 mt-0.5">All services, one place</p>
                         </div>
-                        <a href="/services" className="flex items-center gap-1 text-[11px] font-semibold text-white hover:text-orange-400 transition-colors no-underline shrink-0 ml-4">
-                          Explore <ArrowIcon />
+                        <a href={siteConfig.socialLinks.whatsapp} className="flex items-center gap-1 text-[11px] font-semibold text-white hover:text-orange-400 transition-colors no-underline shrink-0 ml-4">
+                          Contact Us <ArrowIcon />
                         </a>
                       </div>
                     </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { siteConfig } from "@/app/config";
 
 function page() {
   return (
@@ -30,7 +31,9 @@ function page() {
             IT Consultations
           </span>
           <Link
-            href="/contact"
+            href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'd like to discuss an IT consultation with A2V.`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="shrink-0 text-sm font-bold text-white underline"
           >
             Let&apos;s Talk &rsaquo;

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { siteConfig } from "@/app/config";
 import Contact from "@/app/components/Contact";
 import Testimonials from "@/app/components/Testimonials";
 import ServiceFAQ from "@/app/components/ServiceFAQ";
@@ -45,62 +46,62 @@ const benefits = [
     id: "01",
     title: "Custom Web Solutions",
     description: "Tailor-made web applications designed to solve your specific business challenges and drive growth.",
-    href: "/services/web-development/custom-web-solutions"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "02",
     title: "E-commerce Development",
     description: "Robust online stores that provide seamless shopping experiences and maximize your sales potential.",
-    href: "/services/web-development/ecommerce-development"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "03",
     title: "CMS Development",
     description: "User-friendly content management systems that give you full control over your digital content.",
-    href: "/services/web-development/cms-development"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "04",
     title: "Progressive Web Apps",
     description: "High-performance web apps that look and feel like native mobile applications across all devices.",
-    href: "/services/web-development/pwa-development"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "05",
     title: "Web Portal Development",
     description: "Secure and scalable portals for employees, customers, or partners to access centralized information.",
-    href: "/services/web-development/portal-development"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "06",
     title: "API Integration",
     description: "Connecting your web ecosystem with third-party services for enhanced functionality and automation.",
-    href: "/services/web-development/api-integration"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "07",
     title: "Maintenance & Support",
     description: "Continuous monitoring, updates, and optimization to ensure your web assets remain secure and fast.",
-    href: "/services/web-development/maintenance"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "08",
     title: "SPA Development",
     description: "Blazing fast Single Page Applications that provide fluid, app-like interactions without page reloads.",
-    href: "/services/web-development/spa-development"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "09",
     title: "Cloud Solutions",
     description: "Scalable cloud-based architectures that offer reliability, speed, and cost-efficient web hosting.",
-    href: "/services/web-development/cloud-solutions"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "10",
     title: "Web Security",
     description: "Advanced security protocols and vulnerability assessments to protect your data and user privacy.",
-    href: "/services/web-development/web-security"
-  }
+    href: siteConfig.socialLinks.whatsapp
+  },
 ];
 
 export default function WebDevelopmentPage() {
@@ -111,18 +112,18 @@ export default function WebDevelopmentPage() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
           <div>
             <span className="text-[#FF4500] font-bold uppercase tracking-widest text-sm mb-6 block">
-              WEB DEVELOPMENT
+              AI-PERFECTED WEB DEVELOPMENT
             </span>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
               Engineering <br />
-              <span className="text-[#FF4500]">Digital Excellence</span>
+              <span className="text-[#FF4500]">AI-Perfected Excellence</span>
             </h1>
             <p className="text-gray-400 text-lg md:text-xl mb-12 max-w-xl leading-relaxed">
-              We build high-performance, secure, and scalable web solutions 
+              We build high-performance, AI-perfected, and scalable web solutions 
               that drive business growth and user engagement.
             </p>
             <div className="flex flex-wrap gap-6">
-              <Link href="/home/contact" className="px-10 py-4 bg-[#FF4500] text-white font-bold rounded-sm hover:bg-orange-600 transition-all uppercase tracking-wider text-sm">
+              <Link href={siteConfig.socialLinks.whatsapp} className="px-10 py-4 bg-[#FF4500] text-white font-bold rounded-sm hover:bg-orange-600 transition-all uppercase tracking-wider text-sm">
                 Start Building
               </Link>
             </div>
@@ -170,7 +171,7 @@ export default function WebDevelopmentPage() {
                   OUR CAPABILITIES
                 </span>
                 <h2 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-                  Development Solutions <br /> That Scale
+                  AI-Enhanced Solutions <br /> That Scale
                 </h2>
               </div>
             </div>
@@ -208,8 +209,9 @@ export default function WebDevelopmentPage() {
                 <p className="text-gray-500 mb-10 leading-relaxed">
                   {benefit.description}
                 </p>
+                {/* Original Link: {benefit.href} */}
                 <Link
-                  href={benefit.href}
+                  href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'm interested in ${benefit.title} (Web Development).`}
                   className="inline-block px-8 py-2 border-2 border-gray-900 font-bold hover:bg-gray-900 hover:text-white transition-all text-sm uppercase tracking-wider text-center"
                 >
                   Read More

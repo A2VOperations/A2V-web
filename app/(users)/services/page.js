@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Code, Palette, Megaphone, CheckCircle2, Sparkles, Rocket, Plus, Circle, ArrowUpRight, ChevronLeft, ChevronRight, Search, Presentation, Layout, Cloud, Brain, ShieldCheck, TrendingUp } from "lucide-react";
 import ContactForm from "../../components/ContactForm";
+import { siteConfig } from "../../config";
 
 const Typewriter = ({ words }) => {
   const [index, setIndex] = useState(0);
@@ -37,23 +38,23 @@ const services = [
   {
     title: "Web Development",
     desc: "We engineer high-performance digital ecosystems that bridge the gap between ambitious vision and technical reality.",
-    href: "/services/web-development",
+    href: siteConfig.socialLinks.whatsapp,
     icon: <Code className="w-8 h-8" />,
     image: "/images/web-dev-hero.png",
     accent: "orange-500"
   },
   {
-    title: "Graphic Designing",
-    desc: "Visual identities that cut through the noise and resonate on a visceral level, turning your brand essence into a powerful advantage.",
-    href: "/services/graphic-designing",
+    title: "AI-Perfected Design",
+    desc: "Visual identities that cut through the noise and resonate on a visceral level, turning your brand essence into a powerful advantage, perfected with AI.",
+    href: siteConfig.socialLinks.whatsapp,
     icon: <Palette className="w-8 h-8" />,
     image: "/images/graphic-design-hero.png",
     accent: "blue-500"
   },
   {
-    title: "Digital Marketing",
-    desc: "Data-driven strategies focused on high-intent acquisition and aggressive ROI, turning your presence into a revenue engine.",
-    href: "/services/digital-marketing",
+    title: "AI-Driven Marketing",
+    desc: "Data-driven strategies focused on high-intent acquisition and aggressive ROI, turning your presence into a revenue engine powered by AI intelligence.",
+    href: siteConfig.socialLinks.whatsapp,
     icon: <Megaphone className="w-8 h-8" />,
     image: "/images/digital-marketing-hero.png",
     accent: "green-500"
@@ -61,7 +62,7 @@ const services = [
   {
     title: "Artificial Intelligence",
     desc: "Intelligent automation that moves the needle. We turn complex AI capabilities into simple, scalable business advantages.",
-    href: "/services/ai",
+    href: siteConfig.socialLinks.whatsapp,
     icon: <Sparkles className="w-8 h-8" />,
     image: "/images/ai-consultancy-hero.png",
     accent: "purple-500"
@@ -520,13 +521,13 @@ export default function ServicesPage() {
             {/* Left Content */}
             <div className="lg:col-span-7">
                <h1 className="text-5xl md:text-8xl font-black mb-6 leading-[0.9] tracking-tighter uppercase">
-                  <span className="text-[#FC6600] block mb-2">Custom</span>
+                  <span className="text-[#FC6600] block mb-2">AI-Perfected</span>
                   <span className="text-gray-900 min-h-[1.1em] block">
-                     <Typewriter words={["Branding", "Software", "Marketing", "Intelligence"]} />
+                     <Typewriter words={["Solutions", "Branding", "Software", "Marketing"]} />
                   </span>
                </h1>
                <p className="text-xl text-gray-600 max-w-xl mb-10 leading-relaxed font-sans">
-                  For great companies who want more than surface-level support. Connective is a full-service digital marketing non-agency that listens, innovates, and delivers.
+                  For great companies who want more than surface-level support. Connective is a full-service AI-Perfected digital agency that listens, innovates, and delivers.
                </p>
                
                <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center mb-16">
@@ -617,9 +618,9 @@ export default function ServicesPage() {
                   {/* Center Content (Left Aligned) */}
                   <div className="w-full max-w-3xl mt-auto mb-auto">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl text-white font-sans font-bold mb-6 leading-[1.1] tracking-tight">
-                      {service.title === "Web Development" ? "WE BUILD DIGITAL FLAGSHIPS, NOT JUST WEBSITES" : 
-                       service.title === "Graphic Designing" ? "DESIGN THAT COMMANDS ATTENTION & DRIVES ACTION" :
-                       service.title === "Digital Marketing" ? "MARKETING BUILT ON PERFORMANCE, NOT PROMISES" :
+                      {service.title === "Web Development" ? "WE BUILD AI-PERFECTED DIGITAL FLAGSHIPS" : 
+                       service.title === "AI-Perfected Design" ? "DESIGN THAT COMMANDS ATTENTION & DRIVES ACTION" :
+                       service.title === "AI-Driven Marketing" ? "MARKETING BUILT ON PERFORMANCE, NOT PROMISES" :
                        "INTELLIGENCE THAT DRIVES REAL BUSINESS OUTCOMES"}
                     </h2>
                     <p className="text-gray-100 text-sm md:text-base max-w-xl font-medium leading-relaxed">
@@ -633,7 +634,11 @@ export default function ServicesPage() {
                      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0">
                         
                         {/* Explore Button replaces Clients */}
-                        <Link href={service.href} className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition-all shadow-xl text-sm">
+                        {/* Original Link: {service.href} */}
+                        <Link 
+                          href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'm interested in your ${service.title} services.`}
+                          className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition-all shadow-xl text-sm"
+                        >
                           Explore industry solutions <ArrowUpRight className="w-4 h-4" />
                         </Link>
 

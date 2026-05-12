@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { siteConfig } from "@/app/config";
 import Contact from "@/app/components/Contact";
 import Testimonials from "@/app/components/Testimonials";
 import ServiceFAQ from "@/app/components/ServiceFAQ";
@@ -145,7 +146,7 @@ export default function AIPage() {
             </p>
             <div className="flex flex-wrap gap-6">
               <Link
-                href="/home/contact"
+                href={siteConfig.socialLinks.whatsapp}
                 className="px-8 py-4 bg-purple-600 text-white font-bold rounded-sm hover:bg-purple-700 transition-all flex items-center gap-2 group"
               >
                 Start AI Project
@@ -224,8 +225,9 @@ export default function AIPage() {
                 <p className="text-gray-500 mb-10 leading-relaxed">
                   {benefit.description}
                 </p>
+                {/* Original Link: {benefit.href} */}
                 <Link
-                  href={benefit.href}
+                  href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'm interested in ${benefit.title} (AI Services).`}
                   className="inline-block px-8 py-2 border-2 border-purple-600 text-purple-600 font-bold hover:bg-purple-600 hover:text-white transition-all text-sm uppercase tracking-wider text-center"
                 >
                   Explore

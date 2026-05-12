@@ -21,7 +21,7 @@ export default function Home() {
       id: "mission",
       title: "Learn Our Company Mission",
       description:
-        "Our mission is to revolutionize the digital landscape, delivering innovative software solutions to empower businesses to achieve their full potential.",
+        "Our mission is to revolutionize the digital landscape with AI-perfected innovation, delivering innovative software solutions to empower businesses to achieve their full potential.",
       points: ["Premier Tech Innovations", "Nexus Tech Systems"],
       image:
         "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
@@ -30,7 +30,7 @@ export default function Home() {
       id: "vision",
       title: "Our Company Vision",
       description:
-        "We build future-ready platforms and product teams that turn ambitious ideas into measurable growth for modern businesses.",
+        "We build future-ready, AI-driven platforms and product teams that turn ambitious ideas into measurable growth for modern businesses.",
       points: [
         "Long-term digital partnerships",
         "Scalable engineering culture",
@@ -66,7 +66,7 @@ export default function Home() {
       image:
         "/images/brand-service.png",
       accent: "text-[#ff4d00]",
-      link: "/services/graphic-designing/brand-identity",
+      link: siteConfig.socialLinks.whatsapp,
       cta: "icon",
       icon: (
         <svg viewBox="0 0 64 64" className="h-16 w-16" aria-hidden="true">
@@ -109,7 +109,7 @@ export default function Home() {
       image:
         "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80",
       accent: "text-[#ff4d00]",
-      link: "/services/web-development/custom-web-solutions",
+      link: siteConfig.socialLinks.whatsapp,
       cta: "button",
       icon: (
         <svg viewBox="0 0 64 64" className="h-16 w-16" aria-hidden="true">
@@ -164,7 +164,7 @@ export default function Home() {
       image:
         "/images/seo-service.png",
       accent: "text-[#ff4d00]",
-      link: "/services/digital-marketing/seo-optimization",
+      link: siteConfig.socialLinks.whatsapp,
       cta: "icon",
       icon: (
         <svg viewBox="0 0 64 64" className="h-16 w-16" aria-hidden="true">
@@ -250,31 +250,34 @@ export default function Home() {
 
   const testimonials = [
     {
-      text: "Climb the mountain not to plant your flag but to embrace the ways challenge, enjoy the air, and behold the. Climb it see the world, not so the world can see you.",
-      name: "Richard T. Simmons",
-      role: "Graphics Designer",
+      // Indian client - Web Development
+      text: "A2V transformed our outdated portal into a lightning-fast, AI-perfected platform. Our customers noticed the difference within weeks of launch. Truly a world-class web development team based right here in India.",
+      name: "Rajesh Kumar",
+      role: "Founder, TechVision India",
       imgs: [
-        "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=300&h=300&fit=crop&crop=face",
+        "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=300&h=300&fit=crop&crop=face",
         "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=300&h=400&fit=crop&crop=face",
         "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=300&h=400&fit=crop&crop=face",
         "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=face",
       ],
     },
     {
-      text: "Working with Teckko was an absolute game changer. They took our vague ideas and turned them into a product that our users love. Exceptional team, exceptional results.",
-      name: "Amanda J. Williams",
-      role: "Product Manager",
+      // Indian client - Graphic Design & Branding
+      text: "The branding A2V created for us is stunning. From our logo to our complete brand identity, every element reflects premium quality. Our brand now stands out in a very competitive market.",
+      name: "Priya Sharma",
+      role: "CEO, Greenleaf Solutions",
       imgs: [
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&crop=face",
         "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300&h=400&fit=crop&crop=face",
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&crop=face",
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face",
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
       ],
     },
     {
-      text: "The team delivered beyond our expectations. Their attention to detail and commitment to quality is unmatched. I would recommend Teckko to anyone looking for a reliable software partner.",
-      name: "Marcus D. Chen",
-      role: "CTO, Startup Founder",
+      // Indian client - Digital Marketing
+      text: "Since A2V took over our digital marketing, our organic traffic has tripled and leads have never been higher. Their AI-driven approach to SEO and paid ads is genuinely next-level.",
+      name: "Amit Patel",
+      role: "Director, GrowthX Pvt. Ltd.",
       imgs: [
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
         "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=300&h=400&fit=crop&crop=face",
@@ -283,9 +286,10 @@ export default function Home() {
       ],
     },
     {
-      text: "From concept to launch, Teckko guided us every step of the way. Their proactive communication and technical expertise made the entire journey smooth and stress-free.",
-      name: "Priya K. Sharma",
-      role: "UI/UX Lead",
+      // Indian client - AI & Automation
+      text: "A2V's AI automation suite saved our operations team hundreds of hours monthly. Their team understood our workflow deeply and delivered a custom solution that integrates perfectly with our systems.",
+      name: "Deepa Nair",
+      role: "COO, Reddy Enterprises",
       imgs: [
         "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face",
         "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=300&h=400&fit=crop&crop=face",
@@ -380,10 +384,10 @@ export default function Home() {
               {/* Row 1: Title Block (Span 2) */}
               <div className="md:col-span-2">
                 <p className="mb-4 text-base font-bold text-orange-500 sm:text-lg">
-                  Welcome to Tekko Software
+                  Welcome to Tekko AI-Perfected Software
                 </p>
                 <h1 className="text-4xl font-bold leading-tight text-black sm:text-6xl lg:text-7xl">
-                  NextGen Software Innovators
+                  NextGen AI-Powered Innovators
                 </h1>
                 <h2 className="mt-3 text-2xl font-medium leading-tight text-black sm:text-5xl lg:text-6xl">
                   and{" "}
@@ -399,7 +403,7 @@ export default function Home() {
                 <p className="border-l-4 border-orange-500 pl-4 text-base leading-relaxed text-gray-600 md:text-lg">
                   We specialize in delivering comprehensive software solutions
                   tailored to meet the unique needs of businesses across various
-                  industries.
+                  industries, perfected with AI technology.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-8 border-t border-gray-300 pt-8">
                   <div>
@@ -585,8 +589,9 @@ export default function Home() {
                 </div>
 
                 <div className="mt-auto pt-10">
+                  {/* Original Link: {service.link} */}
                   <Link
-                    href={service.link || "#"}
+                    href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'm interested in your ${service.title} service.`}
                     className="inline-flex translate-y-3 items-center gap-3 rounded-full border border-white px-6 py-3 text-base font-semibold text-white opacity-100 transition duration-300 hover:border-orange-400 hover:text-orange-400 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100"
                   >
                     <span className="text-xl leading-none">+</span>
@@ -645,7 +650,8 @@ export default function Home() {
               {members.map((m) => (
                 <div
                   key={m.name}
-                  className="group shrink-0 border border-white/10 bg-[#162020]"
+                  onClick={() => window.open(`https://wa.me/${siteConfig.phone?.replace(/\D/g, "")}?text=Hi, I'd like to connect with ${m.name} from A2V regarding your ${m.role} services.`, "_blank")}
+                  className="group shrink-0 border border-white/10 bg-[#162020] cursor-pointer"
                   style={{
                     width: `calc((100% - ${(visibleCards - 1) * 20}px) / ${visibleCards})`,
                   }}
@@ -674,6 +680,7 @@ export default function Home() {
                           href={href}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           className="flex h-11 w-11 items-center justify-center bg-[#ff6a00] text-sm font-bold text-white hover:bg-[#a34502]"
                         >
                           {label}

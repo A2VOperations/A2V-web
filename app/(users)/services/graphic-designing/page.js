@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { siteConfig } from "@/app/config";
 import Contact from "@/app/components/Contact";
 import Testimonials from "@/app/components/Testimonials";
 import ServiceFAQ from "@/app/components/ServiceFAQ";
@@ -50,61 +51,61 @@ const benefits = [
     id: "01",
     title: "Brand Identity",
     description: "Distinctive logos and comprehensive brand systems that serve as the foundation of your identity.",
-    href: "/services/graphic-designing/brand-identity"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "02",
     title: "UI/UX Design",
     description: "User-centric digital experiences that combine stunning aesthetics with intuitive functionality.",
-    href: "/services/graphic-designing/ui-ux-design"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "03",
     title: "Print & Social Media",
     description: "High-engagement visuals for social platforms and professional print marketing collateral.",
-    href: "/services/graphic-designing/print-social-media"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "04",
     title: "Motion Graphics",
     description: "Dynamic animations and video graphics that capture attention and tell your brand story.",
-    href: "/services/graphic-designing/motion-graphics"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "05",
     title: "Package Design",
     description: "Innovative packaging solutions that protect your product and attract customers on the shelf.",
-    href: "/services/graphic-designing/package-design"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "06",
     title: "Illustration Art",
     description: "Custom digital illustrations that add unique personality and charm to your brand communication.",
-    href: "/services/graphic-designing/illustration"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "07",
     title: "Presentation Design",
     description: "High-impact deck designs that help you communicate ideas clearly and win over audiences.",
-    href: "/services/graphic-designing/presentation-design"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "08",
     title: "Infographic Design",
     description: "Transforming complex data into clear, engaging, and easy-to-understand visual narratives.",
-    href: "/services/graphic-designing/infographics"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "09",
     title: "3D Rendering",
     description: "Photorealistic 3D models and renderings that bring your products and concepts to life.",
-    href: "/services/graphic-designing/3d-rendering"
+    href: siteConfig.socialLinks.whatsapp
   },
   {
     id: "10",
     title: "Logo Animation",
     description: "Bringing your brand identity to life with smooth, professional, and memorable animations.",
-    href: "/services/graphic-designing/logo-animation"
+    href: siteConfig.socialLinks.whatsapp
   }
 ];
 
@@ -117,17 +118,17 @@ export default function GraphicDesignPage() {
           <div className="relative z-20">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-[1.1]">
               Transform Your <br />
-              <span className="text-white">Brand with Stunning</span> <br />
+              <span className="text-white">Brand with AI-Perfected</span> <br />
               <span className="text-white">Visual Design</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-lg leading-relaxed">
-              We turn your vision into reality with visually captivating designs
+              We turn your vision into reality with AI-perfected, visually captivating designs
               that reflect your brand&apos;s true identity. From logos to
               complete brand systems, our creative team crafts experiences that
               leave a lasting impression.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/home/contact" className="px-10 py-4 bg-[#FF4500] text-white font-bold rounded-sm hover:bg-orange-600 transition-all uppercase tracking-wider text-sm">
+              <Link href={siteConfig.socialLinks.whatsapp} className="px-10 py-4 bg-[#FF4500] text-white font-bold rounded-sm hover:bg-orange-600 transition-all uppercase tracking-wider text-sm">
                 Start Project
               </Link>
               <button className="px-10 py-4 border-2 border-white/20 text-white font-bold rounded-sm hover:bg-white/10 transition-all uppercase tracking-wider text-sm">
@@ -217,8 +218,9 @@ export default function GraphicDesignPage() {
                 <p className="text-gray-500 mb-10 leading-relaxed">
                   {benefit.description}
                 </p>
+                {/* Original Link: {benefit.href} */}
                 <Link
-                  href={benefit.href}
+                  href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'm interested in ${benefit.title} (Graphic Designing).`}
                   className="inline-block px-8 py-2 border-2 border-gray-900 font-bold hover:bg-gray-900 hover:text-white transition-all text-sm uppercase tracking-wider text-center"
                 >
                   Read More

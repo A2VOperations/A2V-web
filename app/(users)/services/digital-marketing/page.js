@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { siteConfig } from "@/app/config";
 import Contact from "@/app/components/Contact";
 import Testimonials from "@/app/components/Testimonials";
 import ServiceFAQ from "@/app/components/ServiceFAQ";
@@ -210,8 +211,9 @@ export default function DigitalMarketingPage() {
                 <p className="text-gray-500 mb-10 leading-relaxed">
                   {benefit.description}
                 </p>
+                {/* Original Link: {benefit.href} */}
                 <Link
-                  href={benefit.href}
+                  href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'm interested in ${benefit.title} (Digital Marketing).`}
                   className="inline-block px-8 py-2 border-2 border-gray-900 font-bold hover:bg-gray-900 hover:text-white transition-all text-sm uppercase tracking-wider text-center"
                 >
                   Read More
