@@ -26,7 +26,7 @@ const projects = [
     tag: 'FULL SUITE',
     desc: 'Integrated web development, graphics, and digital marketing strategy for maternal wellness.',
     bgColor: 'bg-rose-50',
-    image: 'https://images.unsplash.com/photo-1619256484616-e2c26ac6b5c6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: '/images/a2vgroups_mhc.png',
     gridClass: 'md:col-span-2 h-[290px]',
   },
   {
@@ -66,7 +66,7 @@ const projects = [
     tag: 'HEALTHCARE',
     desc: 'Next-gen hospital management and patient-care portal implementation.',
     bgColor: 'bg-blue-100',
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
+    image: '/images/a2vgroups_lotus2.jpg',
     gridClass: 'md:col-span-1 h-[350px]',
   },
   {
