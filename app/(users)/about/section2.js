@@ -72,7 +72,7 @@ const Section2 = () => {
             {/* Image 1 */}
             <div className="relative h-[200px] md:h-[260px] overflow-hidden group">
               <Image
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80"
+                src="https://plus.unsplash.com/premium_photo-1723600994013-efd5df7ca908?q=80&w=1170&auto=format&fit=crop"
                 alt="Indian woman working on tech blog"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -90,7 +90,7 @@ const Section2 = () => {
             {/* Image 2 */}
             <div className="relative h-[200px] md:h-[260px] overflow-hidden group">
               <Image
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+                src="/home/a2vgroups_logo_new.jpg"
                 alt="Indian team discussing trends"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -147,17 +147,17 @@ const Section2 = () => {
             <div className="flex -space-x-3">
               <img
                 className="w-14 h-14 border-4 border-white object-cover relative z-30"
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80"
+                src="/home/a2vgroups_testimonial_9.jpg"
                 alt="Team member"
               />
               <img
                 className="w-14 h-14 border-4 border-white object-cover relative z-20"
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+                src="/home/a2vgroups_testimonial_5.jpg"
                 alt="Team member"
               />
               <img
                 className="w-14 h-14 border-4 border-white object-cover relative z-10"
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
+                src="/home/a2vgroups_testimonial_1.jpg"
                 alt="Team member"
               />
             </div>

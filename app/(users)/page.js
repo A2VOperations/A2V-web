@@ -15,6 +15,7 @@ import Contact from "./home/contact/page";
 import ContactForm from "../components/ContactForm";
 import Link from "next/link";
 import { siteConfig } from "../config";
+import ClientLogos from "../components/ClientLogos";
 
 /* ── WhatsApp icon ── */
 function WaIcon() {
@@ -680,8 +681,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* AUTO MARQUEE BETWEEN SECTIONS */}
+      <ClientLogos />
+
       {/* ══════════════════════════════════════
-          HERO SERVICES — nav buttons top-right
+          AI-MASTERED SERVICES — nav buttons top-right
       ══════════════════════════════════════ */}
       <section className="relative overflow-hidden bg-white px-4 py-20 sm:px-6 md:px-14">
         <div className="relative mx-auto max-w-7xl">

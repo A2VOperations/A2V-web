@@ -256,8 +256,8 @@ const ServiceAbout = ({
     "Highly Professional Staff, Accurate Testing Processes",
     "Unrivalled workmanship, Professional and Qualified"
   ];
-  const image1 = image1Prop ?? resolved?.image1 ?? "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop";
-  const image2 = image2Prop ?? resolved?.image2 ?? "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop";
+  const image1 = image1Prop ?? resolved?.image1 ?? "https://plus.unsplash.com/premium_photo-1723600994013-efd5df7ca908?q=80&w=1170&auto=format&fit=crop";
+  const image2 = image2Prop ?? resolved?.image2 ?? "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop";
 
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-white overflow-hidden">
