@@ -26,7 +26,7 @@ function page() {
               <div className="absolute inset-x-0 bottom-0 flex flex-col items-start justify-between gap-0 sm:flex-row sm:items-end">
                 <div className="bg-orange-500 px-5 py-5 text-white shadow-xl sm:px-6 sm:py-6">
                   <p className="max-w-37.5 text-base font-bold leading-tight sm:max-w-40 sm:text-xl">
-                    <CountUp end={5} suffix="m+" enableScrollSpy /> Trusted Global Clients
+                    <CountUp end={5} suffix="m+" enableScrollSpy /> Trusted Clients
                   </p>
                   <div className="mt-5 flex items-center">
                     <div className="flex -space-x-3">
@@ -71,7 +71,7 @@ function page() {
 
               <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-5">
                 {[
-                  { value: 36, suffix: "k+", label: "Trusted Global Clients" },
+                  { value: 36, suffix: "k+", label: "Trusted Clients" },
                   { value: 850, suffix: "+", label: "Best Project Complete" },
                 ].map(({ value, suffix, label }) => (
                   <div

@@ -25,10 +25,10 @@ function page() {
             </div>
             <span className="hidden md:inline truncate text-sm text-white md:text-base capitalize">
               Let&apos;s{" "}
-              <em className="font-bold not-italic underline">
+              <em className="font-bold not-italic  ">
                 Discuss &amp; Start
               </em>{" "}
-              IT Consultations
+              IT Solutions
             </span>
             <Link
               href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'd like to discuss an IT consultation with A2V.`}
@@ -69,12 +69,10 @@ function page() {
                   style={{ marginLeft: i === 0 ? 0 : -10 }}
                 />
               ))}
-              <span className="ml-1.5 flex h-8 w-8 items-center justify-center rounded-full border border-white/70 text-lg font-light text-white">
-                +
-              </span>
+              
             </div>
             <span className="text-sm text-white md:text-base">
-              <strong className="font-extrabold">1.8 million+</strong> Trusted
+              <strong className="font-extrabold"></strong> Trusted
               Clients
             </span>
           </div>
