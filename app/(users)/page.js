@@ -260,7 +260,7 @@ export default function Home() {
   {
     title: "Logo Designing",
     desc: "Creative and professional logo designs crafted to represent your brand with uniqueness and impact.",
-    image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?q=80&w=1000&auto=format&fit=crop",
+    image: "/images/a2vgroups_logo_designing.png",
     wa: "Hi, I'm interested in your Logo Designing service."
   },
   {
