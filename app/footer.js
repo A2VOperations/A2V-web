@@ -78,9 +78,8 @@ export default function Footer() {
             <Image
               src="/images/A2V Group.png"
               alt={`${siteConfig.brandName} Logo`}
-              width={140}
-              height={50}
-              className="object-contain w-auto h-auto"
+              width={210}
+              height={100}
               unoptimized
             />
           </div>
