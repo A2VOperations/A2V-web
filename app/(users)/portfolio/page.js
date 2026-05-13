@@ -1,285 +1,273 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { 
-  ExternalLink, Search, X, 
-  ArrowUpRight, Play, Eye
-} from "lucide-react";
-import { gsap } from "gsap";
-import { getPortfolios } from "@/app/actions/portfolioActions";
+import { useState } from 'react';
+import { ChevronRight, Search, Menu, X } from 'lucide-react';
 
-const categories = ["All", "Web Development", "Graphic Designing", "Digital Marketing"];
+import Image from 'next/image';
+import { siteConfig } from '@/app/config';
 
+const categories = ['All', 'Web Development', 'Graphic Designing', 'Digital Marketing'];
+
+const projects = [
+  {
+    id: 3,
+    title: 'Bikaner Sweets Burari',
+    category: 'Graphic Designing',
+    tag: 'BRANDING',
+    desc: 'Devised premium graphics and informative infographics for a legacy confectionary brand.',
+    bgColor: 'bg-orange-100',
+    image: '/home/a2vgroups_bikaner.jpg',
+    gridClass: 'md:col-span-1 md:row-span-2 h-[400px] md:h-full',
+  },
+  {
+    id: 2,
+    title: 'Mom Health Care',
+    category: 'Web Development',
+    tag: 'FULL SUITE',
+    desc: 'Integrated web development, graphics, and digital marketing strategy for maternal wellness.',
+    bgColor: 'bg-rose-50',
+    image: 'https://images.unsplash.com/photo-1619256484616-e2c26ac6b5c6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    gridClass: 'md:col-span-2 h-[290px]',
+  },
+  {
+    id: 1,
+    title: 'ToysForKids',
+    category: 'Web Development',
+    tag: 'E-COMMERCE',
+    desc: 'A vibrant kids shopping platform designed for the ultimate toy browsing experience.',
+    bgColor: 'bg-white',
+    image: '/images/toysforkids_logo.png',
+    gridClass: 'md:col-span-1 h-[290px]',
+  },
+  {
+    id: 4,
+    title: 'AS Mobile',
+    category: 'Graphic Designing',
+    tag: 'UI/UX',
+    desc: 'Modern graphics and tech-focused infographics for an emerging mobile retail leader.',
+    bgColor: 'bg-blue-50',
+    image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80',
+    gridClass: 'md:col-span-1 h-[290px]',
+  },
+  {
+    id: 5,
+    title: 'Helping India Foundation',
+    category: 'Web Development',
+    tag: 'NGO',
+    desc: 'A robust and compassionate digital home for nationwide humanitarian efforts.',
+    bgColor: 'bg-green-50',
+    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80',
+    gridClass: 'md:col-span-2 h-[350px]',
+  },
+  {
+    id: 6,
+    title: 'Lotus Hospital',
+    category: 'Web Development',
+    tag: 'HEALTHCARE',
+    desc: 'Next-gen hospital management and patient-care portal implementation.',
+    bgColor: 'bg-blue-100',
+    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
+    gridClass: 'md:col-span-1 h-[350px]',
+  },
+  {
+    id: 7,
+    title: 'Ras Care',
+    category: 'Web Development',
+    tag: 'INDUSTRIAL',
+    desc: 'Clean and authoritative web presence for professional waterproofing services.',
+    bgColor: 'bg-slate-100',
+    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
+    gridClass: 'md:col-span-1 h-[290px]',
+  },
+  {
+    id: 8,
+    title: 'Rawat Band',
+    category: 'Web Development',
+    tag: 'EVENTS',
+    desc: 'An festive and rhythmic website for premium wedding band services.',
+    bgColor: 'bg-red-50',
+    image: 'https://rawatband.com/assets/Utranchal%20Rawat%20Band6-DqcfuL_T.jpg',
+    gridClass: 'md:col-span-2 h-[290px]',
+  },
+];
 
 export default function PortfolioPage() {
-  const [filter, setFilter] = useState("All");
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [hoveredProject, setHoveredProject] = useState(null);
 
-  useEffect(() => {
-    async function loadProjects() {
-      const res = await getPortfolios();
-      if (res.success) {
-        setProjects(res.data);
-      }
-      setLoading(false);
-    }
-    loadProjects();
-  }, []);
-
-  const filteredProjects = projects.filter(p => {
-    const matchesFilter = filter === "All" || p.category === filter;
-    const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesFilter && matchesSearch;
+  const filteredProjects = projects.filter((p) => {
+    const matchesCategory = selectedCategory === 'All' || p.category === selectedCategory;
+    const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          p.desc.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
   });
 
-  useEffect(() => {
-    gsap.fromTo(".project-card", 
-      { opacity: 0, y: 30 }, 
-      { opacity: 1, y: 0, stagger: 0.1, duration: 0.8, ease: "power3.out" }
-    );
-  }, [filter, searchQuery]);
-
   return (
-    <main className="min-h-screen bg-slate-50 pt-32 pb-24 px-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-orange-500 font-black uppercase tracking-[0.3em] text-xs mb-4 block animate-bounce">Our Showroom</span>
-          <h1 className="text-5xl md:text-8xl font-black text-slate-900 mb-6 uppercase tracking-tighter leading-none">
-            Success <span className="text-orange-500">Stories</span>
+    <div className="min-h-screen bg-white pt-12">
+      {/* Hero Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 ">
+        <div className="mb-12">
+          <p className="text-orange-500 font-semibold text-xs sm:text-sm tracking-widest uppercase mb-4 sm:mb-6">
+            ✦ Our Showroom
+          </p>
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight tracking-tighter">
+            Portfolio of <br className="hidden md:block"/> <span className="text-orange-500">Success Stories.</span>
           </h1>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-            A curated selection of our best work across web development, creative design, and strategic marketing.
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl leading-relaxed">
+            A curated anthology of our latest explorations across web development, creative
+            design, and strategic marketing.
           </p>
         </div>
 
-        {/* Controls */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-16 bg-white p-6 rounded-[2.5rem] shadow-xl shadow-slate-200/50 border border-slate-100">
-           {/* Filters */}
-           <div className="flex flex-wrap justify-center gap-2">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setFilter(cat)}
-                  className={`px-6 py-3 rounded-2xl text-sm font-black uppercase tracking-widest transition-all ${
-                    filter === cat 
-                    ? "bg-orange-500 text-white shadow-lg shadow-orange-500/40 scale-105" 
-                    : "text-slate-500 hover:bg-slate-50 hover:text-orange-500"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-           </div>
+        {/* Filter & Search Section */}
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-12">
+          {/* Category Buttons */}
+          <div className="flex flex-wrap gap-2 sm:gap-3">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-bold transition-all duration-300 text-sm sm:text-base ${
+                  selectedCategory === category
+                    ? 'bg-orange-500 text-white shadow-lg'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
 
-           {/* Search */}
-           <div className="relative w-full md:w-80">
-              <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-              <input 
-                type="text"
-                placeholder="Search projects..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-6 py-4 bg-slate-50 rounded-2xl border border-slate-100 text-sm outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 transition-all"
-              />
-           </div>
+          {/* Search Box */}
+          <div className="relative w-full lg:max-w-sm group">
+            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+              <Search className="h-5 w-5 text-gray-400 group-focus-within:text-orange-500 transition-colors" />
+            </div>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search projects..."
+              className="block w-full pl-12 pr-4 py-3 border-2 border-gray-100 rounded-2xl bg-gray-50 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-orange-500 transition-all duration-300"
+            />
+          </div>
         </div>
 
-        {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {loading ? (
-            <div className="col-span-1 md:col-span-2 lg:col-span-3 text-center py-20 text-slate-500 font-bold uppercase tracking-widest animate-pulse">
-              Loading Projects...
-            </div>
-          ) : filteredProjects.map((project) => (
-            <div 
-              key={project._id || project.id}
-              className="project-card group relative bg-white rounded-[3rem] overflow-hidden border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+        {/* Portfolio Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-auto">
+          {filteredProjects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`group cursor-pointer relative overflow-hidden rounded-[2rem] transition-all duration-500 shadow-sm hover:shadow-xl ${project.gridClass}`}
+              onMouseEnter={() => setHoveredProject(project.id)}
+              onMouseLeave={() => setHoveredProject(null)}
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image 
-                  src={project.image} 
-                  alt={project.title} 
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+              {/* Background Image */}
+              <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                  unoptimized
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
-                   <button 
-                    onClick={() => setSelectedProject(project)}
-                    className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-orange-500 hover:bg-orange-500 hover:text-white transition-all hover:scale-110"
-                   >
-                      <Eye className="w-6 h-6" />
-                   </button>
-                   {project.isLive && (
-                     <Link 
-                      href={project.link} 
-                      target="_blank"
-                      className="w-14 h-14 bg-orange-500 rounded-2xl flex items-center justify-center text-white hover:bg-slate-900 transition-all hover:scale-110"
-                     >
-                        <ExternalLink className="w-6 h-6" />
-                     </Link>
-                   )}
-                </div>
-                <div className="absolute top-6 right-6 px-4 py-2 bg-white/90 backdrop-blur-md rounded-xl text-[10px] font-black uppercase tracking-[0.2em] text-orange-500 shadow-sm">
-                   {project.category}
-                </div>
+                {/* Overlay for readability */}
+                <div className={`absolute inset-0 ${project.bgColor} opacity-20 group-hover:opacity-10 transition-opacity`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               </div>
 
-              <div className="p-10">
-                <div className="flex flex-wrap gap-2 mb-6">
-                   {project.tech.map((t, i) => (
-                     <span key={i} className="px-3 py-1 bg-slate-50 text-[10px] font-bold text-slate-400 uppercase tracking-widest rounded-lg">
-                        {t}
-                     </span>
-                   ))}
-                </div>
-                <h3 className="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tighter group-hover:text-orange-500 transition-colors">
+              {/* Tag - Top Left */}
+              <div className="absolute top-6 left-6 z-10">
+                <span className="bg-white/90 backdrop-blur-sm text-gray-900 text-[10px] font-black tracking-widest px-3 py-1.5 rounded-full uppercase">
+                  {project.tag}
+                </span>
+              </div>
+
+              {/* Project Info - Bottom Left */}
+              <div className="absolute bottom-8 left-8 right-8 z-10">
+                <p className="text-white/70 text-[10px] font-bold uppercase tracking-widest mb-1">
+                  {project.category}
+                </p>
+                <h3 className="text-white text-2xl md:text-3xl font-bold mb-2 tracking-tight">
                   {project.title}
                 </h3>
-                <p className="text-slate-500 text-sm leading-relaxed line-clamp-2">
-                  {project.description}
+                <p className="text-white/80 text-sm font-medium leading-relaxed max-w-xs">
+                  {project.desc}
                 </p>
-                <div className="mt-8 flex items-center justify-between">
-                   <button 
-                    onClick={() => setSelectedProject(project)}
-                    className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-900 group-hover:text-orange-500 transition-all flex items-center gap-2"
-                   >
-                      Case Study <ArrowUpRight className="w-4 h-4" />
-                   </button>
-                   {project.isLive && (
-                     <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                        <span className="text-[10px] font-black uppercase text-green-600 tracking-widest">Live Demo</span>
-                     </div>
-                   )}
-                </div>
               </div>
+
+              {/* Hover Effect Light */}
+              <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
           ))}
         </div>
 
         {/* Empty State */}
-        {!loading && filteredProjects.length === 0 && (
-          <div className="text-center py-32 bg-white rounded-[4rem] border-2 border-dashed border-slate-100">
-             <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Search className="w-8 h-8 text-slate-300" />
-             </div>
-             <h3 className="text-2xl font-black text-slate-900 mb-2 uppercase tracking-tighter">No Projects Found</h3>
-             <p className="text-slate-400">Try adjusting your filters or search query.</p>
+        {filteredProjects.length === 0 && (
+          <div className="py-16 text-center">
+            <p className="text-gray-500 text-base sm:text-lg">
+              No projects found in this category.
+            </p>
           </div>
         )}
-      </div>
-
-      {/* Project Detail Modal / Iframe Viewer */}
-      {selectedProject && (
-        <div className="fixed inset-0 z-[2000] flex items-center justify-center p-6 md:p-12">
-           <div 
-            className="absolute inset-0 bg-slate-900/95 backdrop-blur-xl"
-            onClick={() => setSelectedProject(null)}
-           />
-           
-           <div className="relative w-full max-w-6xl bg-white rounded-[4rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row h-full lg:max-h-[85vh]">
-              {/* Left: Viewer */}
-              <div className="flex-[1.5] bg-slate-100 relative group overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-100">
-                 {selectedProject.isLive ? (
-                   <iframe 
-                    src={selectedProject.link} 
-                    className="w-full h-full border-none bg-white"
-                    title={selectedProject.title}
-                   />
-                 ) : (
-                   <Image 
-                    src={selectedProject.image} 
-                    alt={selectedProject.title} 
-                    fill 
-                    className="object-cover"
-                   />
-                 )}
-                 <div className="absolute top-6 left-6 flex gap-4">
-                    <div className="px-5 py-2 bg-slate-900 text-white rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-xl">
-                       {selectedProject.isLive ? "Live Preview" : "Final Design"}
-                    </div>
-                 </div>
-              </div>
-
-              {/* Right: Info */}
-              <div className="flex-1 p-10 md:p-16 overflow-y-auto custom-scrollbar">
-                 <button 
-                  onClick={() => setSelectedProject(null)}
-                  className="absolute top-8 right-8 w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 hover:bg-orange-500 hover:text-white transition-all shadow-sm"
-                 >
-                    <X className="w-6 h-6" />
-                 </button>
-
-                 <span className="text-orange-500 font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">
-                    {selectedProject.category}
-                 </span>
-                 <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 uppercase tracking-tighter leading-none">
-                    {selectedProject.title}
-                 </h2>
-
-                 <div className="space-y-10">
-                    <div>
-                       <h4 className="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-4">Project Overview</h4>
-                       <p className="text-slate-600 leading-relaxed text-lg">
-                          {selectedProject.description}
-                       </p>
-                    </div>
-
-                    <div>
-                       <h4 className="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-4">Technologies Used</h4>
-                       <div className="flex flex-wrap gap-3">
-                          {selectedProject.tech.map((t, i) => (
-                            <span key={i} className="px-5 py-2 bg-slate-50 text-slate-900 font-bold rounded-xl text-xs border border-slate-100">
-                               {t}
-                            </span>
-                          ))}
-                       </div>
-                    </div>
-
-                    <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row gap-6">
-                       {selectedProject.isLive && (
-                         <Link 
-                          href={selectedProject.link} 
-                          target="_blank"
-                          className="flex-1 px-8 py-4 bg-orange-500 text-white font-black rounded-2xl text-center uppercase tracking-widest text-xs hover:bg-orange-600 transition-all flex items-center justify-center gap-3 shadow-xl shadow-orange-500/30"
-                         >
-                            Visit Live Site <ExternalLink className="w-4 h-4" />
-                         </Link>
-                       )}
-                       <Link 
-                        href="/contact" 
-                        className="flex-1 px-8 py-4 bg-slate-900 text-white font-black rounded-2xl text-center uppercase tracking-widest text-xs hover:bg-black transition-all flex items-center justify-center gap-3 shadow-xl shadow-slate-900/30"
-                       >
-                          Similar Project? <Play className="w-4 h-4" />
-                       </Link>
-                    </div>
-                 </div>
-              </div>
-           </div>
-        </div>
-      )}
-
-      {/* Contact CTA */}
-      <section className="mt-32 max-w-5xl mx-auto">
-         <div className="bg-slate-900 rounded-[4rem] p-12 md:p-24 text-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/20 blur-[100px] rounded-full" />
-            <h2 className="text-4xl md:text-7xl font-black text-white mb-10 uppercase tracking-tighter leading-none relative z-10">
-               Ready To Build Your <br /> <span className="text-orange-500 italic">Success Story?</span>
-            </h2>
-            <Link 
-              href="/contact" 
-              className="px-12 py-5 bg-orange-500 text-white font-black rounded-2xl hover:bg-orange-600 transition-all shadow-2xl shadow-orange-500/40 hover:-translate-y-2 uppercase tracking-widest text-sm inline-flex items-center gap-4 relative z-10"
-            >
-               Let&apos;s Discuss <ArrowUpRight className="w-5 h-5" />
-            </Link>
-         </div>
       </section>
-    </main>
+
+      {/* Collaborative Brands Section */}
+      <section className=" text-black pt-24 pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          {/* Header */}
+          <div className="flex flex-col items-center mb-16">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-[10px] font-black tracking-[0.3em] text-gray-500 uppercase">Collaborative Brands</span>
+              <div className="w-12 h-px bg-gray-800" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center tracking-tight">
+              Our Digital <span className="text-orange-500">Brand</span> Associates
+            </h2>
+          </div>
+
+          {/* Brands Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {[
+              { name: 'ToysForKids', style: 'font-serif italic tracking-tight' },
+              { name: 'Mom Health Care', style: 'font-sans font-black tracking-tighter uppercase' },
+              { name: 'Bikaner Sweets', style: 'font-serif font-medium tracking-[0.2em] uppercase' },
+              { name: 'AS Mobile', style: 'font-sans font-extralight tracking-[0.3em] uppercase' },
+              { name: 'Helping India', style: 'font-serif font-bold tracking-normal' },
+              { name: 'Lotus Hospital', style: 'font-sans font-semibold tracking-[0.15em] uppercase' },
+              { name: 'Ras Care', style: 'font-serif italic font-light tracking-wide' },
+              { name: 'Rawat Band', style: 'font-sans font-black tracking-[0.25em] uppercase' },
+              { name: 'Max', style: 'font-serif font-black text-2xl tracking-tighter' },
+              { name: 'Arogya', style: 'font-sans font-medium tracking-[0.4em] uppercase text-[10px]' },
+            ].map((brand) => (
+              <div 
+                key={brand.name}
+                className="bg-[#111] border border-gray-800 rounded-xl p-6 flex items-center justify-center h-28 hover:border-orange-500/50 transition-all duration-300 group shadow-2xl"
+              >
+                <span className={`text-gray-300 leading-none group-hover:text-white transition-colors text-center ${brand.style}`}>
+                  {brand.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CSS Animations */}
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
+    </div>
   );
 }
