@@ -296,7 +296,7 @@ export default function Home() {
     },
     {
       text: "The branding A2V created for us is stunning. From our logo to our complete brand identity, every element reflects premium quality. Our brand now stands out in a very competitive market.",
-      name: "Priya Sharma", role: "CEO, Greenleaf Solutions",
+      name: "Priya Sharma", role: "CEO, ToysForKids",
       imgs: [
         "/home/a2vgroups_testimonial_1.jpg",
         "/home/a2vgroups_testimonial_2.jpg",
@@ -820,7 +820,6 @@ export default function Home() {
                     <span className="block select-none text-7xl leading-none text-orange-500 mb-4">&quot;</span>
                     <p className="mb-6 text-lg leading-8 text-gray-700">{t.text}</p>
                     <p className="text-sm font-semibold text-gray-900">{t.name}</p>
-                    <p className="mt-1 text-sm font-medium text-orange-500">{t.role}</p>
                   </div>
                 </SwiperSlide>
               ))}
