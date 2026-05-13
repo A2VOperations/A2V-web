@@ -209,7 +209,7 @@ const Section2 = () => {
             <div className="flex items-center gap-4 pt-2 border-t border-white/10">
               <div className="flex flex-col">
                 <span className="text-white font-bold text-sm">A2V Digital Team</span>
-                <span className="text-gray-400 text-xs">AI-Perfected Agency · Est. 2000</span>
+                <span className="text-gray-400 text-xs">AI-Perfected IT solution company · Est. 2000</span>
               </div>
               <div className="ml-auto flex gap-6">
                 <div className="text-center">

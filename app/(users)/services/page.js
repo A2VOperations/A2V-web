@@ -230,7 +230,7 @@ const testimonials = [
   },
   {
     name: "Neha Kapoor (Kapoor Creatives)",
-    text: "A truly professional agency. They are our go-to partners for anything related to web development and UI/UX design. Exceptional work!",
+    text: "A truly professional IT solution company. They are our go-to partners for anything related to web development and UI/UX design. Exceptional work!",
     rating: 5
   }
 ];
@@ -527,7 +527,7 @@ export default function ServicesPage() {
                   </span>
                </h1>
                <p className="text-xl text-gray-600 max-w-xl mb-10 leading-relaxed font-sans">
-                  For great companies who want more than surface-level support. Connective is a full-service AI-Perfected digital agency that listens, innovates, and delivers.
+                  For great companies who want more than surface-level support. Connective is a full-service AI-Perfected digital IT solution company that listens, innovates, and delivers.
                </p>
                
                <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center mb-16">
@@ -1112,7 +1112,7 @@ function WebDevProcess() {
     <ProcessSection
       subtitle="Our Approach"
       title="WEB DEVELOPMENT PROCESS"
-      desc="As a premier website development agency, our team uses a multi-prong approach with the development team involved from the start."
+      desc="As a premier website development IT solution company, our team uses a multi-prong approach with the development team involved from the start."
       steps={webSteps}
       ctaLabel="LET'S GET STARTED"
       ctaHref="/contact"

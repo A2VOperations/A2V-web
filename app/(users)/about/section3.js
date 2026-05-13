@@ -8,7 +8,7 @@ const timelineData = [
   {
     year: "2000",
     label: "Establishment & Foundation",
-    desc: "A2V was founded with a clear vision: to deliver world-class digital solutions powered by innovation and creativity. We started small but dreamed big, laying the groundwork for what would become a leading AI-perfected agency.",
+    desc: "A2V was founded with a clear vision: to deliver world-class digital solutions powered by innovation and creativity. We started small but dreamed big, laying the groundwork for what would become a leading AI-perfected IT solution company.",
   },
   {
     year: "2005",
@@ -18,12 +18,12 @@ const timelineData = [
   {
     year: "2010",
     label: "First Major Milestone",
-    desc: "A2V delivered over 500 successful projects and launched its digital marketing division. Recognition from national tech forums positioned us as a go-to agency for scalable, performance-driven digital growth.",
+    desc: "A2V delivered over 500 successful projects and launched its digital marketing division. Recognition from national tech forums positioned us as a go-to IT solution company for scalable, performance-driven digital growth.",
   },
   {
     year: "2018",
     label: "AI Integration Era",
-    desc: "We pioneered AI-integrated workflows into our design, development and marketing pipelines — years before it became mainstream. A2V became one of India's earliest agencies to offer AI-perfected branding and automation solutions.",
+    desc: "We pioneered AI-integrated workflows into our design, development and marketing pipelines — years before it became mainstream. A2V became one of India's earliest IT solution companies to offer AI-perfected branding and automation solutions.",
   },
   {
     year: "Today",
@@ -76,7 +76,7 @@ export default function Section3() {
             </h2>
 
             <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-8 max-w-lg">
-              A2V is an AI-perfected digital agency delivering cutting-edge web development,
+              A2V is an AI-perfected digital IT solution company delivering cutting-edge web development,
               design, marketing, and automation solutions. Since our founding, we've helped
               thousands of businesses grow smarter, faster, and stronger in the digital world.
             </p>

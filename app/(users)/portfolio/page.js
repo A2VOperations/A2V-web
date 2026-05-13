@@ -240,13 +240,13 @@ export default function PortfolioPage() {
               { name: 'Ras Care', style: 'font-serif italic font-light tracking-wide' },
               { name: 'Rawat Band', style: 'font-sans font-black tracking-[0.25em] uppercase' },
               { name: 'Max', style: 'font-serif font-black text-2xl tracking-tighter' },
-              { name: 'Arogya', style: 'font-sans font-medium tracking-[0.4em] uppercase text-[10px]' },
+              { name: 'Arogya', style: 'font-sans font-medium tracking-[0.4em] uppercase text-[24px]' },
             ].map((brand) => (
               <div 
                 key={brand.name}
-                className="bg-[#111] border border-gray-800 rounded-xl p-6 flex items-center justify-center h-28 hover:border-orange-500/50 transition-all duration-300 group shadow-2xl"
+                className="bg-[#19272B] border border-gray-800 rounded-xl p-6 flex items-center justify-center h-28 hover:border-orange-500/50 transition-all duration-300 group shadow-2xl"
               >
-                <span className={`text-gray-300 leading-none group-hover:text-white transition-colors text-center ${brand.style}`}>
+                <span className={`text-gray-300 text-2xl leading-none group-hover:text-white transition-colors text-center ${brand.style}`}>
                   {brand.name}
                 </span>
               </div>

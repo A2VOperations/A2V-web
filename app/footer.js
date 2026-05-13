@@ -41,11 +41,10 @@ export default function Footer() {
 
   const services = [
     { label: "Web (UX/UI) Design", href: siteConfig.socialLinks.whatsapp },
-    { label: "Machine Learning & AI", href: siteConfig.socialLinks.whatsapp },
     { label: "Web Development", href: siteConfig.socialLinks.whatsapp },
-    { label: "IT Cyber Security", href: siteConfig.socialLinks.whatsapp },
-    { label: "Cloud Computing", href: siteConfig.socialLinks.whatsapp },
-    { label: "Analytic & Engineering", href: siteConfig.socialLinks.whatsapp },
+    { label: "Logo Designing", href: siteConfig.socialLinks.whatsapp },
+    { label: "SEO Optimization", href: siteConfig.socialLinks.whatsapp },
+    { label: "Digital Marketing", href: siteConfig.socialLinks.whatsapp },
   ];
 
   return (
@@ -55,12 +54,12 @@ export default function Footer() {
         <div className="flex w-max animate-marquee">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex whitespace-nowrap">
+              <p className="mx-5 text-orange-500 text-9xl font-semibold">Schedule a Free</p>
+              <p className="mx-5 text-white text-9xl font-semibold">Consultation</p>
               <p className="mx-5 text-orange-500 text-9xl font-semibold">Contact Us</p>
               <p className="mx-5 text-white text-9xl font-semibold">Get In Touch</p>
-              <p className="mx-5 text-orange-500 text-9xl font-semibold">Contact Us</p>
-              <p className="mx-5 text-white text-9xl font-semibold">Get In Touch</p>
-              <p className="mx-5 text-orange-500 text-9xl font-semibold">Contact Us</p>
-              <p className="mx-5 text-white text-9xl font-semibold">Get In Touch</p>
+              <p className="mx-5 text-orange-500 text-9xl font-semibold">Schedule a Free</p>
+              <p className="mx-5 text-white text-9xl font-semibold">Consultation</p>
               <p className="mx-5 text-orange-500 text-9xl font-semibold">Contact Us</p>
               <p className="mx-5 text-white text-9xl font-semibold">Get In Touch</p>
             </div>

@@ -6,7 +6,7 @@ import { siteConfig } from "@/app/config";
 const plans = [
   {
     label: "Basic Plan",
-    name: "Startup Agency",
+    name: "Startup IT Solution Company",
     monthly: 15,
     yearly: 12,
     popular: false,
@@ -20,7 +20,7 @@ const plans = [
   },
   {
     label: "Standard Plan",
-    name: "Corporate Agency",
+    name: "Corporate IT Solution Company",
     monthly: 49,
     yearly: 39,
     popular: true,

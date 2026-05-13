@@ -36,7 +36,7 @@ function Page() {
                   </defs>
                   <text className="fill-[#111] text-[14px] uppercase [letter-spacing:5px]">
                     <textPath href="#tekko-circle-text" startOffset="0%">
-                      Software Solutions • Digital Agency •
+                      Software Solutions • IT Solution Company •
                     </textPath>
                   </text>
                 </svg>

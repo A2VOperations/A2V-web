@@ -8,36 +8,36 @@ import { siteConfig } from "@/app/config";
 function page() {
   const cases = [
     {
-      tag: "Software Development",
-      title: "Mobile Application Design",
-      desc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque seeney laudantium totam",
+      tag: "Web Development",
+      title: "Next-Gen Web Platforms",
+      desc: "Building scalable, high-performance web applications tailored to modern business needs and user expectations.",
       img: "/home/mobile_app.jpg",
       active: true,
-      wa: `Hi, I'm interested in your Mobile Application Design (Software Development) services at A2V.`,
+      wa: `Hi, I'm interested in your Web Platform Development services at A2V.`,
     },
     {
-      tag: "Software Development",
-      title: "UI/UX Design",
-      desc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque seeney laudantium totam",
+      tag: "Graphic Designing",
+      title: "Premium Brand Identity",
+      desc: "Crafting unique visual experiences and brand languages that help businesses stand out in a crowded market.",
       img: "https://teckko.vercel.app/image/project-item/project-item-2.jpg",
       active: false,
-      wa: `Hi, I'm interested in your UI/UX Design (Software Development) services at A2V.`,
+      wa: `Hi, I'm interested in your Brand Identity and Graphic Design services at A2V.`,
     },
     {
       tag: "Web Development",
-      title: "E-Commerce Platform",
-      desc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque seeney laudantium totam",
+      title: "E-Commerce Ecosystems",
+      desc: "Developing robust online storefronts with seamless payment integrations and optimized user journeys for maximum conversion.",
       img: "/home/e_com.jpg",
       active: false,
-      wa: `Hi, I'm interested in your E-Commerce Platform (Web Development) services at A2V.`,
+      wa: `Hi, I'm interested in your E-Commerce Development services at A2V.`,
     },
     {
-      tag: "Cloud Solutions",
-      title: "Enterprise Cloud Migration",
-      desc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque seeney laudantium totam",
+      tag: "Digital Marketing",
+      title: "Strategic SEO Growth",
+      desc: "Implementing data-driven marketing and SEO strategies that drive organic traffic and establish digital authority.",
       img: "https://teckko.vercel.app/image/project-item/project-item-4.jpg",
       active: false,
-      wa: `Hi, I'm interested in your Enterprise Cloud Migration (Cloud Solutions) services at A2V.`,
+      wa: `Hi, I'm interested in your Digital Marketing and SEO services at A2V.`,
     },
   ];
 
@@ -84,7 +84,7 @@ function page() {
               Our Case Studies
             </p>
             <h2 className="font-syne text-4xl font-extrabold text-black md:text-5xl">
-              Explore Our <span className="font-light">Recent Case Studies</span>
+              Our Journey of <span className="font-light">Digital Excellence</span>
             </h2>
           </div>
           
@@ -122,7 +122,7 @@ function page() {
             {cases.map((c, i) => (
               <div
                 key={i}
-                onClick={() => window.open(`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(c.wa)}`, "_blank")}
+                onClick={() => window.open(`https://api.whatsapp.com/send?phone=${siteConfig.phone.replace(/\D/g, "")}&text=${encodeURIComponent(c.wa)}`, "_blank")}
                 className="group flex w-[min(92vw,850px)] shrink-0 flex-col-reverse overflow-hidden border border-white/10 bg-[#132120] md:h-105 md:flex-row-reverse cursor-pointer"
               >
                 <Image
@@ -132,6 +132,7 @@ function page() {
                   height={500}
                   className="h-64 w-full object-cover md:h-full md:w-[52%]"
                   unoptimized
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="flex flex-1 flex-col justify-center p-4 md:p-8">
                   <p className="mb-2 text-xs font-semibold tracking-widest text-white">
@@ -148,7 +149,7 @@ function page() {
                   </p>
 
                   <button
-                    onClick={(e) => { e.stopPropagation(); window.open(`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(c.wa)}`, "_blank"); }}
+                    onClick={(e) => { e.stopPropagation(); window.open(`https://api.whatsapp.com/send?phone=${siteConfig.phone.replace(/\D/g, "")}&text=${encodeURIComponent(c.wa)}`, "_blank"); }}
                     className="flex h-11 w-11 items-center justify-center gap-2 overflow-hidden rounded-full border border-white/35 px-0 text-sm font-light text-white transition-all duration-300 group-hover:w-36 group-hover:px-5 hover:border-[#29aae2] hover:bg-[#29aae2]/10"
                   >
                     <span className="text-xl leading-none">+</span>

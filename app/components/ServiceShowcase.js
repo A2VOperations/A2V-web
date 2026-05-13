@@ -10,7 +10,7 @@ const contentMap = {
     label: "Data-Driven SEO Solutions For Growing Businesses!",
     title: "Proven SEO Strategies That Drive Real Organic Growth",
     description:
-      "A leading SEO agency specializing in technical excellence, content authority, and sustainable first-page rankings.",
+      "A leading SEO IT solution company specializing in technical excellence, content authority, and sustainable first-page rankings.",
     cards: [
       { title: "Technical SEO Audits", description: "Deep crawl analysis to identify and fix every technical issue holding your site back from ranking." },
       { title: "Keyword Intelligence", description: "In-depth research to target high-intent queries that bring customers who are ready to convert." },
@@ -21,7 +21,7 @@ const contentMap = {
     label: "Viral Social Media Solutions For Modern Brands!",
     title: "Creative Social Strategies That Turn Followers Into Loyal Customers",
     description:
-      "A creative-first social media agency specialising in platform-native content and community management.",
+      "A creative-first social media IT solution company specialising in platform-native content and community management.",
     cards: [
       { title: "Content Production", description: "Scroll-stopping Reels, TikToks, and carousel posts designed to entertain, educate, and convert." },
       { title: "Community Management", description: "Daily engagement with your audience to build brand loyalty and respond to every interaction." },
@@ -32,7 +32,7 @@ const contentMap = {
     label: "High-ROI Paid Advertising Solutions For Scale-Up Businesses!",
     title: "PPC Campaigns That Maximise Every Dollar Of Your Ad Spend",
     description:
-      "A performance-obsessed PPC agency managing Google, Meta, and LinkedIn campaigns with a focus on ROAS.",
+      "A performance-obsessed PPC IT solution company managing Google, Meta, and LinkedIn campaigns with a focus on ROAS.",
     cards: [
       { title: "Search Ads (Google/Bing)", description: "Capturing customers at the exact moment they're searching for your product or service." },
       { title: "Social Ads (Meta/LinkedIn)", description: "Disruptive creatives and laser-targeted audiences to build awareness and generate leads." },
@@ -43,7 +43,7 @@ const contentMap = {
     label: "World-Class Brand Identity Solutions For Ambitious Companies!",
     title: "Visual Identities That Make Your Brand Impossible To Forget",
     description:
-      "A strategic branding agency crafting complete visual ecosystems — from iconic logos to brand guidelines.",
+      "A strategic branding IT solution company crafting complete visual ecosystems — from iconic logos to brand guidelines.",
     cards: [
       { title: "Logo & Mark Design", description: "Timeless, distinctive marks that encapsulate your brand's essence in a single powerful symbol." },
       { title: "Color & Typography", description: "Scientifically-backed color palettes and custom font pairings that evoke the right responses." },
@@ -54,7 +54,7 @@ const contentMap = {
     label: "User-Centric Design Solutions For Digital Products!",
     title: "Intuitive Interfaces That Users Love & Businesses Profit From",
     description:
-      "A UX-first design studio rooted in research, prototyping, and data validation for modern products.",
+      "A UX-first IT solution company rooted in research, prototyping, and data validation for modern products.",
     cards: [
       { title: "User Research", description: "Deep behavioral analysis, heatmapping, and interview sessions to understand user actions." },
       { title: "Wireframing & Prototypes", description: "High-fidelity clickable Figma prototypes validated with real users before development." },
@@ -65,7 +65,7 @@ const contentMap = {
     label: "Premium Visual Design Solutions For Every Medium!",
     title: "Designs That Command Attention From The Screen To The Shelf",
     description:
-      "A full-service visual design studio specialising in premium print materials and scroll-stopping digital assets.",
+      "A full-service visual IT solution company specialising in premium print materials and scroll-stopping digital assets.",
     cards: [
       { title: "Social Media Kits", description: "On-brand templates for Instagram, LinkedIn, and Facebook to keep your feed consistent." },
       { title: "Packaging Design", description: "Premium product packaging that stands out on the shelf and enhances the unboxing." },
@@ -95,7 +95,7 @@ const contentMap = {
   "ecommerce-development": {
     label: "High-Conversion Commerce Solutions For Global Brands!",
     title: "E-commerce Engines Engineered To Scale Your Revenue",
-    description: "A performance-first commerce agency building fast, secure, and intuitive digital storefronts.",
+    description: "A performance-first commerce IT solution company building fast, secure, and intuitive digital storefronts.",
     cards: [
       { title: "Custom Checkout", description: "Frictionless, high-conversion checkout flows designed to maximize your AOV." },
       { title: "Omnichannel Sync", description: "Real-time inventory and order synchronization across all your physical and digital stores." },

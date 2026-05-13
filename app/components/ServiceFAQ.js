@@ -18,7 +18,7 @@ const contentMap = {
     subtitle: "Unsure about our marketing campaigns?",
     faqs: [
       { q: "How long does it take to see SEO results?", a: "While initial improvements can be seen in 3-4 weeks, sustainable SEO growth typically takes 3-6 months depending on competition." },
-      { q: "Do you guarantee first page rankings?", a: "No reputable agency can guarantee exact rankings, but our data-driven strategies consistently deliver top-page results for our clients." },
+      { q: "Do you guarantee first page rankings?", a: "No reputable IT solution company can guarantee exact rankings, but our data-driven strategies consistently deliver top-page results for our clients." },
       { q: "What ad platforms do you manage?", a: "We manage Google Ads, Meta (Facebook/Instagram), LinkedIn Ads, TikTok, and Bing Ads for comprehensive reach." },
       { q: "How do you measure marketing success?", a: "We track KPIs tailored to your goals, such as Return on Ad Spend (ROAS), Cost Per Acquisition (CPA), and organic traffic growth." },
       { q: "Do I get monthly reports?", a: "Yes, we provide detailed, transparent monthly reports highlighting performance, insights, and next steps." },

@@ -52,7 +52,7 @@ function page() {
                     </span>
                     <div>
                       <p className="text-2xl font-bold text-black">A2V Groups</p>
-                      <p className="text-xs text-gray-500">Software agency</p>
+                      <p className="text-xs text-gray-500">IT solution company</p>
                     </div>
                   </div>
                 </div>
@@ -66,7 +66,7 @@ function page() {
               </p>
               <h3 className="mt-4 text-3xl font-semibold leading-tight text-black sm:text-4xl md:text-5xl lg:text-6xl">
                 Premier Tech Innovations
-                <span className="block font-light">A2V Groups Software Agency</span>
+                <span className="block font-light">A2V Groups IT Solution Company</span>
               </h3>
 
               <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-5">
