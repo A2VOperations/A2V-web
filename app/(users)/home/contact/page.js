@@ -206,11 +206,15 @@ function Page() {
                   <option value="" disabled>
                     Choose Services
                   </option>
-                  <option>Mobile App Development</option>
-                  <option>Web Development</option>
-                  <option>UI/UX Design</option>
-                  <option>Cloud Solutions</option>
-                  <option>Software Consulting</option>
+                  {siteConfig.formServices.map((cat) => (
+                    <optgroup key={cat.category} label={cat.category}>
+                      {cat.options.map((opt) => (
+                        <option key={opt} value={opt}>
+                          {opt}
+                        </option>
+                      ))}
+                    </optgroup>
+                  ))}
                 </select>
                 <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
                   <svg

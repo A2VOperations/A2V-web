@@ -55,7 +55,7 @@ export default function PrivacyPage() {
           <h1 className="text-4xl md:text-6xl font-black text-white mb-6">
             Privacy <span className="text-orange-500">Policy</span>
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto">
             Your privacy is important to us. This policy outlines how A2V Groups
             handles your data and ensures your protection.
           </p>
@@ -65,10 +65,7 @@ export default function PrivacyPage() {
       {/* Content */}
       <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-20">
         <div className="bg-white rounded-3xl shadow-2xl shadow-slate-200 border border-slate-100 p-8 md:p-12">
-          <div className="flex items-center justify-between mb-10 pb-6 border-b border-slate-100">
-            <div className="text-sm text-slate-400 font-medium uppercase tracking-wider">
-              Last Updated: <span className="text-slate-900">{lastUpdated}</span>
-            </div>
+          <div className="flex items-center justify-end mb-10 pb-6 border-b border-slate-100">
             <Link
               href="/"
               className="text-orange-500 text-sm font-bold hover:underline"
@@ -80,11 +77,14 @@ export default function PrivacyPage() {
           <div className="space-y-12">
             {sections.map((section, index) => (
               <section key={index} className="group">
-                <h2 className="text-2xl font-bold text-black mb-4 group-hover:text-orange-500 transition-colors duration-300">
+                <h2 className="text-xl md:text-2xl font-bold text-black mb-4 group-hover:text-orange-500 transition-colors duration-300">
                   {section.title}
                 </h2>
-                <p className="text-slate-600 leading-relaxed text-lg">
-                  {section.content}
+                <p className="text-slate-600 leading-relaxed text-sm md:text-lg">
+                  {index === 5 
+                    ? "We may change this Privacy Policy from time to time. If we make changes, we will notify you by providing you with additional notice through our website or direct communication."
+                    : section.content
+                  }
                 </p>
               </section>
             ))}

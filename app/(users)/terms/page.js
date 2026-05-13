@@ -60,7 +60,7 @@ export default function TermsPage() {
           <h1 className="text-4xl md:text-6xl font-black text-white mb-6">
             Terms & <span className="text-orange-500">Regulations</span>
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto">
             Please read these terms carefully before using our services. They
             outline your rights and responsibilities when working with A2V
             Groups.
@@ -71,10 +71,7 @@ export default function TermsPage() {
       {/* Content */}
       <div className="max-w-4xl mx-auto px-6 -mt-10 relative z-20">
         <div className="bg-white rounded-3xl shadow-2xl shadow-slate-200 border border-slate-100 p-8 md:p-12">
-          <div className="flex items-center justify-between mb-10 pb-6 border-b border-slate-100">
-            <div className="text-sm text-slate-400 font-medium uppercase tracking-wider">
-              Last Updated: <span className="text-slate-900">{lastUpdated}</span>
-            </div>
+          <div className="flex items-center justify-end mb-10 pb-6 border-b border-slate-100">
             <Link
               href="/"
               className="text-orange-500 text-sm font-bold hover:underline"
@@ -86,10 +83,10 @@ export default function TermsPage() {
           <div className="space-y-12">
             {sections.map((section, index) => (
               <section key={index} className="group">
-                <h2 className="text-2xl font-bold text-black mb-4 group-hover:text-orange-500 transition-colors duration-300">
+                <h2 className="text-xl md:text-2xl font-bold text-black mb-4 group-hover:text-orange-500 transition-colors duration-300">
                   {section.title}
                 </h2>
-                <p className="text-slate-600 leading-relaxed text-lg">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-lg">
                   {section.content}
                 </p>
               </section>

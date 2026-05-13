@@ -6,6 +6,7 @@ import { useValidation } from "@/app/context/ValidationContext";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { siteConfig } from "@/app/config";
 
 const LAT = 28.746691;
 const LNG = 77.194993;
@@ -258,16 +259,15 @@ export default function ContactPage() {
                     className="w-full px-5 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl text-black font-medium outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 transition-all appearance-none"
                   >
                     <option value="">Select a service</option>
-                    <option>Custom Web Solutions</option>
-                    <option>E-commerce Development</option>
-                    <option>CMS Development</option>
-                    <option>Brand Identity</option>
-                    <option>UI/UX Design</option>
-                    <option>Print & Social Media</option>
-                    <option>SEO Optimization</option>
-                    <option>Social Media Marketing</option>
-                    <option>PPC & Paid Ads</option>
-                    <option>General Inquiry</option>
+                    {siteConfig.formServices.map((cat) => (
+                      <optgroup key={cat.category} label={cat.category}>
+                        {cat.options.map((opt) => (
+                          <option key={opt} value={opt}>
+                            {opt}
+                          </option>
+                        ))}
+                      </optgroup>
+                    ))}
                   </select>
                 </div>
 
