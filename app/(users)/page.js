@@ -365,7 +365,7 @@ export default function Home() {
                     <p className="mt-1 text-sm text-gray-500">Happy Clients</p>
                   </div>
                   <div>
-                    <h3 className="text-3xl font-semibold text-gray-600 md:text-5xl">10+</h3>
+                    <h3 className="text-3xl font-semibold text-gray-600 md:text-5xl">9+</h3>
                     <p className="mt-1 text-sm text-gray-500">Years Experience</p>
                   </div>
                 </div>
@@ -436,7 +436,7 @@ export default function Home() {
                           href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(product.wa)}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-white text-slate-900 px-6 py-3 font-bold text-sm shadow-xl"
+                          className="bg-white/30 text-white px-6 py-3 font-bold text-sm shadow-xl"
                         >
                          Inquire Now
                        </Link>
@@ -654,7 +654,7 @@ export default function Home() {
                           href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(service.wa)}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-white text-slate-900 px-6 py-3 font-bold text-sm shadow-xl"
+                          className="bg-white/30 text-white px-6 py-3 font-bold text-sm shadow-xl"
                         >
                          Inquire Now
                        </Link>
@@ -751,7 +751,7 @@ export default function Home() {
                           href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(s.wa)}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-white text-slate-900 px-6 py-3 font-bold text-sm shadow-xl"
+                          className="bg-white/30 text-white px-6 py-3 font-bold text-sm shadow-xl"
                         >
                          Inquire Now
                        </Link>
