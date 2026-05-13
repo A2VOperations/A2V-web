@@ -81,7 +81,7 @@ const Section2 = () => {
               />
               <div className="absolute top-4 right-4 flex gap-2">
                 <span className="px-3 py-1 bg-black/40 backdrop-blur-md text-white text-[10px] uppercase font-semibold tracking-wider border border-white/20">
-                  Tech Blog
+                  A2V Groups
                 </span>
                 <span className="px-3 py-1 bg-black/40 backdrop-blur-md text-white text-[10px] uppercase font-semibold tracking-wider border border-white/20">
                   Trends
@@ -100,11 +100,9 @@ const Section2 = () => {
               />
               <div className="absolute top-4 right-4 flex gap-2">
                 <span className="px-3 py-1 bg-black/40 backdrop-blur-md text-white text-[10px] uppercase font-semibold tracking-wider border border-white/20">
-                  Tech Blog
+                  A2V Groups
                 </span>
-                <span className="px-3 py-1 bg-black/40 backdrop-blur-md text-white text-[10px] uppercase font-semibold tracking-wider border border-white/20">
-                  Trends
-                </span>
+                
               </div>
             </div>
           </div>
