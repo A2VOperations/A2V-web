@@ -40,6 +40,7 @@ const Section2 = () => {
               src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=1200&q=80"
               alt="A2V team working"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
           </div>
@@ -75,6 +76,7 @@ const Section2 = () => {
                 src="https://plus.unsplash.com/premium_photo-1723600994013-efd5df7ca908?q=80&w=1170&auto=format&fit=crop"
                 alt="Indian woman working on tech blog"
                 fill
+                sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute top-4 right-4 flex gap-2">
@@ -93,6 +95,7 @@ const Section2 = () => {
                 src="/home/a2vgroups_logo_new.jpg"
                 alt="Indian team discussing trends"
                 fill
+                sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute top-4 right-4 flex gap-2">

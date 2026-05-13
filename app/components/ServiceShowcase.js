@@ -154,6 +154,8 @@ const ServiceShowcase = ({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
+    swipeToSlide: true,
+    touchThreshold: 10,
     autoplay: true,
     autoplaySpeed: 3000,
   };

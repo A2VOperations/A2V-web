@@ -10,5 +10,62 @@ export const siteConfig = {
     threads: "https://www.threads.com/@a2vgroups",
     linkedin: "https://www.linkedin.com/posts/a2v-groups_digitalmarketing-seo-googleads-activity-7459879422645620736-mNvC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGVYpH8Bn06vguXbJk0O2J3gqKQqNnvJDNc",
     whatsapp: `https://wa.me/${(process.env.NEXT_PUBLIC_PHONE || "+91 78275 01356").replace(/\D/g, "")}`,
-  }
+  },
+  formServices: [
+    {
+      category: "Web Development",
+      options: [
+        "Next.js Web Development",
+        "Custom Web Solutions",
+        "E-commerce Development",
+        "CMS Development",
+        "Web Portal Development",
+        "SPA Development"
+      ]
+    },
+    {
+      category: "Digital Marketing",
+      options: [
+        "SEO Optimization",
+        "Technical & Local SEO",
+        "Social Media Marketing",
+        "PPC & Paid Ads",
+        "Influencer Marketing",
+        "Content Marketing",
+        "Digital Strategy & Consultation"
+      ]
+    },
+    {
+      category: "Creative & Design",
+      options: [
+        "Brand & Identity",
+        "UI/UX Experience",
+        "Logo Designing",
+        "Infographics Designing",
+        "Print & Social Media Design",
+        "Graphic Designing"
+      ]
+    },
+    {
+      category: "Software & AI",
+      options: [
+        "App Development",
+        "CRM Development",
+        "AI Consultancy",
+        "AI Development",
+        "Machine Learning",
+        "Natural Language Processing",
+        "Computer Vision",
+        "Intelligent Automation",
+        "Conversational AI (Chatbots)",
+        "Data Science",
+        "Predictive Analytics",
+        "Infrastructure Modernization"
+      ]
+    },
+    {
+      category: "Other",
+      options: ["General Inquiry"]
+    }
+  ]
 };

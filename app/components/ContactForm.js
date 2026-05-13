@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import ContactSuccessPopup from "./ContactSuccessPopup";
+import { siteConfig } from "../config";
 import { useValidation } from "../context/ValidationContext";
 
 export default function ContactForm({ source = "homepage" }) {
@@ -22,15 +23,17 @@ export default function ContactForm({ source = "homepage" }) {
       "custom-web-solutions": "Custom Web Solutions",
       "ecommerce-development": "E-commerce Development",
       "cms-development": "CMS Development",
-      "brand-identity": "Brand Identity",
-      "ui-ux-design": "UI/UX Design",
-      "print-social-media": "Print & Social Media",
+      "brand-identity": "Brand & Identity",
+      "ui-ux-design": "UI/UX Experience",
+      "print-social-media": "Print & Social Media Design",
       "seo-optimization": "SEO Optimization",
       "social-media-marketing": "Social Media Marketing",
       "ppc-paid-ads": "PPC & Paid Ads",
       "web-development": "Custom Web Solutions",
-      "graphic-designing": "Brand Identity",
-      "digital-marketing": "SEO Optimization"
+      "graphic-designing": "Graphic Designing",
+      "digital-marketing": "SEO Optimization",
+      "hero_section": "General Inquiry",
+      "hero_section_v2": "General Inquiry"
     };
 
     if (source && sourceToSubject[source]) {
@@ -149,16 +152,15 @@ export default function ContactForm({ source = "homepage" }) {
             className="w-full px-4 py-3 bg-slate-50 border border-slate-100 rounded-xl text-sm text-black font-medium outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 transition-all appearance-none"
           >
             <option value="">Select a service</option>
-            <option>Custom Web Solutions</option>
-            <option>E-commerce Development</option>
-            <option>CMS Development</option>
-            <option>Brand Identity</option>
-            <option>UI/UX Design</option>
-            <option>Print & Social Media</option>
-            <option>SEO Optimization</option>
-            <option>Social Media Marketing</option>
-            <option>PPC & Paid Ads</option>
-            <option>General Inquiry</option>
+            {siteConfig.formServices.map((cat) => (
+              <optgroup key={cat.category} label={cat.category}>
+                {cat.options.map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+                ))}
+              </optgroup>
+            ))}
           </select>
         </div>
 

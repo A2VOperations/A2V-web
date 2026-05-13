@@ -409,6 +409,8 @@ export default function Home() {
             spaceBetween={24}
             slidesPerView={1}
             loop
+            grabCursor={true}
+            touchEventsTarget="container"
             autoplay={{ delay: 4500, disableOnInteraction: false }}
             onSwiper={(s) => { productsSwiperRef.current = s; }}
             breakpoints={{
@@ -425,6 +427,7 @@ export default function Home() {
                       src={product.image} 
                       alt={product.title} 
                       fill 
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-110" 
                       unoptimized
                     />
@@ -556,7 +559,9 @@ export default function Home() {
             modules={[Autoplay]}
             spaceBetween={0}
             slidesPerView={1}
-            loop
+            loop={popularServices.length > 1}
+            grabCursor={true}
+            touchEventsTarget="container"
             autoplay={{ delay: 4000, disableOnInteraction: false }}
             onSwiper={(s) => { popularSwiperRef.current = s; }}
             breakpoints={{
@@ -623,6 +628,8 @@ export default function Home() {
             spaceBetween={30}
             slidesPerView={1}
             loop
+            grabCursor={true}
+            touchEventsTarget="container"
             autoplay={{ delay: 4000, disableOnInteraction: false }}
             onSwiper={(s) => { servicesSwiperRef.current = s; }}
             breakpoints={{
@@ -732,6 +739,7 @@ export default function Home() {
                       src={s.image} 
                       alt={s.title} 
                       fill 
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-110" 
                       unoptimized
                     />

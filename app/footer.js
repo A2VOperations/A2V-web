@@ -69,19 +69,19 @@ export default function Footer() {
       </section>
 
 
-      <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr] gap-x-12 gap-y-12 relative z-10">
+      <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr] gap-x-12 gap-y-12 relative z-10 text-center md:text-left">
 
         {/* LEFT - Logo + WhatsApp CTA */}
         <div className="flex flex-col">
 
           {/* Logo */}
-          <div className="mb-10">
+          <div className="mb-10 flex justify-center md:justify-start">
             <Image
               src="/images/A2V Group.png"
               alt={`${siteConfig.brandName} Logo`}
               width={140}
               height={50}
-              className="object-contain"
+              className="object-contain w-auto h-auto"
               unoptimized
             />
           </div>
@@ -97,7 +97,7 @@ export default function Footer() {
           </p>
 
           {/* Social Links */}
-          <div className="flex gap-3 mb-8">
+          <div className="flex gap-3 mb-8 justify-center md:justify-start">
             <a href={siteConfig.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 border border-white/10">
               <FaFacebookF className="text-sm" />
             </a>
@@ -155,7 +155,7 @@ export default function Footer() {
           <h3 className="text-lg font-semibold mb-5 pb-2 border-b border-white/10">
             Services
           </h3>
-          <ul className="space-y-3">
+          <ul className="space-y-3 flex flex-col items-center md:items-start">
             {services.map((item) => (
               <li key={item.label}>
                 <Link
@@ -206,7 +206,7 @@ export default function Footer() {
                 href={siteConfig.socialLinks.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-lg font-bold text-white hover:text-green-400 transition group"
+                className="flex items-center gap-2 text-lg font-bold text-white hover:text-green-400 transition group justify-center md:justify-start"
               >
                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-green-500/20 group-hover:bg-green-500/40 transition">
                   <FaWhatsapp className="text-green-400 text-base" />
@@ -220,23 +220,9 @@ export default function Footer() {
 
       {/* Divider + Bottom bar */}
       <div className="max-w-[1280px] mx-auto px-6 mt-16 border-t border-white/10 pt-8 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-400 text-xs order-2 md:order-1">
-            © 2025 <span className="font-semibold text-white">{siteConfig.brandName}</span> – AI-Perfected IT
-            Services. All rights reserved.
-          </p>
-
-          {/* Scroll Top */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            aria-label="Scroll to top"
-            className="order-1 md:order-2 w-11 h-11 bg-white text-black rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:bg-orange-50 transition-all duration-200"
-          >
-            <FaArrowUp className="text-sm" />
-          </button>
-
-          {/* Nav links */}
-          <div className="flex gap-6 order-3">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4">
+          {/* Nav links - TOP on mobile */}
+          <div className="flex flex-wrap justify-center gap-6 order-1 md:order-3">
             {navLinks.map((item) => (
               <Link
                 key={item.label}
@@ -247,6 +233,21 @@ export default function Footer() {
               </Link>
             ))}
           </div>
+
+          {/* Copyright - MIDDLE on mobile */}
+          <p className="text-gray-400 text-xs order-2 md:order-1 text-center md:text-left">
+            © 2025 <span className="font-semibold text-white">{siteConfig.brandName}</span> – AI-Perfected IT
+            Services. All rights reserved.
+          </p>
+
+          {/* Scroll Top - BOTTOM on mobile */}
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            aria-label="Scroll to top"
+            className="order-3 md:order-2 w-11 h-11 bg-white text-black rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:bg-orange-50 transition-all duration-200"
+          >
+            <FaArrowUp className="text-sm" />
+          </button>
         </div>
       </div>
     </footer>

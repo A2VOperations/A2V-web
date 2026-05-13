@@ -61,7 +61,10 @@ export default function FeaturedProjects({
     speed: 500,
     slidesToShow: variant === "gallery" ? 4 : 3,
     slidesToScroll: 1,
-    arrows: false,
+    swipeToSlide: true,
+    touchThreshold: 10,
+    touchMove: true,
+    draggable: true,
     autoplay: variant !== "gallery",
     autoplaySpeed: 4000,
     responsive: [
