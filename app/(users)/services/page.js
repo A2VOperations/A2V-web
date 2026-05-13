@@ -637,6 +637,8 @@ export default function ServicesPage() {
                         {/* Original Link: {service.href} */}
                         <Link 
                           href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'm interested in your ${service.title} services.`}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition-all shadow-xl text-sm"
                         >
                           Explore industry solutions <ArrowUpRight className="w-4 h-4" />

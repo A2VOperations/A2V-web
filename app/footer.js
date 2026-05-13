@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaWhatsapp, FaArrowUp } from "react-icons/fa";
+import { FaWhatsapp, FaArrowUp, FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { SiThreads } from "react-icons/si";
 import { FiPhone } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 import { useValidation } from "./context/ValidationContext";
@@ -19,7 +20,7 @@ export default function Footer() {
   const { showError } = useValidation();
   const [footerPhone, setFooterPhone] = useState("");
   const phone = siteConfig.phone;
-  const whatsappNumber = phone?.replace(/\D/g, ""); // "911234567890"
+  const whatsappNumber = phone?.replace(/\D/g, ""); // "917827501356"
 
   const handleWhatsApp = (e) => {
     if (!/^[+\d\s\-()]{7,15}$/.test(footerPhone)) {
@@ -32,6 +33,7 @@ export default function Footer() {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
+    { label: "Faqs", href: "/contact#faqs" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms", href: "/terms" },
     { label: "Contact", href: "/contact" },
@@ -93,6 +95,25 @@ export default function Footer() {
             We understand that every challenge is an opportunity for AI-perfected innovation. We are here
             with a team of dedicated professionals.
           </p>
+
+          {/* Social Links */}
+          <div className="flex gap-3 mb-8">
+            <a href={siteConfig.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 border border-white/10">
+              <FaFacebookF className="text-sm" />
+            </a>
+            <a href={siteConfig.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 border border-white/10">
+              <FaInstagram className="text-sm" />
+            </a>
+            <a href={siteConfig.socialLinks.threads} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 border border-white/10">
+              <SiThreads className="text-sm" />
+            </a>
+            <a href={siteConfig.socialLinks.x} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 border border-white/10">
+              <FaTwitter className="text-sm" />
+            </a>
+            <a href={siteConfig.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 border border-white/10">
+              <FaLinkedinIn className="text-sm" />
+            </a>
+          </div>
 
           {/* Phone input + WhatsApp button */}
           <div className="flex flex-col sm:flex-row gap-3 mb-4 w-full">

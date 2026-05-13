@@ -16,26 +16,6 @@ import ContactForm from "../components/ContactForm";
 import Link from "next/link";
 import { siteConfig } from "../config";
 
-/* ── Reusable outlined-circle nav button pair ── */
-function NavButtons({ onPrev, onNext, dark = false }) {
-  const base =
-    "flex h-11 w-11 items-center justify-center rounded-full border-2 text-lg font-medium transition-all duration-200 select-none";
-  const light =
-    "border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white";
-  const darkStyle =
-    "border-white text-white hover:bg-white hover:text-orange-500";
-  return (
-    <div className="flex items-center gap-3">
-      <button type="button" onClick={onPrev} aria-label="Previous" className={`${base} ${dark ? darkStyle : light}`}>
-        ←
-      </button>
-      <button type="button" onClick={onNext} aria-label="Next" className={`${base} ${dark ? darkStyle : light}`}>
-        →
-      </button>
-    </div>
-  );
-}
-
 /* ── WhatsApp icon ── */
 function WaIcon() {
   return (
@@ -46,12 +26,31 @@ function WaIcon() {
 }
 
 export default function Home() {
-  const popularRef     = useRef(null);
-  const heroSvcRef     = useRef(null);
-  const testimonialRef = useRef(null);
+  const popularSwiperRef     = useRef(null);
+  const heroSvcSwiperRef     = useRef(null);
+  const testimonialSwiperRef = useRef(null);
+  const servicesSwiperRef    = useRef(null);
+  const productsSwiperRef    = useRef(null);
 
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [activeGrowthPanel, setActiveGrowthPanel] = useState("mission");
+
+  /* ── Reusable outlined-circle nav button pair ── */
+  const NavButtons = ({ onPrev, onNext, dark = false }) => {
+    const base = "flex h-11 w-11 items-center justify-center rounded-full border-2 text-lg font-medium transition-all duration-200 select-none";
+    const light = "border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white";
+    const darkStyle = "border-white text-white hover:bg-white hover:text-orange-500";
+    return (
+      <div className="flex items-center gap-3">
+        <button type="button" onClick={onPrev} aria-label="Previous" className={`${base} ${dark ? darkStyle : light}`}>
+          ←
+        </button>
+        <button type="button" onClick={onNext} aria-label="Next" className={`${base} ${dark ? darkStyle : light}`}>
+          →
+        </button>
+      </div>
+    );
+  };
 
   /* ── DATA ── */
   const growthPanels = [
@@ -137,46 +136,151 @@ export default function Home() {
     {
       num: "01", tag: "Web Development", title: "Next.js Web Development",
       desc: "Blazing-fast, SEO-ready web applications built with Next.js — the industry standard for scalable React projects, PWAs, and e-commerce platforms.",
-      gradient: "from-orange-500/10 to-transparent",
-      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg>,
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop",
       wa: "Hi, I'm interested in your Next.js Web Development service at A2V.",
     },
     {
       num: "02", tag: "SEO & Growth", title: "Technical & Local SEO Optimization",
       desc: "Dominate search rankings with AI-powered technical audits, schema markup, Core Web Vitals optimization, and local SEO strategies tailored for Indian markets.",
-      gradient: "from-blue-500/10 to-transparent",
-      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21M10.5 7.5v6m3-3h-6" /></svg>,
+      image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1000&auto=format&fit=crop",
       wa: "Hi, I'm interested in your Technical & Local SEO Optimization service at A2V.",
     },
     {
       num: "03", tag: "AI Creative", title: "AI Motion Graphics",
       desc: "Hyper-realistic animations and cinematic motion graphics powered by AI — from brand reveals and product demos to social reels that stop the scroll.",
-      gradient: "from-purple-500/10 to-transparent",
-      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>,
+      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop",
       wa: "Hi, I'm interested in your AI Motion Graphics service at A2V.",
     },
     {
       num: "04", tag: "Graphic Design", title: "Infographic Designing",
       desc: "Transform complex data, reports, and ideas into stunning, shareable infographics that educate your audience and drive engagement across all platforms.",
-      gradient: "from-green-500/10 to-transparent",
-      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" /></svg>,
+      image: "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?q=80&w=1000&auto=format&fit=crop",
       wa: "Hi, I'm interested in your Infographic Designing service at A2V.",
     },
     {
       num: "05", tag: "Digital Marketing", title: "Influencer Marketing",
       desc: "Connect your brand with the right voices — from micro-influencers to industry leaders — through data-driven campaigns that build trust and generate real ROI.",
-      gradient: "from-pink-500/10 to-transparent",
-      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" /></svg>,
+      image: "https://images.unsplash.com/photo-1628157588553-5eeea00af15c?q=80&w=1000&auto=format&fit=crop",
       wa: "Hi, I'm interested in your Influencer Marketing service at A2V.",
     },
     {
       num: "06", tag: "Web Development", title: "CMS Development",
       desc: "CMS development is the process of creating a Content Management System so users can manage website content without any coding knowledge.",
-      gradient: "from-orange-500/10 to-transparent",
-      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg>,
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop",
       wa: "Hi, I'm interested in your CMS Development service at A2V.",
     },
   ];
+
+  const mainServices = [
+    {
+      title: "Custom Web Solutions",
+      tag: "Web Development",
+      desc: "End-to-end web development using modern stacks like Next.js, React, and Node.js for high-performance applications.",
+      image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1000&auto=format&fit=crop",
+      wa: "Hi, I'm interested in your Custom Web Solutions at A2V."
+    },
+    {
+      title: "Digital Marketing",
+      tag: "Growth",
+      desc: "Data-driven marketing strategies including SEO, SEM, and Social Media to maximize your ROI and brand reach.",
+      image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=1000&auto=format&fit=crop",
+      wa: "Hi, I'm interested in your Digital Marketing services at A2V."
+    },
+    {
+      title: "Graphic Designing",
+      tag: "Creative",
+      desc: "Stunning visual identities, brand guidelines, and marketing collaterals that make your brand stand out.",
+      image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1000&auto=format&fit=crop",
+      wa: "Hi, I'm interested in your Graphic Designing services at A2V."
+    },
+    {
+      title: "UI/UX Experience",
+      tag: "Design",
+      desc: "User-centric design processes focusing on usability, accessibility, and delightful user interactions.",
+      image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1000&auto=format&fit=crop",
+      wa: "Hi, I'm interested in your UI/UX Experience services at A2V."
+    },
+    {
+      title: "SEO Optimization",
+      tag: "Search",
+      desc: "Advanced search engine optimization to improve organic visibility and drive high-quality traffic.",
+      image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1000&auto=format&fit=crop",
+      wa: "Hi, I'm interested in your SEO Optimization services at A2V."
+    },
+    {
+      title: "Social Media Marketing",
+      tag: "Social",
+      desc: "Engaging social media campaigns that build community and drive brand loyalty across platforms.",
+      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop",
+      wa: "Hi, I'm interested in your Social Media Marketing at A2V."
+    },
+    {
+      title: "Brand Strategy",
+      tag: "Identity",
+      desc: "Developing long-term brand equity with strategic positioning and distinctive identity design.",
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1000&auto=format&fit=crop",
+      wa: "Hi, I'm interested in your Brand Strategy services at A2V."
+    },
+    {
+      title: "Content Marketing",
+      tag: "Writing",
+      desc: "Compelling storytelling and content creation that educates, informs, and converts your audience.",
+      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1000&auto=format&fit=crop",
+      wa: "Hi, I'm interested in your Content Marketing services at A2V."
+    },
+    {
+      title: "App Development",
+      tag: "Mobile",
+      desc: "Custom mobile applications for iOS and Android, built with focus on performance and native experience.",
+      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop",
+      wa: "Hi, I'm interested in your App Development services at A2V."
+    }
+  ];
+
+  const heroProducts = [
+  {
+    title: "Custom Web Development",
+    desc: "Modern, fast, and fully responsive websites tailored to your business goals using the latest technologies.",
+    image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1000&auto=format&fit=crop",
+    wa: "Hi, I'm interested in your Custom Web Development service."
+  },
+  {
+    title: "Brand & Identity",
+    desc: "Build a powerful and memorable brand identity with strategic visuals, messaging, and creative direction.",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop",
+    wa: "Hi, I'm interested in your Brand & Identity service."
+  },
+  {
+    title: "SEO Optimization",
+    desc: "Improve your search engine rankings, website visibility, and organic traffic with advanced SEO strategies.",
+    image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1000&auto=format&fit=crop",
+    wa: "Hi, I'm interested in your SEO Optimization service."
+  },
+  {
+    title: "Logo Designing",
+    desc: "Creative and professional logo designs crafted to represent your brand with uniqueness and impact.",
+    image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?q=80&w=1000&auto=format&fit=crop",
+    wa: "Hi, I'm interested in your Logo Designing service."
+  },
+  {
+    title: "Infographics Designing",
+    desc: "Engaging infographic designs that simplify complex information and boost audience engagement.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+    wa: "Hi, I'm interested in your Infographics Designing service."
+  },
+  {
+    title: "CRM Development",
+    desc: "Custom CRM solutions to manage leads, automate workflows, and improve customer relationships efficiently.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop",
+    wa: "Hi, I'm interested in your CRM Development service."
+  },
+  {
+    title: "Social Media Marketing",
+    desc: "Grow your online presence with targeted social media campaigns, content strategies, and audience engagement.",
+    image: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=1000&auto=format&fit=crop",
+    wa: "Hi, I'm interested in your Social Media Marketing service."
+  }
+];
 
   const testimonials = [
     {
@@ -282,6 +386,84 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════
+          HERO PRODUCTS — Below Hero
+      ══════════════════════════════════════ */}
+      <section className="relative bg-white py-20 px-4 sm:px-6 lg:px-14 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Premium Products</span>
+              <h2 className="text-4xl md:text-5xl font-black text-slate-900">
+                Our Hero <span className="text-orange-500">Services</span>
+              </h2>
+            </div>
+            <NavButtons 
+              onPrev={() => productsSwiperRef.current?.slidePrev()} 
+              onNext={() => productsSwiperRef.current?.slideNext()} 
+            />
+          </div>
+
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={24}
+            slidesPerView={1}
+            loop
+            autoplay={{ delay: 4500, disableOnInteraction: false }}
+            onSwiper={(s) => { productsSwiperRef.current = s; }}
+            breakpoints={{
+              640:  { slidesPerView: 1 },
+              768:  { slidesPerView: 2 },
+              1280: { slidesPerView: 3 },
+            }}
+          >
+            {heroProducts.map((product, idx) => (
+              <SwiperSlide key={idx}>
+                <div className="group relative overflow-hidden bg-slate-50 border border-slate-100 h-full flex flex-col">
+                  <div className="relative h-64 overflow-hidden">
+                    <Image 
+                      src={product.image} 
+                      alt={product.title} 
+                      fill 
+                      className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                      unoptimized
+                    />
+                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <Link 
+                          href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(product.wa)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-white text-slate-900 px-6 py-3 font-bold text-sm shadow-xl"
+                        >
+                         Inquire Now
+                       </Link>
+                    </div>
+                  </div>
+                  <div className="p-8 flex-1 flex flex-col">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">
+                      {product.title}
+                    </h3>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
+                      {product.desc}
+                    </p>
+                    <div className="mt-auto">
+                      <Link 
+                        href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(product.wa)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-orange-500 font-bold text-xs uppercase tracking-widest"
+                      >
+                        Reach Us <span className="group-hover:translate-x-1 transition-transform">→</span>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
           COMPONENT SECTIONS
       ══════════════════════════════════════ */}
       <SoftwareDev />
@@ -364,8 +546,8 @@ export default function Home() {
               </h2>
             </div>
             <NavButtons
-              onPrev={() => popularRef.current?.slidePrev()}
-              onNext={() => popularRef.current?.slideNext()}
+              onPrev={() => popularSwiperRef.current?.slidePrev()}
+              onNext={() => popularSwiperRef.current?.slideNext()}
             />
           </div>
 
@@ -375,7 +557,7 @@ export default function Home() {
             slidesPerView={1}
             loop
             autoplay={{ delay: 4000, disableOnInteraction: false }}
-            onSwiper={(s) => (popularRef.current = s)}
+            onSwiper={(s) => { popularSwiperRef.current = s; }}
             breakpoints={{
               768:  { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
@@ -400,6 +582,8 @@ export default function Home() {
                   <div className="mt-auto pt-10">
                     <Link
                       href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'm interested in your ${service.title} service.`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-3 rounded-full border border-black/20 px-6 py-3 text-base font-semibold text-black transition duration-300 hover:border-orange-400 hover:text-orange-400 group-hover:border-white group-hover:text-white"
                     >
                       <span className="text-xl leading-none">+</span>
@@ -416,6 +600,87 @@ export default function Home() {
       <DiscussStart />
 
       {/* ══════════════════════════════════════
+          SERVICES WE OFFER — Swiper
+      ══════════════════════════════════════ */}
+      <section id="services" className="relative bg-[#f8fafc] py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <span className="text-orange-500 font-bold uppercase tracking-[0.2em] text-sm mb-4 block">Our Comprehensive Solutions</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900">
+                Services We <span className="text-orange-500 italic">Offer</span>
+              </h2>
+            </div>
+            <NavButtons 
+              onPrev={() => servicesSwiperRef.current?.slidePrev()} 
+              onNext={() => servicesSwiperRef.current?.slideNext()} 
+            />
+          </div>
+
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            loop
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            onSwiper={(s) => { servicesSwiperRef.current = s; }}
+            breakpoints={{
+              640:  { slidesPerView: 1 },
+              768:  { slidesPerView: 2 },
+              1280: { slidesPerView: 3 },
+            }}
+          >
+            {mainServices.map((service, idx) => (
+              <SwiperSlide key={idx} className="h-auto pb-4">
+                <div className="group relative overflow-hidden bg-white border border-slate-100 h-full flex flex-col shadow-sm hover:shadow-xl transition-all duration-500">
+                  <div className="relative h-64 overflow-hidden">
+                    <Image 
+                      src={service.image} 
+                      alt={service.title} 
+                      fill 
+                      className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                      unoptimized
+                    />
+                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <Link 
+                          href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(service.wa)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-white text-slate-900 px-6 py-3 font-bold text-sm shadow-xl"
+                        >
+                         Inquire Now
+                       </Link>
+                    </div>
+                  </div>
+                  <div className="p-8 flex-1 flex flex-col">
+                    <span className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-400 mb-2 group-hover:text-orange-500 transition-colors">
+                      {service.tag}
+                    </span>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
+                      {service.desc}
+                    </p>
+                    <div className="mt-auto">
+                      <Link 
+                        href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(service.wa)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-orange-500 font-bold text-xs uppercase tracking-widest"
+                      >
+                        Reach Us <span className="group-hover:translate-x-1 transition-transform">→</span>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
           HERO SERVICES — nav buttons top-right
       ══════════════════════════════════════ */}
       <section className="relative overflow-hidden bg-white px-4 py-20 sm:px-6 md:px-14">
@@ -428,7 +693,7 @@ export default function Home() {
                 AI-Perfected Solutions
               </p>
               <h2 className="text-4xl font-extrabold leading-tight text-black sm:text-5xl">
-                Our Hero <span className="font-light text-black">Services</span>
+                AI-Mastered <span className="font-light text-black">Services</span>
               </h2>
             </div>
             <div className="flex flex-col items-start sm:items-end gap-3">
@@ -436,8 +701,8 @@ export default function Home() {
                 Precision-engineered digital services that combine cutting-edge technology with creative excellence.
               </p>
               <NavButtons
-                onPrev={() => heroSvcRef.current?.slidePrev()}
-                onNext={() => heroSvcRef.current?.slideNext()}
+                onPrev={() => heroSvcSwiperRef.current?.slidePrev()}
+                onNext={() => heroSvcSwiperRef.current?.slideNext()}
               />
             </div>
           </div>
@@ -448,7 +713,7 @@ export default function Home() {
             slidesPerView={1}
             loop
             autoplay={{ delay: 5000, disableOnInteraction: false }}
-            onSwiper={(s) => (heroSvcRef.current = s)}
+            onSwiper={(s) => { heroSvcSwiperRef.current = s; }}
             breakpoints={{
               640:  { slidesPerView: 1 },
               768:  { slidesPerView: 2 },
@@ -457,29 +722,47 @@ export default function Home() {
           >
             {heroServices.map((s) => (
               <SwiperSlide key={s.num} className="h-auto">
-                <div
-                  onClick={() =>
-                    window.open(
-                      `https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(s.wa)}`,
-                      "_blank"
-                    )
-                  }
-                  className={`group relative flex flex-col gap-6 border border-black/12 bg-gradient-to-br ${s.gradient} p-8 cursor-pointer transition-all duration-300 hover:border-orange-500/50 hover:shadow-lg h-full min-h-[420px]`}
-                >
-                  <span className="absolute top-6 right-8 text-5xl font-black text-black/5 group-hover:text-orange-500/10 transition-colors select-none">
-                    {s.num}
-                  </span>
-                  <div className="w-14 h-14 flex items-center justify-center rounded-xl border border-black/10 text-orange-500 group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-all duration-300">
-                    {s.icon}
+                <div className="group relative overflow-hidden bg-white border border-slate-100 h-full flex flex-col shadow-sm hover:shadow-xl transition-all duration-500">
+                  <div className="relative h-64 overflow-hidden">
+                    <Image 
+                      src={s.image} 
+                      alt={s.title} 
+                      fill 
+                      className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                      unoptimized
+                    />
+                    <span className="absolute top-4 right-4 z-10 text-4xl font-black text-white/20 group-hover:text-white/40 transition-colors select-none">
+                      {s.num}
+                    </span>
+                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <Link 
+                          href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(s.wa)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-white text-slate-900 px-6 py-3 font-bold text-sm shadow-xl"
+                        >
+                         Inquire Now
+                       </Link>
+                    </div>
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-orange-500">{s.tag}</span>
-                  <h3 className="text-2xl font-bold text-black leading-snug group-hover:text-orange-500 transition-colors">
-                    {s.title}
-                  </h3>
-                  <p className="text-sm leading-7 text-gray-600 flex-1">{s.desc}</p>
-                  <div className="flex items-center gap-3 text-orange-500 text-sm font-bold uppercase tracking-wider group-hover:gap-4 transition-all">
-                    <WaIcon />
-                    <span>Contact via WhatsApp</span>
+                  <div className="p-8 flex-1 flex flex-col">
+                    <span className="text-xs font-bold uppercase tracking-widest text-orange-500 mb-2">{s.tag}</span>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">
+                      {s.title}
+                    </h3>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
+                      {s.desc}
+                    </p>
+                    <div className="mt-auto">
+                      <Link 
+                        href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(s.wa)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 text-orange-500 text-sm font-bold uppercase tracking-wider group-hover:gap-4 transition-all"
+                      >
+                        Reach Us <span className="group-hover:translate-x-1 transition-transform">→</span>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -506,8 +789,8 @@ export default function Home() {
 
             {/* ← nav buttons ABOVE the card → */}
             <NavButtons
-              onPrev={() => testimonialRef.current?.slidePrev()}
-              onNext={() => testimonialRef.current?.slideNext()}
+              onPrev={() => testimonialSwiperRef.current?.slidePrev()}
+              onNext={() => testimonialSwiperRef.current?.slideNext()}
             />
 
             <Swiper
@@ -515,7 +798,7 @@ export default function Home() {
               slidesPerView={1}
               loop
               autoplay={{ delay: 4000, disableOnInteraction: false }}
-              onSwiper={(s) => (testimonialRef.current = s)}
+              onSwiper={(s) => { testimonialSwiperRef.current = s; }}
               onSlideChange={(s) => setActiveTestimonial(s.realIndex)}
               className="mt-8"
             >

@@ -147,6 +147,8 @@ export default function AIPage() {
             <div className="flex flex-wrap gap-6">
               <Link
                 href={siteConfig.socialLinks.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 bg-purple-600 text-white font-bold rounded-sm hover:bg-purple-700 transition-all flex items-center gap-2 group"
               >
                 Start AI Project
@@ -228,6 +230,8 @@ export default function AIPage() {
                 {/* Original Link: {benefit.href} */}
                 <Link
                   href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'm interested in ${benefit.title} (AI Services).`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block px-8 py-2 border-2 border-purple-600 text-purple-600 font-bold hover:bg-purple-600 hover:text-white transition-all text-sm uppercase tracking-wider text-center"
                 >
                   Explore

@@ -2,8 +2,18 @@
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Inter, sans-serif;
+  @apply antialiased;
+}
+
+/* Global Smooth Transitions */
+a, button, input, select, textarea {
+  @apply transition-all duration-300 ease-in-out;
 }
 
 @theme inline {

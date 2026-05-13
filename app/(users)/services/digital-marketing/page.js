@@ -214,6 +214,8 @@ export default function DigitalMarketingPage() {
                 {/* Original Link: {benefit.href} */}
                 <Link
                   href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'm interested in ${benefit.title} (Digital Marketing).`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block px-8 py-2 border-2 border-gray-900 font-bold hover:bg-gray-900 hover:text-white transition-all text-sm uppercase tracking-wider text-center"
                 >
                   Read More

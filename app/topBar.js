@@ -1,7 +1,8 @@
 "use client";
 
 import { FiMapPin, FiMail, FiPhone } from "react-icons/fi";
-import { FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaTwitter, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
+import { SiThreads } from "react-icons/si";
 import { siteConfig } from "./config";
 
 export default function Topbar() {
@@ -31,33 +32,41 @@ export default function Topbar() {
         {/* Right Links */}
         <div className="flex items-center gap-4">
 
-          {["Help", "Support", "Faqs"].map((item) => (
+          {[
+            { label: "Help", href: "#" },
+            { label: "Support", href: "#" },
+            { label: "Faqs", href: "/contact#faqs" }
+          ].map((item) => (
             <a
-              key={item}
-              href="#"
+              key={item.label}
+              href={item.href}
               className="hover:text-orange-500 transition font-medium"
             >
-              {item}
+              {item.label}
             </a>
           ))}
 
           {/* Socials */}
           <div className="hidden sm:flex items-center gap-3 ml-2">
 
+            <a href={siteConfig.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-orange-500 transition">
+              <FaFacebookF className="text-[14px]" />
+            </a>
+
             <a href={siteConfig.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-orange-500 transition">
               <FaInstagram className="text-[14px]" />
+            </a>
+
+            <a href={siteConfig.socialLinks.threads} target="_blank" rel="noopener noreferrer" className="hover:text-orange-500 transition">
+              <SiThreads className="text-[14px]" />
             </a>
 
             <a href={siteConfig.socialLinks.x} target="_blank" rel="noopener noreferrer" className="hover:text-orange-500 transition">
               <FaTwitter className="text-[14px]" />
             </a>
 
-            <a href={siteConfig.socialLinks.linkedin} className="hover:text-orange-500 transition">
+            <a href={siteConfig.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-orange-500 transition">
               <FaLinkedinIn className="text-[14px]" />
-            </a>
-
-            <a href={siteConfig.socialLinks.youtube} className="hover:text-orange-500 transition">
-              <FaYoutube className="text-[14px]" />
             </a>
 
           </div>

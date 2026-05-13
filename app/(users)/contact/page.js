@@ -5,6 +5,7 @@ import ContactSuccessPopup from "@/app/components/ContactSuccessPopup";
 import { useValidation } from "@/app/context/ValidationContext";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 const LAT = 28.746691;
 const LNG = 77.194993;
@@ -25,6 +26,7 @@ export default function ContactPage() {
   const [showPopup, setShowPopup] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
+  const [openFaq, setOpenFaq] = useState(null);
 
   const { showError } = useValidation();
 
@@ -154,7 +156,7 @@ export default function ContactPage() {
                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.18 2 2 0 012 .02h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
                   ),
                   label: "Phone",
-                  value: process.env.NEXT_PUBLIC_PHONE || "+91 1234567890",
+                  value: process.env.NEXT_PUBLIC_PHONE || "+91 78275 01356",
                 },
               ].map(({ icon, label, value }, i) => (
                 <div
@@ -313,18 +315,113 @@ export default function ContactPage() {
           </div>
         </div>
         {/* Full Weight Calendar Section */}
-        <div className="mt-16 overflow-hidden">
-          <div className="min-h-[600px] w-full">
-            <Cal
-              namespace="30min"
-              calLink="a2v-chakra-operations-ywesru/30min"
-              style={{ width: "100%", height: "100%", minHeight: "600px" }}
-              config={{
-                layout: "month_view",
-                useSlotsViewOnSmallScreen: "true",
-              }}
-            />
+        <div className="mt-24 mb-16">
+          <div className="text-center mb-12">
+            <span className="inline-block text-[10px] font-black tracking-[0.2em] uppercase text-orange-500 mb-3 bg-orange-50 px-4 py-1.5 rounded-full">
+              Meeting Scheduler
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-black mb-4">
+              Schedule Your <span className="text-orange-500">Meeting</span>
+            </h2>
+            <p className="text-slate-500 max-w-xl mx-auto text-sm sm:text-base leading-relaxed px-4">
+              Choose a date and select your preferred time for a 30-minute strategy call with our expert team. We look forward to discussing your project!
+            </p>
           </div>
+
+          <div className="relative min-h-[700px] w-full bg-white rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-slate-200/50 overflow-hidden">
+            {/* Loading Spinner Background */}
+            <div className="absolute inset-0 flex items-center justify-center bg-slate-50/30 backdrop-blur-[2px]">
+              <div className="flex flex-col items-center gap-4">
+                <div className="relative">
+                  <div className="w-16 h-16 border-4 border-orange-500/10 border-t-orange-500 rounded-full animate-spin"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-8 h-8 bg-orange-500/10 rounded-full animate-pulse"></div>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center">
+                  <p className="text-sm font-black text-slate-800 uppercase tracking-widest">A2V Calendar</p>
+                  <p className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-1">Syncing Schedule...</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Calendar Embed */}
+            <div className="relative z-10 h-full">
+              <Cal
+                namespace="30min"
+                calLink="a2v-chakra-operations-ywesru/30min"
+                style={{ width: "100%", height: "100%", minHeight: "700px" }}
+                config={{
+                  layout: "month_view",
+                  theme: "light",
+                  useSlotsViewOnSmallScreen: "true",
+                }}
+              />
+            </div>
+          </div>
+        {/* FAQ Section */}
+        <div id="faqs" className="mt-24 mb-20 scroll-mt-24">
+          <div className="text-center mb-12">
+            <span className="inline-block text-[10px] font-black tracking-[0.2em] uppercase text-orange-500 mb-3 bg-orange-50 px-4 py-1.5 rounded-full">
+              Common Questions
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-black mb-4">
+              Frequently Asked <span className="text-orange-500">Questions</span>
+            </h2>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              {
+                q: "What services does A2V Groups offer?",
+                a: "We provide AI-perfected IT solutions including Web Development, UI/UX Design, Digital Marketing, SEO Optimization, and AI/ML consulting."
+              },
+              {
+                q: "How long does a typical project take?",
+                a: "Project timelines vary depending on complexity. Small websites typically take 7 to 9 days."
+              },
+              {
+                q: "Do you offer post-launch support?",
+                a: "Yes, we provide technical support to ensure your platforms remain optimized and secure."
+              },
+              {
+                q: "What is 'AI-Perfected' development?",
+                a: "It's our unique approach where we integrate AI tools and logic into the development workflow to ensure faster delivery, cleaner code, and smarter user experiences."
+              },
+              {
+                q: "How can I get a custom quote?",
+                a: "You can fill out the contact form above, schedule a call via our calendar, or message us directly on WhatsApp with your project details."
+              }
+            ].map((faq, index) => (
+              <div 
+                key={index} 
+                onMouseEnter={() => setOpenFaq(index)}
+                onMouseLeave={() => setOpenFaq(null)}
+                className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <div
+                  className="w-full flex items-center justify-between p-6 text-left cursor-default"
+                >
+                  <span className="text-sm sm:text-base font-bold text-slate-800">{faq.q}</span>
+                  {openFaq === index ? (
+                    <FiChevronUp className="text-orange-500 shrink-0" />
+                  ) : (
+                    <FiChevronDown className="text-slate-400 shrink-0" />
+                  )}
+                </div>
+                <div 
+                  className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${
+                    openFaq === index ? "pb-6 max-h-40 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    {faq.a}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
         </div>
       </div>
     </main>

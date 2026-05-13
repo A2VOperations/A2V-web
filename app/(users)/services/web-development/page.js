@@ -123,7 +123,12 @@ export default function WebDevelopmentPage() {
               that drive business growth and user engagement.
             </p>
             <div className="flex flex-wrap gap-6">
-              <Link href={siteConfig.socialLinks.whatsapp} className="px-10 py-4 bg-[#FF4500] text-white font-bold rounded-sm hover:bg-orange-600 transition-all uppercase tracking-wider text-sm">
+              <Link 
+                href={siteConfig.socialLinks.whatsapp} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-10 py-4 bg-[#FF4500] text-white font-bold rounded-sm hover:bg-orange-600 transition-all uppercase tracking-wider text-sm"
+              >
                 Start Building
               </Link>
             </div>
@@ -212,6 +217,8 @@ export default function WebDevelopmentPage() {
                 {/* Original Link: {benefit.href} */}
                 <Link
                   href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'm interested in ${benefit.title} (Web Development).`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block px-8 py-2 border-2 border-gray-900 font-bold hover:bg-gray-900 hover:text-white transition-all text-sm uppercase tracking-wider text-center"
                 >
                   Read More
