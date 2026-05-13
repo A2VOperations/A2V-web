@@ -220,10 +220,10 @@ export default function PortfolioPage() {
           {/* Header */}
           <div className="flex flex-col items-center mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-[10px] font-black tracking-[0.3em] text-gray-500 uppercase">Collaborative Brands</span>
+              <span className="text-[14px] font-black tracking-[0.3em] text-gray-500  uppercase">Collaborative Brands</span>
               <div className="w-12 h-px bg-gray-800" />
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center tracking-tight pt-10">
               Our Digital <span className="text-orange-500">Brand</span> Associates
             </h2>
           </div>
