@@ -131,7 +131,7 @@ const Section2 = () => {
               </p>
             </div>
             <div>
-              <h3 className="text-3xl font-bold mb-2">9+</h3>
+              <h3 className="text-3xl font-bold mb-2">10+</h3>
               <p className="text-[11px] text-gray-400 uppercase font-semibold tracking-wider">
                 Years Of Mastery
               </p>
@@ -209,7 +209,7 @@ const Section2 = () => {
             <div className="flex items-center gap-4 pt-2 border-t border-white/10">
               <div className="flex flex-col">
                 <span className="text-white font-bold text-sm">A2V Digital Team</span>
-                <span className="text-gray-400 text-xs">AI-Perfected IT solution company · Est. 2000</span>
+                <span className="text-gray-400 text-xs">AI-Perfected IT solution company · Est. 2013</span>
               </div>
               <div className="ml-auto flex gap-6">
                 <div className="text-center">
@@ -217,7 +217,7 @@ const Section2 = () => {
                   <p className="text-gray-400 text-[10px] uppercase tracking-wider">Clients</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-[#ff6900] font-black text-xl">9yr</p>
+                  <p className="text-[#ff6900] font-black text-xl">10yr+</p>
                   <p className="text-gray-400 text-[10px] uppercase tracking-wider">Legacy</p>
                 </div>
               </div>

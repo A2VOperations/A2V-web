@@ -365,7 +365,7 @@ export default function Home() {
                     <p className="mt-1 text-sm text-gray-500">Happy Clients</p>
                   </div>
                   <div>
-                    <h3 className="text-3xl font-semibold text-gray-600 md:text-5xl">9+</h3>
+                    <h3 className="text-3xl font-semibold text-gray-600 md:text-5xl">10+</h3>
                     <p className="mt-1 text-sm text-gray-500">Years Experience</p>
                   </div>
                 </div>

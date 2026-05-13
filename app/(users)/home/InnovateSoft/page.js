@@ -74,18 +74,18 @@ function Page() {
                   <div className="space-y-3">
                     <h4 className="text-lg font-bold text-black">Our Mission</h4>
                     <p className="text-sm leading-relaxed text-gray-500">
-                      To empower businesses with cutting-edge technology and creative strategies that drive real, measurable growth in the digital landscape.
+                      Our mission is to provide the best IT and digital services to businesses of every size. Whether it is web designing, web development, graphic designing, branding, Google Business Profile, or digital marketing, we aim to deliver professional, reliable, and growth-focused solutions that help our clients build a strong market presence.
                     </p>
                   </div>
                   <div className="space-y-3">
-                    <h4 className="text-lg font-bold text-black">Our Expertise</h4>
+                    <h4 className="text-lg font-bold text-black">Our Vision</h4>
                     <p className="text-sm leading-relaxed text-gray-500">
-                      From custom software development to advanced digital marketing, we bridge the gap between complex technology and intuitive user experiences.
+                      Our vision is to take A2V Groups’ services to every corner of India and expand our reach globally. We want to become a trusted technology partner for businesses by providing modern, AI-friendly, and future-ready digital solutions.
                     </p>
                   </div>
                   <div className="col-span-full mt-4 bg-orange-50 p-6">
                     <p className="text-sm font-medium italic text-orange-800">
-                      "We don't just build software; we build the future of your business. Join us on a journey of innovation and excellence."
+                      "We aim to grow with technology and help our clients grow with us — by giving them better visibility, better branding, better customer reach, and better digital results."
                     </p>
                   </div>
                 </div>

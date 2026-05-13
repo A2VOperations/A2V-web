@@ -6,29 +6,29 @@ import { siteConfig } from "@/app/config";
 
 const timelineData = [
   {
-    year: "2000",
-    label: "Establishment & Foundation",
-    desc: "A2V was founded with a clear vision: to deliver world-class digital solutions powered by innovation and creativity. We started small but dreamed big, laying the groundwork for what would become a leading AI-perfected IT solution company.",
+    year: "2013",
+    label: "A2V Groups",
+    desc: "We started our journey with a clear goal: to provide reliable, creative, and affordable digital solutions for businesses. In the early stage, our focus was on understanding client needs, building trust, and delivering quality work with personal attention.",
   },
   {
-    year: "2005",
-    label: "Early Growth & Expansion",
-    desc: "With a growing client base across India, A2V expanded its service portfolio to include web development, branding, and SEO. Our first 100 client milestones were achieved, building a foundation of trust and excellence.",
+    year: "2016",
+    label: "Growing with the Digital Revolution",
+    desc: "As businesses started moving online, we expanded our services into professional website designing, branding, and digital promotion. This phase helped us support local businesses in creating their digital identity and reaching more customers.",
   },
   {
-    year: "2010",
-    label: "First Major Milestone",
-    desc: "A2V delivered over 500 successful projects and launched its digital marketing division. Recognition from national tech forums positioned us as a go-to IT solution company for scalable, performance-driven digital growth.",
+    year: "2019",
+    label: "Stronger Digital & Branding Solutions",
+    desc: "With the rise of social media and online marketing, we added graphic designing, print branding, and digital marketing solutions. Our aim was to give clients complete business visibility — from logo and visiting cards to websites, Google presence, and online campaigns.",
   },
   {
-    year: "2018",
-    label: "AI Integration Era",
-    desc: "We pioneered AI-integrated workflows into our design, development and marketing pipelines — years before it became mainstream. A2V became one of India's earliest IT solution companies to offer AI-perfected branding and automation solutions.",
+    year: "2022",
+    label: "Smart Websites & Business Automation",
+    desc: "We moved towards modern, performance-focused websites and smarter digital systems. Our services became more structured with lead generation, WhatsApp integration, SEO-friendly websites, and business automation support.",
   },
   {
     year: "Today",
-    label: "Industry Leadership",
-    desc: "Today, A2V serves clients across 15+ industries with an award-winning team of designers, engineers, and AI strategists. We continue to lead with cutting-edge technology, creative excellence, and measurable results for every client.",
+    label: "AI-Friendly Solutions",
+    desc: "Today, A2V Groups is growing with AI-friendly tools, modern technologies, and advanced digital strategies. We use technology to improve speed, creativity, customer reach, branding quality, and business growth for our clients.",
   },
 ];
 
@@ -68,17 +68,15 @@ export default function Section3() {
             </div>
 
             <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-white leading-[1.2] mb-6">
-              Your Gateway To{" "}
+              Your Vision,{" "}
               <span className="text-[#ff6900]">
-                Online<br className="hidden md:block" /> Excellence
+                Our<br className="hidden md:block" /> Technology
               </span>{" "}
-              — Dream Big In Pixels.
+              — Building Digital Growth Since 2013
             </h2>
 
             <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-8 max-w-lg">
-              A2V is an AI-perfected digital IT solution company delivering cutting-edge web development,
-              design, marketing, and automation solutions. Since our founding, we've helped
-              thousands of businesses grow smarter, faster, and stronger in the digital world.
+              A2V Groups is an IT and digital solutions company helping businesses build a strong online presence through website development, graphic designing, branding, and digital marketing services. Since 2013, we have grown with changing technology and continuously upgraded our skills to deliver smarter, faster, and more result-focused solutions for our clients.
             </p>
 
             {/* Mobile: toggle button | Desktop: decorative label */}
@@ -101,14 +99,14 @@ export default function Section3() {
               <div className="hidden lg:flex items-center gap-3">
                 <span className="w-8 h-[2px] bg-[#ff6900]" />
                 <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#ff6900]">
-                  Our Story Since 2000
+                  Our Story Since 2013
                 </span>
                 <span className="w-8 h-[2px] bg-[#ff6900]" />
               </div>
 
               {/* WhatsApp Button for Story */}
               <button
-                onClick={() => window.open(`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent("Hi A2V, I just read about your story since 2000 and would like to learn more about your digital solutions.")}`, "_blank")}
+                onClick={() => window.open(`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent("Hi A2V, I just read about your story since 2013 and would like to learn more about your digital solutions.")}`, "_blank")}
                 className="mt-6 flex items-center gap-3 bg-transparent border border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white px-6 py-2.5 font-bold transition-all duration-300 group text-sm"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
