@@ -14,30 +14,34 @@ import ClientLogos from "@/app/components/ClientLogos";
 const galleryProjects = [
   {
     image: "https://res.cloudinary.com/dwbgco82p/image/upload/v1778575206/Picture19_sbdc8t.jpg",
-    categories: ["Branding"],
+    previewImage: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format",
+    categories: ["Branding", "Logo"],
     title: "QUATES",
-    description: "", 
+    description: "Premium visual identity for a high-end fashion brand focusing on minimalism and elegance.", 
     link: "#"
   },
   {
     image: "https://res.cloudinary.com/dwbgco82p/image/upload/v1778575206/Picture19_sbdc8t.jpg",
-    categories: ["Branding"],
-    title: "VISUAL ECOSYSTEM 02",
-    description: "", 
+    previewImage: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2071&auto=format",
+    categories: ["Identity", "Visuals"],
+    title: "VISUAL ECOSYSTEM",
+    description: "A comprehensive design system that scales across print, digital, and environmental touchpoints.", 
     link: "#"
   },
   {
     image: "https://res.cloudinary.com/dwbgco82p/image/upload/v1778575206/Picture19_sbdc8t.jpg",
-    categories: ["Branding"],
-    title: "BRAND ARCHITECTURE 03",
-    description: "",
+    previewImage: "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?q=80&w=2070&auto=format",
+    categories: ["Strategy", "Design"],
+    title: "BRAND ARCHITECTURE",
+    description: "Strategic brand positioning and architecture for a multi-national conglomerate.",
     link: "#"
   },
   {
     image: "https://res.cloudinary.com/dwbgco82p/image/upload/v1778575206/Picture19_sbdc8t.jpg",
-    categories: ["Branding"],
-    title: "STRATEGIC MARK 04",
-    description: "",
+    previewImage: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format",
+    categories: ["Creative", "Mark"],
+    title: "STRATEGIC MARK",
+    description: "Developing iconic symbols that communicate brand values instantly and leave a lasting impression.",
     link: "#"
   }
 ];
@@ -107,6 +111,7 @@ export default function BrandIdentityPage() {
         variant="gallery" 
         title="Visual Identity Gallery" 
         subtitle="Our Creative Work"
+        source={source}
       />
 
       {/* About Section */}
