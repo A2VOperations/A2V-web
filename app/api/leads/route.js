@@ -42,12 +42,15 @@ export async function POST(request) {
 
     const mailOptions = {
       from: sender,
-      to: [process.env.EMAIL_TO || process.env.NEXT_PUBLIC_EMAIL || "operation.a2vgroups@gmail.com"],
+      to: [
+        process.env.EMAIL_TO ||
+          process.env.NEXT_PUBLIC_EMAIL ||
+          "a2vgroups1@gmail.com",
+      ],
       replyTo: trimmedEmail,
       subject: `New Lead: ${trimmedSubject || "Website Inquiry"} from ${trimmedName}`,
       text: `You have received a new lead submission.\n\nCustomer Details:\nName: ${trimmedName}\nEmail: ${trimmedEmail}\nPhone: ${trimmedPhone || "N/A"}\nAddress: ${trimmedAddress || "N/A"}\nSource: ${trimmedSource || "website"}\nSubject: ${trimmedSubject || "N/A"}\n\nMessage:\n${trimmedMessage || "No message provided"}`,
     };
-
 
     if (pdfBase64) {
       const base64Data = pdfBase64.split("base64,")[1] || pdfBase64;

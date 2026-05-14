@@ -1,14 +1,17 @@
 export const siteConfig = {
   brandName: "A2V Groups",
   phone: process.env.NEXT_PUBLIC_PHONE || "+91 78275 01356",
-  email: process.env.NEXT_PUBLIC_EMAIL || "operation.a2vgroups@gmail.com",
-  address: process.env.NEXT_PUBLIC_ADDRESS || "A-Block, 25 Feet Rd, Kamal Vihar, Burari, Delhi, 110084",
+  email: process.env.NEXT_PUBLIC_EMAIL || "a2vgroups1@gmail.com",
+  address:
+    process.env.NEXT_PUBLIC_ADDRESS ||
+    "A-Block, 25 Feet Rd, Kamal Vihar, Burari, Delhi, 110084",
   socialLinks: {
     instagram: "https://www.instagram.com/a2vgroups/",
     x: "https://x.com/a2vgroups",
     facebook: "https://www.facebook.com/a2vgroups",
     threads: "https://www.threads.com/@a2vgroups",
-    linkedin: "https://www.linkedin.com/posts/a2v-groups_digitalmarketing-seo-googleads-activity-7459879422645620736-mNvC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGVYpH8Bn06vguXbJk0O2J3gqKQqNnvJDNc",
+    linkedin:
+      "https://www.linkedin.com/posts/a2v-groups_digitalmarketing-seo-googleads-activity-7459879422645620736-mNvC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGVYpH8Bn06vguXbJk0O2J3gqKQqNnvJDNc",
     whatsapp: `https://wa.me/${(process.env.NEXT_PUBLIC_PHONE || "+91 78275 01356").replace(/\D/g, "")}`,
   },
   formServices: [
@@ -20,8 +23,8 @@ export const siteConfig = {
         "E-commerce Development",
         "CMS Development",
         "Web Portal Development",
-        "SPA Development"
-      ]
+        "SPA Development",
+      ],
     },
     {
       category: "Digital Marketing",
@@ -32,8 +35,8 @@ export const siteConfig = {
         "PPC & Paid Ads",
         "Influencer Marketing",
         "Content Marketing",
-        "Digital Strategy & Consultation"
-      ]
+        "Digital Strategy & Consultation",
+      ],
     },
     {
       category: "Creative & Design",
@@ -43,8 +46,8 @@ export const siteConfig = {
         "Logo Designing",
         "Infographics Designing",
         "Print & Social Media Design",
-        "Graphic Designing"
-      ]
+        "Graphic Designing",
+      ],
     },
     {
       category: "Software & AI",
@@ -60,12 +63,12 @@ export const siteConfig = {
         "Conversational AI (Chatbots)",
         "Data Science",
         "Predictive Analytics",
-        "Infrastructure Modernization"
-      ]
+        "Infrastructure Modernization",
+      ],
     },
     {
       category: "Other",
-      options: ["General Inquiry"]
-    }
-  ]
+      options: ["General Inquiry"],
+    },
+  ],
 };

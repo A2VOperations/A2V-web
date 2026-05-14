@@ -149,8 +149,7 @@ export default function ContactPage() {
                   ),
                   label: "Email",
                   value:
-                    process.env.NEXT_PUBLIC_EMAIL ||
-                    "operation.a2vgroups@gmail.com",
+                    process.env.NEXT_PUBLIC_EMAIL || "a2vgroups1@gmail.com",
                 },
                 {
                   icon: (
@@ -324,7 +323,9 @@ export default function ContactPage() {
               Schedule Your <span className="text-orange-500">Meeting</span>
             </h2>
             <p className="text-slate-500 max-w-xl mx-auto text-sm sm:text-base leading-relaxed px-4">
-              Choose a date and select your preferred time for a 30-minute strategy call with our expert team. We look forward to discussing your project!
+              Choose a date and select your preferred time for a 30-minute
+              strategy call with our expert team. We look forward to discussing
+              your project!
             </p>
           </div>
 
@@ -339,8 +340,12 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div className="flex flex-col items-center">
-                  <p className="text-sm font-black text-slate-800 uppercase tracking-widest">A2V Calendar</p>
-                  <p className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-1">Syncing Schedule...</p>
+                  <p className="text-sm font-black text-slate-800 uppercase tracking-widest">
+                    A2V Calendar
+                  </p>
+                  <p className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-1">
+                    Syncing Schedule...
+                  </p>
                 </div>
               </div>
             </div>
@@ -359,69 +364,72 @@ export default function ContactPage() {
               />
             </div>
           </div>
-        {/* FAQ Section */}
-        <div id="faqs" className="mt-24 mb-20 scroll-mt-24">
-          <div className="text-center mb-12">
-            <span className="inline-block text-[10px] font-black tracking-[0.2em] uppercase text-orange-500 mb-3 bg-orange-50 px-4 py-1.5 rounded-full">
-              Common Questions
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-black mb-4">
-              Frequently Asked <span className="text-orange-500">Questions</span>
-            </h2>
-          </div>
+          {/* FAQ Section */}
+          <div id="faqs" className="mt-24 mb-20 scroll-mt-24">
+            <div className="text-center mb-12">
+              <span className="inline-block text-[10px] font-black tracking-[0.2em] uppercase text-orange-500 mb-3 bg-orange-50 px-4 py-1.5 rounded-full">
+                Common Questions
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-black mb-4">
+                Frequently Asked{" "}
+                <span className="text-orange-500">Questions</span>
+              </h2>
+            </div>
 
-          <div className="max-w-3xl mx-auto space-y-4">
-            {[
-              {
-                q: "What services does A2V Groups offer?",
-                a: "We provide AI-perfected IT solutions including Web Development, UI/UX Design, Digital Marketing, SEO Optimization, and AI/ML consulting."
-              },
-              {
-                q: "How long does a typical project take?",
-                a: "Project timelines vary depending on complexity. Small websites typically take 7 to 9 days."
-              },
-              {
-                q: "Do you offer post-launch support?",
-                a: "Yes, we provide technical support to ensure your platforms remain optimized and secure."
-              },
-              {
-                q: "What is 'AI-Perfected' development?",
-                a: "It's our unique approach where we integrate AI tools and logic into the development workflow to ensure faster delivery, cleaner code, and smarter user experiences."
-              },
-              {
-                q: "How can I get a custom quote?",
-                a: "You can fill out the contact form above, schedule a call via our calendar, or message us directly on WhatsApp with your project details."
-              }
-            ].map((faq, index) => (
-              <div 
-                key={index} 
-                onMouseEnter={() => setOpenFaq(index)}
-                onMouseLeave={() => setOpenFaq(null)}
-                className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
-              >
+            <div className="max-w-3xl mx-auto space-y-4">
+              {[
+                {
+                  q: "What services does A2V Groups offer?",
+                  a: "We provide AI-perfected IT solutions including Web Development, UI/UX Design, Digital Marketing, SEO Optimization, and AI/ML consulting.",
+                },
+                {
+                  q: "How long does a typical project take?",
+                  a: "Project timelines vary depending on complexity. Small websites typically take 7 to 9 days.",
+                },
+                {
+                  q: "Do you offer post-launch support?",
+                  a: "Yes, we provide technical support to ensure your platforms remain optimized and secure.",
+                },
+                {
+                  q: "What is 'AI-Perfected' development?",
+                  a: "It's our unique approach where we integrate AI tools and logic into the development workflow to ensure faster delivery, cleaner code, and smarter user experiences.",
+                },
+                {
+                  q: "How can I get a custom quote?",
+                  a: "You can fill out the contact form above, schedule a call via our calendar, or message us directly on WhatsApp with your project details.",
+                },
+              ].map((faq, index) => (
                 <div
-                  className="w-full flex items-center justify-between p-6 text-left cursor-default"
+                  key={index}
+                  onMouseEnter={() => setOpenFaq(index)}
+                  onMouseLeave={() => setOpenFaq(null)}
+                  className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
-                  <span className="text-sm sm:text-base font-bold text-slate-800">{faq.q}</span>
-                  {openFaq === index ? (
-                    <FiChevronUp className="text-orange-500 shrink-0" />
-                  ) : (
-                    <FiChevronDown className="text-slate-400 shrink-0" />
-                  )}
+                  <div className="w-full flex items-center justify-between p-6 text-left cursor-default">
+                    <span className="text-sm sm:text-base font-bold text-slate-800">
+                      {faq.q}
+                    </span>
+                    {openFaq === index ? (
+                      <FiChevronUp className="text-orange-500 shrink-0" />
+                    ) : (
+                      <FiChevronDown className="text-slate-400 shrink-0" />
+                    )}
+                  </div>
+                  <div
+                    className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${
+                      openFaq === index
+                        ? "pb-6 max-h-40 opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <p className="text-sm text-slate-500 leading-relaxed">
+                      {faq.a}
+                    </p>
+                  </div>
                 </div>
-                <div 
-                  className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${
-                    openFaq === index ? "pb-6 max-h-40 opacity-100" : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <p className="text-sm text-slate-500 leading-relaxed">
-                    {faq.a}
-                  </p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </main>

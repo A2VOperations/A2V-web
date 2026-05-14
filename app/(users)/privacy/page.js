@@ -81,10 +81,9 @@ export default function PrivacyPage() {
                   {section.title}
                 </h2>
                 <p className="text-slate-600 leading-relaxed text-sm md:text-lg">
-                  {index === 5 
+                  {index === 5
                     ? "We may change this Privacy Policy from time to time. If we make changes, we will notify you by providing you with additional notice through our website or direct communication."
-                    : section.content
-                  }
+                    : section.content}
                 </p>
               </section>
             ))}
@@ -99,7 +98,7 @@ export default function PrivacyPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || "operation.a2vgroups@gmail.com"}`}
+                href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || "a2vgroups1@gmail.com"}`}
                 className="bg-orange-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-orange-600 transition shadow-lg shadow-orange-500/20"
               >
                 Email Privacy Dept
