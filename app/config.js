@@ -11,7 +11,7 @@ export const siteConfig = {
     facebook: "https://www.facebook.com/a2vgroups",
     threads: "https://www.threads.com/@a2vgroups",
     linkedin:
-      "https://www.linkedin.com/posts/a2v-groups_digitalmarketing-seo-googleads-activity-7459879422645620736-mNvC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGVYpH8Bn06vguXbJk0O2J3gqKQqNnvJDNc",
+      "https://www.linkedin.com/company/a2v-groups?trk=public_post_feed-actor-name",
     whatsapp: `https://wa.me/${(process.env.NEXT_PUBLIC_PHONE || "+91 78275 01356").replace(/\D/g, "")}`,
   },
   formServices: [
