@@ -1,7 +1,7 @@
 export const siteConfig = {
   brandName: "A2V Groups",
   phone: process.env.NEXT_PUBLIC_PHONE || "+91 78275 01356",
-  email: process.env.NEXT_PUBLIC_EMAIL || "a2vgroups1@gmail.com",
+  email: process.env.NEXT_PUBLIC_EMAIL || "operation.a2vgroups@gmail.com",
   address:
     process.env.NEXT_PUBLIC_ADDRESS ||
     "A-Block, 25 Feet Rd, Kamal Vihar, Burari, Delhi, 110084",

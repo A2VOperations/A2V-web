@@ -45,7 +45,7 @@ export async function POST(request) {
       to: [
         process.env.EMAIL_TO ||
           process.env.NEXT_PUBLIC_EMAIL ||
-          "a2vgroups1@gmail.com",
+          "operation.a2vgroups@gmail.com",
       ],
       replyTo: trimmedEmail,
       subject: `New Lead: ${trimmedSubject || "Website Inquiry"} from ${trimmedName}`,

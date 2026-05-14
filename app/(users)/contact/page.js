@@ -149,7 +149,8 @@ export default function ContactPage() {
                   ),
                   label: "Email",
                   value:
-                    process.env.NEXT_PUBLIC_EMAIL || "a2vgroups1@gmail.com",
+                    process.env.NEXT_PUBLIC_EMAIL ||
+                    "operation.a2vgroups@gmail.com",
                 },
                 {
                   icon: (
@@ -331,14 +332,8 @@ export default function ContactPage() {
 
           <div className="relative min-h-[700px] w-full bg-white rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-slate-200/50 overflow-hidden">
             {/* Loading Spinner Background */}
-            <div className="absolute inset-0 flex items-center justify-center bg-slate-50/30 backdrop-blur-[2px]">
+            <div className="absolute inset-0 top-24 flex items-center justify-center bg-slate-50/30 backdrop-blur-[2px]">
               <div className="flex flex-col items-center gap-4">
-                <div className="relative">
-                  <div className="w-16 h-16 border-4 border-orange-500/10 border-t-orange-500 rounded-full animate-spin"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-8 h-8 bg-orange-500/10 rounded-full animate-pulse"></div>
-                  </div>
-                </div>
                 <div className="flex flex-col items-center">
                   <p className="text-sm font-black text-slate-800 uppercase tracking-widest">
                     A2V Calendar
