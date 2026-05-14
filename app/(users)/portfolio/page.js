@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronRight, Search, Menu, X } from 'lucide-react';
+import { ChevronRight, Search, Menu, X, Eye, ChevronLeft, ArrowRight } from 'lucide-react';
 
 import Image from 'next/image';
 import { siteConfig } from '@/app/config';
@@ -11,12 +11,13 @@ const categories = ['All', 'Web Development', 'Graphic Designing', 'Digital Mark
 const projects = [
   {
     id: 3,
-    title: 'Bikaner Sweets Burari',
+    title: 'Hamira',
     category: 'Graphic Designing',
     tag: 'BRANDING',
-    desc: 'Devised premium graphics and informative infographics for a legacy confectionary brand.',
+    desc: 'Devised premium graphics and informative infographics for a majestic brand.',
     bgColor: 'bg-orange-100',
-    image: '/home/a2vgroups_bikaner.jpg',
+    image: '/images/a2vgroups_preview_graphics_logo.png',
+    previewImage: '/images/a2vgroups_preview_graphics.png',
     gridClass: 'md:col-span-1 md:row-span-2 h-[400px] md:h-full',
   },
   {
@@ -27,26 +28,29 @@ const projects = [
     desc: 'Integrated web development, graphics, and digital marketing strategy for maternal wellness.',
     bgColor: 'bg-rose-50',
     image: '/images/a2vgroups_mhc.png',
+    previewImage: '/images/a2vgroups_preview_webiste_mhc.png',
     gridClass: 'md:col-span-2 h-[290px]',
   },
   {
     id: 1,
-    title: 'ToysForKids',
+    title: 'ShopinGo',
     category: 'Web Development',
     tag: 'E-COMMERCE',
-    desc: 'A vibrant kids shopping platform designed for the ultimate toy browsing experience.',
+    desc: 'A vibrant shoping platform designed for the ultimate browsing experience.',
     bgColor: 'bg-white',
-    image: '/images/toysforkids_logo.png',
+    image: '/images/a2vgroups_preview_website3.png',
+    previewImage: '/images/a2vgroups_preview_website3.png',
     gridClass: 'md:col-span-1 h-[290px]',
   },
   {
     id: 4,
-    title: 'AS Mobile',
+    title: 'Quates',
     category: 'Graphic Designing',
     tag: 'UI/UX',
-    desc: 'Modern graphics and tech-focused infographics for an emerging mobile retail leader.',
+    desc: 'Modern graphics and tech-focused infographics for an emerging brand.',
     bgColor: 'bg-blue-50',
-    image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80',
+    image: '/images/a2vgroups_preview_graphics_logo2.png',
+    previewImage: '/images/a2vgroups_preview_graphics2.jpg',
     gridClass: 'md:col-span-1 h-[290px]',
   },
   {
@@ -57,26 +61,40 @@ const projects = [
     desc: 'A robust and compassionate digital home for nationwide humanitarian efforts.',
     bgColor: 'bg-green-50',
     image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80',
+    previewImage: '/images/a2vgroups_previe_website_hif.png',
     gridClass: 'md:col-span-2 h-[350px]',
   },
+  // {
+  //   id: 6,
+  //   title: 'Lotus Hospital',
+  //   category: 'Web Development',
+  //   tag: 'HEALTHCARE',
+  //   desc: 'Next-gen hospital management and patient-care portal implementation.',
+  //   bgColor: 'bg-blue-100',
+  //   image: '/images/a2vgroups_lotus2.jpg',
+  //   previewImage: '/images/a2vgroups_lotus2.jpg',
+  //   gridClass: 'md:col-span-1 h-[350px]',
+  // },
   {
     id: 6,
-    title: 'Lotus Hospital',
+    title: 'Ridda Designs',
     category: 'Web Development',
-    tag: 'HEALTHCARE',
-    desc: 'Next-gen hospital management and patient-care portal implementation.',
+    tag: 'UI/UX',
+    desc: 'A website design and digital marketing agency.',
     bgColor: 'bg-blue-100',
-    image: '/images/a2vgroups_lotus2.jpg',
+    image: '/images/a2vgroups_preview_website_logo2.jpg',
+    previewImage: '/images/a2vgroups_preview_website2.png',
     gridClass: 'md:col-span-1 h-[350px]',
   },
   {
     id: 7,
-    title: 'Ras Care',
+    title: 'Meipaly',
     category: 'Web Development',
-    tag: 'INDUSTRIAL',
-    desc: 'Clean and authoritative web presence for professional waterproofing services.',
+    tag: 'WEB DESIGN',
+    desc: 'A modern and stylish website design agency.',
     bgColor: 'bg-slate-100',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
+    image: '/images/a2vgroups_preview_website_logo.png',
+    previewImage: '/images/a2vgroups_preview_website.png',
     gridClass: 'md:col-span-1 h-[290px]',
   },
   {
@@ -87,7 +105,30 @@ const projects = [
     desc: 'An festive and rhythmic website for premium wedding band services.',
     bgColor: 'bg-red-50',
     image: 'https://rawatband.com/assets/Utranchal%20Rawat%20Band6-DqcfuL_T.jpg',
+    previewImage: '/images/a2vgroups_preview_website_rawat.png',
     gridClass: 'md:col-span-2 h-[290px]',
+  },
+  {
+    id: 9,
+    title: 'BRB Works',
+    category: 'Digital Marketing',
+    tag: 'SEO',
+    desc: 'SEO AND KEYWORD OPTIMIZATION for an emerging brand.',
+    bgColor: 'bg-red-50',
+    image: '/images/a2vgroups_preview_digital.jpg',
+    previewImage: '/images/a2vgroups_preview_digital.jpg',
+    gridClass: 'md:col-span-1 h-[290px]',
+  },
+  {
+    id: 10,
+    title: 'Pravah Enterprise',
+    category: 'Digital Marketing',
+    tag: 'Lead Generation',
+    desc: 'Global lead generation for an emerging company.',
+    bgColor: 'bg-red-50',
+    image: '/images/a2vgroups_preview_digital2.jpg',
+    previewImage: '/images/a2vgroups_preview_digital2.jpg',
+    gridClass: 'md:col-span-1 h-[290px]',
   },
 ];
 
@@ -95,6 +136,10 @@ export default function PortfolioPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [hoveredProject, setHoveredProject] = useState(null);
+  
+  // Lightbox State
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const filteredProjects = projects.filter((p) => {
     const matchesCategory = selectedCategory === 'All' || p.category === selectedCategory;
@@ -103,8 +148,54 @@ export default function PortfolioPage() {
     return matchesCategory && matchesSearch;
   });
 
+  const getPreviewLabel = (project) => {
+    const cat = project.category.toLowerCase();
+    if (cat.includes('web')) return 'Preview Website';
+    if (cat.includes('design')) return 'Preview Design';
+    if (cat.includes('marketing')) return 'Preview Results';
+    return 'Preview Project';
+  };
+
+  const openLightbox = (index) => {
+    setCurrentIndex(index);
+    setSelectedImage(filteredProjects[index].previewImage || filteredProjects[index].image);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+    document.body.style.overflow = 'auto';
+  };
+
+  const nextImage = (e) => {
+    e.stopPropagation();
+    const nextIdx = (currentIndex + 1) % filteredProjects.length;
+    setCurrentIndex(nextIdx);
+    setSelectedImage(filteredProjects[nextIdx].previewImage || filteredProjects[nextIdx].image);
+  };
+
+  const prevImage = (e) => {
+    e.stopPropagation();
+    const prevIdx = (currentIndex - 1 + filteredProjects.length) % filteredProjects.length;
+    setCurrentIndex(prevIdx);
+    setSelectedImage(filteredProjects[prevIdx].previewImage || filteredProjects[prevIdx].image);
+  };
+
   return (
     <div className="min-h-screen bg-white pt-12">
+      <style jsx global>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #FC6600;
+          border-radius: 10px;
+        }
+      `}</style>
+
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 ">
         <div className="mb-12">
@@ -162,20 +253,31 @@ export default function PortfolioPage() {
               className={`group cursor-pointer relative overflow-hidden rounded-[2rem] transition-all duration-500 shadow-sm hover:shadow-xl ${project.gridClass}`}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
+              onClick={() => openLightbox(index)}
             >
               {/* Background Image */}
-              <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+              <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-cover blur-[2px] group-hover:blur-none transition-all duration-700"
                   unoptimized
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 {/* Overlay for readability */}
-                <div className={`absolute inset-0 ${project.bgColor} opacity-20 group-hover:opacity-10 transition-opacity`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className={`absolute inset-0 ${project.bgColor} opacity-30 group-hover:opacity-10 transition-opacity`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+              </div>
+
+              {/* Hover Overlay - Premium Style */}
+              <div className="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center gap-4 z-20">
+                  <div className="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center text-white scale-50 group-hover:scale-100 transition-transform duration-500 delay-100 shadow-xl">
+                    <Eye className="w-8 h-8" />
+                  </div>
+                  <span className="text-white font-black uppercase tracking-[0.2em] text-xs translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-200">
+                    {getPreviewLabel(project)}
+                  </span>
               </div>
 
               {/* Tag - Top Left */}
@@ -186,8 +288,8 @@ export default function PortfolioPage() {
               </div>
 
               {/* Project Info - Bottom Left */}
-              <div className="absolute bottom-8 left-8 right-8 z-10">
-                <p className="text-white/70 text-[10px] font-bold uppercase tracking-widest mb-1">
+              <div className="absolute bottom-0 left-0 right-0 p-8 pt-20 z-10 bg-gradient-to-t from-black/80 to-transparent group-hover:opacity-0 transition-opacity duration-300">
+                <p className="text-orange-500 text-[10px] font-bold uppercase tracking-widest mb-1">
                   {project.category}
                 </p>
                 <h3 className="text-white text-2xl md:text-3xl font-bold mb-2 tracking-tight">
@@ -213,6 +315,85 @@ export default function PortfolioPage() {
           </div>
         )}
       </section>
+
+      {/* Lightbox Overlay / Preview Gallery Mode */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-[9999] bg-slate-950/95 flex items-center justify-center p-0 md:p-10 backdrop-blur-md transition-all animate-in fade-in duration-500"
+          onClick={closeLightbox}
+        >
+          {/* Top Bar */}
+          <div className="absolute top-0 left-0 right-0 h-20 px-8 flex items-center justify-between z-[10001] bg-gradient-to-b from-black/80 to-transparent">
+             <div className="flex flex-col">
+                <span className="text-orange-500 text-[10px] font-black uppercase tracking-[0.3em]">Portfolio Showcase</span>
+                <h4 className="text-white font-black uppercase tracking-tight text-xl">{filteredProjects[currentIndex].title}</h4>
+             </div>
+             <button 
+                className="text-white/70 hover:text-white transition-colors p-2 bg-white/10 rounded-full"
+                onClick={closeLightbox}
+              >
+                <X className="w-6 h-6" />
+              </button>
+          </div>
+
+          {/* Navigation */}
+          <button 
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-all p-4 z-[10001] bg-white/5 rounded-full hover:bg-white/10 hidden md:block"
+            onClick={prevImage}
+          >
+            <ChevronLeft className="w-10 h-10" />
+          </button>
+
+          <button 
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-all p-4 z-[10001] bg-white/5 rounded-full hover:bg-white/10 hidden md:block"
+            onClick={nextImage}
+          >
+            <ChevronRight className="w-10 h-10" />
+          </button>
+
+          {/* Image Container - Scrollable */}
+          <div 
+            className="w-full h-full overflow-y-auto custom-scrollbar flex flex-col items-center pt-24 pb-24 px-4" 
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="relative w-full max-w-5xl bg-[#111] shadow-2xl border border-white/5">
+              <img 
+                src={selectedImage} 
+                alt="Enlarged view" 
+                className="w-full h-auto block"
+              />
+              
+              {/* Info Overlay at bottom of image */}
+              <div className="p-12 bg-white text-gray-900 w-full">
+                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                    <div>
+                       <span className="text-orange-500 text-xs font-black uppercase tracking-[0.2em] mb-2 block">
+                          {filteredProjects[currentIndex].category} • {filteredProjects[currentIndex].tag}
+                       </span>
+                       <h3 className="text-4xl font-black uppercase tracking-tighter">
+                          {filteredProjects[currentIndex].title}
+                       </h3>
+                    </div>
+                 </div>
+                 <p className="mt-8 text-gray-500 text-lg leading-relaxed max-w-3xl font-medium">
+                    {filteredProjects[currentIndex].desc}
+                 </p>
+              </div>
+            </div>
+
+            {/* Pagination Hint */}
+            <div className="mt-12 mb-12 text-center">
+              <p className="text-white/40 text-[10px] font-black uppercase tracking-[0.4em]">
+                {currentIndex + 1} / {filteredProjects.length}
+              </p>
+              <div className="flex gap-4 mt-6 md:hidden">
+                 <button onClick={prevImage} className="px-6 py-3 bg-white/10 text-white font-black text-xs uppercase tracking-widest">Prev</button>
+                 <button onClick={nextImage} className="px-6 py-3 bg-orange-500 text-white font-black text-xs uppercase tracking-widest">Next</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Collaborative Brands Section */}
       <section className=" text-black pt-24 pb-20">
@@ -254,20 +435,6 @@ export default function PortfolioPage() {
           </div>
         </div>
       </section>
-
-      {/* CSS Animations */}
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 }

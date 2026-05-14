@@ -13,31 +13,35 @@ import ClientLogos from "@/app/components/ClientLogos";
 
 const featuredProjects = [
   {
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
-    categories: ["Building", "Interior"],
-    title: "The Fallingwater House",
-    description: "We understand that data is greatest asset when it comes to analyzing and optimizing your supply chain performance.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+    previewImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+    categories: ["SEO", "Analysis"],
+    title: "Organic Growth Audit",
+    description: "Detailed analysis showing 300% increase in organic traffic through technical SEO and content optimization.",
     link: "#"
   },
   {
-    image: "https://images.unsplash.com/photo-1428366890462-dd4baecf492b?q=80&w=800&auto=format&fit=crop",
-    categories: ["Construction", "Engineering"],
-    title: "The Guggenheim Museum",
-    description: "Cost savings is crucial, innovative technology minimizes your overall spend by utilizing an extensive consolidation.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+    previewImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2426&auto=format&fit=crop",
+    categories: ["Search", "Rankings"],
+    title: "Keyword Dominance",
+    description: "Successfully ranking for 500+ competitive keywords on the first page of Google search results.",
     link: "#"
   },
   {
-    image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=800&auto=format&fit=crop",
-    categories: ["Renovation", "Architecture"],
-    title: "Neue National Galerie",
-    description: "Our Group has been building relationships and projects last. Serving an impressive list of long-term clients with experience.",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e90526354c?q=80&w=800&auto=format&fit=crop",
+    previewImage: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop",
+    categories: ["Traffic", "ROI"],
+    title: "Conversion Optimization",
+    description: "Data-driven approach to SEO that focuses on quality traffic and high conversion rates.",
     link: "#"
   },
   {
-    image: "https://images.unsplash.com/photo-1541888086925-0c13d3cb0023?q=80&w=800&auto=format&fit=crop",
-    categories: ["Commercial", "Design"],
-    title: "Modern Tech Hub",
-    description: "A state-of-the-art facility designed for collaboration and innovation in the heart of the tech district.",
+    image: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?q=80&w=800&auto=format&fit=crop",
+    previewImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2426&auto=format&fit=crop",
+    categories: ["Technical", "Performance"],
+    title: "Core Web Vitals",
+    description: "Optimizing website performance to meet Google's Core Web Vitals and improve user experience.",
     link: "#"
   }
 ];
@@ -107,7 +111,7 @@ export default function SEOOptimizationPage() {
 
       {/* Stats Section */}
       <ServiceStatsCards source={source} />
-      <FeaturedProjects projects={featuredProjects} />
+      <FeaturedProjects projects={featuredProjects} source={source} />
 
       {/* About Section */}
       <ServiceAbout source={source} />

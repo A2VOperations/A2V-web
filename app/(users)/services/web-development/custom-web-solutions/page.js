@@ -14,30 +14,34 @@ import ClientLogos from "@/app/components/ClientLogos";
 const featuredProjects = [
   {
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
-    categories: ["Building", "Interior"],
-    title: "The Fallingwater House",
-    description: "We understand that data is greatest asset when it comes to analyzing and optimizing your supply chain performance.",
+    previewImage: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1200&auto=format", // Different preview image
+    categories: ["Web Development", "Next.js"],
+    title: "Enterprise Solutions Portal",
+    description: "A high-performance portal designed for enterprise-level data management and analytics reporting.",
     link: "#"
   },
   {
     image: "https://images.unsplash.com/photo-1428366890462-dd4baecf492b?q=80&w=800&auto=format&fit=crop",
-    categories: ["Construction", "Engineering"],
-    title: "The Guggenheim Museum",
-    description: "Cost savings is crucial, innovative technology minimizes your overall spend by utilizing an extensive consolidation.",
+    previewImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop", // Full-page look
+    categories: ["E-commerce", "React"],
+    title: "Global Commerce Engine",
+    description: "Scalable e-commerce architecture supporting multi-currency and real-time inventory synchronization.",
     link: "#"
   },
   {
     image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=800&auto=format&fit=crop",
-    categories: ["Renovation", "Architecture"],
-    title: "Neue National Galerie",
-    description: "Our Group has been building relationships and projects last. Serving an impressive list of long-term clients with experience.",
+    previewImage: "https://images.unsplash.com/photo-1555066931-bf19f8fd1085?q=80&w=2071&auto=format&fit=crop",
+    categories: ["SaaS", "Dashboard"],
+    title: "Analytics Dashboard Pro",
+    description: "Real-time data visualization platform with advanced filtering and collaborative reporting features.",
     link: "#"
   },
   {
     image: "https://images.unsplash.com/photo-1541888086925-0c13d3cb0023?q=80&w=800&auto=format&fit=crop",
-    categories: ["Commercial", "Design"],
-    title: "Modern Tech Hub",
-    description: "A state-of-the-art facility designed for collaboration and innovation in the heart of the tech district.",
+    previewImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1000&auto=format&fit=crop", // This one could be tall
+    categories: ["PWA", "Mobile"],
+    title: "Modern Tech Ecosystem",
+    description: "A progressive web application offering native-like experience across all devices and platforms.",
     link: "#"
   }
 ];
@@ -108,7 +112,7 @@ export default function CustomWebSolutionsPage() {
 
       {/* Stats Section */}
       <ServiceStatsCards source={source} />
-      <FeaturedProjects projects={featuredProjects} />
+      <FeaturedProjects projects={featuredProjects} source={source} />
 
       {/* About Section */}
       <ServiceAbout source={source} />
