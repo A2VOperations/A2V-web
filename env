@@ -1,0 +1,12 @@
+NEXT_PUBLIC_ADDRESS="A-Block, 25 Feet Rd, Kamal Vihar, Burari, Delhi, 110084"
+NEXT_PUBLIC_EMAIL="operation.a2vgroups@gmail.com"
+NEXT_PUBLIC_PHONE="+91 1234567890"
+NEXT_PUBLIC_INSTAGRAM_URL=https://instagram.com/yourhandle
+NEXT_PUBLIC_FACEBOOK_URL=https://facebook.com/yourpage
+NEXT_PUBLIC_LINKEDIN_URL=https://linkedin.com/company/yourcompany
+MAILTRAP_TOKEN=19290469494534108daabec6b3cd6a5d
+EMAIL_MAILTRAP=hello@demomailtrap.co
+EMAIL_TO=operation.a2vgroups@gmail.com
+NEXTAUTH_SECRET=a2v_secret_key_1234567890_asdfghjkl
+NEXTAUTH_URL=http://localhost:3000
+MONGODB_URI=mongodb://127.0.0.1:27017/a2v

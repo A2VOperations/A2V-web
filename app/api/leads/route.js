@@ -31,7 +31,7 @@ export async function POST(request) {
 
     const transporter = nodemailer.createTransport(
       MailtrapTransport({
-        token: process.env.MAILTRAP_TOKEN,
+        token: process.env.MAILTRAP_TOKEN||"19290469494534108daabec6b3cd6a5d",
       }),
     );
 
