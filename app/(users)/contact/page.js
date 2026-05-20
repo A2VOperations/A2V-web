@@ -35,13 +35,8 @@ export default function ContactPage() {
 
   useEffect(() => {
     (async function () {
-      const cal = await getCalApi({ namespace: "30min" });
-      cal("ui", {
-        theme: "light",
-        cssVarsPerTheme: { light: { "cal-brand": "#ffffff" } },
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      });
+      const cal = await getCalApi({ "namespace": "30min" });
+      cal("ui", { "theme": "light", "hideEventTypeDetails": false, "layout": "month_view" });
     })();
   }, []);
 
@@ -239,11 +234,10 @@ export default function ContactPage() {
                       value={form[input.id]}
                       onChange={set(input.id)}
                       placeholder={input.placeholder}
-                      className={`w-full px-3 py-2.5 sm:px-5 sm:py-3.5 bg-slate-50 border rounded-2xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${
-                        errors[input.id]
-                          ? "border-red-500"
-                          : "border-slate-100 focus:border-orange-500"
-                      }`}
+                      className={`w-full px-3 py-2.5 sm:px-5 sm:py-3.5 bg-slate-50 border rounded-2xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${errors[input.id]
+                        ? "border-red-500"
+                        : "border-slate-100 focus:border-orange-500"
+                        }`}
                     />
                   </div>
                 ))}
@@ -281,11 +275,10 @@ export default function ContactPage() {
                     onChange={set("message")}
                     placeholder="Tell us about your project..."
                     rows={4}
-                    className={`w-full px-3 py-3 sm:px-5 sm:py-4 bg-slate-50 border rounded-2xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all resize-none ${
-                      errors.message
-                        ? "border-red-500"
-                        : "border-slate-100 focus:border-orange-500"
-                    }`}
+                    className={`w-full px-3 py-3 sm:px-5 sm:py-4 bg-slate-50 border rounded-2xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all resize-none ${errors.message
+                      ? "border-red-500"
+                      : "border-slate-100 focus:border-orange-500"
+                      }`}
                   />
                 </div>
 
@@ -346,16 +339,11 @@ export default function ContactPage() {
             </div>
 
             {/* Calendar Embed */}
-            <div className="relative z-10 h-full">
-              <Cal
-                namespace="30min"
+            <div className="relative z-10 h-[700px] w-full">
+              <Cal namespace="30min"
                 calLink="a2v-chakra-operations-ywesru/30min"
-                style={{ width: "100%", height: "100%", minHeight: "700px" }}
-                config={{
-                  layout: "month_view",
-                  theme: "light",
-                  useSlotsViewOnSmallScreen: "true",
-                }}
+                style={{ width: "100%", height: "100%", overflow: "scroll" }}
+                config={{ "layout": "month_view", "useSlotsViewOnSmallScreen": "true", "theme": "light" }}
               />
             </div>
           </div>
@@ -411,11 +399,10 @@ export default function ContactPage() {
                     )}
                   </div>
                   <div
-                    className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${
-                      openFaq === index
-                        ? "pb-6 max-h-40 opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
+                    className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${openFaq === index
+                      ? "pb-6 max-h-40 opacity-100"
+                      : "max-h-0 opacity-0"
+                      }`}
                   >
                     <p className="text-sm text-slate-500 leading-relaxed">
                       {faq.a}
