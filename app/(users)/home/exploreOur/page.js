@@ -150,10 +150,10 @@ function page() {
 
                   <button
                     onClick={(e) => { e.stopPropagation(); window.open(`https://api.whatsapp.com/send?phone=${siteConfig.phone.replace(/\D/g, "")}&text=${encodeURIComponent(c.wa)}`, "_blank"); }}
-                    className="flex h-11 w-11 items-center justify-center gap-2 overflow-hidden rounded-full border border-white/35 px-0 text-sm font-light text-white transition-all duration-300 group-hover:w-36 group-hover:px-5 hover:border-[#29aae2] hover:bg-[#29aae2]/10"
+                    className="flex h-11 w-36 px-5 border-[#29aae2] bg-[#29aae2]/10 items-center justify-center gap-2 overflow-hidden rounded-full border text-sm font-light text-white transition-all duration-300 lg:w-11 lg:px-0 lg:border-white/35 lg:bg-transparent lg:group-hover:w-36 lg:group-hover:px-5 lg:hover:border-[#29aae2] lg:hover:bg-[#29aae2]/10"
                   >
                     <span className="text-xl leading-none">+</span>
-                    <span className="max-w-0 whitespace-nowrap opacity-0 transition-all duration-300 group-hover:max-w-24 group-hover:opacity-100">
+                    <span className="max-w-24 opacity-100 whitespace-nowrap transition-all duration-300 lg:max-w-0 lg:opacity-0 lg:group-hover:max-w-24 lg:group-hover:opacity-100">
                       Whatsapp
                     </span>
                   </button>
