@@ -92,62 +92,62 @@ export default function ContactForm({ source = "homepage" }) {
   }
 
   return (
-    <div className="w-full bg-white border border-slate-100 shadow-2xl shadow-slate-200/60 rounded-3xl p-6 sm:p-8">
+    <div className="w-full bg-white border border-slate-100 shadow-2xl shadow-slate-200/60 rounded-3xl p-5 sm:p-8">
       <ContactSuccessPopup
         isOpen={showPopup}
         onClose={() => setShowPopup(false)}
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <div className="flex flex-col gap-1.5">
-          <label className="text-[14px] font-bold text-black uppercase tracking-wider">
+      <div className="grid grid-cols-2 gap-3 sm:gap-5">
+        <div className="flex flex-col gap-1 sm:gap-1.5">
+          <label className="text-xs sm:text-[14px] font-bold text-black uppercase tracking-wider">
             Full Name
           </label>
           <input
             type="text"
             value={form.name}
             onChange={set("name")}
-            placeholder="Enter your name"
-            className={`w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${errors.name ? "border-red-500" : "border-slate-100 focus:border-orange-500"
+            placeholder="Enter name"
+            className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-slate-50 border rounded-xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${errors.name ? "border-red-500" : "border-slate-100 focus:border-orange-500"
               }`}
           />
         </div>
 
-        <div className="flex flex-col gap-1.5">
-          <label className="text-[14px] font-bold text-black uppercase tracking-wider">
+        <div className="flex flex-col gap-1 sm:gap-1.5">
+          <label className="text-xs sm:text-[14px] font-bold text-black uppercase tracking-wider">
             Email Address
           </label>
           <input
             type="email"
             value={form.email}
             onChange={set("email")}
-            placeholder="Enter your email"
-            className={`w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${errors.email ? "border-red-500" : "border-slate-100 focus:border-orange-500"
+            placeholder="Enter email"
+            className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-slate-50 border rounded-xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${errors.email ? "border-red-500" : "border-slate-100 focus:border-orange-500"
               }`}
           />
         </div>
 
-        <div className="flex flex-col gap-1.5">
-          <label className="text-[14px] font-bold text-black uppercase tracking-wider">
+        <div className="flex flex-col gap-1 sm:gap-1.5">
+          <label className="text-xs sm:text-[14px] font-bold text-black uppercase tracking-wider">
             Phone Number
           </label>
           <input
             type="tel"
             value={form.phone}
             onChange={set("phone")}
-            placeholder="Enter your phone number"
-            className="w-full px-4 py-3 bg-slate-50 border border-slate-100 rounded-xl text-sm text-black font-medium outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 transition-all"
+            placeholder="Enter phone number"
+            className="w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-slate-50 border border-slate-100 rounded-xl text-sm text-black font-medium outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 transition-all"
           />
         </div>
 
-        <div className="flex flex-col gap-1.5">
-          <label className="text-[14px] font-bold text-black uppercase tracking-wider">
+        <div className="flex flex-col gap-1 sm:gap-1.5">
+          <label className="text-xs sm:text-[14px] font-bold text-black uppercase tracking-wider">
             Subject
           </label>
           <select
             value={form.subject}
             onChange={set("subject")}
-            className="w-full px-4 py-3 bg-slate-50 border border-slate-100 rounded-xl text-sm text-black font-medium outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 transition-all appearance-none"
+            className="w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-slate-50 border border-slate-100 rounded-xl text-sm text-black font-medium outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 transition-all appearance-none"
           >
             <option value="">Select a service</option>
             {siteConfig.formServices.map((cat) => (
@@ -162,8 +162,8 @@ export default function ContactForm({ source = "homepage" }) {
           </select>
         </div>
 
-        <div className="flex flex-col gap-1.5 sm:col-span-2">
-          <label className="text-[14px] font-bold text-black uppercase tracking-wider">
+        <div className="flex flex-col gap-1 sm:gap-1.5 col-span-2">
+          <label className="text-xs sm:text-[14px] font-bold text-black uppercase tracking-wider">
             Message
           </label>
           <textarea
@@ -171,12 +171,12 @@ export default function ContactForm({ source = "homepage" }) {
             onChange={set("message")}
             placeholder="Tell us about your project..."
             rows={3}
-            className={`w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all resize-none ${errors.message ? "border-red-500" : "border-slate-100 focus:border-orange-500"
+            className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-slate-50 border rounded-xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all resize-none ${errors.message ? "border-red-500" : "border-slate-100 focus:border-orange-500"
               }`}
           />
         </div>
 
-        <div className="sm:col-span-2 pt-1">
+        <div className="col-span-2 pt-1">
           <button
             onClick={handleSubmit}
             disabled={loading}
