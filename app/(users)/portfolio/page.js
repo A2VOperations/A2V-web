@@ -250,7 +250,7 @@ export default function PortfolioPage() {
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              className={`group cursor-pointer relative overflow-hidden rounded-[2rem] transition-all duration-500 shadow-sm hover:shadow-xl ${project.gridClass}`}
+              className={`group cursor-pointer relative overflow-hidden rounded-xl transition-all duration-500 shadow-sm hover:shadow-xl ${project.gridClass}`}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
               onClick={() => openLightbox(index)}
