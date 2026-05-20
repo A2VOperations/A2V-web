@@ -98,7 +98,7 @@ export default function ContactForm({ source = "homepage" }) {
         onClose={() => setShowPopup(false)}
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div className="flex flex-col gap-1.5">
           <label className="text-[14px] font-bold text-black uppercase tracking-wider">
             Full Name
