@@ -559,7 +559,8 @@ export default function Home() {
             modules={[Autoplay]}
             spaceBetween={0}
             slidesPerView={1}
-            loop={popularServices.length > 1}
+            loop={true}
+            speed={800}
             grabCursor={true}
             touchEventsTarget="container"
             autoplay={{ delay: 4000, disableOnInteraction: false }}
@@ -569,8 +570,8 @@ export default function Home() {
               1024: { slidesPerView: 3 },
             }}
           >
-            {popularServices.map((service) => (
-              <SwiperSlide key={service.title} className="h-auto">
+            {[...popularServices, ...popularServices].map((service, idx) => (
+              <SwiperSlide key={`${service.title}-${idx}`} className="h-auto">
                 <article className="group flex flex-col h-full border border-black/10 px-6 py-8 sm:px-8 sm:py-10 transition duration-300 hover:bg-[#19272b]">
                   <div className={`${service.accent} transition duration-300 group-hover:text-orange-400`}>
                     {service.icon}
@@ -628,6 +629,7 @@ export default function Home() {
             spaceBetween={30}
             slidesPerView={1}
             loop
+            speed={800}
             grabCursor={true}
             touchEventsTarget="container"
             autoplay={{ delay: 4000, disableOnInteraction: false }}
