@@ -79,51 +79,51 @@ const processSteps = [
 ];
 
 const devTabs = [
-  { 
-    title: "WORDPRESS DEVELOPMENT", 
-    heading: "WORDPRESS DEVELOPMENT", 
+  {
+    title: "WORDPRESS DEVELOPMENT",
+    heading: "WORDPRESS DEVELOPMENT",
     desc: "Custom WordPress solutions tailored to your business needs, ensuring a scalable and secure digital foundation.",
     bullets: ["Custom Theme Design", "Plugin Development", "SEO Optimization"],
     smallImg: "https://images.unsplash.com/photo-1551288049-bbbda536ad37?auto=format&fit=crop&q=80&w=300"
   },
-  { 
-    title: "AMP WEB DEVELOPMENT", 
-    heading: "AMP WEB DEVELOPMENT", 
+  {
+    title: "AMP WEB DEVELOPMENT",
+    heading: "AMP WEB DEVELOPMENT",
     desc: "Accelerated Mobile Pages (AMP) to ensure lightning-fast load times for your mobile visitors.",
     bullets: ["Performance Audits", "Mobile Optimization", "Core Web Vitals"],
     smallImg: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=300"
   },
-  { 
-    title: "CUSTOM 3D PRODUCT CONFIGURATORS", 
-    heading: "CUSTOM 3D CONFIGURATORS", 
+  {
+    title: "CUSTOM 3D PRODUCT CONFIGURATORS",
+    heading: "CUSTOM 3D CONFIGURATORS",
     desc: "Interactive 3D configurators that allow your customers to customize products in real-time.",
     bullets: ["WebGL Integration", "Real-time Rendering", "Interactive UI"],
     smallImg: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=300"
   },
-  { 
-    title: "E-COMMERCE WEB DEVELOPMENT", 
-    heading: "E-COMMERCE DEVELOPMENT", 
+  {
+    title: "E-COMMERCE WEB DEVELOPMENT",
+    heading: "E-COMMERCE DEVELOPMENT",
     desc: "Robust and scalable e-commerce platforms designed to maximize conversions and sales.",
     bullets: ["Secure Payments", "Inventory Management", "Custom Checkouts"],
     smallImg: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=300"
   },
-  { 
-    title: "SHOPIFY DEVELOPMENT", 
-    heading: "SHOPIFY DEVELOPMENT", 
+  {
+    title: "SHOPIFY DEVELOPMENT",
+    heading: "SHOPIFY DEVELOPMENT",
     desc: "Leverage the power of Shopify with our development services. We design compelling, easy-to-navigate Shopify stores.",
     bullets: ["Theme Customization", "App Integration", "Store Migration"],
     smallImg: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&q=80&w=300"
   },
-  { 
-    title: "MAGENTO DEVELOPMENT", 
-    heading: "MAGENTO DEVELOPMENT", 
+  {
+    title: "MAGENTO DEVELOPMENT",
+    heading: "MAGENTO DEVELOPMENT",
     desc: "Enterprise-grade Magento development for complex e-commerce ecosystems.",
     bullets: ["B2B Solutions", "API Integration", "High Scalability"],
     smallImg: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=300"
   },
-  { 
-    title: "LARAVEL DEVELOPMENT", 
-    heading: "LARAVEL DEVELOPMENT", 
+  {
+    title: "LARAVEL DEVELOPMENT",
+    heading: "LARAVEL DEVELOPMENT",
     desc: "Custom web applications built on the robust and elegant Laravel PHP framework.",
     bullets: ["Custom Web Apps", "Database Design", "Cloud Deployment"],
     smallImg: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=300"
@@ -131,44 +131,44 @@ const devTabs = [
 ];
 
 const graphicTabs = [
-  { 
-    title: "UI/UX DESIGN", 
-    heading: "UI/UX DESIGN", 
+  {
+    title: "UI/UX DESIGN",
+    heading: "UI/UX DESIGN",
     desc: "Crafting intuitive, engaging, and beautiful user interfaces that provide seamless digital experiences.",
     bullets: ["User Research", "Wireframing", "Interactive Prototypes"],
     smallImg: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=300"
   },
-  { 
-    title: "LOGO DESIGN", 
-    heading: "LOGO DESIGN", 
+  {
+    title: "LOGO DESIGN",
+    heading: "LOGO DESIGN",
     desc: "Creating memorable and impactful logos that capture the essence of your brand.",
     bullets: ["Concept Development", "Vector Graphics", "Brand Guidelines"],
     smallImg: "https://images.unsplash.com/photo-1572044162444-ad60f128bde2?auto=format&fit=crop&q=80&w=300"
   },
-  { 
-    title: "BRANDING", 
-    heading: "BRANDING", 
+  {
+    title: "BRANDING",
+    heading: "BRANDING",
     desc: "Building strong, cohesive brand identities that resonate with your target audience.",
     bullets: ["Brand Strategy", "Visual Identity", "Voice & Tone"],
     smallImg: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=300"
   },
-  { 
-    title: "ILLUSTRATION", 
-    heading: "ILLUSTRATION", 
+  {
+    title: "ILLUSTRATION",
+    heading: "ILLUSTRATION",
     desc: "Bespoke illustrations that add a unique, creative touch to your digital and physical assets.",
     bullets: ["Digital Painting", "Vector Art", "Custom Graphics"],
     smallImg: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=300"
   },
-  { 
-    title: "PRINT DESIGN", 
-    heading: "PRINT DESIGN", 
+  {
+    title: "PRINT DESIGN",
+    heading: "PRINT DESIGN",
     desc: "Designing eye-catching print materials from brochures to business cards.",
     bullets: ["Brochures", "Business Cards", "Large Format Print"],
     smallImg: "https://images.unsplash.com/photo-1586717799252-bd134ad00e26?auto=format&fit=crop&q=80&w=300"
   },
-  { 
-    title: "MOTION GRAPHICS", 
-    heading: "MOTION GRAPHICS", 
+  {
+    title: "MOTION GRAPHICS",
+    heading: "MOTION GRAPHICS",
     desc: "Bringing your brand to life with stunning animations and motion graphics.",
     bullets: ["2D Animation", "Explainer Videos", "Social Content"],
     smallImg: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=300"
@@ -244,26 +244,26 @@ const WorkingProcess = () => {
       if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      
+
       // Calculate progress based on viewport position
       // Starts filling when the section bottom enters the viewport
       // Finishes filling when the section top reaches the top of the viewport
       const scrollStart = rect.top + window.scrollY - windowHeight;
       const scrollEnd = rect.top + window.scrollY;
       const totalDist = windowHeight;
-      
+
       let currentProgress = 0;
       const currentScroll = window.scrollY;
-      
+
       // Alternative approach for full section height
       const sectionTop = rect.top + window.scrollY;
       const sectionHeight = rect.height;
       const viewportBottom = window.scrollY + windowHeight;
-      
+
       if (viewportBottom > sectionTop) {
         currentProgress = ((viewportBottom - sectionTop) / (sectionHeight + windowHeight)) * 100;
       }
-      
+
       setProgress(Math.min(100, Math.max(0, currentProgress)));
     };
 
@@ -349,7 +349,7 @@ const WorkingProcess = () => {
         <div className="lg:hidden grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 pb-20">
           {mobileItems.map((item, i) => (
             <div key={i} className={`flex items-start gap-6 group ${i % 2 !== 0 && 'md:flex-row-reverse md:text-right'}`}>
-              <div 
+              <div
                 className="w-20 h-20 shrink-0 rounded-3xl flex items-center justify-center shadow-xl transition-transform duration-500 group-hover:scale-110"
                 style={{ backgroundColor: item.color }}
               >
@@ -370,20 +370,19 @@ const WorkingProcess = () => {
             {/* Timeline Bar */}
             <div className="flex w-1 relative shrink-0">
               <div className="absolute left-1/2 -translate-x-1/2 w-[2px] h-full bg-gray-100 rounded-xl">
-                <div 
+                <div
                   className="absolute top-0 left-0 w-full bg-[#FC6600] shadow-[0_0_20px_rgba(252,102,0,0.5)] transition-all duration-100 ease-out rounded-xl"
                   style={{ height: `${progress}%` }}
                 />
               </div>
               <div className="absolute inset-0 flex flex-col justify-between py-10">
                 {steps.map((_, i) => (
-                  <div 
-                    key={i} 
-                    className={`w-4 h-4 rounded-xl border-2 mx-auto transition-all duration-500 z-20 ${
-                      progress >= (i / (steps.length - 1)) * 100 
-                        ? 'bg-[#FC6600] border-[#FC6600] scale-125 shadow-[0_0_15px_rgba(252,102,0,0.8)]' 
+                  <div
+                    key={i}
+                    className={`w-4 h-4 rounded-xl border-2 mx-auto transition-all duration-500 z-20 ${progress >= (i / (steps.length - 1)) * 100
+                        ? 'bg-[#FC6600] border-[#FC6600] scale-125 shadow-[0_0_15px_rgba(252,102,0,0.8)]'
                         : 'bg-white border-gray-200'
-                    }`}
+                      }`}
                   />
                 ))}
               </div>
@@ -417,7 +416,7 @@ const WorkingProcess = () => {
                       </li>
                     ))}
                   </ul>
-                  
+
                   {/* Mobile Only Image */}
                   <div className="mt-8 lg:hidden relative rounded-2xl overflow-hidden shadow-lg aspect-[16/10] border border-gray-100 bg-gray-50">
                     <Image src={step.image} alt={step.title} fill className="object-cover" />
@@ -429,58 +428,58 @@ const WorkingProcess = () => {
 
           {/* Right: Dense Collage Stream (Continuous) */}
           <div className="lg:col-span-5 space-y-8 pt-10">
-             {/* Cluster 1: Initial Feature */}
-             <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
-                <Image src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=800&q=80" alt="Laptop Workspace" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+            {/* Cluster 1: Initial Feature */}
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
+              <Image src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=800&q=80" alt="Laptop Workspace" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-black/5" />
+            </div>
+
+            {/* Cluster 2: Masonry Mix */}
+            <div className="grid grid-cols-2 gap-2 h-[700px]">
+              <div className="relative rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
+                <Image src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=800&q=80" alt="Digital Strategy" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-black/5" />
-             </div>
-             
-             {/* Cluster 2: Masonry Mix */}
-             <div className="grid grid-cols-2 gap-2 h-[700px]">
-                <div className="relative rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
-                   <Image src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=800&q=80" alt="Digital Strategy" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
-                   <div className="absolute inset-0 bg-black/5" />
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
+                  <Image src="https://images.unsplash.com/photo-1544256718-3bcf237f3974?auto=format&fit=crop&w=800&q=80" alt="Creative Design" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-black/5" />
                 </div>
-                <div className="flex flex-col gap-2">
-                   <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
-                      <Image src="https://images.unsplash.com/photo-1544256718-3bcf237f3974?auto=format&fit=crop&w=800&q=80" alt="Creative Design" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
-                      <div className="absolute inset-0 bg-black/5" />
-                   </div>
-                   <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
-                      <Image src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Engineering" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
-                      <div className="absolute inset-0 bg-black/5" />
-                   </div>
+                <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
+                  <Image src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Engineering" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-black/5" />
                 </div>
-             </div>
+              </div>
+            </div>
 
-             {/* Cluster 3: Wide Focal Point */}
-             <div className="relative aspect-square rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
-                <Image src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Growth & Analytics" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+            {/* Cluster 3: Wide Focal Point */}
+            <div className="relative aspect-square rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
+              <Image src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Growth & Analytics" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-black/5" />
+            </div>
+
+            {/* Cluster 4: Reversed Masonry */}
+            <div className="grid grid-cols-2 gap-2 h-[700px]">
+              <div className="flex flex-col gap-2">
+                <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
+                  <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Collaboration" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-black/5" />
+                </div>
+                <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
+                  <Image src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Marketing Data" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-black/5" />
+                </div>
+              </div>
+              <div className="relative rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
+                <Image src="https://images.unsplash.com/photo-1633167606207-d840b5070fc2?auto=format&fit=crop&w=800&q=80" alt="Advanced Tech" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-black/5" />
-             </div>
+              </div>
+            </div>
 
-             {/* Cluster 4: Reversed Masonry */}
-             <div className="grid grid-cols-2 gap-2 h-[700px]">
-                <div className="flex flex-col gap-2">
-                   <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
-                      <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Collaboration" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
-                      <div className="absolute inset-0 bg-black/5" />
-                   </div>
-                   <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
-                      <Image src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Marketing Data" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
-                      <div className="absolute inset-0 bg-black/5" />
-                   </div>
-                </div>
-                <div className="relative rounded-xl overflow-hidden shadow-2xl border border-gray-100 group">
-                   <Image src="https://images.unsplash.com/photo-1633167606207-d840b5070fc2?auto=format&fit=crop&w=800&q=80" alt="Advanced Tech" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
-                   <div className="absolute inset-0 bg-black/5" />
-                </div>
-             </div>
-            
 
-         
-             
-           
+
+
+
           </div>
         </div>
       </div>
@@ -510,74 +509,74 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-white overflow-hidden font-sans">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6  overflow-hidden min-h-[85vh] flex items-center">
-         {/* Background Graphic (Infinity style) */}
-         <div className="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none">
-            <svg viewBox="0 0 500 500" className="w-full h-full text-gray-400">
-               <path d="M100 250 C 100 150, 200 150, 250 250 C 300 350, 400 350, 400 250 C 400 150, 300 150, 250 250 C 200 350, 100 350, 100 250" fill="none" stroke="currentColor" strokeWidth="20" />
-            </svg>
-         </div>
+        {/* Background Graphic (Infinity style) */}
+        <div className="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none">
+          <svg viewBox="0 0 500 500" className="w-full h-full text-gray-400">
+            <path d="M100 250 C 100 150, 200 150, 250 250 C 300 350, 400 350, 400 250 C 400 150, 300 150, 250 250 C 200 350, 100 350, 100 250" fill="none" stroke="currentColor" strokeWidth="20" />
+          </svg>
+        </div>
 
-         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
-            {/* Left Content */}
-            <div className="lg:col-span-7">
-               <h1 className="text-5xl md:text-8xl font-black mb-6 leading-[0.9] tracking-tighter uppercase">
-                  <span className="text-[#FC6600] block mb-2">AI-Perfected</span>
-                  <span className="text-gray-900 min-h-[1.1em] block">
-                     <Typewriter words={["Solutions", "Branding", "Software", "Marketing"]} />
-                  </span>
-               </h1>
-               <p className="text-xl text-gray-600 max-w-xl mb-10 leading-relaxed font-sans">
-                  For great companies who want more than surface-level support. Connective is a full-service AI-Perfected digital IT solution company that listens, innovates, and delivers.
-               </p>
-               
-               <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center mb-16">
-                  <Link href="/contact" className="px-10 py-5 bg-[#FC6600] text-white font-black rounded-2xl hover:bg-[#e55c00] transition-all uppercase tracking-widest text-sm shadow-2xl shadow-[#FC6600]/30 hover:-translate-y-1">
-                     Get Connective Solutions
-                  </Link>
-               </div>
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
+          {/* Left Content */}
+          <div className="lg:col-span-7">
+            <h1 className="text-5xl md:text-8xl font-black mb-6 leading-[0.9] tracking-tighter uppercase">
+              <span className="text-[#FC6600] block mb-2">AI-Perfected</span>
+              <span className="text-gray-900 min-h-[1.1em] block">
+                <Typewriter words={["Solutions", "Branding", "Software", "Marketing"]} />
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-xl mb-10 leading-relaxed font-sans">
+              For great companies who want more than surface-level support. Connective is a full-service AI-Perfected digital IT solution company that listens, innovates, and delivers.
+            </p>
 
-               {/* Trust Logos */}
-               <div className="flex flex-wrap items-center gap-12 pt-10 border-t border-gray-200">
-                  <div className="flex items-center gap-3">
-                     <span className="text-gray-400 font-bold text-2xl">Google</span>
-                     <div className="text-xs">
-                        <div className="text-[#FC6600] font-black">4.9</div>
-                        <div className="text-gray-400 uppercase tracking-tighter font-bold">Stars</div>
-                     </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                     <span className="text-gray-400 font-bold text-2xl">DESIGNRUSH</span>
-                     <div className="text-xs">
-                        <div className="text-[#FC6600] font-black">4.9</div>
-                        <div className="text-gray-400 uppercase tracking-tighter font-bold">Stars</div>
-                     </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                     <span className="text-gray-400 font-bold text-2xl">yelp</span>
-                     <div className="text-xs">
-                        <div className="text-[#FC6600] font-black">5</div>
-                        <div className="text-gray-400 uppercase tracking-tighter font-bold">Stars</div>
-                     </div>
-                  </div>
-               </div>
+            <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center mb-16">
+              <Link href="/contact" className="px-10 py-5 bg-[#FC6600] text-white font-black rounded-2xl hover:bg-[#e55c00] transition-all uppercase tracking-widest text-sm shadow-2xl shadow-[#FC6600]/30 hover:-translate-y-1">
+                Get Connective Solutions
+              </Link>
             </div>
 
-            {/* Right Content: Contact Form */}
-            <div className="lg:col-span-5 relative">
-               <div className="absolute -inset-10 bg-[#FC6600]/5 rounded-full blur-3xl" />
-               <div className="relative z-20 bg-white rounded-[3rem] shadow-2xl border border-gray-100 overflow-hidden p-2">
-                  <div className="p-4 bg-gray-50/50 rounded-[2.5rem]">
-                     <h3 className="text-2xl font-black text-gray-900 mb-6 px-4">Start Your Project</h3>
-                     <ContactForm source="services_hero" />
-                  </div>
-               </div>
-               
-               {/* People Overlay */}
-               <div className="absolute -bottom-10 -right-20 w-[400px] h-[400px] pointer-events-none opacity-20 hidden xl:block -z-10">
-                  <Image src="/images/agency-hero-people.png" alt="Our Team" fill className="object-contain" />
-               </div>
+            {/* Trust Logos */}
+            <div className="flex flex-wrap items-center gap-12 pt-10 border-t border-gray-200">
+              <div className="flex items-center gap-3">
+                <span className="text-gray-400 font-bold text-2xl">Google</span>
+                <div className="text-xs">
+                  <div className="text-[#FC6600] font-black">4.9</div>
+                  <div className="text-gray-400 uppercase tracking-tighter font-bold">Stars</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-gray-400 font-bold text-2xl">DESIGNRUSH</span>
+                <div className="text-xs">
+                  <div className="text-[#FC6600] font-black">4.9</div>
+                  <div className="text-gray-400 uppercase tracking-tighter font-bold">Stars</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-gray-400 font-bold text-2xl">yelp</span>
+                <div className="text-xs">
+                  <div className="text-[#FC6600] font-black">5</div>
+                  <div className="text-gray-400 uppercase tracking-tighter font-bold">Stars</div>
+                </div>
+              </div>
             </div>
-         </div>
+          </div>
+
+          {/* Right Content: Contact Form */}
+          <div className="xl:col-span-5 relative w-full max-w-2xl mx-auto xl:mx-0">
+            <div className="absolute -inset-10 bg-[#FC6600]/5 rounded-full blur-3xl" />
+            <div className="relative z-20 bg-white rounded-[3rem] shadow-2xl border border-gray-100 overflow-hidden p-2">
+              <div className="p-4 bg-gray-50/50 rounded-[2.5rem]">
+                <h3 className="text-2xl font-black text-gray-900 mb-6 px-4">Start Your Project</h3>
+                <ContactForm source="services_hero" />
+              </div>
+            </div>
+
+            {/* People Overlay */}
+            <div className="absolute -bottom-10 -right-20 w-[400px] h-[400px] pointer-events-none opacity-20 hidden xl:block -z-10">
+              <Image src="/images/agency-hero-people.png" alt="Our Team" fill className="object-contain" />
+            </div>
+          </div>
+        </div>
       </section>
       <WorkingProcess />
       {/* Services Main Grid */}
@@ -586,42 +585,42 @@ export default function ServicesPage() {
           {services.map((service, i) => {
             const isActive = activeIndex === i;
             return (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 style={{ flex: isActive ? "8 8 0%" : "1 1 0%" }}
                 className={`group relative overflow-hidden rounded-4xl transition-all duration-800 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer shadow-xl`}
                 onClick={() => setActiveIndex(i)}
                 onMouseEnter={() => setActiveIndex(i)}
               >
-                <Image 
-                  src={service.image} 
-                  alt={service.title} 
-                  fill 
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
                   className={`object-cover transition-all duration-1200 ${isActive ? 'scale-100 opacity-90' : 'scale-110 opacity-40 grayscale-80'}`}
                 />
-                
+
                 {/* Subtle gradient overlays */}
                 <div className={`absolute inset-0 transition-opacity duration-700 ${isActive ? 'bg-slate-900/40' : 'bg-slate-900/60'}`} />
                 <div className={`absolute inset-0 transition-opacity duration-700 ${isActive ? 'bg-linear-to-r from-slate-900/90 via-slate-900/50 to-transparent' : 'bg-linear-to-b from-slate-900/80 via-transparent to-slate-900/80'}`} />
 
                 {/* Expanded Content */}
                 <div className={`absolute inset-0 flex flex-col justify-between p-8 md:p-12 lg:p-16 transition-all duration-700 delay-100 ${isActive ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-                  
+
                   {/* Top Right Label */}
                   <div className="flex justify-end w-full">
-                     <div className="flex items-center gap-3 text-white/90">
-                        <span className="text-sm font-medium tracking-wide">{service.title}</span>
-                        <Circle className="w-2.5 h-2.5 opacity-80" />
-                     </div>
+                    <div className="flex items-center gap-3 text-white/90">
+                      <span className="text-sm font-medium tracking-wide">{service.title}</span>
+                      <Circle className="w-2.5 h-2.5 opacity-80" />
+                    </div>
                   </div>
 
                   {/* Center Content (Left Aligned) */}
                   <div className="w-full max-w-3xl mt-auto mb-auto">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl text-white font-sans font-bold mb-6 leading-[1.1] tracking-tight">
-                      {service.title === "Web Development" ? "WE BUILD AI-PERFECTED DIGITAL FLAGSHIPS" : 
-                       service.title === "AI-Perfected Design" ? "DESIGN THAT COMMANDS ATTENTION & DRIVES ACTION" :
-                       service.title === "AI-Driven Marketing" ? "MARKETING BUILT ON PERFORMANCE, NOT PROMISES" :
-                       "INTELLIGENCE THAT DRIVES REAL BUSINESS OUTCOMES"}
+                      {service.title === "Web Development" ? "WE BUILD AI-PERFECTED DIGITAL FLAGSHIPS" :
+                        service.title === "AI-Perfected Design" ? "DESIGN THAT COMMANDS ATTENTION & DRIVES ACTION" :
+                          service.title === "AI-Driven Marketing" ? "MARKETING BUILT ON PERFORMANCE, NOT PROMISES" :
+                            "INTELLIGENCE THAT DRIVES REAL BUSINESS OUTCOMES"}
                     </h2>
                     <p className="text-gray-100 text-sm md:text-base max-w-xl font-medium leading-relaxed">
                       {service.desc}
@@ -630,51 +629,51 @@ export default function ServicesPage() {
 
                   {/* Bottom Section */}
                   <div className="w-full mt-auto relative z-10">
-                     <div className="h-px w-full bg-white/30 mb-6" />
-                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0">
-                        
-                        {/* Explore Button replaces Clients */}
-                        {/* Original Link: {service.href} */}
-                        <Link 
-                          href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'm interested in your ${service.title} services.`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition-all shadow-xl text-sm"
-                        >
-                          Explore industry solutions <ArrowUpRight className="w-4 h-4" />
-                        </Link>
+                    <div className="h-px w-full bg-white/30 mb-6" />
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0">
 
-                        {/* Navigation Arrows */}
-                        <div className="flex gap-3">
-                           <button 
-                             className="w-10 h-10 rounded-full border border-white/40 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-                             onClick={(e) => { e.stopPropagation(); setActiveIndex((i - 1 + services.length) % services.length); }}
-                           >
-                              <ChevronLeft className="w-5 h-5" />
-                           </button>
-                           <button 
-                             className="w-10 h-10 rounded-full border border-white/40 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-                             onClick={(e) => { e.stopPropagation(); setActiveIndex((i + 1) % services.length); }}
-                           >
-                              <ChevronRight className="w-5 h-5" />
-                           </button>
-                        </div>
-                     </div>
+                      {/* Explore Button replaces Clients */}
+                      {/* Original Link: {service.href} */}
+                      <Link
+                        href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=Hi, I'm interested in your ${service.title} services.`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition-all shadow-xl text-sm"
+                      >
+                        Explore industry solutions <ArrowUpRight className="w-4 h-4" />
+                      </Link>
+
+                      {/* Navigation Arrows */}
+                      <div className="flex gap-3">
+                        <button
+                          className="w-10 h-10 rounded-full border border-white/40 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                          onClick={(e) => { e.stopPropagation(); setActiveIndex((i - 1 + services.length) % services.length); }}
+                        >
+                          <ChevronLeft className="w-5 h-5" />
+                        </button>
+                        <button
+                          className="w-10 h-10 rounded-full border border-white/40 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                          onClick={(e) => { e.stopPropagation(); setActiveIndex((i + 1) % services.length); }}
+                        >
+                          <ChevronRight className="w-5 h-5" />
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  
+
                   {/* Floating consultation card */}
                   {i === activeIndex && (
-                     <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 w-64 bg-white rounded-4xl p-4 shadow-2xl z-30 transition-all duration-700 animate-in slide-in-from-right-8 fade-in ">
-                        <div className="relative w-full h-24 rounded-2xl overflow-hidden mb-3">
-                           <Image src={service.image} alt="Consultation" fill className="object-cover" />
-                        </div>
-                        <p className="text-[13px] font-semibold text-gray-900 leading-snug mb-3 pr-2">
-                           Receive a complimentary consultation
-                        </p>
-                        <Link href="/contact" className="text-[14px] font-bold text-[white] no-underline flex items-center gap-1  uppercase tracking-wide pl-9 bg-[#FC6600] hover:bg-[#FC6600]/80 rounded-lg p-2">
-                           Book now <ArrowUpRight className="w-3 h-3" />
-                        </Link>
-                     </div>
+                    <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 w-64 bg-white rounded-4xl p-4 shadow-2xl z-30 transition-all duration-700 animate-in slide-in-from-right-8 fade-in ">
+                      <div className="relative w-full h-24 rounded-2xl overflow-hidden mb-3">
+                        <Image src={service.image} alt="Consultation" fill className="object-cover" />
+                      </div>
+                      <p className="text-[13px] font-semibold text-gray-900 leading-snug mb-3 pr-2">
+                        Receive a complimentary consultation
+                      </p>
+                      <Link href="/contact" className="text-[14px] font-bold text-[white] no-underline flex items-center gap-1  uppercase tracking-wide pl-9 bg-[#FC6600] hover:bg-[#FC6600]/80 rounded-lg p-2">
+                        Book now <ArrowUpRight className="w-3 h-3" />
+                      </Link>
+                    </div>
                   )}
                 </div>
 
@@ -682,23 +681,23 @@ export default function ServicesPage() {
                 <div className={`absolute inset-0 flex md:flex-col items-center justify-between p-6 transition-all duration-500 ${isActive ? 'opacity-0 pointer-events-none' : 'opacity-100 delay-300'}`}>
                   {/* Top Circle */}
                   <div className="hidden md:flex mt-2">
-                     <Circle className="w-3 h-3 text-white/60" />
+                    <Circle className="w-3 h-3 text-white/60" />
                   </div>
-                  
+
                   {/* Title for Desktop (Vertical) */}
                   <div className="hidden md:flex flex-1 items-start justify-center w-full mt-10">
                     <h3 className="text-white/90 font-bold tracking-wide text-xl whitespace-nowrap group-hover:text-white transition-colors" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
                       {service.title}
                     </h3>
                   </div>
-                  
+
                   {/* Title for Mobile (Horizontal) */}
                   <div className="flex md:hidden flex-1 items-center justify-start w-full">
                     <h3 className="text-white/90 font-medium tracking-wide text-sm">
                       {service.title}
                     </h3>
                   </div>
-                  
+
                   {/* Plus Icon */}
                   <div className="w-10 h-10 shrink-0 rounded-full border border-white/30 flex items-center justify-center text-white/70 group-hover:text-white group-hover:border-white/80 group-hover:bg-white/10 transition-all duration-300 md:mb-2">
                     <Plus className="w-5 h-5 font-light" />
@@ -1018,7 +1017,7 @@ function ProcessSection({ title, subtitle, desc, steps, ctaLabel, ctaHref }) {
         position: "relative",
         zIndex: 1,
       }}
-      className="flex-col md:flex-row"
+        className="flex-col md:flex-row"
       >
         {/* ── LEFT: sticky panel ── */}
         <div style={{
@@ -1031,7 +1030,7 @@ function ProcessSection({ title, subtitle, desc, steps, ctaLabel, ctaHref }) {
           paddingBottom: 40,
           paddingRight: 40,
         }}
-        className="md:w-[320px]"
+          className="md:w-[320px]"
         >
           <p style={{
             fontSize: 11,

@@ -17,7 +17,7 @@ export default function ContactForm({ source = "homepage" }) {
   const [showPopup, setShowPopup] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
-  
+
   useEffect(() => {
     const sourceToSubject = {
       "custom-web-solutions": "Custom Web Solutions",
@@ -52,9 +52,9 @@ export default function ContactForm({ source = "homepage" }) {
     if (!form.phone.trim()) e.phone = "Phone Number is required";
     if (!form.subject.trim()) e.subject = "Please select a Subject";
     if (!form.message.trim()) e.message = "Message cannot be empty";
-    
+
     setErrors(e);
-    
+
     if (Object.keys(e).length > 0) {
       showError("Wait a moment!", "We found some issues with your form:", Object.values(e));
       return false;
@@ -97,8 +97,8 @@ export default function ContactForm({ source = "homepage" }) {
         isOpen={showPopup}
         onClose={() => setShowPopup(false)}
       />
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-5">
         <div className="flex flex-col gap-1.5">
           <label className="text-[14px] font-bold text-black uppercase tracking-wider">
             Full Name
@@ -108,9 +108,8 @@ export default function ContactForm({ source = "homepage" }) {
             value={form.name}
             onChange={set("name")}
             placeholder="Enter your name"
-            className={`w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${
-              errors.name ? "border-red-500" : "border-slate-100 focus:border-orange-500"
-            }`}
+            className={`w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${errors.name ? "border-red-500" : "border-slate-100 focus:border-orange-500"
+              }`}
           />
         </div>
 
@@ -123,9 +122,8 @@ export default function ContactForm({ source = "homepage" }) {
             value={form.email}
             onChange={set("email")}
             placeholder="Enter your email"
-            className={`w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${
-              errors.email ? "border-red-500" : "border-slate-100 focus:border-orange-500"
-            }`}
+            className={`w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${errors.email ? "border-red-500" : "border-slate-100 focus:border-orange-500"
+              }`}
           />
         </div>
 
@@ -173,9 +171,8 @@ export default function ContactForm({ source = "homepage" }) {
             onChange={set("message")}
             placeholder="Tell us about your project..."
             rows={3}
-            className={`w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all resize-none ${
-              errors.message ? "border-red-500" : "border-slate-100 focus:border-orange-500"
-            }`}
+            className={`w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all resize-none ${errors.message ? "border-red-500" : "border-slate-100 focus:border-orange-500"
+              }`}
           />
         </div>
 

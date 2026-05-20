@@ -62,16 +62,16 @@ const menuData = {
         hoverText: "group-hover/item:text-orange-500",
         Icon: WebDevIcon,
         items: [
-          { title: "Custom Web Solutions",   href: siteConfig.socialLinks.whatsapp },
+          { title: "Custom Web Solutions", href: siteConfig.socialLinks.whatsapp },
           { title: "E-commerce Development", href: siteConfig.socialLinks.whatsapp },
-          { title: "CMS Development",        href: siteConfig.socialLinks.whatsapp },
-          { title: "Progressive Web Apps",   href: siteConfig.socialLinks.whatsapp },
+          { title: "CMS Development", href: siteConfig.socialLinks.whatsapp },
+          { title: "Progressive Web Apps", href: siteConfig.socialLinks.whatsapp },
           { title: "Web Portal Development", href: siteConfig.socialLinks.whatsapp },
-          { title: "API Integration",        href: siteConfig.socialLinks.whatsapp },
-          { title: "Maintenance & Support",  href: siteConfig.socialLinks.whatsapp },
-          { title: "SPA Development",        href: siteConfig.socialLinks.whatsapp },
-          { title: "Cloud Solutions",        href: siteConfig.socialLinks.whatsapp },
-          { title: "Web Security",           href: siteConfig.socialLinks.whatsapp },
+          { title: "API Integration", href: siteConfig.socialLinks.whatsapp },
+          { title: "Maintenance & Support", href: siteConfig.socialLinks.whatsapp },
+          { title: "SPA Development", href: siteConfig.socialLinks.whatsapp },
+          { title: "Cloud Solutions", href: siteConfig.socialLinks.whatsapp },
+          { title: "Web Security", href: siteConfig.socialLinks.whatsapp },
         ],
       },
       {
@@ -86,16 +86,16 @@ const menuData = {
         hoverText: "group-hover/item:text-blue-600",
         Icon: GraphicIcon,
         items: [
-          { title: "Brand Identity",       href: siteConfig.socialLinks.whatsapp },
-          { title: "UI/UX Design",         href: siteConfig.socialLinks.whatsapp },
+          { title: "Brand Identity", href: siteConfig.socialLinks.whatsapp },
+          { title: "UI/UX Design", href: siteConfig.socialLinks.whatsapp },
           { title: "Print & Social Media", href: siteConfig.socialLinks.whatsapp },
-          { title: "Motion Graphics",      href: siteConfig.socialLinks.whatsapp },
-          { title: "Package Design",       href: siteConfig.socialLinks.whatsapp },
-          { title: "Illustration Art",     href: siteConfig.socialLinks.whatsapp },
-          { title: "Presentation Design",  href: siteConfig.socialLinks.whatsapp },
-          { title: "Infographic Design",   href: siteConfig.socialLinks.whatsapp },
-          { title: "3D Rendering",         href: siteConfig.socialLinks.whatsapp },
-          { title: "Logo Animation",       href: siteConfig.socialLinks.whatsapp },
+          { title: "Motion Graphics", href: siteConfig.socialLinks.whatsapp },
+          { title: "Package Design", href: siteConfig.socialLinks.whatsapp },
+          { title: "Illustration Art", href: siteConfig.socialLinks.whatsapp },
+          { title: "Presentation Design", href: siteConfig.socialLinks.whatsapp },
+          { title: "Infographic Design", href: siteConfig.socialLinks.whatsapp },
+          { title: "3D Rendering", href: siteConfig.socialLinks.whatsapp },
+          { title: "Logo Animation", href: siteConfig.socialLinks.whatsapp },
         ],
       },
       {
@@ -110,16 +110,16 @@ const menuData = {
         hoverText: "group-hover/item:text-green-600",
         Icon: MarketingIcon,
         items: [
-          { title: "SEO Optimization",       href: siteConfig.socialLinks.whatsapp },
+          { title: "SEO Optimization", href: siteConfig.socialLinks.whatsapp },
           { title: "Social Media Marketing", href: siteConfig.socialLinks.whatsapp },
-          { title: "PPC & Paid Ads",         href: siteConfig.socialLinks.whatsapp },
-          { title: "Content Marketing",      href: siteConfig.socialLinks.whatsapp },
-          { title: "Email Marketing",        href: siteConfig.socialLinks.whatsapp },
-          { title: "Influencer Marketing",   href: siteConfig.socialLinks.whatsapp },
-          { title: "ORM Services",           href: siteConfig.socialLinks.whatsapp },
-          { title: "E-Commerce Marketing",   href: siteConfig.socialLinks.whatsapp },
-          { title: "Marketing Automation",   href: siteConfig.socialLinks.whatsapp },
-          { title: "Conversion Optimization",href: siteConfig.socialLinks.whatsapp },
+          { title: "PPC & Paid Ads", href: siteConfig.socialLinks.whatsapp },
+          { title: "Content Marketing", href: siteConfig.socialLinks.whatsapp },
+          { title: "Email Marketing", href: siteConfig.socialLinks.whatsapp },
+          { title: "Influencer Marketing", href: siteConfig.socialLinks.whatsapp },
+          { title: "ORM Services", href: siteConfig.socialLinks.whatsapp },
+          { title: "E-Commerce Marketing", href: siteConfig.socialLinks.whatsapp },
+          { title: "Marketing Automation", href: siteConfig.socialLinks.whatsapp },
+          { title: "Conversion Optimization", href: siteConfig.socialLinks.whatsapp },
         ],
       },
       {
@@ -134,35 +134,35 @@ const menuData = {
         hoverText: "group-hover/item:text-purple-600",
         Icon: AIIcon,
         items: [
-          { title: "AI Consulting",        href: siteConfig.socialLinks.whatsapp },
-          { title: "AI Development",       href: siteConfig.socialLinks.whatsapp },
-          { title: "Machine Learning",     href: siteConfig.socialLinks.whatsapp },
-          { title: "NLP Solutions",        href: siteConfig.socialLinks.whatsapp },
-          { title: "Computer Vision",      href: siteConfig.socialLinks.whatsapp },
-          { title: "AI Automation",        href: siteConfig.socialLinks.whatsapp },
-          { title: "Chatbot Development",  href: siteConfig.socialLinks.whatsapp },
-          { title: "Data Science",         href: siteConfig.socialLinks.whatsapp },
+          { title: "AI Consulting", href: siteConfig.socialLinks.whatsapp },
+          { title: "AI Development", href: siteConfig.socialLinks.whatsapp },
+          { title: "Machine Learning", href: siteConfig.socialLinks.whatsapp },
+          { title: "NLP Solutions", href: siteConfig.socialLinks.whatsapp },
+          { title: "Computer Vision", href: siteConfig.socialLinks.whatsapp },
+          { title: "AI Automation", href: siteConfig.socialLinks.whatsapp },
+          { title: "Chatbot Development", href: siteConfig.socialLinks.whatsapp },
+          { title: "Data Science", href: siteConfig.socialLinks.whatsapp },
           { title: "Predictive Analytics", href: siteConfig.socialLinks.whatsapp },
-          { title: "AI Modernization",     href: siteConfig.socialLinks.whatsapp },
+          { title: "AI Modernization", href: siteConfig.socialLinks.whatsapp },
         ],
       },
     ],
   },
   Portfolio: { columns: [] },
-  Pages:     { columns: [] },
-  Blog:      { columns: [] },
+  Pages: { columns: [] },
+  Blog: { columns: [] },
 };
 
 const navItems = [
-  { label: "Home",       href: "/" },
-  { label: "About Us",   href: "/about" },
-  { label: "Portfolio",  href: "/portfolio" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Portfolio", href: "/portfolio" },
   // { label: "Services",   href: "/services", hasDropdown: true },
-  { label: "WhatsApp",   href: siteConfig.socialLinks.whatsapp },
+  { label: "WhatsApp", href: siteConfig.socialLinks.whatsapp },
   { label: "Contact Us", href: "/contact" },
 ];
 
-const navLinks   = navItems.map((item) => item.label);
+const navLinks = navItems.map((item) => item.label);
 const hasDropdown = navItems.filter((i) => i.hasDropdown).map((i) => i.label);
 
 // ── Small SVG helpers ──────────────────────────────────────────────────────
@@ -187,11 +187,11 @@ const CloseIcon = () => (
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [openMenu, setOpenMenu]           = useState(null);
-  const [mobileOpen, setMobileOpen]       = useState(false);
+  const [openMenu, setOpenMenu] = useState(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState(null);
-  const [megaVisible, setMegaVisible]     = useState(false);
-  const [scrolled, setScrolled]           = useState(false);
+  const [megaVisible, setMegaVisible] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const closeTimer = useRef(null);
 
   useEffect(() => {
@@ -252,17 +252,15 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       onClick={(e) => { if (item.href === "#") e.preventDefault(); }}
-                      className={`relative flex items-center gap-1.5 px-4 xl:px-[18px] h-full text-[15px] xl:text-[17px] font-semibold whitespace-nowrap transition-all duration-200 rounded-lg ${
-                        item.href === "/"
-                          ? pathname === "/" ? "text-orange-500" : "text-gray-700 hover:text-orange-500 hover:bg-orange-50"
-                          : pathname.startsWith(item.href) ? "text-orange-500" : "text-gray-700 hover:text-orange-500 hover:bg-orange-50"
-                      }`}
+                      className={`relative flex items-center gap-1.5 px-4 xl:px-[18px] h-full text-[15px] xl:text-[17px] font-semibold whitespace-nowrap transition-all duration-200 rounded-lg ${item.href === "/"
+                        ? pathname === "/" ? "text-orange-500" : "text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+                        : pathname.startsWith(item.href) ? "text-orange-500" : "text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+                        }`}
                     >
-                      <span className={`absolute bottom-[18px] left-1/2 -translate-x-1/2 h-0.5 bg-orange-500 rounded-full transition-all duration-300 ${
-                        item.href === "/"
-                          ? pathname === "/" ? "w-[70%]" : "w-0"
-                          : pathname.startsWith(item.href) ? "w-[70%]" : "w-0"
-                      }`} />
+                      <span className={`absolute bottom-[18px] left-1/2 -translate-x-1/2 h-0.5 bg-orange-500 rounded-full transition-all duration-300 ${item.href === "/"
+                        ? pathname === "/" ? "w-[70%]" : "w-0"
+                        : pathname.startsWith(item.href) ? "w-[70%]" : "w-0"
+                        }`} />
                       {item.label}
                       {item.hasDropdown && (
                         <ChevronIcon className={openMenu === item.label ? "rotate-180" : ""} />
@@ -299,11 +297,10 @@ export default function Navbar() {
           {/* ── Desktop Mega Menu ── */}
           {openMenu && menuData[openMenu]?.columns?.length > 0 && (
             <div
-              className={`hidden lg:block absolute top-[130px] left-0 w-full bg-white border-t border-b border-gray-100 shadow-[0_40px_80px_rgba(0,0,0,0.08)] z-[9998] overflow-hidden transition-all duration-300 ease-in-out ${
-                megaVisible
-                  ? "opacity-100 translate-y-0 scale-y-100 pointer-events-auto max-h-[800px]"
-                  : "opacity-0 -translate-y-4 scale-y-[0.95] pointer-events-none max-h-0"
-              }`}
+              className={`hidden lg:block absolute top-[130px] left-0 w-full bg-white border-t border-b border-gray-100 shadow-[0_40px_80px_rgba(0,0,0,0.08)] z-[9998] overflow-hidden transition-all duration-300 ease-in-out ${megaVisible
+                ? "opacity-100 translate-y-0 scale-y-100 pointer-events-auto max-h-[800px]"
+                : "opacity-0 -translate-y-4 scale-y-[0.95] pointer-events-none max-h-0"
+                }`}
               style={{ transformOrigin: "top center" }}
               onMouseEnter={handleMegaEnter}
               onMouseLeave={handleMouseLeave}
@@ -318,7 +315,7 @@ export default function Navbar() {
                       <div key={col.heading} className={`col-span-3 flex flex-col ${idx === 0 ? "pr-6" : idx === menuData[openMenu].columns.length - 1 ? "pl-6" : "px-6"}`}>
 
                         {/* Column header */}
-                        <Link 
+                        <Link
                           href={col.categoryHref || "#"}
                           onClick={() => setOpenMenu(null)}
                           className="flex items-center gap-3 mb-5 pb-4 border-b border-gray-100 group/col transition-all hover:bg-gray-50/50 rounded-lg -mx-2 px-2"
@@ -408,14 +405,12 @@ export default function Navbar() {
                 {item.hasDropdown ? (
                   <button
                     onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
-                    className={`w-full flex items-center justify-between px-2 py-4 text-[15px] font-semibold bg-transparent border-none cursor-pointer text-left transition-colors duration-200 ${
-                      pathname.startsWith(item.href ?? "") ? "text-orange-500" : "text-gray-900 hover:text-orange-500"
-                    }`}
+                    className={`w-full flex items-center justify-between px-2 py-4 text-[15px] font-semibold bg-transparent border-none cursor-pointer text-left transition-colors duration-200 ${pathname.startsWith(item.href ?? "") ? "text-orange-500" : "text-gray-900 hover:text-orange-500"
+                      }`}
                   >
                     <div className="flex items-center gap-3">
-                      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${
-                        pathname.startsWith(item.href ?? "") ? "bg-orange-500" : "bg-gray-200"
-                      }`} />
+                      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${pathname.startsWith(item.href ?? "") ? "bg-orange-500" : "bg-gray-200"
+                        }`} />
                       {item.label}
                     </div>
                     <ChevronIcon className={`text-gray-400 ${mobileExpanded === item.label ? "rotate-180" : ""}`} />
@@ -426,17 +421,15 @@ export default function Navbar() {
                     onClick={() => setMobileOpen(false)}
                     target={item.href.startsWith("http") ? "_blank" : undefined}
                     rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className={`flex items-center justify-between px-2 py-4 text-[15px] font-semibold no-underline transition-colors duration-200 ${
-                      (item.href === "/" ? pathname === "/" : pathname.startsWith(item.href))
-                        ? "text-orange-500"
-                        : "text-gray-900 hover:text-orange-500"
-                    }`}
+                    className={`flex items-center justify-between px-2 py-4 text-[15px] font-semibold no-underline transition-colors duration-200 ${(item.href === "/" ? pathname === "/" : pathname.startsWith(item.href))
+                      ? "text-orange-500"
+                      : "text-gray-900 hover:text-orange-500"
+                      }`}
                   >
                     <div className="flex items-center gap-3">
-                      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${
-                        (item.href === "/" ? pathname === "/" : pathname.startsWith(item.href))
-                          ? "bg-orange-500" : "bg-gray-200"
-                      }`} />
+                      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${(item.href === "/" ? pathname === "/" : pathname.startsWith(item.href))
+                        ? "bg-orange-500" : "bg-gray-200"
+                        }`} />
                       {item.label}
                     </div>
                   </Link>
