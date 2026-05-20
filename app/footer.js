@@ -234,7 +234,7 @@ export default function Footer() {
 
           {/* Copyright - MIDDLE on mobile */}
           <p className="text-gray-400 text-xs order-2 md:order-1 text-center md:text-left">
-            © 2025 <span className="font-semibold text-white">{siteConfig.brandName}</span> – AI-Perfected IT
+            © 2026 <span className="font-semibold text-white">{siteConfig.brandName}</span> – AI-Perfected IT
             Services. All rights reserved.
           </p>
 
