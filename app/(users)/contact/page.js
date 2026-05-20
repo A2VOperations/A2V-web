@@ -207,30 +207,30 @@ export default function ContactPage() {
 
           {/* RIGHT — Form + Map */}
           <div className="flex flex-col gap-8">
-            <div className="bg-white border border-slate-100 shadow-2xl shadow-slate-200/60 rounded-3xl p-8 sm:p-10">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="bg-white border border-slate-100 shadow-2xl shadow-slate-200/60 rounded-3xl p-5 sm:p-8">
+              <div className="grid grid-cols-2 gap-3 sm:gap-5">
                 {/* Input Template */}
                 {[
                   {
                     id: "name",
                     label: "Full Name",
                     type: "text",
-                    placeholder: "Enter your name",
+                    placeholder: "Enter name",
                   },
                   {
                     id: "email",
                     label: "Email Address",
                     type: "email",
-                    placeholder: "Enter your email",
+                    placeholder: "Enter email",
                   },
                   {
                     id: "phone",
                     label: "Phone Number",
                     type: "tel",
-                    placeholder: "Enter your phone number",
+                    placeholder: "Enter phone number",
                   },
                 ].map((input) => (
-                  <div key={input.id} className="flex flex-col gap-2">
+                  <div key={input.id} className="flex flex-col gap-1 sm:gap-1.5">
                     <label className="text-xs font-bold text-black uppercase tracking-wider">
                       {input.label}
                     </label>
@@ -239,7 +239,7 @@ export default function ContactPage() {
                       value={form[input.id]}
                       onChange={set(input.id)}
                       placeholder={input.placeholder}
-                      className={`w-full px-5 py-3.5 bg-slate-50 border rounded-2xl text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${
+                      className={`w-full px-3 py-2.5 sm:px-5 sm:py-3.5 bg-slate-50 border rounded-2xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${
                         errors[input.id]
                           ? "border-red-500"
                           : "border-slate-100 focus:border-orange-500"
@@ -249,14 +249,14 @@ export default function ContactPage() {
                 ))}
 
                 {/* Subject Select */}
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-1 sm:gap-1.5">
                   <label className="text-xs font-bold text-black uppercase tracking-wider">
                     Subject
                   </label>
                   <select
                     value={form.subject}
                     onChange={set("subject")}
-                    className="w-full px-5 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl text-black font-medium outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 transition-all appearance-none"
+                    className="w-full px-3 py-2.5 sm:px-5 sm:py-3.5 bg-slate-50 border border-slate-100 rounded-2xl text-sm text-black font-medium outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 transition-all appearance-none"
                   >
                     <option value="">Select a service</option>
                     {siteConfig.formServices.map((cat) => (
@@ -272,7 +272,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Message */}
-                <div className="flex flex-col gap-2 sm:col-span-2">
+                <div className="flex flex-col gap-1 sm:gap-1.5 col-span-2">
                   <label className="text-xs font-bold text-black uppercase tracking-wider">
                     Message
                   </label>
@@ -281,7 +281,7 @@ export default function ContactPage() {
                     onChange={set("message")}
                     placeholder="Tell us about your project..."
                     rows={4}
-                    className={`w-full px-5 py-4 bg-slate-50 border rounded-2xl text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all resize-none ${
+                    className={`w-full px-3 py-3 sm:px-5 sm:py-4 bg-slate-50 border rounded-2xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all resize-none ${
                       errors.message
                         ? "border-red-500"
                         : "border-slate-100 focus:border-orange-500"
@@ -290,11 +290,11 @@ export default function ContactPage() {
                 </div>
 
                 {/* Button */}
-                <div className="sm:col-span-2 pt-2">
+                <div className="col-span-2 pt-2">
                   <button
                     onClick={handleSubmit}
                     disabled={loading}
-                    className="w-full sm:w-auto flex items-center justify-center gap-3 px-10 py-4 rounded-2xl font-black text-sm uppercase tracking-widest text-white bg-[#ff6a00] shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-[1.02] active:scale-95 transition-all duration-200 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full sm:w-auto flex items-center justify-center gap-3 px-10 py-3.5 rounded-2xl font-black text-sm uppercase tracking-widest text-white bg-[#ff6a00] shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-[1.02] active:scale-95 transition-all duration-200 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {loading ? "Sending..." : "Send Message"}
                     {!loading && (
