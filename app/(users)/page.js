@@ -16,6 +16,7 @@ import ContactForm from "../components/ContactForm";
 import Link from "next/link";
 import { siteConfig } from "../config";
 import ClientLogos from "../components/ClientLogos";
+import ProblemSolutionSection from './home/problemSolution/page'
 
 /* ── WhatsApp icon ── */
 function WaIcon() {
@@ -338,9 +339,9 @@ export default function Home() {
           position={{ top: "80%", left: "-200px", translateY: "-50%" }}
           size={{ outer: "600px", inner: "400px" }}
         />
-        <div className="z-10 mx-auto w-full max-w-[1440px]">
+        <div className="z-10 mx-auto w-full max-w-[1600px]">
           <div className="grid grid-cols-1 xl:grid-cols-12 gap-10 xl:gap-14 items-start">
-            <div className="xl:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+            <div className="xl:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
               <div className="md:col-span-2">
                 <p className="mb-4 text-base font-bold text-orange-500 sm:text-lg">
                   Welcome to Tekko AI-Perfected Software
@@ -370,20 +371,27 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg shadow-xl">
+              {/* <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg shadow-xl">
                 <Image
                   src="/home/a2vgroups_innovative.jpg"
                   alt="Innovation Team" fill
                   className="object-cover transition-transform duration-700 hover:scale-105"
                   unoptimized
                 />
-              </div>
+              </div> */}
             </div>
             <div className="xl:col-span-4 xl:sticky xl:top-24 w-full max-w-2xl mx-auto xl:mx-0">
               <ContactForm source="hero_section_v2" />
             </div>
           </div>
         </div>
+      </section>
+
+      {/* ══════════════════════════════════════
+          PROBLEM + SOLUTION SECTION (REPLACING YOUR OLD CTA) – below Hero
+      ══════════════════════════════════════ */}
+      <section className="px-4 sm:px-6 lg:px-14 py-14 bg-[#f5f5f5]">
+        <ProblemSolutionSection />
       </section>
 
       {/* ══════════════════════════════════════

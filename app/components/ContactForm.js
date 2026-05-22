@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import ContactSuccessPopup from "./ContactSuccessPopup";
 import { siteConfig } from "../config";
 import { useValidation } from "../context/ValidationContext";
+import Image from "next/image";
 
 export default function ContactForm({ source = "homepage" }) {
   const { showError } = useValidation();
@@ -32,8 +33,8 @@ export default function ContactForm({ source = "homepage" }) {
       "web-development": "Custom Web Solutions",
       "graphic-designing": "Graphic Designing",
       "digital-marketing": "SEO Optimization",
-      "hero_section": "General Inquiry",
-      "hero_section_v2": "General Inquiry"
+      hero_section: "General Inquiry",
+      hero_section_v2: "General Inquiry",
     };
 
     if (source && sourceToSubject[source]) {
@@ -56,7 +57,11 @@ export default function ContactForm({ source = "homepage" }) {
     setErrors(e);
 
     if (Object.keys(e).length > 0) {
-      showError("Wait a moment!", "We found some issues with your form:", Object.values(e));
+      showError(
+        "Wait a moment!",
+        "We found some issues with your form:",
+        Object.values(e),
+      );
       return false;
     }
     return true;
@@ -81,7 +86,10 @@ export default function ContactForm({ source = "homepage" }) {
         setForm({ name: "", email: "", phone: "", subject: "", message: "" });
       } else {
         const data = await res.json();
-        showError("Submission Failed", data.message || "Failed to send message.");
+        showError(
+          "Submission Failed",
+          data.message || "Failed to send message.",
+        );
       }
     } catch (err) {
       console.error(err);
@@ -92,64 +100,95 @@ export default function ContactForm({ source = "homepage" }) {
   }
 
   return (
-    <div className="w-full bg-white border border-slate-100 shadow-2xl shadow-slate-200/60 rounded-3xl p-5 sm:p-8">
+    <div className="bg-white p-10 rounded-lg shadow-lg">
       <ContactSuccessPopup
         isOpen={showPopup}
         onClose={() => setShowPopup(false)}
       />
+      <div className="flex flex-wrap gap-5 items-center w-full max-md:max-w-full mb-10">
+        <div className="flex flex-wrap flex-1 shrink gap-5 items-center self-stretch my-auto basis-0 min-w-[240px] max-md:max-w-full">
+          <div className="flex relative flex-col justify-center self-stretch bg-gray-100 h-[70px] min-h-[70px] rounded-[16px] overflow-hidden w-[70px]">
+            <div className="aspect-auto">
+              <Image
+                src="/home/a2vgroups_logo_new.jpg"
+                alt="Contact"
+                width={100}
+                height={100}
+                className="object-cover"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col self-stretch my-auto min-w-[240px]">
+            <div className="text-base text-gray-800">
+              We Will Give You The Solution
+            </div>
+            <div className="mt-2 text-sm text-gray-500">
+              UX/UI designer, in A2V Group
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <div className="grid grid-cols-2 gap-3 sm:gap-5">
-        <div className="flex flex-col gap-1 sm:gap-1.5">
-          <label className="text-xs sm:text-[14px] font-bold text-black uppercase tracking-wider">
-            Full Name
-          </label>
+      <div className="grid grid-cols-2 gap-6 mb-10">
+        <div className="relative col-span-2 sm:col-span-1">
           <input
             type="text"
+            id="floating_outlined_name"
             value={form.name}
             onChange={set("name")}
-            placeholder="Enter name"
-            className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-slate-50 border rounded-xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${errors.name ? "border-red-500" : "border-slate-100 focus:border-orange-500"
-              }`}
+            className={`block w-full text-sm h-[50px] px-4 text-slate-900 bg-white rounded-[8px] border ${errors.name ? "border-red-500" : "border-violet-200"} appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px]`}
+            placeholder="Full Name"
           />
+          <label
+            htmlFor="floating_outlined_name"
+            className="peer-placeholder-shown:-z-10 peer-focus:z-10 absolute text-[14px] leading-[150%] text-primary peer-focus:text-primary peer-invalid:text-error-500 focus:invalid:text-error-500 duration-300 transform -translate-y-[1.2rem] scale-75 top-2 z-10 origin-[0] bg-white disabled:bg-gray-50-background- px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-[1.2rem] rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+          >
+            Full Name
+          </label>
         </div>
 
-        <div className="flex flex-col gap-1 sm:gap-1.5">
-          <label className="text-xs sm:text-[14px] font-bold text-black uppercase tracking-wider">
-            Email Address
-          </label>
+        <div className="relative col-span-2 sm:col-span-1">
           <input
             type="email"
+            id="floating_outlined_email"
             value={form.email}
             onChange={set("email")}
-            placeholder="Enter email"
-            className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-slate-50 border rounded-xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${errors.email ? "border-red-500" : "border-slate-100 focus:border-orange-500"
-              }`}
+            className={`block w-full text-sm h-[50px] px-4 text-slate-900 bg-white rounded-[8px] border ${errors.email ? "border-red-500" : "border-violet-200"} appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px]`}
+            placeholder="Email Address "
           />
+          <label
+            htmlFor="floating_outlined_email"
+            className="peer-placeholder-shown:-z-10 peer-focus:z-10 absolute text-[14px] leading-[150%] text-primary peer-focus:text-primary peer-invalid:text-error-500 focus:invalid:text-error-500 duration-300 transform -translate-y-[1.2rem] scale-75 top-2 z-10 origin-[0] bg-white disabled:bg-gray-50-background- px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-[1.2rem] rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+          >
+            Email Address
+          </label>
         </div>
 
-        <div className="flex flex-col gap-1 sm:gap-1.5">
-          <label className="text-xs sm:text-[14px] font-bold text-black uppercase tracking-wider">
-            Phone Number
-          </label>
+        <div className="relative col-span-2 sm:col-span-1">
           <input
             type="tel"
+            id="floating_outlined_phone"
             value={form.phone}
             onChange={set("phone")}
-            placeholder="Enter phone number"
-            className="w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-slate-50 border border-slate-100 rounded-xl text-sm text-black font-medium outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 transition-all"
+            className={`block w-full text-sm h-[50px] px-4 text-slate-900 bg-white rounded-[8px] border ${errors.phone ? "border-red-500" : "border-violet-200"} appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px]`}
+            placeholder="Phone Number"
           />
+          <label
+            htmlFor="floating_outlined_phone"
+            className="peer-placeholder-shown:-z-10 peer-focus:z-10 absolute text-[14px] leading-[150%] text-primary peer-focus:text-primary peer-invalid:text-error-500 focus:invalid:text-error-500 duration-300 transform -translate-y-[1.2rem] scale-75 top-2 z-10 origin-[0] bg-white disabled:bg-gray-50-background- px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-[1.2rem] rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+          >
+            Phone Number
+          </label>
         </div>
 
-        <div className="flex flex-col gap-1 sm:gap-1.5">
-          <label className="text-xs sm:text-[14px] font-bold text-black uppercase tracking-wider">
-            Subject
-          </label>
+        <div className="relative col-span-2 sm:col-span-1">
           <select
+            id="floating_outlined_subject"
             value={form.subject}
             onChange={set("subject")}
-            className="w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-slate-50 border border-slate-100 rounded-xl text-sm text-black font-medium outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 transition-all appearance-none"
+            className={`block w-full text-sm h-[50px] px-4 text-slate-900 bg-white rounded-[8px] border ${errors.subject ? "border-red-500" : "border-violet-200"} appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px] bg-none`}
           >
-            <option value="">Select a service</option>
+            <option value="" disabled hidden></option>
             {siteConfig.formServices.map((cat) => (
               <optgroup key={cat.category} label={cat.category}>
                 {cat.options.map((opt) => (
@@ -160,36 +199,69 @@ export default function ContactForm({ source = "homepage" }) {
               </optgroup>
             ))}
           </select>
+          <label
+            htmlFor="floating_outlined_subject"
+            className="peer-placeholder-shown:-z-10 peer-focus:z-10 absolute text-[14px] leading-[150%] text-primary peer-focus:text-primary peer-invalid:text-error-500 focus:invalid:text-error-500 duration-300 transform -translate-y-[1.2rem] scale-75 top-2 z-10 origin-[0] bg-white disabled:bg-gray-50-background- px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-[1.2rem] rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+          >
+            Subject
+          </label>
         </div>
 
-        <div className="flex flex-col gap-1 sm:gap-1.5 col-span-2">
-          <label className="text-xs sm:text-[14px] font-bold text-black uppercase tracking-wider">
-            Message
-          </label>
+        <div className="relative col-span-2">
           <textarea
+            id="floating_outlined_message"
             value={form.message}
             onChange={set("message")}
-            placeholder="Tell us about your project..."
-            rows={3}
-            className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-slate-50 border rounded-xl text-sm text-black font-medium outline-none focus:ring-4 focus:ring-orange-500/10 transition-all resize-none ${errors.message ? "border-red-500" : "border-slate-100 focus:border-orange-500"
-              }`}
+            rows={4}
+            className={`block w-full text-sm py-4 px-4 text-slate-900 bg-white rounded-[8px] border ${errors.message ? "border-red-500" : "border-violet-200"} appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 pr-[48px] resize-none`}
+            placeholder="Message"
           />
-        </div>
-
-        <div className="col-span-2 pt-1">
-          <button
-            onClick={handleSubmit}
-            disabled={loading}
-            className="w-full flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-xs uppercase tracking-widest text-white bg-[#ff6a00] shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-[1.01] active:scale-95 transition-all duration-200 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+          <label
+            htmlFor="floating_outlined_message"
+            className="peer-placeholder-shown:-z-10 peer-focus:z-10 absolute text-[14px] leading-[150%] text-primary peer-focus:text-primary peer-invalid:text-error-500 focus:invalid:text-error-500 duration-300 transform -translate-y-[1.2rem] scale-75 top-2 z-10 origin-[0] bg-white disabled:bg-gray-50-background- px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-[1.2rem] rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
           >
+            Message
+          </label>
+        </div>
+      </div>
+
+      <div className="sm:flex sm:flex-row-reverse flex gap-4">
+        <button
+          type="button"
+          onClick={handleSubmit}
+          disabled={loading}
+          className="w-fit rounded-lg text-sm px-5 py-2 focus:outline-none h-[50px] border bg-[#f56302] hover:bg-[#f56302]/80 focus:bg-[#f56302]/80 border-violet-500-violet- text-white focus:ring-4 focus:ring-violet-200 hover:ring-4 hover:ring-violet-100 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+        >
+          <div className="flex gap-2 items-center">
             {loading ? "Sending..." : "Send Message"}
             {!loading && (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="w-3.5 h-3.5">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                className="w-3.5 h-3.5"
+              >
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             )}
-          </button>
-        </div>
+          </div>
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            setForm({
+              name: "",
+              email: "",
+              phone: "",
+              subject: "",
+              message: "",
+            })
+          }
+          className="w-fit rounded-lg text-sm px-5 py-2 focus:outline-none h-[50px] border bg-transparent border-primary text-primary focus:ring-4 focus:ring-gray-100"
+        >
+          Cancel
+        </button>
       </div>
     </div>
   );
