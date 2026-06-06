@@ -360,7 +360,7 @@ export default function Home() {
               <p className="mb-4 text-base font-bold text-[#FC6600] sm:text-lg">
                 Welcome to A2V Groups Web Development Studio
               </p>
-              <h1 className="text-4xl font-bold leading-tight text-black sm:text-6xl xl:text-6xl">
+              <h1 className="text-4xl font-semibold leading-tight text-black sm:text-6xl xl:text-6xl">
                 NextGen AI-Powered Web Solutions
               </h1>
               <h2 className="mt-3 text-2xl font-medium leading-tight text-black sm:text-5xl xl:text-5xl">
