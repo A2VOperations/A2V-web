@@ -360,10 +360,10 @@ export default function Home() {
               <p className="mb-4 text-base font-bold text-[#FC6600] sm:text-lg">
                 Welcome to A2V Groups Web Development Studio
               </p>
-              <h1 className="text-4xl font-bold leading-tight text-black sm:text-6xl xl:text-7xl">
+              <h1 className="text-4xl font-bold leading-tight text-black sm:text-6xl lg:text-7xl">
                 NextGen AI-Powered Web Solutions
               </h1>
-              <h2 className="mt-3 text-2xl font-medium leading-tight text-black sm:text-5xl xl:text-6xl">
+              <h2 className="mt-3 text-2xl font-medium leading-tight text-black sm:text-5xl lg:text-6xl">
                 and{" "}
                 <span className="inline-block bg-[#FC6600] px-3 py-1 text-white">CUSTOM WEB</span>{" "}
                 Platforms
