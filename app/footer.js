@@ -40,11 +40,11 @@ export default function Footer() {
   ];
 
   const services = [
-    { label: "Web (UX/UI) Design", href: siteConfig.socialLinks.whatsapp },
-    { label: "Web Development", href: siteConfig.socialLinks.whatsapp },
-    { label: "Logo Designing", href: siteConfig.socialLinks.whatsapp },
-    { label: "SEO Optimization", href: siteConfig.socialLinks.whatsapp },
-    { label: "Digital Marketing", href: siteConfig.socialLinks.whatsapp },
+    { label: "Custom Web Solutions", href: siteConfig.socialLinks.whatsapp },
+    { label: "E-commerce Development", href: siteConfig.socialLinks.whatsapp },
+    { label: "CMS & Portal Development", href: siteConfig.socialLinks.whatsapp },
+    { label: "Cloud & Web Security", href: siteConfig.socialLinks.whatsapp },
+    { label: "SPA & PWA Development", href: siteConfig.socialLinks.whatsapp },
   ];
 
   return (
@@ -85,13 +85,12 @@ export default function Footer() {
           </div>
 
           <h2 className="text-3xl font-semibold mb-4 leading-tight">
-            Join the AI-Perfected{" "}
-            <span className="text-orange-500 font-extrabold">{siteConfig.brandName}</span>
+            AI-Perfected{" "}
+            <span className="text-orange-500 font-extrabold">Web Development</span>
           </h2>
 
           <p className="text-gray-300 mb-6 leading-relaxed text-sm">
-            We understand that every challenge is an opportunity for AI-perfected innovation. We are here
-            with a team of dedicated professionals.
+            We build high-performance web applications, custom storefronts, and blazing-fast Next.js portals. Every line of code is perfected for absolute speed and scale.
           </p>
 
           {/* Social Links */}

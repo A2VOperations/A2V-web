@@ -23,15 +23,15 @@ import {
 const ServiceGridDark = ({ source }) => {
   const contentMap = {
     "website-development": {
-      title: "WE SHAPE THE PERFECT SOLUTIONS.",
-      description: "We are committed to providing our customers with exceptional service while offering our employees the best training.",
+      title: "WE SHAPE PERFECT WEB PLATFORMS.",
+      description: "We are committed to providing our clients with exceptional custom web solutions, e-commerce storefronts, and blazing fast Next.js applications.",
       services: [
-        { id: "01", name: "WEBSITE DEVELOPMENT", icon: <Monitor className="w-10 h-10 text-orange-500" /> },
-        { id: "02", name: "GRAPHIC DESIGNING", icon: <Palette className="w-10 h-10 text-orange-500" /> },
-        { id: "03", name: "DIGITAL MARKETING", icon: <Target className="w-10 h-10 text-orange-500" /> },
-        { id: "04", name: "SEO & CONTENT WRITING", icon: <FileEdit className="w-10 h-10 text-orange-500" /> },
-        { id: "05", name: "APP DEVELOPMENT", icon: <Smartphone className="w-10 h-10 text-orange-500" /> },
-        { id: "06", name: "UI/UX DESIGNING", icon: <Monitor className="w-10 h-10 text-orange-500" /> },
+        { id: "01", name: "CUSTOM WEB APPS", icon: <Monitor className="w-10 h-10 text-orange-500" /> },
+        { id: "02", name: "E-COMMERCE STORES", icon: <Database className="w-10 h-10 text-orange-500" /> },
+        { id: "03", name: "HEADLESS CMS & BLOGS", icon: <Cloud className="w-10 h-10 text-orange-500" /> },
+        { id: "04", name: "API & DATA SYSTEMS", icon: <Zap className="w-10 h-10 text-orange-500" /> },
+        { id: "05", name: "SPEED & PERFORMANCE", icon: <Zap className="w-10 h-10 text-orange-500" /> },
+        { id: "06", name: "SECURITY & MAINTENANCE", icon: <Shield className="w-10 h-10 text-orange-500" /> },
       ]
     },
     "digital-marketing": {

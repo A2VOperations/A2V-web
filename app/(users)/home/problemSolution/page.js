@@ -3,37 +3,37 @@
 import React, { useState } from 'react';
 
 const data = {
-  web: {
-    badge: 'Web Development',
+  info: {
+    badge: 'Information Website',
     cards: [
-      { icon: 'ti-device-mobile-off', problem: '"My site looks totally broken on phones."', solution: 'We build fully responsive websites that look perfect on every screen size.' },
-      { icon: 'ti-clock-off', problem: '"My website takes forever to load — visitors just leave."', solution: 'We optimize speed with modern hosting, compressed assets & clean code.' },
-      { icon: 'ti-world-off', problem: '"I don\'t even have a website. Customers can\'t find me."', solution: 'We design and launch your website end-to-end, from domain to go-live.' },
-      { icon: 'ti-mood-empty', problem: '"My site looks old and embarrassing. I\'m losing trust."', solution: 'We redesign with a modern, professional look that builds instant credibility.' },
+      { icon: 'ti-info-circle', problem: '"No one knows about my services or business hours online."', solution: 'We build modern, informative websites that present your services and details clearly.' },
+      { icon: 'ti-search', problem: '"My business doesn\'t show up when local clients search Google."', solution: 'We engineer highly SEO-optimized structures so you appear at the top of Google.' },
+      { icon: 'ti-help', problem: '"Clients ask the same basic questions repeatedly over the phone."', solution: 'We design dedicated FAQ pages, forms, and resource sections to educate visitors.' },
+      { icon: 'ti-map-pin', problem: '"Clients complain that our contact info or address is hard to find."', solution: 'We integrate visual contact details, direct click-to-call, and Google Maps interfaces.' },
     ]
   },
-  mkt: {
-    badge: 'Digital Marketing',
+  portfolio: {
+    badge: 'Portfolio Website',
     cards: [
-      { icon: 'ti-ad-off', problem: '"I\'m spending on ads but getting zero sales."', solution: 'We audit your campaigns and rebuild them with proven targeting strategies.' },
-      { icon: 'ti-search-off', problem: '"My competitors appear on Google. I\'m invisible."', solution: 'We do on-page & off-page SEO to push your business to page one.' },
-      { icon: 'ti-heart-broken', problem: '"I post on social media but get no engagement or leads."', solution: 'We create data-driven content strategies that actually convert followers.' },
-      { icon: 'ti-chart-off', problem: '"I have no idea if my marketing money is working."', solution: 'We set up analytics dashboards so you see exactly what\'s performing.' },
+      { icon: 'ti-briefcase', problem: '"I have amazing client work but my website looks cheap and outdated."', solution: 'We build stunning, visual-first portfolios to wow your potential clients.' },
+      { icon: 'ti-layout-grid4', problem: '"My past case studies look cluttered and text-heavy to read."', solution: 'We structure elegant project galleries, dynamic sliders, and clean typography.' },
+      { icon: 'ti-bolt', problem: '"My visual work and project photos take forever to load on mobile."', solution: 'We compression-bundle high-res media files and implement lazy-loading scripts.' },
+      { icon: 'ti-face-smile', problem: '"I don\'t know how to cleanly showcase client reviews and feedback."', solution: 'We build custom animated testimonial carousels and brand highlights.' },
     ]
   },
-  design: {
-    badge: 'Graphic Design',
+  ecom: {
+    badge: 'E-Commerce Website',
     cards: [
-      { icon: 'ti-brush-off', problem: '"My logo looks amateurish. No one takes me seriously."', solution: 'We craft a professional logo and brand identity that builds instant trust.' },
-      { icon: 'ti-layout-off', problem: '"My brand looks inconsistent across every platform."', solution: 'We build a full brand kit — colors, fonts, templates — so everything matches.' },
-      { icon: 'ti-photo-off', problem: '"My social posts look unprofessional compared to competitors."', solution: 'We design scroll-stopping post templates tailored to your brand.' },
-      { icon: 'ti-pencil-off', problem: '"I need a designer for every single thing — it\'s too slow."', solution: 'We create ready-to-edit template packs you can update yourself anytime.' },
+      { icon: 'ti-shopping-cart-x', problem: '"Too many users abandon shopping carts at the checkout page."', solution: 'We build seamless, 1-click checkout experiences to boost completed orders.' },
+      { icon: 'ti-database-off', problem: '"My store inventory is out of sync across multiple warehouses."', solution: 'We integrate real-time API sync tunnels connecting your digital dashboard.' },
+      { icon: 'ti-lock', problem: '"I\'m worried my customers\' payment gateway is insecure."', solution: 'We implement high-grade SSL certificates, HTTPS, and compliant Stripe gateways.' },
+      { icon: 'ti-stats-down', problem: '"My Shopify store layout feels rigid and slows down during sales."', solution: 'We build custom liquid templates and headless frontends to scale transaction speed.' },
     ]
   }
 };
 
 export default function ProblemSolutionPage() {
-  const [activeTab, setActiveTab] = useState('web');
+  const [activeTab, setActiveTab] = useState('info');
 
   const { badge, cards } = data[activeTab];
 
@@ -44,45 +44,45 @@ export default function ProblemSolutionPage() {
 
   return (
     <div className="font-sans">
-      <h2 className="sr-only">Problem and solution section for web development, digital marketing, and graphic design services</h2>
+      <h2 className="sr-only">Problem and solution section for information websites, portfolio websites, and e-commerce stores</h2>
       
       <div className="text-center mb-12 flex flex-col items-center">
         <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Sound Familiar?</span>
         <h2 className="text-4xl md:text-5xl font-black text-slate-900 max-w-2xl">
-          Pick your struggle — <span className="text-orange-500 italic">we've got the fix.</span>
+          Pick your struggle — <span className="text-orange-500 italic">we\'ve got the fix.</span>
         </h2>
       </div>
 
       <div className="flex gap-3 justify-center mb-12 flex-wrap">
         <button 
           className={`px-6 py-3 rounded-full border text-sm cursor-pointer flex items-center gap-2 transition-all duration-300 shadow-sm
-            ${activeTab === 'web' 
+            ${activeTab === 'info' 
               ? 'bg-orange-500 text-white border-orange-500 font-bold shadow-md shadow-orange-500/20' 
               : 'bg-white border-slate-200 text-slate-600 hover:border-orange-500 hover:text-orange-500'
             }`} 
-          onClick={() => setActiveTab('web')}
+          onClick={() => setActiveTab('info')}
         >
-          <i className="ti ti-code text-lg" aria-hidden="true"></i> Web Development
+          <i className="ti ti-info-circle text-lg" aria-hidden="true"></i> Information Website
         </button>
         <button 
           className={`px-6 py-3 rounded-full border text-sm cursor-pointer flex items-center gap-2 transition-all duration-300 shadow-sm
-            ${activeTab === 'mkt' 
+            ${activeTab === 'portfolio' 
               ? 'bg-orange-500 text-white border-orange-500 font-bold shadow-md shadow-orange-500/20' 
               : 'bg-white border-slate-200 text-slate-600 hover:border-orange-500 hover:text-orange-500'
             }`} 
-          onClick={() => setActiveTab('mkt')}
+          onClick={() => setActiveTab('portfolio')}
         >
-          <i className="ti ti-speakerphone text-lg" aria-hidden="true"></i> Digital Marketing
+          <i className="ti ti-briefcase text-lg" aria-hidden="true"></i> Portfolio Website
         </button>
         <button 
           className={`px-6 py-3 rounded-full border text-sm cursor-pointer flex items-center gap-2 transition-all duration-300 shadow-sm
-            ${activeTab === 'design' 
+            ${activeTab === 'ecom' 
               ? 'bg-orange-500 text-white border-orange-500 font-bold shadow-md shadow-orange-500/20' 
               : 'bg-white border-slate-200 text-slate-600 hover:border-orange-500 hover:text-orange-500'
             }`} 
-          onClick={() => setActiveTab('design')}
+          onClick={() => setActiveTab('ecom')}
         >
-          <i className="ti ti-palette text-lg" aria-hidden="true"></i> Graphic Design
+          <i className="ti ti-shopping-cart text-lg" aria-hidden="true"></i> E-Commerce Website
         </button>
       </div>
 

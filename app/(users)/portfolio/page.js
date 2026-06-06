@@ -203,7 +203,7 @@ export default function PortfolioPage() {
             ✦ Our Showroom
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight tracking-tighter">
-            Portfolio of <br className="hidden md:block"/> <span className="text-orange-500">Success Stories.</span>
+            Portfolio of <br className="hidden md:block"/> <span className="text-orange-500">Success Stories</span>
           </h1>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl leading-relaxed">
             A curated anthology of our latest explorations across web development, creative

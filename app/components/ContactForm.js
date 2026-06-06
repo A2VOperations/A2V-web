@@ -22,17 +22,17 @@ export default function ContactForm({ source = "homepage" }) {
   useEffect(() => {
     const sourceToSubject = {
       "custom-web-solutions": "Custom Web Solutions",
-      "ecommerce-development": "E-commerce Development",
-      "cms-development": "CMS Development",
-      "brand-identity": "Brand & Identity",
-      "ui-ux-design": "UI/UX Experience",
-      "print-social-media": "Print & Social Media Design",
-      "seo-optimization": "SEO Optimization",
-      "social-media-marketing": "Social Media Marketing",
-      "ppc-paid-ads": "PPC & Paid Ads",
+      "ecommerce-development": "Custom E-Commerce Storefronts",
+      "cms-development": "Headless CMS Integration",
+      "brand-identity": "Custom Web Solutions",
+      "ui-ux-design": "Custom Web Solutions",
+      "print-social-media": "Custom Web Solutions",
+      "seo-optimization": "Core Web Vitals Optimization",
+      "social-media-marketing": "Custom Web Solutions",
+      "ppc-paid-ads": "Custom Web Solutions",
       "web-development": "Custom Web Solutions",
-      "graphic-designing": "Graphic Designing",
-      "digital-marketing": "SEO Optimization",
+      "graphic-designing": "Custom Web Solutions",
+      "digital-marketing": "Core Web Vitals Optimization",
       hero_section: "General Inquiry",
       hero_section_v2: "General Inquiry",
     };
@@ -123,7 +123,7 @@ export default function ContactForm({ source = "homepage" }) {
               We Will Give You The Solution
             </div>
             <div className="mt-2 text-sm text-gray-500">
-              UX/UI designer, in A2V Group
+              Web Developer, A2V Groups
             </div>
           </div>
         </div>

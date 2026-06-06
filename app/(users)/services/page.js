@@ -36,34 +36,34 @@ const Typewriter = ({ words }) => {
 
 const services = [
   {
-    title: "Web Development",
-    desc: "We engineer high-performance digital ecosystems that bridge the gap between ambitious vision and technical reality.",
+    title: "Custom Web Solutions",
+    desc: "We engineer custom SaaS, react apps, and API integrations that bridge the gap between business vision and digital reality.",
     href: siteConfig.socialLinks.whatsapp,
     icon: <Code className="w-8 h-8" />,
     image: "/images/web-dev-hero.png",
     accent: "orange-500"
   },
   {
-    title: "AI-Perfected Design",
-    desc: "Visual identities that cut through the noise and resonate on a visceral level, turning your brand essence into a powerful advantage, perfected with AI.",
+    title: "E-Commerce Platforms",
+    desc: "High-conversion online stores with custom payment gateways, secure checkouts, and optimized performance to maximize sales.",
     href: siteConfig.socialLinks.whatsapp,
-    icon: <Palette className="w-8 h-8" />,
+    icon: <Layout className="w-8 h-8" />,
     image: "/images/graphic-design-hero.png",
     accent: "blue-500"
   },
   {
-    title: "AI-Driven Marketing",
-    desc: "Data-driven strategies focused on high-intent acquisition and aggressive ROI, turning your presence into a revenue engine powered by AI intelligence.",
+    title: "Headless CMS & Blogs",
+    desc: "Intuitive content platforms built with headless dashboards like Strapi or Sanity so your team publishes instantly without code.",
     href: siteConfig.socialLinks.whatsapp,
-    icon: <Megaphone className="w-8 h-8" />,
+    icon: <Cloud className="w-8 h-8" />,
     image: "/images/digital-marketing-hero.png",
     accent: "green-500"
   },
   {
-    title: "Artificial Intelligence",
-    desc: "Intelligent automation that moves the needle. We turn complex AI capabilities into simple, scalable business advantages.",
+    title: "Web Speed & SEO",
+    desc: "Advanced PageSpeed tuning and technical Core Web Vitals optimizations to achieve top search authority and ultra-fast loads.",
     href: siteConfig.socialLinks.whatsapp,
-    icon: <Sparkles className="w-8 h-8" />,
+    icon: <Zap className="w-8 h-8" />,
     image: "/images/ai-consultancy-hero.png",
     accent: "purple-500"
   }
@@ -522,11 +522,11 @@ export default function ServicesPage() {
             <h1 className="text-5xl md:text-8xl font-black mb-6 leading-[0.9] tracking-tighter uppercase">
               <span className="text-[#FC6600] block mb-2">AI-Perfected</span>
               <span className="text-gray-900 min-h-[1.1em] block">
-                <Typewriter words={["Solutions", "Branding", "Software", "Marketing"]} />
+                <Typewriter words={["Next.js Apps", "Custom Portals", "E-Commerce", "SaaS Solutions"]} />
               </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-xl mb-10 leading-relaxed font-sans">
-              For great companies who want more than surface-level support. Connective is a full-service AI-Perfected digital IT solution company that listens, innovates, and delivers.
+              For ambitious companies who want more than standard websites. A2V is a premier AI-Perfected Web Development studio that designs, engineers, and delivers.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center mb-16">
@@ -617,10 +617,10 @@ export default function ServicesPage() {
                   {/* Center Content (Left Aligned) */}
                   <div className="w-full max-w-3xl mt-auto mb-auto">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl text-white font-sans font-bold mb-6 leading-[1.1] tracking-tight">
-                      {service.title === "Web Development" ? "WE BUILD AI-PERFECTED DIGITAL FLAGSHIPS" :
-                        service.title === "AI-Perfected Design" ? "DESIGN THAT COMMANDS ATTENTION & DRIVES ACTION" :
-                          service.title === "AI-Driven Marketing" ? "MARKETING BUILT ON PERFORMANCE, NOT PROMISES" :
-                            "INTELLIGENCE THAT DRIVES REAL BUSINESS OUTCOMES"}
+                      {service.title === "Custom Web Solutions" ? "WE BUILD AI-PERFECTED DIGITAL FLAGSHIPS" :
+                        service.title === "E-Commerce Platforms" ? "HIGH-CONVERSION ENGINES FOR YOUR STOREFRONT" :
+                          service.title === "Headless CMS & Blogs" ? "INTUITIVE CONTENT SYSTEMS WITH ZERO CODE" :
+                            "PERFORMANCE TUNING FOR 95+ PAGESPEED SCORES"}
                     </h2>
                     <p className="text-gray-100 text-sm md:text-base max-w-xl font-medium leading-relaxed">
                       {service.desc}

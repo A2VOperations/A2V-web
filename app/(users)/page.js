@@ -58,38 +58,38 @@ export default function Home() {
   const growthPanels = [
     {
       id: "mission",
-      title: "Learn Our Company Mission",
-      description: "Our mission is to revolutionize the digital landscape with AI-perfected innovation, delivering innovative software solutions to empower businesses to achieve their full potential.",
-      points: ["Premier Tech Innovations", "Nexus Tech Systems"],
+      title: "Learn Our Engineering Mission",
+      description: "Our mission is to revolutionize the digital web landscape with AI-perfected engineering, delivering high-performance, clean web applications to empower modern businesses.",
+      points: ["Next-Gen Web Platforms", "AI-Perfected Integration"],
       image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
     },
     {
       id: "vision",
-      title: "Our Company Vision",
-      description: "We build future-ready, AI-driven platforms and product teams that turn ambitious ideas into measurable growth for modern businesses.",
-      points: ["Long-term digital partnerships", "Scalable engineering culture"],
+      title: "Our Development Vision",
+      description: "We build future-ready, scalable Jamstack and React-based applications that turn ambitious digital concepts into secure, blazing-fast storefronts and portals.",
+      points: ["Scalable Next.js systems", "Modern headless setups"],
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80",
     },
     {
       id: "philosophy",
-      title: "Our Philosophy",
-      description: "Clear strategy, practical execution, and user-focused design guide every decision we make from planning through launch.",
-      points: ["Human-centered product thinking", "Lean, high-impact delivery"],
+      title: "Our Design Philosophy",
+      description: "Fast loading times, responsive UI/UX, and robust API endpoints guide every web project we build from initial prototype through launch.",
+      points: ["User-centric web interactions", "Semantic and clean code"],
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
     },
     {
       id: "strategy",
-      title: "Our Strategy",
-      description: "We combine modern technology, sharp product insight, and collaborative delivery to help teams move faster with confidence.",
-      points: ["Roadmaps tied to outcomes", "Reliable delivery systems"],
+      title: "Our Development Strategy",
+      description: "We combine modern framework selection (like Next.js) with robust hosting environments (Vercel, AWS) to deliver stable web platforms.",
+      points: ["Core Web Vitals alignment", "Secure & stable deployment"],
       image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80",
     },
   ];
 
   const popularServices = [
     {
-      title: "Brand and Identity",
-      description: "We create distinctive brand identities that resonate with your audience and build lasting brand equity through strategic design.",
+      title: "Next.js Web Apps",
+      description: "Blazing-fast Single Page Applications and server-rendered sites engineered for absolute performance, high search discoverability, and clean UI.",
       image: "/images/brand-service.png",
       accent: "text-[#ff4d00]",
       icon: (
@@ -102,8 +102,8 @@ export default function Home() {
       ),
     },
     {
-      title: "Custom Website Development",
-      description: "High-performance, scalable web solutions built with cutting-edge technologies to drive your digital transformation and business growth.",
+      title: "Custom E-Commerce",
+      description: "High-performance, secure digital storefronts designed to maximize conversions, sync inventories, and offer fluid shopping and checkout experiences.",
       image: "/home/a2vgroups_web.jpg",
       accent: "text-[#ff4d00]",
       icon: (
@@ -118,8 +118,8 @@ export default function Home() {
       ),
     },
     {
-      title: "SEO Optimization",
-      description: "Maximize your online visibility and drive sustainable organic growth with our advanced search engine optimization strategies.",
+      title: "CMS & Portals",
+      description: "Manage content with headless setups or custom admin dashboards, giving your team control without needing technical database skills.",
       image: "/images/seo-service.png",
       accent: "text-[#ff4d00]",
       icon: (
@@ -142,145 +142,145 @@ export default function Home() {
       wa: "Hi, I'm interested in your Next.js Web Development service at A2V.",
     },
     {
-      num: "02", tag: "SEO & Growth", title: "Technical & Local SEO Optimization",
-      desc: "Dominate search rankings with AI-powered technical audits, schema markup, Core Web Vitals optimization, and local SEO strategies tailored for Indian markets.",
+      num: "02", tag: "Web Performance", title: "Technical Page Speed Audits",
+      desc: "Dominate search rankings and reduce bounce rates with speed optimization, image compression, asset bundling, and Core Web Vitals refinement.",
       image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your Technical & Local SEO Optimization service at A2V.",
+      wa: "Hi, I'm interested in your Web Performance & Speed Audits at A2V.",
     },
     {
-      num: "03", tag: "AI Creative", title: "AI Motion Graphics",
-      desc: "Hyper-realistic animations and cinematic motion graphics powered by AI — from brand reveals and product demos to social reels that stop the scroll.",
+      num: "03", tag: "E-Commerce", title: "Custom Shopify Stores",
+      desc: "Bespoke storefront templates and tailored backend scripts that elevate your Shopify store for visual perfection, speed, and high transaction limits.",
       image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your AI Motion Graphics service at A2V.",
+      wa: "Hi, I'm interested in Custom Shopify Development at A2V.",
     },
     {
-      num: "04", tag: "Graphic Design", title: "Infographic Designing",
-      desc: "Transform complex data, reports, and ideas into stunning, shareable infographics that educate your audience and drive engagement across all platforms.",
+      num: "04", tag: "CMS Integration", title: "Headless CMS Platforms",
+      desc: "Connect robust frontends with headless content management panels like Strapi, Sanity, or Contentful to publish instantly without developer overhead.",
       image: "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your Infographic Designing service at A2V.",
+      wa: "Hi, I'm interested in your Headless CMS Integration service at A2V.",
     },
     {
-      num: "05", tag: "Digital Marketing", title: "Influencer Marketing",
-      desc: "Connect your brand with the right voices — from micro-influencers to industry leaders — through data-driven campaigns that build trust and generate real ROI.",
+      num: "05", tag: "API Solutions", title: "API Development & Synclinks",
+      desc: "Build highly reliable endpoints and data webhooks that sync inventories, handle payments, connect CRMs, and automate backend operations cleanly.",
       image: "https://images.unsplash.com/photo-1628157588553-5eeea00af15c?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your Influencer Marketing service at A2V.",
+      wa: "Hi, I'm interested in API Development & Integrations at A2V.",
     },
     {
-      num: "06", tag: "Web Development", title: "CMS Development",
-      desc: "CMS development is the process of creating a Content Management System so users can manage website content without any coding knowledge.",
+      num: "06", tag: "Web Development", title: "Corporate Web Portals",
+      desc: "Centralized client-login portals and robust employee dashboards that protect data, handle operations, and streamline visual reporting.",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your CMS Development service at A2V.",
+      wa: "Hi, I'm interested in your Corporate Web Portal service at A2V.",
     },
   ];
 
   const mainServices = [
     {
       title: "Custom Web Solutions",
-      tag: "Web Development",
+      tag: "React & Node",
       desc: "End-to-end web development using modern stacks like Next.js, React, and Node.js for high-performance applications.",
       image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1000&auto=format&fit=crop",
       wa: "Hi, I'm interested in your Custom Web Solutions at A2V."
     },
     {
-      title: "Digital Marketing",
-      tag: "Growth",
-      desc: "Data-driven marketing strategies including SEO, SEM, and Social Media to maximize your ROI and brand reach.",
+      title: "E-commerce Stores",
+      tag: "Shopify & Custom",
+      desc: "High-conversion online stores with custom payment gateways, fluid shopping cart experiences, and inventory sync systems.",
       image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your Digital Marketing services at A2V."
+      wa: "Hi, I'm interested in your E-commerce Web Solutions at A2V."
     },
     {
-      title: "Graphic Designing",
-      tag: "Creative",
-      desc: "Stunning visual identities, brand guidelines, and marketing collaterals that make your brand stand out.",
+      title: "CMS & Blogs",
+      tag: "WordPress & Headless",
+      desc: "Intuitive publishing systems built with headless panels or corporate WordPress settings to update copy with zero code.",
       image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your Graphic Designing services at A2V."
+      wa: "Hi, I'm interested in your CMS and Blog setups at A2V."
     },
     {
-      title: "UI/UX Experience",
-      tag: "Design",
-      desc: "User-centric design processes focusing on usability, accessibility, and delightful user interactions.",
+      title: "Single Page Apps (SPA)",
+      tag: "Fast & Fluid",
+      desc: "Blazing fast client-side applications providing fluid, native-app transitions and interactions without page reloads.",
       image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your UI/UX Experience services at A2V."
+      wa: "Hi, I'm interested in Single Page App Development at A2V."
     },
     {
-      title: "SEO Optimization",
-      tag: "Search",
-      desc: "Advanced search engine optimization to improve organic visibility and drive high-quality traffic.",
+      title: "Web Speed Optimization",
+      tag: "Core Web Vitals",
+      desc: "Comprehensive page audit and technical tune-ups to achieve 95+ performance scores and reduce user bounce rates.",
       image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your SEO Optimization services at A2V."
+      wa: "Hi, I'm interested in Web Speed and Performance Tuning at A2V."
     },
     {
-      title: "Social Media Marketing",
-      tag: "Social",
-      desc: "Engaging social media campaigns that build community and drive brand loyalty across platforms.",
+      title: "Web Security Setup",
+      tag: "Protocols & SSL",
+      desc: "SSL certifications, cross-site scripting guards, robust data encryption, and regular vulnerability checkups.",
       image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your Social Media Marketing at A2V."
+      wa: "Hi, I'm interested in Web Security setups at A2V."
     },
     {
-      title: "Brand Strategy",
-      tag: "Identity",
-      desc: "Developing long-term brand equity with strategic positioning and distinctive identity design.",
+      title: "API Integrations",
+      tag: "Custom Webhooks",
+      desc: "Connecting third-party databases, accounting APIs, CRM systems, and customer support channels to automate web operations.",
       image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your Brand Strategy services at A2V."
+      wa: "Hi, I'm interested in API Integration services at A2V."
     },
     {
-      title: "Content Marketing",
-      tag: "Writing",
-      desc: "Compelling storytelling and content creation that educates, informs, and converts your audience.",
+      title: "Support & Maintenance",
+      tag: "24/7 Stability",
+      desc: "Regular software updates, uptime monitoring, bug squash agreements, and proactive technical adjustments.",
       image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your Content Marketing services at A2V."
+      wa: "Hi, I'm interested in Web Maintenance & Support at A2V."
     },
     {
-      title: "App Development",
-      tag: "Mobile",
-      desc: "Custom mobile applications for iOS and Android, built with focus on performance and native experience.",
+      title: "Progressive Web Apps",
+      tag: "Mobile Web PWA",
+      desc: "Creating web apps with push notifications, offline states, and rapid installs, feeling exactly like native phone apps.",
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your App Development services at A2V."
+      wa: "Hi, I'm interested in PWA Web Development at A2V."
     }
   ];
 
   const heroProducts = [
     {
-      title: "Custom Web Development",
-      desc: "Modern, fast, and fully responsive websites tailored to your business goals using the latest technologies.",
+      title: "Custom Web Solutions",
+      desc: "Modern, fast, and fully responsive websites tailored to your business goals using Next.js and Tailwind CSS.",
       image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your Custom Web Development service."
+      wa: "Hi, I'm interested in your Custom Web Solutions."
     },
     {
-      title: "Brand & Identity",
-      desc: "Build a powerful and memorable brand identity with strategic visuals, messaging, and creative direction.",
+      title: "E-Commerce Stores",
+      desc: "Robust Shopify and custom digital shops that scale transaction limits and simplify client catalog updates.",
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your Brand & Identity service."
+      wa: "Hi, I'm interested in E-Commerce Storefronts."
     },
     {
-      title: "SEO Optimization",
-      desc: "Improve your search engine rankings, website visibility, and organic traffic with advanced SEO strategies.",
+      title: "Web Speed & SEO",
+      desc: "Tune page load times and technical index structures to score 95+ on Google PageSpeed Insights.",
       image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your SEO Optimization service."
+      wa: "Hi, I'm interested in Web Speed and SEO optimization."
     },
     {
-      title: "Logo Designing",
-      desc: "Creative and professional logo designs crafted to represent your brand with uniqueness and impact.",
+      title: "Headless CMS Blogs",
+      desc: "Publish blog posts instantly with visual CMS structures like Strapi or Sanity without touching backend tables.",
       image: "/images/a2vgroups_logo_designing.png",
-      wa: "Hi, I'm interested in your Logo Designing service."
+      wa: "Hi, I'm interested in Headless CMS setup."
     },
     {
-      title: "Infographics Designing",
-      desc: "Engaging infographic designs that simplify complex information and boost audience engagement.",
+      title: "Corporate Web Portals",
+      desc: "Secure portals for clients or employees to access visual reports, billing histories, and task dashboards.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your Infographics Designing service."
+      wa: "Hi, I'm interested in Corporate Web Portals."
     },
     {
-      title: "CRM Development",
-      desc: "Custom CRM solutions to manage leads, automate workflows, and improve customer relationships efficiently.",
+      title: "Custom API Solutions",
+      desc: "Tailor-made webhook systems that sync inventories across sales pipelines and connect CRM records instantly.",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your CRM Development service."
+      wa: "Hi, I'm interested in Custom API development."
     },
     {
-      title: "Social Media Marketing",
-      desc: "Grow your online presence with targeted social media campaigns, content strategies, and audience engagement.",
+      title: "Ongoing Web Support",
+      desc: "Ensure security shields remain updated, databases remain clean, and technical bugs are squashed proactively.",
       image: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your Social Media Marketing service."
+      wa: "Hi, I'm interested in your Web Support plans."
     }
   ];
 
@@ -344,21 +344,20 @@ export default function Home() {
             <div className="xl:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
               <div className="md:col-span-2">
                 <p className="mb-4 text-base font-bold text-orange-500 sm:text-lg">
-                  Welcome to Tekko AI-Perfected Software
+                  Welcome to A2V Groups Web Development Studio
                 </p>
                 <h1 className="text-4xl font-bold leading-tight text-black sm:text-6xl xl:text-7xl">
-                  NextGen AI-Powered Innovators
+                  NextGen AI-Powered Web Solutions
                 </h1>
                 <h2 className="mt-3 text-2xl font-medium leading-tight text-black sm:text-5xl xl:text-6xl">
                   and{" "}
-                  <span className="inline-block bg-orange-500 px-3 py-1 text-white">DIGITAL SOFT</span>{" "}
-                  Solutions
+                  <span className="inline-block bg-orange-500 px-3 py-1 text-white">CUSTOM WEB</span>{" "}
+                  Platforms
                 </h2>
               </div>
               <div className="flex flex-col justify-center">
                 <p className="border-l-4 border-orange-500 pl-4 text-base leading-relaxed text-gray-600 md:text-lg">
-                  We specialize in delivering comprehensive software solutions tailored to meet the unique
-                  needs of businesses across various industries, perfected with AI technology.
+                  We specialize in building high-performance, custom web applications, e-commerce storefronts, and blazing-fast Next.js solutions tailored for business growth, perfected with AI technology.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-8 border-t border-gray-300 pt-8">
                   <div>
@@ -551,10 +550,10 @@ export default function Home() {
           {/* Header + nav buttons on same row */}
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between mb-14">
             <div>
-              <p className="text-sm font-semibold text-orange-400 md:text-base">Our Popular Services</p>
+              <p className="text-sm font-semibold text-orange-400 md:text-base">Our Popular Solutions</p>
               <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-semibold tracking-tight">
-                We Run All kinds Of IT Services
-                <span className="mt-2 block font-light text-black">that vow Your Success</span>
+                We Engineer Premium Web Applications
+                <span className="mt-2 block font-light text-black">that Drive Business Growth</span>
               </h2>
             </div>
             <NavButtons

@@ -16,12 +16,12 @@ function page() {
       wa: `Hi, I'm interested in your Web Platform Development services at A2V.`,
     },
     {
-      tag: "Graphic Designing",
-      title: "Premium Brand Identity",
-      desc: "Crafting unique visual experiences and brand languages that help businesses stand out in a crowded market.",
+      tag: "Web Development",
+      title: "SaaS Dashboard Portals",
+      desc: "Designing responsive, reactive admin and client tracking dashboards with secure user authentication.",
       img: "https://teckko.vercel.app/image/project-item/project-item-2.jpg",
       active: false,
-      wa: `Hi, I'm interested in your Brand Identity and Graphic Design services at A2V.`,
+      wa: `Hi, I'm interested in your SaaS and Client Portal services at A2V.`,
     },
     {
       tag: "Web Development",
@@ -32,12 +32,12 @@ function page() {
       wa: `Hi, I'm interested in your E-Commerce Development services at A2V.`,
     },
     {
-      tag: "Digital Marketing",
-      title: "Strategic SEO Growth",
-      desc: "Implementing data-driven marketing and SEO strategies that drive organic traffic and establish digital authority.",
+      tag: "Web Development",
+      title: "Headless CMS & Blogs",
+      desc: "Integrating Next.js frontends with Strapi headless CMS systems to enable rapid visual post publication.",
       img: "https://teckko.vercel.app/image/project-item/project-item-4.jpg",
       active: false,
-      wa: `Hi, I'm interested in your Digital Marketing and SEO services at A2V.`,
+      wa: `Hi, I'm interested in your Headless CMS services at A2V.`,
     },
   ];
 
