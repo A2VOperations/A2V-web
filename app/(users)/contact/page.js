@@ -27,7 +27,7 @@ export default function ContactPage() {
   const [showPopup, setShowPopup] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
-  const [openFaq, setOpenFaq] = useState(null);
+
 
   const { showError } = useValidation();
 

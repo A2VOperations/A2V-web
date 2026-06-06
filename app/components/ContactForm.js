@@ -106,8 +106,8 @@ export default function ContactForm({ source = "homepage" }) {
         onClose={() => setShowPopup(false)}
       />
       <div className="flex flex-wrap gap-5 items-center w-full max-md:max-w-full mb-10">
-        <div className="flex flex-wrap flex-1 shrink gap-5 items-center self-stretch my-auto basis-0 min-w-[240px] max-md:max-w-full">
-          <div className="flex relative flex-col justify-center self-stretch bg-gray-100 h-[70px] min-h-[70px] rounded-[16px] overflow-hidden w-[70px]">
+
+        {/* <div className="flex relative flex-col justify-center self-stretch bg-gray-100 h-[70px] min-h-[70px] rounded-[16px] overflow-hidden w-[70px]">
             <div className="aspect-auto">
               <Image
                 src="/home/a2vgroups_logo_new.jpg"
@@ -117,16 +117,13 @@ export default function ContactForm({ source = "homepage" }) {
                 className="object-cover"
               />
             </div>
-          </div>
-          <div className="flex flex-col self-stretch my-auto min-w-[240px]">
-            <div className="text-base text-gray-800">
-              We Will Give You The Solution
-            </div>
-            <div className="mt-2 text-sm text-gray-500">
-              Web Developer, A2V Groups
-            </div>
+          </div> */}
+        <div className="flex flex-col justify-center  items-center text-center self-stretch my-auto min-w-[240px]">
+          <div className="text-[24px] text-gray-800 font-semibold text-center">
+            Let’s Create Something Extra-ordinary together
           </div>
         </div>
+
       </div>
 
       <div className="grid grid-cols-2 gap-6 mb-10">

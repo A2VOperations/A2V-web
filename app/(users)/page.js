@@ -390,7 +390,8 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════
-          PROBLEM + SOLUTION SECTION (REPLACING YOUR OLD CTA) – below Hero
+          PROBLEM + SOLUTION SECTION
+          (REPLACING YOUR OLD CTA) – below Hero
       ══════════════════════════════════════ */}
       <section className="px-4 sm:px-6 lg:px-14 py-14 bg-[#f5f5f5]">
         <ProblemSolutionSection />
@@ -488,7 +489,7 @@ export default function Home() {
           GROWTH & DEVELOPMENT
       ══════════════════════════════════════ */}
       <section className="bg-[#19272b] px-4 py-16 text-white md:px-8 md:py-24">
-        <div className="mx-auto grid max-w-[1440px] gap-12 xl:grid-cols-[0.95fr_1.05fr] xl:items-start">
+        <div className="mx-auto grid max-w-7xl gap-12 xl:grid-cols-[0.95fr_1.05fr] xl:items-start">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold text-orange-400 md:text-base">Grow &amp; Development</p>
             <h2 className="mt-6 text-4xl leading-[1.05] font-semibold tracking-tight md:text-5xl">
@@ -801,7 +802,7 @@ export default function Home() {
           TESTIMONIALS — nav buttons above slide
       ══════════════════════════════════════ */}
       <section className="bg-white px-4 py-16 sm:px-6 md:px-16 md:py-24">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-12 md:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-12 md:grid-cols-2">
 
           {/* Left */}
           <div>

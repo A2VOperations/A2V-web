@@ -52,7 +52,7 @@ export default function ProblemSolutionPage() {
   };
 
   return (
-    <div className="font-sans">
+    <div className="font-sans mx-auto max-w-7xl">
       <h2 className="sr-only">Problem and solution section for information websites, portfolio websites, and e-commerce stores</h2>
       
       <div className="text-center mb-12 flex flex-col items-center">
