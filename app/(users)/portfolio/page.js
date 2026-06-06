@@ -6,15 +6,15 @@ import { ChevronRight, Search, Menu, X, Eye, ChevronLeft, ArrowRight } from 'luc
 import Image from 'next/image';
 import { siteConfig } from '@/app/config';
 
-const categories = ['All', 'Web Development', 'Graphic Designing', 'Digital Marketing'];
+const categories = ['All', 'Custom Web Apps', 'E-Commerce', 'Corporate & NGO'];
 
 const projects = [
   {
     id: 3,
     title: 'Hamira',
-    category: 'Graphic Designing',
-    tag: 'BRANDING',
-    desc: 'Devised premium graphics and informative infographics for a majestic brand.',
+    category: 'Custom Web Apps',
+    tag: 'SAAS PORTAL',
+    desc: 'Bespoke SaaS customer dashboard and digital platform engineered for a majestic brand.',
     bgColor: 'bg-orange-100',
     image: '/images/a2vgroups_preview_graphics_logo.png',
     previewImage: '/images/a2vgroups_preview_graphics.png',
@@ -23,9 +23,9 @@ const projects = [
   {
     id: 2,
     title: 'Mom Health Care',
-    category: 'Web Development',
-    tag: 'FULL SUITE',
-    desc: 'Integrated web development, graphics, and digital marketing strategy for maternal wellness.',
+    category: 'Custom Web Apps',
+    tag: 'HEALTH PORTAL',
+    desc: 'High-performance web app and medical consultation portal for maternal wellness.',
     bgColor: 'bg-rose-50',
     image: '/images/a2vgroups_mhc.png',
     previewImage: '/images/a2vgroups_preview_webiste_mhc.png',
@@ -34,9 +34,9 @@ const projects = [
   {
     id: 1,
     title: 'ShopinGo',
-    category: 'Web Development',
-    tag: 'E-COMMERCE',
-    desc: 'A vibrant shoping platform designed for the ultimate browsing experience.',
+    category: 'E-Commerce',
+    tag: 'STOREFRONT',
+    desc: 'A vibrant, fast e-commerce platform designed for the ultimate product checkout experience.',
     bgColor: 'bg-white',
     image: '/images/a2vgroups_preview_website3.png',
     previewImage: '/images/a2vgroups_preview_website3.png',
@@ -45,9 +45,9 @@ const projects = [
   {
     id: 4,
     title: 'Quates',
-    category: 'Graphic Designing',
-    tag: 'UI/UX',
-    desc: 'Modern graphics and tech-focused infographics for an emerging brand.',
+    category: 'Custom Web Apps',
+    tag: 'REACT APP',
+    desc: 'React-based interactive quotation engine and user tracking app for an emerging brand.',
     bgColor: 'bg-blue-50',
     image: '/images/a2vgroups_preview_graphics_logo2.png',
     previewImage: '/images/a2vgroups_preview_graphics2.jpg',
@@ -56,31 +56,20 @@ const projects = [
   {
     id: 5,
     title: 'Helping India Foundation',
-    category: 'Web Development',
-    tag: 'NGO',
-    desc: 'A robust and compassionate digital home for nationwide humanitarian efforts.',
+    category: 'Corporate & NGO',
+    tag: 'NGO PLATFORM',
+    desc: 'A robust, fast and compassionate digital home for humanitarian efforts nationwide.',
     bgColor: 'bg-green-50',
     image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80',
     previewImage: '/images/a2vgroups_previe_website_hif.png',
     gridClass: 'md:col-span-2 h-[350px]',
   },
-  // {
-  //   id: 6,
-  //   title: 'Lotus Hospital',
-  //   category: 'Web Development',
-  //   tag: 'HEALTHCARE',
-  //   desc: 'Next-gen hospital management and patient-care portal implementation.',
-  //   bgColor: 'bg-blue-100',
-  //   image: '/images/a2vgroups_lotus2.jpg',
-  //   previewImage: '/images/a2vgroups_lotus2.jpg',
-  //   gridClass: 'md:col-span-1 h-[350px]',
-  // },
   {
     id: 6,
     title: 'Ridda Designs',
-    category: 'Web Development',
-    tag: 'UI/UX',
-    desc: 'A website design and digital marketing agency.',
+    category: 'Custom Web Apps',
+    tag: 'AGENCY SITE',
+    desc: 'A modern Next.js web application for a creative digital studio.',
     bgColor: 'bg-blue-100',
     image: '/images/a2vgroups_preview_website_logo2.jpg',
     previewImage: '/images/a2vgroups_preview_website2.png',
@@ -89,9 +78,9 @@ const projects = [
   {
     id: 7,
     title: 'Meipaly',
-    category: 'Web Development',
-    tag: 'WEB DESIGN',
-    desc: 'A modern and stylish website design agency.',
+    category: 'Custom Web Apps',
+    tag: 'PORTFOLIO APP',
+    desc: 'An interactive portfolio web application with client dashboards.',
     bgColor: 'bg-slate-100',
     image: '/images/a2vgroups_preview_website_logo.png',
     previewImage: '/images/a2vgroups_preview_website.png',
@@ -100,9 +89,9 @@ const projects = [
   {
     id: 8,
     title: 'Rawat Band',
-    category: 'Web Development',
-    tag: 'EVENTS',
-    desc: 'An festive and rhythmic website for premium wedding band services.',
+    category: 'Corporate & NGO',
+    tag: 'PORTAL',
+    desc: 'A responsive and musical web platform for wedding band reservations.',
     bgColor: 'bg-red-50',
     image: 'https://rawatband.com/assets/Utranchal%20Rawat%20Band6-DqcfuL_T.jpg',
     previewImage: '/images/a2vgroups_preview_website_rawat.png',
@@ -111,9 +100,9 @@ const projects = [
   {
     id: 9,
     title: 'BRB Works',
-    category: 'Digital Marketing',
-    tag: 'SEO',
-    desc: 'SEO AND KEYWORD OPTIMIZATION for an emerging brand.',
+    category: 'Custom Web Apps',
+    tag: 'SPEED INDEX',
+    desc: 'Fast Next.js page speed analytics dashboard and technical web audit app.',
     bgColor: 'bg-red-50',
     image: '/images/a2vgroups_preview_digital.jpg',
     previewImage: '/images/a2vgroups_preview_digital.jpg',
@@ -122,9 +111,9 @@ const projects = [
   {
     id: 10,
     title: 'Pravah Enterprise',
-    category: 'Digital Marketing',
-    tag: 'Lead Generation',
-    desc: 'Global lead generation for an emerging company.',
+    category: 'Custom Web Apps',
+    tag: 'DATABASE PORTAL',
+    desc: 'Full-stack client onboarding, secure database and task dashboard portal.',
     bgColor: 'bg-red-50',
     image: '/images/a2vgroups_preview_digital2.jpg',
     previewImage: '/images/a2vgroups_preview_digital2.jpg',
@@ -149,11 +138,7 @@ export default function PortfolioPage() {
   });
 
   const getPreviewLabel = (project) => {
-    const cat = project.category.toLowerCase();
-    if (cat.includes('web')) return 'Preview Website';
-    if (cat.includes('design')) return 'Preview Design';
-    if (cat.includes('marketing')) return 'Preview Results';
-    return 'Preview Project';
+    return 'Preview Website';
   };
 
   const openLightbox = (index) => {
@@ -206,8 +191,7 @@ export default function PortfolioPage() {
             Portfolio of <br className="hidden md:block"/> <span className="text-orange-500">Success Stories</span>
           </h1>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl leading-relaxed">
-            A curated anthology of our latest explorations across web development, creative
-            design, and strategic marketing.
+            A curated anthology of our latest web applications, custom storefronts, and high-performance digital portals.
           </p>
         </div>
 

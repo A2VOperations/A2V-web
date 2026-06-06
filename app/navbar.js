@@ -1,168 +1,23 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Topbar from "./topBar";
 import Image from "next/image";
 import { siteConfig } from "./config";
 
-// ── Icons ──────────────────────────────────────────────────────────────────
-
-const WebDevIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="16 18 22 12 16 6" />
-    <polyline points="8 6 2 12 8 18" />
-  </svg>
-);
-const GraphicIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="13.5" cy="6.5" r="2.5" />
-    <circle cx="6.5" cy="13.5" r="2.5" />
-    <circle cx="17.5" cy="17.5" r="2.5" />
-    <line x1="8.5" y1="11.5" x2="11.5" y2="8.5" />
-  </svg>
-);
-const MarketingIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-    <polyline points="16 7 22 7 22 13" />
-  </svg>
-);
-const AIIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-    <rect x="4" y="4" width="16" height="16" rx="2" />
-    <rect x="9" y="9" width="6" height="6" />
-    <line x1="9" y1="1" x2="9" y2="4" />
-    <line x1="15" y1="1" x2="15" y2="4" />
-    <line x1="9" y1="20" x2="9" y2="23" />
-    <line x1="15" y1="20" x2="15" y2="23" />
-    <line x1="20" y1="9" x2="23" y2="9" />
-    <line x1="20" y1="14" x2="23" y2="14" />
-    <line x1="1" y1="9" x2="4" y2="9" />
-    <line x1="1" y1="14" x2="4" y2="14" />
-  </svg>
-);
-
 // ── Menu Data ──────────────────────────────────────────────────────────────
-
-const menuData = {
-  Services: {
-    columns: [
-      {
-        heading: "Core Web Dev",
-        categoryHref: "/services/web-development",
-        subtitle: "Custom digital apps",
-        iconBg: "bg-orange-100",
-        iconColor: "text-orange-500",
-        dotIdle: "bg-orange-200",
-        dotActive: "group-hover/item:bg-orange-500",
-        hoverBg: "hover:bg-orange-50/60",
-        hoverText: "group-hover/item:text-orange-500",
-        Icon: WebDevIcon,
-        items: [
-          { title: "Next.js Web Apps", href: siteConfig.socialLinks.whatsapp },
-          { title: "Custom Web Solutions", href: siteConfig.socialLinks.whatsapp },
-          { title: "SPA Development", href: siteConfig.socialLinks.whatsapp },
-          { title: "Progressive Web Apps", href: siteConfig.socialLinks.whatsapp },
-          { title: "Custom SaaS Apps", href: siteConfig.socialLinks.whatsapp },
-          { title: "Cloud Solutions", href: siteConfig.socialLinks.whatsapp },
-          { title: "React Development", href: siteConfig.socialLinks.whatsapp },
-          { title: "Node.js Backends", href: siteConfig.socialLinks.whatsapp },
-          { title: "Database Architecture", href: siteConfig.socialLinks.whatsapp },
-          { title: "API Development", href: siteConfig.socialLinks.whatsapp },
-        ],
-      },
-      {
-        heading: "E-Commerce",
-        categoryHref: "/services/web-development",
-        subtitle: "Digital store ecosystems",
-        iconBg: "bg-blue-100",
-        iconColor: "text-blue-600",
-        dotIdle: "bg-blue-200",
-        dotActive: "group-hover/item:bg-blue-500",
-        hoverBg: "hover:bg-blue-50/60",
-        hoverText: "group-hover/item:text-blue-600",
-        Icon: GraphicIcon,
-        items: [
-          { title: "Shopify Customization", href: siteConfig.socialLinks.whatsapp },
-          { title: "Custom Storefronts", href: siteConfig.socialLinks.whatsapp },
-          { title: "WooCommerce Setup", href: siteConfig.socialLinks.whatsapp },
-          { title: "Magento Enterprise", href: siteConfig.socialLinks.whatsapp },
-          { title: "Payment Gateways", href: siteConfig.socialLinks.whatsapp },
-          { title: "B2B E-Commerce", href: siteConfig.socialLinks.whatsapp },
-          { title: "Shopping Carts UX", href: siteConfig.socialLinks.whatsapp },
-          { title: "Inventory Syncing", href: siteConfig.socialLinks.whatsapp },
-          { title: "Multi-vendor Portals", href: siteConfig.socialLinks.whatsapp },
-          { title: "E-Com Maintenance", href: siteConfig.socialLinks.whatsapp },
-        ],
-      },
-      {
-        heading: "CMS & Portals",
-        categoryHref: "/services/web-development",
-        subtitle: "Content control & access",
-        iconBg: "bg-green-100",
-        iconColor: "text-green-600",
-        dotIdle: "bg-green-200",
-        dotActive: "group-hover/item:bg-green-500",
-        hoverBg: "hover:bg-green-50/60",
-        hoverText: "group-hover/item:text-green-600",
-        Icon: MarketingIcon,
-        items: [
-          { title: "WordPress Theme Dev", href: siteConfig.socialLinks.whatsapp },
-          { title: "Headless CMS Build", href: siteConfig.socialLinks.whatsapp },
-          { title: "Strapi / Sanity CMS", href: siteConfig.socialLinks.whatsapp },
-          { title: "Corporate Web Portals", href: siteConfig.socialLinks.whatsapp },
-          { title: "Admin Dashboards", href: siteConfig.socialLinks.whatsapp },
-          { title: "Client Portals UX", href: siteConfig.socialLinks.whatsapp },
-          { title: "Content Translation", href: siteConfig.socialLinks.whatsapp },
-          { title: "Role-Based Access", href: siteConfig.socialLinks.whatsapp },
-          { title: "Publishing Workflows", href: siteConfig.socialLinks.whatsapp },
-          { title: "CRM Integrations", href: siteConfig.socialLinks.whatsapp },
-        ],
-      },
-      {
-        heading: "Speed & Security",
-        categoryHref: "/services/web-development",
-        subtitle: "Technical site integrity",
-        iconBg: "bg-purple-100",
-        iconColor: "text-purple-600",
-        dotIdle: "bg-purple-200",
-        dotActive: "group-hover/item:bg-purple-500",
-        hoverBg: "hover:bg-purple-50/60",
-        hoverText: "group-hover/item:text-purple-600",
-        Icon: AIIcon,
-        items: [
-          { title: "Website Speed Audits", href: siteConfig.socialLinks.whatsapp },
-          { title: "Core Web Vitals", href: siteConfig.socialLinks.whatsapp },
-          { title: "Web Security Audits", href: siteConfig.socialLinks.whatsapp },
-          { title: "SSL & HTTPS Setup", href: siteConfig.socialLinks.whatsapp },
-          { title: "Uptime Monitoring", href: siteConfig.socialLinks.whatsapp },
-          { title: "Bug Squashing", href: siteConfig.socialLinks.whatsapp },
-          { title: "Performance Tuning", href: siteConfig.socialLinks.whatsapp },
-          { title: "Database Tuning", href: siteConfig.socialLinks.whatsapp },
-          { title: "Ongoing Maintenance", href: siteConfig.socialLinks.whatsapp },
-          { title: "24/7 SLA Support", href: siteConfig.socialLinks.whatsapp },
-        ],
-      },
-    ],
-  },
-  Portfolio: { columns: [] },
-  Pages: { columns: [] },
-  Blog: { columns: [] },
-};
 
 const navItems = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Portfolio", href: "/portfolio" },
-  // { label: "Services",   href: "/services", hasDropdown: true },
-  { label: "WhatsApp", href: siteConfig.socialLinks.whatsapp },
+  { label: "Services", href: "/services" },
   { label: "Contact Us", href: "/contact" },
 ];
 
-const navLinks = navItems.map((item) => item.label);
-const hasDropdown = navItems.filter((i) => i.hasDropdown).map((i) => i.label);
+
 
 // ── Small SVG helpers ──────────────────────────────────────────────────────
 
@@ -186,12 +41,8 @@ const CloseIcon = () => (
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [openMenu, setOpenMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileExpanded, setMobileExpanded] = useState(null);
-  const [megaVisible, setMegaVisible] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const closeTimer = useRef(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -203,26 +54,6 @@ export default function Navbar() {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
-
-  useEffect(() => {
-    if (openMenu) {
-      setMegaVisible(false);
-      requestAnimationFrame(() => requestAnimationFrame(() => setMegaVisible(true)));
-    } else {
-      setMegaVisible(false);
-    }
-  }, [openMenu]);
-
-  const handleMouseEnter = (link) => {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-    setOpenMenu(menuData[link]?.columns?.length ? link : null);
-  };
-  const handleMouseLeave = () => {
-    closeTimer.current = setTimeout(() => setOpenMenu(null), 120);
-  };
-  const handleMegaEnter = () => {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-  };
 
   if (pathname.startsWith("/admin")) return null;
 
@@ -244,10 +75,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center justify-center flex-1 px-2">
               <ul className="flex items-center list-none h-[90px] gap-0">
                 {navItems.map((item) => (
-                  <li key={item.label} className="relative h-full flex items-center"
-                    onMouseEnter={() => handleMouseEnter(item.label)}
-                    onMouseLeave={handleMouseLeave}
-                  >
+                  <li key={item.label} className="relative h-full flex items-center">
                     <Link
                       href={item.href}
                       onClick={(e) => { if (item.href === "#") e.preventDefault(); }}
@@ -261,9 +89,6 @@ export default function Navbar() {
                         : pathname.startsWith(item.href) ? "w-[70%]" : "w-0"
                         }`} />
                       {item.label}
-                      {item.hasDropdown && (
-                        <ChevronIcon className={openMenu === item.label ? "rotate-180" : ""} />
-                      )}
                     </Link>
                   </li>
                 ))}
@@ -293,84 +118,7 @@ export default function Navbar() {
             </div>
           </nav>
 
-          {/* ── Desktop Mega Menu ── */}
-          {openMenu && menuData[openMenu]?.columns?.length > 0 && (
-            <div
-              className={`hidden lg:block absolute top-[130px] left-0 w-full bg-white border-t border-b border-gray-100 shadow-[0_40px_80px_rgba(0,0,0,0.08)] z-[9998] overflow-hidden transition-all duration-300 ease-in-out ${megaVisible
-                ? "opacity-100 translate-y-0 scale-y-100 pointer-events-auto max-h-[800px]"
-                : "opacity-0 -translate-y-4 scale-y-[0.95] pointer-events-none max-h-0"
-                }`}
-              style={{ transformOrigin: "top center" }}
-              onMouseEnter={handleMegaEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div className="max-w-[1400px] mx-auto px-10 py-8">
 
-                {/* ── Category columns ── */}
-                <div className="grid grid-cols-12 divide-x divide-gray-100">
-                  {menuData[openMenu].columns.map((col, idx) => {
-                    const { Icon } = col;
-                    return (
-                      <div key={col.heading} className={`col-span-3 flex flex-col ${idx === 0 ? "pr-6" : idx === menuData[openMenu].columns.length - 1 ? "pl-6" : "px-6"}`}>
-
-                        {/* Column header */}
-                        <Link
-                          href={col.categoryHref || "#"}
-                          onClick={() => setOpenMenu(null)}
-                          className="flex items-center gap-3 mb-5 pb-4 border-b border-gray-100 group/col transition-all hover:bg-gray-50/50 rounded-lg -mx-2 px-2"
-                        >
-                          <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-transform group-hover/col:scale-110 ${col.iconBg} ${col.iconColor}`}>
-                            <Icon />
-                          </div>
-                          <div>
-                            <p className="text-[16px] font-bold uppercase tracking-[0.12em] text-gray-700 leading-tight group-hover/col:text-orange-500 transition-colors">
-                              {col.heading}
-                            </p>
-                            <p className="text-[13px] text-gray-400 mt-0.5 leading-tight">
-                              {col.subtitle}
-                            </p>
-                          </div>
-                        </Link>
-
-                        {/* Service links — 2-column grid */}
-                        <div className="grid grid-cols-2 gap-x-3 gap-y-0.5">
-                          {col.items.map((item) => (
-                            <Link
-                              key={item.title}
-                              href={item.href || "#"}
-                              onClick={() => setOpenMenu(null)}
-                              className={`group/item flex items-center gap-2.5 px-2.5 py-2 rounded-lg no-underline transition-all duration-200 ${col.hoverBg}`}
-                            >
-                              <div className={`w-1.5 h-1.5 rounded-full shrink-0 transition-all duration-200 ${col.dotIdle} ${col.dotActive} group-hover/item:scale-125`} />
-                              <p className={`text-[14px] font-medium text-gray-700 leading-snug transition-colors duration-200 ${col.hoverText}`}>
-                                {item.title}
-                              </p>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* ── Mega menu footer bar ── */}
-                <div className="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
-                  <p className="text-[12px] text-gray-400">
-                    40+ services across 4 categories
-                  </p>
-                  <Link
-                    href={siteConfig.socialLinks.whatsapp}
-                    onClick={() => setOpenMenu(null)}
-                    className="flex items-center gap-1.5 text-[13px] font-semibold text-orange-500 no-underline hover:text-orange-600 transition-colors duration-200 group/all"
-                  >
-                    Contact on WhatsApp
-                    <ArrowIcon className="transition-transform duration-200 group-hover/all:translate-x-0.5" />
-                  </Link>
-                </div>
-
-              </div>
-            </div>
-          )}
         </header>
       </div>
 
@@ -379,14 +127,14 @@ export default function Navbar() {
 
         {/* Drawer header */}
         <div className="flex items-center justify-between px-4 h-[72px] border-b border-gray-100 shrink-0">
-          <a href="/" className="flex items-center gap-2.5 no-underline">
+          <Link href="/" className="flex items-center gap-2.5 no-underline">
             <div className="w-10 h-9 bg-orange-500 rounded-lg flex items-center justify-center shrink-0">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
             <span className="text-xl font-black text-gray-900 tracking-tight">A2V AI</span>
-          </a>
+          </Link>
           <button
             onClick={() => setMobileOpen(false)}
             aria-label="Close menu"
@@ -401,93 +149,23 @@ export default function Navbar() {
           <div className="px-4 pt-2 pb-6">
             {navItems.map((item) => (
               <div key={item.label} className="border-b border-gray-100 last:border-none">
-                {item.hasDropdown ? (
-                  <button
-                    onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
-                    className={`w-full flex items-center justify-between px-2 py-4 text-[15px] font-semibold bg-transparent border-none cursor-pointer text-left transition-colors duration-200 ${pathname.startsWith(item.href ?? "") ? "text-orange-500" : "text-gray-900 hover:text-orange-500"
-                      }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${pathname.startsWith(item.href ?? "") ? "bg-orange-500" : "bg-gray-200"
-                        }`} />
-                      {item.label}
-                    </div>
-                    <ChevronIcon className={`text-gray-400 ${mobileExpanded === item.label ? "rotate-180" : ""}`} />
-                  </button>
-                ) : (
-                  <Link
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className={`flex items-center justify-between px-2 py-4 text-[15px] font-semibold no-underline transition-colors duration-200 ${(item.href === "/" ? pathname === "/" : pathname.startsWith(item.href))
-                      ? "text-orange-500"
-                      : "text-gray-900 hover:text-orange-500"
-                      }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${(item.href === "/" ? pathname === "/" : pathname.startsWith(item.href))
-                        ? "bg-orange-500" : "bg-gray-200"
-                        }`} />
-                      {item.label}
-                    </div>
-                  </Link>
-                )}
-
-                {/* Mobile sub-menu */}
-                {item.hasDropdown && menuData[item.label]?.columns?.length > 0 && (
-                  <div className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${mobileExpanded === item.label ? "max-h-[2500px] opacity-100" : "max-h-0 opacity-0"}`}>
-                    <div className="pb-6 px-2 space-y-4">
-                      {menuData[item.label].columns.map((col) => {
-                        const { Icon } = col;
-                        return (
-                          <div key={col.heading} className="bg-gray-50/50 rounded-2xl p-4">
-                            {/* Mobile column header with icon */}
-                            <div className="flex items-center gap-2.5 mb-3">
-                              <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${col.iconBg} ${col.iconColor}`}>
-                                <Icon />
-                              </div>
-                              <div>
-                                <p className="text-[11px] font-bold text-gray-700 uppercase tracking-[0.12em] leading-tight">
-                                  {col.heading}
-                                </p>
-                                <p className="text-[10px] text-gray-400 leading-tight">{col.subtitle}</p>
-                              </div>
-                            </div>
-                            <div className="grid grid-cols-1 gap-0.5">
-                              {col.items.map((item) => (
-                                <Link
-                                  key={item.title}
-                                  href={item.href || "#"}
-                                  onClick={() => setMobileOpen(false)}
-                                  className={`flex items-center gap-3 px-3 py-2.5 rounded-xl no-underline transition-colors duration-150 group/mitem ${col.hoverBg}`}
-                                >
-                                  <div className={`w-1.5 h-1.5 rounded-full shrink-0 transition-colors duration-150 ${col.dotIdle} ${col.dotActive}`} />
-                                  <p className={`text-[13px] font-semibold text-gray-800 leading-tight transition-colors duration-150 ${col.hoverText}`}>
-                                    {item.title}
-                                  </p>
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        );
-                      })}
-
-                      {/* Promo card */}
-                      <div className="mx-1 mt-1 bg-gray-900 rounded-2xl p-4 flex items-center justify-between">
-                        <div>
-                          <p className="text-sm font-black text-white leading-tight">
-                            THE <span className="text-orange-500">AI-PERFECTED</span> STACK
-                          </p>
-                          <p className="text-[11px] text-gray-400 mt-0.5">All services, one place</p>
-                        </div>
-                        <a href={siteConfig.socialLinks.whatsapp} className="flex items-center gap-1 text-[11px] font-semibold text-white hover:text-orange-400 transition-colors no-underline shrink-0 ml-4">
-                          Contact Us <ArrowIcon />
-                        </a>
-                      </div>
-                    </div>
+                <Link
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className={`flex items-center justify-between px-2 py-4 text-[15px] font-semibold no-underline transition-colors duration-200 ${(item.href === "/" ? pathname === "/" : pathname.startsWith(item.href))
+                    ? "text-orange-500"
+                    : "text-gray-900 hover:text-orange-500"
+                    }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${(item.href === "/" ? pathname === "/" : pathname.startsWith(item.href))
+                      ? "bg-orange-500" : "bg-gray-200"
+                      }`} />
+                    {item.label}
                   </div>
-                )}
+                </Link>
               </div>
             ))}
           </div>
@@ -522,9 +200,6 @@ export default function Navbar() {
       {/* Backdrops */}
       {mobileOpen && (
         <div className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-[10000]" onClick={() => setMobileOpen(false)} />
-      )}
-      {openMenu && (
-        <div className="hidden lg:block fixed inset-0 bg-black/40 backdrop-blur-[2px] z-[90] transition-all duration-300" onClick={() => setOpenMenu(null)} />
       )}
 
       <div className="h-[110px] lg:h-[130px]" />

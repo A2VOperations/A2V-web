@@ -5,14 +5,22 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { siteConfig } from "@/app/config";
 
-function page() {
+function ExploreOurPage() {
   const cases = [
+    {
+      tag: "Digital Marketing",
+      title: "Marketing & SEO Growth",
+      desc: "Executing data-driven marketing strategies, optimizing search visibility, and managing paid campaigns to drive measurable business growth.",
+      img: "https://images.unsplash.com/photo-1557838923-2985c318b67f?q=80&w=1000&auto=format&fit=crop",
+      active: true,
+      wa: `Hi, I'm interested in your Digital Marketing services at A2V.`,
+    },
     {
       tag: "Web Development",
       title: "Next-Gen Web Platforms",
       desc: "Building scalable, high-performance web applications tailored to modern business needs and user expectations.",
       img: "/home/mobile_app.jpg",
-      active: true,
+      active: false,
       wa: `Hi, I'm interested in your Web Platform Development services at A2V.`,
     },
     {
@@ -183,4 +191,4 @@ function page() {
   );
 }
 
-export default page;
+export default ExploreOurPage;

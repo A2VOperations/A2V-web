@@ -12,20 +12,30 @@ import PremierTech from "./home/premierTech/page";
 import ExploreOur from "./home/exploreOur/page";
 import DiscussStart from "./home/discussStart/page";
 import Contact from "./home/contact/page";
+import FAQSection from "./home/faq/page";
 import ContactForm from "../components/ContactForm";
 import Link from "next/link";
 import { siteConfig } from "../config";
 import ClientLogos from "../components/ClientLogos";
-import ProblemSolutionSection from './home/problemSolution/page'
+import ProblemSolutionSection from './home/problemSolution/page';
+import { Code, Layout, Search, Megaphone, TrendingUp, Presentation, ShieldCheck, Rocket, Zap, Brain } from "lucide-react";
 
-/* ── WhatsApp icon ── */
-function WaIcon() {
+/* ── Reusable outlined-circle nav button pair ── */
+const NavButtons = ({ onPrev, onNext, dark = false }) => {
+  const base = "flex h-11 w-11 items-center justify-center rounded-full border-2 text-lg font-medium transition-all duration-200 select-none";
+  const light = "border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white";
+  const darkStyle = "border-white text-white hover:bg-white hover:text-orange-500";
   return (
-    <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378l-.361.214-3.741-.982.998 3.645-.235.364a9.864 9.864 0 1.378 15.88c.341.066.678.1.01 3.766l3.841-.999-.363-.239a9.874 9.874 0 00-1.51-5.026zM11.25 5a6.75 6.75 0 110 13.5A6.75 6.75 0 0111.25 5z" />
-    </svg>
+    <div className="flex items-center gap-3">
+      <button type="button" onClick={onPrev} aria-label="Previous" className={`${base} ${dark ? darkStyle : light}`}>
+        ←
+      </button>
+      <button type="button" onClick={onNext} aria-label="Next" className={`${base} ${dark ? darkStyle : light}`}>
+        →
+      </button>
+    </div>
   );
-}
+};
 
 export default function Home() {
   const popularSwiperRef = useRef(null);
@@ -36,23 +46,6 @@ export default function Home() {
 
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [activeGrowthPanel, setActiveGrowthPanel] = useState("mission");
-
-  /* ── Reusable outlined-circle nav button pair ── */
-  const NavButtons = ({ onPrev, onNext, dark = false }) => {
-    const base = "flex h-11 w-11 items-center justify-center rounded-full border-2 text-lg font-medium transition-all duration-200 select-none";
-    const light = "border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white";
-    const darkStyle = "border-white text-white hover:bg-white hover:text-orange-500";
-    return (
-      <div className="flex items-center gap-3">
-        <button type="button" onClick={onPrev} aria-label="Previous" className={`${base} ${dark ? darkStyle : light}`}>
-          ←
-        </button>
-        <button type="button" onClick={onNext} aria-label="Next" className={`${base} ${dark ? darkStyle : light}`}>
-          →
-        </button>
-      </div>
-    );
-  };
 
   /* ── DATA ── */
   const growthPanels = [
@@ -88,50 +81,75 @@ export default function Home() {
 
   const popularServices = [
     {
-      title: "Next.js Web Apps",
-      description: "Blazing-fast Single Page Applications and server-rendered sites engineered for absolute performance, high search discoverability, and clean UI.",
-      image: "/images/brand-service.png",
+      title: "Web Development",
+      description: "Custom React & Next.js applications, responsive corporate portals, and robust backend integrations tailored for business growth.",
+      image: "/images/web-dev-hero.png",
       accent: "text-[#ff4d00]",
-      icon: (
-        <svg viewBox="0 0 64 64" className="h-16 w-16" aria-hidden="true">
-          <rect x="11" y="17" width="34" height="26" rx="3" className="fill-none stroke-current" strokeWidth="2" />
-          <path d="M22 50c5-2 15-2 20 0M23 31l-4 4 4 4M33 39l4-8M41 31l4 4-4 4" className="fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <circle cx="46" cy="22" r="9" className="fill-none stroke-current" strokeWidth="2" />
-          <path d="M46 17v10M41 22h10" className="fill-none stroke-current" strokeWidth="2" strokeLinecap="round" />
-        </svg>
-      ),
+      icon: <Code className="h-16 w-16" strokeWidth={1.5} />,
     },
     {
-      title: "Custom E-Commerce",
-      description: "High-performance, secure digital storefronts designed to maximize conversions, sync inventories, and offer fluid shopping and checkout experiences.",
-      image: "/home/a2vgroups_web.jpg",
+      title: "E-Commerce Websites",
+      description: "High-conversion online stores, Shopify configurations, custom checkout processes, and real-time inventory management systems.",
+      image: "/home/e_com.jpg",
       accent: "text-[#ff4d00]",
-      icon: (
-        <svg viewBox="0 0 64 64" className="h-16 w-16" aria-hidden="true">
-          <circle cx="32" cy="30" r="10" className="fill-none stroke-current" strokeWidth="2" />
-          <path d="M32 12v8M32 40v12M14 30h8M42 30h8M20 18l6 6M38 36l6 6M44 18l-6 6M26 36l-6 6" className="fill-none stroke-current" strokeWidth="2" strokeLinecap="round" />
-          <circle cx="32" cy="7" r="4" className="fill-none stroke-current" strokeWidth="2" />
-          <circle cx="32" cy="55" r="4" className="fill-none stroke-current" strokeWidth="2" />
-          <circle cx="9" cy="30" r="4" className="fill-none stroke-current" strokeWidth="2" />
-          <circle cx="55" cy="30" r="4" className="fill-none stroke-current" strokeWidth="2" />
-        </svg>
-      ),
+      icon: <Layout className="h-16 w-16" strokeWidth={1.5} />,
     },
     {
-      title: "CMS & Portals",
-      description: "Manage content with headless setups or custom admin dashboards, giving your team control without needing technical database skills.",
+      title: "SEO Solutions",
+      description: "Advanced search engine optimization, technical Core Web Vitals optimization, and keyword analysis for ranking growth.",
       image: "/images/seo-service.png",
       accent: "text-[#ff4d00]",
-      icon: (
-        <svg viewBox="0 0 64 64" className="h-16 w-16" aria-hidden="true">
-          <path d="M24 16l8-4 8 4v9l-8 4-8-4zM24 16l8 4 8-4M32 20v9" className="fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <circle cx="32" cy="28" r="18" className="fill-none stroke-current" strokeWidth="2" strokeDasharray="4 4" />
-          <path d="M17 44l-5 5M47 44l5 5M18 13l-5-5M46 13l5-5" className="fill-none stroke-current" strokeWidth="2" strokeLinecap="round" />
-          <circle cx="49" cy="42" r="6" className="fill-none stroke-current" strokeWidth="2" />
-          <path d="M49 38v8M45 42h8" className="fill-none stroke-current" strokeWidth="2" strokeLinecap="round" />
-        </svg>
-      ),
+      icon: <Search className="h-16 w-16" strokeWidth={1.5} />,
     },
+    {
+      title: "Digital Marketing",
+      description: "Data-driven marketing campaigns, email marketing sequences, and conversion-focused growth strategies for your brand.",
+      image: "/images/digital-marketing-hero.png",
+      accent: "text-[#ff4d00]",
+      icon: <Megaphone className="h-16 w-16" strokeWidth={1.5} />,
+    },
+    {
+      title: "Google Ads Management",
+      description: "Highly-targeted Pay-Per-Click campaigns designed to capture immediate interest, drive high-intent leads, and maximize ROAS.",
+      image: "/images/seo-why.png",
+      accent: "text-[#ff4d00]",
+      icon: <TrendingUp className="h-16 w-16" strokeWidth={1.5} />,
+    },
+    {
+      title: "Social Media Marketing",
+      description: "Engaged community building, creative content planning, and strategic paid social campaigns across Facebook, Instagram, and LinkedIn.",
+      image: "/images/a2vgroups_preview_digital.jpg",
+      accent: "text-[#ff4d00]",
+      icon: <Presentation className="h-16 w-16" strokeWidth={1.5} />,
+    },
+    {
+      title: "CRM Setup & Integration",
+      description: "Seamless CRM deployment and automation workflow designs (Salesforce, HubSpot) to manage leads, pipelines, and customers.",
+      image: "/images/team-collaboration.png",
+      accent: "text-[#ff4d00]",
+      icon: <ShieldCheck className="h-16 w-16" strokeWidth={1.5} />,
+    },
+    {
+      title: "App Development",
+      description: "Bespoke mobile application development for Android and iOS using modern hybrid and native engineering frameworks.",
+      image: "/home/mobile_app.jpg",
+      accent: "text-[#ff4d00]",
+      icon: <Rocket className="h-16 w-16" strokeWidth={1.5} />,
+    },
+    {
+      title: "Web & Data Analytics",
+      description: "Custom tracking implementation, heatmaps, event triggering, and visual dashboards to analyze traffic and boost conversion rates.",
+      image: "/images/traffic-gen.png",
+      accent: "text-[#ff4d00]",
+      icon: <Zap className="h-16 w-16" strokeWidth={1.5} />,
+    },
+    {
+      title: "AI & Machine Learning",
+      description: "Building custom machine learning models, semantic search, automated workflows, and GPT/LLM chat integrations.",
+      image: "/images/ai-consultancy-hero.png",
+      accent: "text-[#ff4d00]",
+      icon: <Brain className="h-16 w-16" strokeWidth={1.5} />,
+    }
   ];
 
   const heroServices = [
@@ -175,67 +193,74 @@ export default function Home() {
 
   const mainServices = [
     {
-      title: "Custom Web Solutions",
-      tag: "React & Node",
-      desc: "End-to-end web development using modern stacks like Next.js, React, and Node.js for high-performance applications.",
-      image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your Custom Web Solutions at A2V."
+      title: "Web Development",
+      tag: "React & Next.js",
+      desc: "Custom React & Next.js applications, responsive corporate portals, and robust backend integrations tailored for business growth.",
+      image: "/images/web-dev-hero.png",
+      wa: "Hi, I'm interested in your Web Development services at A2V."
     },
     {
-      title: "E-commerce Stores",
+      title: "E-Commerce Websites",
       tag: "Shopify & Custom",
-      desc: "High-conversion online stores with custom payment gateways, fluid shopping cart experiences, and inventory sync systems.",
-      image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your E-commerce Web Solutions at A2V."
+      desc: "High-conversion online stores, Shopify configurations, custom checkout processes, and real-time inventory management systems.",
+      image: "/home/e_com.jpg",
+      wa: "Hi, I'm interested in your E-Commerce services at A2V."
     },
     {
-      title: "CMS & Blogs",
-      tag: "WordPress & Headless",
-      desc: "Intuitive publishing systems built with headless panels or corporate WordPress settings to update copy with zero code.",
-      image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in your CMS and Blog setups at A2V."
+      title: "SEO Solutions",
+      tag: "Rankings & Audit",
+      desc: "Advanced search engine optimization, technical Core Web Vitals optimization, and keyword analysis for ranking growth.",
+      image: "/images/seo-service.png",
+      wa: "Hi, I'm interested in your SEO Solutions at A2V."
     },
     {
-      title: "Single Page Apps (SPA)",
-      tag: "Fast & Fluid",
-      desc: "Blazing fast client-side applications providing fluid, native-app transitions and interactions without page reloads.",
-      image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in Single Page App Development at A2V."
+      title: "Digital Marketing",
+      tag: "Outreach & Ads",
+      desc: "Data-driven marketing campaigns, email marketing sequences, and conversion-focused growth strategies for your brand.",
+      image: "/images/digital-marketing-hero.png",
+      wa: "Hi, I'm interested in your Digital Marketing services at A2V."
     },
     {
-      title: "Web Speed Optimization",
-      tag: "Core Web Vitals",
-      desc: "Comprehensive page audit and technical tune-ups to achieve 95+ performance scores and reduce user bounce rates.",
-      image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in Web Speed and Performance Tuning at A2V."
+      title: "Google Ads Management",
+      tag: "PPC & ROAS",
+      desc: "Highly-targeted Pay-Per-Click campaigns designed to capture immediate interest, drive high-intent leads, and maximize ROAS.",
+      image: "/images/seo-why.png",
+      wa: "Hi, I'm interested in your Google Ads Management at A2V."
     },
     {
-      title: "Web Security Setup",
-      tag: "Protocols & SSL",
-      desc: "SSL certifications, cross-site scripting guards, robust data encryption, and regular vulnerability checkups.",
-      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in Web Security setups at A2V."
+      title: "Social Media Marketing",
+      tag: "Meta & LinkedIn",
+      desc: "Engaged community building, creative content planning, and strategic paid social campaigns across Facebook, Instagram, and LinkedIn.",
+      image: "/images/a2vgroups_preview_digital.jpg",
+      wa: "Hi, I'm interested in your Social Media Marketing at A2V."
     },
     {
-      title: "API Integrations",
-      tag: "Custom Webhooks",
-      desc: "Connecting third-party databases, accounting APIs, CRM systems, and customer support channels to automate web operations.",
-      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in API Integration services at A2V."
+      title: "CRM Setup & Integration",
+      tag: "HubSpot & Salesforce",
+      desc: "Seamless CRM deployment and automation workflow designs (Salesforce, HubSpot) to manage leads, pipelines, and customers.",
+      image: "/images/team-collaboration.png",
+      wa: "Hi, I'm interested in your CRM Setup & Integration at A2V."
     },
     {
-      title: "Support & Maintenance",
-      tag: "24/7 Stability",
-      desc: "Regular software updates, uptime monitoring, bug squash agreements, and proactive technical adjustments.",
-      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in Web Maintenance & Support at A2V."
+      title: "App Development",
+      tag: "iOS & Android",
+      desc: "Bespoke mobile application development for Android and iOS using modern hybrid and native engineering frameworks.",
+      image: "/home/mobile_app.jpg",
+      wa: "Hi, I'm interested in your App Development at A2V."
     },
     {
-      title: "Progressive Web Apps",
-      tag: "Mobile Web PWA",
-      desc: "Creating web apps with push notifications, offline states, and rapid installs, feeling exactly like native phone apps.",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop",
-      wa: "Hi, I'm interested in PWA Web Development at A2V."
+      title: "Web & Data Analytics",
+      tag: "GA4 & Funnels",
+      desc: "Custom tracking implementation, heatmaps, event triggering, and visual dashboards to analyze traffic and boost conversion rates.",
+      image: "/images/traffic-gen.png",
+      wa: "Hi, I'm interested in your Web & Data Analytics at A2V."
+    },
+    {
+      title: "AI & Machine Learning",
+      tag: "GPT & Workflows",
+      desc: "Building custom machine learning models, semantic search, automated workflows, and GPT/LLM chat integrations.",
+      image: "/images/ai-consultancy-hero.png",
+      wa: "Hi, I'm interested in your AI & Machine Learning services at A2V."
     }
   ];
 
@@ -315,16 +340,6 @@ export default function Home() {
         "/home/a2vgroups_testimonial_8.jpg",
       ],
     },
-    // {
-    //   text: "A2V's AI automation suite saved our operations team hundreds of hours monthly. Their team understood our workflow deeply and delivered a custom solution that integrates perfectly with our systems.",
-    //   name: "Deepa Nair", role: "COO, Reddy Enterprises",
-    //   imgs: [
-    //     "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face",
-    //     "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=300&h=400&fit=crop&crop=face",
-    //     "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=300&h=400&fit=crop&crop=face",
-    //     "https://images.unsplash.com/photo-1521119989659-a83eee488004?w=300&h=300&fit=crop&crop=face",
-    //   ],
-    // },
   ];
 
   return (
@@ -333,53 +348,41 @@ export default function Home() {
       {/* ══════════════════════════════════════
           HERO
       ══════════════════════════════════════ */}
-      <section className="relative z-10 flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#f5f5f5]/55 px-4 py-16 sm:py-20 md:min-h-[90vh] md:py-24">
+      <section className="relative z-10 pt-32 pb-20 px-6 overflow-hidden min-h-[85vh] flex items-center bg-[#f5f5f5]/55">
         <BackgroundCircle />
         <BackgroundCircle
           position={{ top: "80%", left: "-200px", translateY: "-50%" }}
           size={{ outer: "600px", inner: "400px" }}
         />
-        <div className="z-10 mx-auto w-full max-w-[1600px]">
-          <div className="grid grid-cols-1 xl:grid-cols-12 gap-10 xl:gap-14 items-start">
-            <div className="xl:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
-              <div className="md:col-span-2">
-                <p className="mb-4 text-base font-bold text-orange-500 sm:text-lg">
-                  Welcome to A2V Groups Web Development Studio
-                </p>
-                <h1 className="text-4xl font-bold leading-tight text-black sm:text-6xl xl:text-7xl">
-                  NextGen AI-Powered Web Solutions
-                </h1>
-                <h2 className="mt-3 text-2xl font-medium leading-tight text-black sm:text-5xl xl:text-6xl">
-                  and{" "}
-                  <span className="inline-block bg-orange-500 px-3 py-1 text-white">CUSTOM WEB</span>{" "}
-                  Platforms
-                </h2>
-              </div>
-              <div className="flex flex-col justify-center">
-                <p className="border-l-4 border-orange-500 pl-4 text-base leading-relaxed text-gray-600 md:text-lg">
-                  We specialize in building high-performance, custom web applications, e-commerce storefronts, and blazing-fast Next.js solutions tailored for business growth, perfected with AI technology.
-                </p>
-                <div className="mt-8 flex flex-wrap gap-8 border-t border-gray-300 pt-8">
-                  <div>
-                    <h3 className="text-3xl font-semibold text-gray-600 md:text-5xl">5k+</h3>
-                    <p className="mt-1 text-sm text-gray-500">Happy Clients</p>
-                  </div>
-                  <div>
-                    <h3 className="text-3xl font-semibold text-gray-600 md:text-5xl">9+</h3>
-                    <p className="mt-1 text-sm text-gray-500">Years Experience</p>
-                  </div>
+        <div className="z-10 mx-auto w-full max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative">
+            <div className="lg:col-span-7 flex flex-col justify-center">
+              <p className="mb-4 text-base font-bold text-[#FC6600] sm:text-lg">
+                Welcome to A2V Groups Web Development Studio
+              </p>
+              <h1 className="text-4xl font-bold leading-tight text-black sm:text-6xl xl:text-7xl">
+                NextGen AI-Powered Web Solutions
+              </h1>
+              <h2 className="mt-3 text-2xl font-medium leading-tight text-black sm:text-5xl xl:text-6xl">
+                and{" "}
+                <span className="inline-block bg-[#FC6600] px-3 py-1 text-white">CUSTOM WEB</span>{" "}
+                Platforms
+              </h2>
+              <p className="mt-6 border-l-4 border-[#FC6600] pl-4 text-base leading-relaxed text-gray-600 md:text-lg max-w-xl">
+                We specialize in building high-performance, custom web applications, e-commerce storefronts, and blazing-fast Next.js solutions tailored for business growth, perfected with AI technology.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-8 border-t border-gray-300 pt-8 max-w-xl">
+                <div>
+                  <h3 className="text-3xl font-semibold text-gray-600 md:text-5xl">5k+</h3>
+                  <p className="mt-1 text-sm text-gray-500">Happy Clients</p>
+                </div>
+                <div>
+                  <h3 className="text-3xl font-semibold text-gray-600 md:text-5xl">9+</h3>
+                  <p className="mt-1 text-sm text-gray-500">Years Experience</p>
                 </div>
               </div>
-              {/* <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg shadow-xl">
-                <Image
-                  src="/home/a2vgroups_innovative.jpg"
-                  alt="Innovation Team" fill
-                  className="object-cover transition-transform duration-700 hover:scale-105"
-                  unoptimized
-                />
-              </div> */}
             </div>
-            <div className="xl:col-span-4 xl:sticky xl:top-24 w-full max-w-2xl mx-auto xl:mx-0">
+            <div className="lg:col-span-5 relative w-full max-w-2xl mx-auto lg:mx-0">
               <ContactForm source="hero_section_v2" />
             </div>
           </div>
@@ -862,6 +865,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════
+          GEO FAQs
+      ══════════════════════════════════════ */}
+      <FAQSection />
 
       <Contact />
     </div>
