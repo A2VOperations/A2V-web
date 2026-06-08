@@ -349,7 +349,8 @@ export default function Home() {
           HERO
       ══════════════════════════════════════ */}
       <section className="relative z-10 pt-32 pb-20 px-6 overflow-hidden min-h-[85vh] flex items-center bg-[#f5f5f5]/55">
-        <BackgroundCircle />
+        <BackgroundCircle position={{ top: "55%", left: "50%", translateY: "-50%" }}
+          size={{ outer: "600px", inner: "400px" }}/>
         <BackgroundCircle
           position={{ top: "80%", left: "-200px", translateY: "-50%" }}
           size={{ outer: "600px", inner: "400px" }}

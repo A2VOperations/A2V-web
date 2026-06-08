@@ -100,7 +100,7 @@ export default function ContactForm({ source = "homepage" }) {
   }
 
   return (
-    <div className="bg-white p-10 rounded-lg shadow-lg">
+    <div className="bg-white px-5 py-5 rounded-lg shadow-lg">
       <ContactSuccessPopup
         isOpen={showPopup}
         onClose={() => setShowPopup(false)}

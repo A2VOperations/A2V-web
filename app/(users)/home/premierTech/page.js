@@ -47,8 +47,8 @@ function page() {
 
                 <div className="m-3 bg-white px-5 py-4 shadow-2xl sm:mb-8 sm:mr-8">
                   <div className="flex items-center gap-3">
-                    <span className="flex h-10 w-10 items-center justify-center bg-sky-100 text-xl font-bold text-sky-500">
-                      S
+                    <span className="flex h-10 w-10 items-center justify-center bg-orange-100 text-xl font-bold text-orange-500">
+                      A
                     </span>
                     <div>
                       <p className="text-2xl font-bold text-black">A2V Groups</p>
