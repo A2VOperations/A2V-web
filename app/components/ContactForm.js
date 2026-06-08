@@ -106,18 +106,6 @@ export default function ContactForm({ source = "homepage" }) {
         onClose={() => setShowPopup(false)}
       />
       <div className="flex flex-wrap gap-5 items-center w-full max-md:max-w-full mb-10">
-
-        {/* <div className="flex relative flex-col justify-center self-stretch bg-gray-100 h-[70px] min-h-[70px] rounded-[16px] overflow-hidden w-[70px]">
-            <div className="aspect-auto">
-              <Image
-                src="/home/a2vgroups_logo_new.jpg"
-                alt="Contact"
-                width={100}
-                height={100}
-                className="object-cover"
-              />
-            </div>
-          </div> */}
         <div className="flex flex-col justify-center  items-center text-center self-stretch my-auto min-w-[240px]">
           <div className="text-[24px] text-gray-800 font-semibold text-center">
             Let’s Create Something Extra-ordinary together
