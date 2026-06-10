@@ -600,13 +600,13 @@ export default function Home() {
       {/* ══════════════════════════════════════
           HERO
       ══════════════════════════════════════ */}
-      <section className="relative z-10 pt-10 pb-20 px-6 overflow-hidden min-h-[85vh] flex items-center bg-[#f5f5f5]/55">
+      <section className="relative z-10 pt-15 pb-20 px-6 overflow-hidden min-h-[85vh] flex items-center bg-[#f5f5f5]/55">
         <BackgroundCircle position={{ top: "45%", left: "20%", translateY: "-50%" }}
           size={2.5} />
 
         <div className="z-10 mx-auto w-full max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-13 gap-16 items-start relative">
-            <div className="lg:col-span-9 flex flex-col justify-center">
+          <div className="grid grid-cols-1 lg:grid-cols-13 gap-16 items-center relative">
+            <div className="lg:col-span-9 flex flex-col  justify-center">
               {/* Heading Group – staggered block animation */}
               <div ref={headingGroupRef}>
 
@@ -626,7 +626,7 @@ export default function Home() {
                 {/* Sub-heading with Highlighting */}
                 <h2 className="mt-3 text-2xl font-medium leading-tight text-black sm:text-5xl xl:text-5xl flex flex-wrap items-center gap-x-3" style={{ opacity: 0 }}>
                   <SlideRightText text="and" delay={0.6} />{" "}
-                  <span className="inline-block bg-[#FC6600] px-3 px-1 text-white">
+                  <span className="inline-block bg-[#F68C34] px-3 px-1 text-white">
                     <SlideRightText text="CUSTOM WEB" delay={0.7} />
                   </span>{" "}
                   <SlideRightText text="Platforms" delay={1.0} />

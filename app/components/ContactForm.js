@@ -133,7 +133,7 @@ export default function ContactForm({ source = "homepage" }) {
       </div>
 
       <div className="grid grid-cols-2 gap-3 mb-5">
-        <div className="relative col-span-2 sm:col-span-1">
+        <div className="relative col-span-2">
           <input
             type="text"
             id="floating_outlined_name"
@@ -150,7 +150,7 @@ export default function ContactForm({ source = "homepage" }) {
           </label>
         </div>
 
-        <div className="relative col-span-2 sm:col-span-1">
+        <div className="relative col-span-2">
           <input
             type="email"
             id="floating_outlined_email"
@@ -167,7 +167,7 @@ export default function ContactForm({ source = "homepage" }) {
           </label>
         </div>
 
-        <div className="relative col-span-2 sm:col-span-1">
+        <div className="relative col-span-2">
           <input
             type="tel"
             id="floating_outlined_phone"
@@ -184,7 +184,7 @@ export default function ContactForm({ source = "homepage" }) {
           </label>
         </div>
 
-        <div className="relative col-span-2 sm:col-span-1">
+        <div className="relative col-span-2">
           <select
             id="floating_outlined_subject"
             value={form.subject}

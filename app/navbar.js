@@ -54,7 +54,7 @@ export default function Navbar() {
       currentAngle += 90; // Rotate to next face
       gsap.to(cubeRef.current, {
         rotateY: currentAngle,
-        duration: 1, // 1 second roll
+        duration: 2, // 1 second roll
         ease: "power2.inOut",
       });
     }, 3000); // Waits 2s, then 1s animation = 3s total loop
@@ -81,6 +81,13 @@ export default function Navbar() {
     Image3: "/images/A2V  Groups Logo2.png",
   }
 
+  const cubeFaces = [
+    { src: logo.Image1, rotateY: 0 },
+    { src: logo.Image2, rotateY: 90 },
+    { src: logo.Image3, rotateY: 180 },
+    { src: logo.Image2, rotateY: -90 },
+  ];
+
   return (
     <>
       <div className={`fixed top-0 left-0 w-full z-[100] bg-white transition-all duration-300 ${scrolled ? "-translate-y-[40px]" : "translate-y-0"}`}>
@@ -91,24 +98,14 @@ export default function Navbar() {
           <nav className="flex items-center h-[72px] lg:h-[90px] px-4 sm:px-6 lg:px-0">
 
             {/* Logo */}
-            <Link href="/" className="flex flex-col justify-center items-center lg:pl-14 lg:pr-14 lg:border-r-2 lg:border-black/20 lg:h-full [perspective:1000px]">
+            <Link href="/" className="flex flex-col justify-center items-center lg:py-2 lg:pl-14 lg:pr-14 lg:border-r-2 lg:border-black/20 lg:h-full [perspective:1000px]">
               <div ref={cubeRef} className="relative w-[130px] h-[130px] [transform-style:preserve-3d]">
-                {/* Front */}
-                <div className="absolute inset-0 bg-white [backface-visibility:hidden]" style={{ transform: 'rotateY(0deg) translateZ(65px)' }}>
-                  <Image src={logo.Image1} alt="Logo" fill className="object-contain" priority />
-                </div>
-                {/* Right */}
-                <div className="absolute inset-0 bg-white [backface-visibility:hidden]" style={{ transform: 'rotateY(90deg) translateZ(65px)' }}>
-                  <Image src={logo.Image2} alt="Logo" fill className="object-contain" priority />
-                </div>
-                {/* Back */}
-                <div className="absolute inset-0 bg-white [backface-visibility:hidden]" style={{ transform: 'rotateY(180deg) translateZ(65px)' }}>
-                  <Image src={logo.Image3} alt="Logo" fill className="object-contain" priority />
-                </div>
-                {/* Left */}
-                <div className="absolute inset-0 bg-white [backface-visibility:hidden]" style={{ transform: 'rotateY(-90deg) translateZ(65px)' }}>
-                  <Image src={logo.Image2} alt="Logo" fill className="object-contain" priority />
-                </div>
+                {cubeFaces.map((face, index) => (
+                  <div key={index} className="absolute inset-0 bg-white overflow-hidden [backface-visibility:hidden]" style={{ transform: `rotateY(${face.rotateY}deg) translateZ(65px)` }}>
+                    <Image src={face.src} alt={`Logo Face ${index + 1}`} fill className="object-contain" priority />
+                    <div className="pointer-events-none absolute top-[-50%] bottom-[-50%] w-[40px] bg-gradient-to-r from-transparent via-white/80 to-transparent -skew-x-[20deg] animate-shine-diagonal z-20" />
+                  </div>
+                ))}
               </div>
             </Link>
 
