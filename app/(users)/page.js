@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import BackgroundCircle from "../backgroundCircle";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -37,6 +38,163 @@ const NavButtons = ({ onPrev, onNext, dark = false }) => {
   );
 };
 
+const AnimatedText = ({ text, delay = 0 }) => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const letters = containerRef.current.querySelectorAll(".animate-letter");
+
+    // Initialize initial state (Hidden, flipped back, dropped down slightly)
+    gsap.set(letters, {
+      opacity: 0,
+      rotateX: -70,
+      y: 15,
+      transformOrigin: "top center"
+    });
+
+    // Run the flip-down typewriter reveal
+    gsap.to(letters, {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      duration: 0.15,        // Quick individual letter flip
+      stagger: 0.03,         // Crisp sequential spacing between letters
+      delay: delay,          // Staggers entire text blocks if needed
+      ease: "power2.out",
+      clearProps: "transform",
+    });
+  }, [delay]);
+
+  return (
+    <span
+      ref={containerRef}
+      className="inline-block"
+      style={{ perspective: "1000px" }} // Gives depth to the rotateX flip
+    >
+      {text.split("").map((char, idx) => (
+        <span
+          key={idx}
+          className="animate-letter inline-block"
+          style={{ whiteSpace: char === " " ? "pre" : "normal" }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </span>
+      ))}
+    </span>
+  );
+};
+
+// Letter-by-letter slide-in from RIGHT to LEFT
+const SlideRightText = ({ text, delay = 0 }) => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const letters = containerRef.current.querySelectorAll(".slide-letter");
+    gsap.set(letters, { opacity: 0, x: 30 });
+    gsap.to(letters, {
+      opacity: 1,
+      x: 0,
+      duration: 0.2,
+      stagger: 0.03,
+      delay: delay,
+      ease: "power3.out",
+      clearProps: "transform",
+    });
+  }, [delay]);
+
+  return (
+    <span
+      ref={containerRef}
+      className="inline-block"
+    >
+      {text.split("").map((char, idx) => (
+        <span
+          key={idx}
+          className="slide-letter inline-block"
+          style={{ whiteSpace: char === " " ? "pre" : "normal" }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </span>
+      ))}
+    </span>
+  );
+};
+
+// Word-by-word fade + slide-up animation for body text
+const FadeWordsText = ({ text, delay = 0 }) => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const words = containerRef.current.querySelectorAll(".fade-word");
+    gsap.set(words, { opacity: 0, y: 18, filter: "blur(4px)" });
+    gsap.to(words, {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      duration: 0.5,
+      stagger: 0.055,
+      delay: delay,
+      ease: "power3.out",
+    });
+  }, [delay]);
+
+  return (
+    <span ref={containerRef}>
+      {text.split(" ").map((word, idx) => (
+        <span key={idx} className="fade-word inline-block mr-[0.28em]">
+          {word}
+        </span>
+      ))}
+    </span>
+  );
+};
+
+// Slot-machine roll-up: cycles through an array of strings
+const RollingText = ({ items, interval = 2500 }) => {
+  const textRef = useRef(null);
+  const indexRef = useRef(0);
+
+  useEffect(() => {
+    if (!textRef.current || !items?.length) return;
+
+    const roll = () => {
+      const el = textRef.current;
+      if (!el) return;
+      // Roll current text up and out
+      gsap.to(el, {
+        y: -22,
+        opacity: 0,
+        ease: "power2.in",
+        onComplete: () => {
+          indexRef.current = (indexRef.current + 1) % items.length;
+          el.textContent = items[indexRef.current];
+          // Snap to below, then roll up into place
+          gsap.fromTo(
+            el,
+            { y: 22, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.35, ease: "power2.out" }
+          );
+        },
+      });
+    };
+
+    const timer = setInterval(roll, interval);
+    return () => clearInterval(timer);
+  }, [items, interval]);
+
+  return (
+    <span className="inline-block overflow-hidden align-bottom">
+      <span ref={textRef} className="inline-block">
+        {items?.[0] ?? ""}
+      </span>
+    </span>
+  );
+};
+
 export default function Home() {
   const popularSwiperRef = useRef(null);
   const heroSvcSwiperRef = useRef(null);
@@ -46,6 +204,86 @@ export default function Home() {
 
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [activeGrowthPanel, setActiveGrowthPanel] = useState("mission");
+
+  const heroTextContainerRef = useRef(null);
+  const contactFormRef = useRef(null);
+
+  useEffect(() => {
+    if (!contactFormRef.current) return;
+    gsap.fromTo(
+      contactFormRef.current,
+      { opacity: 0, x: 40 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1.1,
+        delay: 0.6,
+        ease: "power3.out",
+      }
+    );
+  }, []);
+
+  const partnersRef = useRef(null);
+  const borderLineRef = useRef(null);
+  const partnersBorderRef = useRef(null);
+
+  useEffect(() => {
+    if (!partnersRef.current) return;
+    const logos = partnersRef.current.querySelectorAll(".partner-logo");
+    gsap.set(logos, { opacity: 0, y: 24 });
+    gsap.to(logos, {
+      opacity: 1,
+      y: 0,
+      duration: 0.55,
+      stagger: 0.18,
+      delay: 1.8,
+      ease: "power3.out",
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!partnersBorderRef.current) return;
+    gsap.fromTo(
+      partnersBorderRef.current,
+      { scaleX: 0, transformOrigin: "left center" },
+      {
+        scaleX: 1,
+        duration: 1.0,
+        delay: 1.55,
+        ease: "power3.out",
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    if (!borderLineRef.current) return;
+    gsap.fromTo(
+      borderLineRef.current,
+      { scaleY: 0, transformOrigin: "top center" },
+      {
+        scaleY: 1,
+        duration: 0.9,
+        delay: 1.5,
+        ease: "power3.out",
+      }
+    );
+  }, []);
+
+  const headingGroupRef = useRef(null);
+
+  useEffect(() => {
+    if (!headingGroupRef.current) return;
+    const items = headingGroupRef.current.children;
+    gsap.set(items, { opacity: 0, y: 28 });
+    gsap.to(items, {
+      opacity: 1,
+      y: 0,
+      duration: 0.55,
+      stagger: 0.2,
+      delay: 0,
+      ease: "power3.out",
+    });
+  }, []);
 
   /* ── DATA ── */
   const growthPanels = [
@@ -342,48 +580,95 @@ export default function Home() {
     },
   ];
 
+  const googlepartner = {
+    image1: "/home/google.png",
+    image2: "/home/facebook.png",
+    image3: "/home/clutch.png",
+    image4: "/home/goodfirms.png",
+  }
+
+  const titleHero = {
+    line1: "Web Development",
+    line2: "Digital Marketing",
+    line3: "AI Solutions",
+    line4: "Graphic Designing",
+  }
+
   return (
     <div className="font-family relative min-h-screen overflow-hidden bg-white">
 
       {/* ══════════════════════════════════════
           HERO
       ══════════════════════════════════════ */}
-      <section className="relative z-10 pt-32 pb-20 px-6 overflow-hidden min-h-[85vh] flex items-center bg-[#f5f5f5]/55">
-        <BackgroundCircle position={{ top: "55%", left: "50%", translateY: "-50%" }}
-          size={{ outer: "600px", inner: "400px" }}/>
-        <BackgroundCircle
-          position={{ top: "80%", left: "-200px", translateY: "-50%" }}
-          size={{ outer: "600px", inner: "400px" }}
-        />
+      <section className="relative z-10 pt-10 pb-20 px-6 overflow-hidden min-h-[85vh] flex items-center bg-[#f5f5f5]/55">
+        <BackgroundCircle position={{ top: "45%", left: "20%", translateY: "-50%" }}
+          size={2.5} />
+
         <div className="z-10 mx-auto w-full max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative">
-            <div className="lg:col-span-7 flex flex-col justify-center">
-              <p className="mb-4 text-base font-bold text-[#FC6600] sm:text-lg">
-                Welcome to A2V Groups Web Development Studio
+          <div className="grid grid-cols-1 lg:grid-cols-13 gap-16 items-start relative">
+            <div className="lg:col-span-9 flex flex-col justify-center">
+              {/* Heading Group – staggered block animation */}
+              <div ref={headingGroupRef}>
+
+                {/* Small Top Intro Line */}
+                <p className="mb-4 text-base font-bold text-white px-1 w-fit sm:text-lg bg-[#F56302]" style={{ opacity: 0 }}>
+                  Welcome to A2V Groups&nbsp;
+                  <RollingText items={Object.values(titleHero)} interval={2500} />
+                  &nbsp;
+                  IT Company
+                </p>
+
+                {/* Main Heading */}
+                <h1 className="text-4xl font-semibold leading-tight text-black sm:text-6xl xl:text-[68px]" style={{ opacity: 0 }}>
+                  <SlideRightText text="NextGen AI Web Solutions" delay={0.3} />
+                </h1>
+
+                {/* Sub-heading with Highlighting */}
+                <h2 className="mt-3 text-2xl font-medium leading-tight text-black sm:text-5xl xl:text-5xl flex flex-wrap items-center gap-x-3" style={{ opacity: 0 }}>
+                  <SlideRightText text="and" delay={0.6} />{" "}
+                  <span className="inline-block bg-[#FC6600] px-3 px-1 text-white">
+                    <SlideRightText text="CUSTOM WEB" delay={0.7} />
+                  </span>{" "}
+                  <SlideRightText text="Platforms" delay={1.0} />
+                </h2>
+
+              </div>
+
+              {/* Description Block */}
+              <p className="mt-6 pl-4 text-base leading-relaxed text-gray-600 md:text-md max-w-2xl relative">
+                <span
+                  ref={borderLineRef}
+                  className="absolute left-0 top-0 h-full w-1 bg-[#FC6600]"
+                  style={{ transform: "scaleY(0)", transformOrigin: "top center" }}
+                />
+                <FadeWordsText
+                  text="Transforming ideas into high-performance digital reality. We design and develop custom Next.js solutions and AI-driven web applications built to scale."
+                  delay={1.3}
+                />
               </p>
-              <h1 className="text-4xl font-semibold leading-tight text-black sm:text-6xl xl:text-6xl">
-                NextGen AI-Powered Web Solutions
-              </h1>
-              <h2 className="mt-3 text-2xl font-medium leading-tight text-black sm:text-5xl xl:text-5xl">
-                and{" "}
-                <span className="inline-block bg-[#FC6600] px-3 py-1 text-white">CUSTOM WEB</span>{" "}
-                Platforms
-              </h2>
-              <p className="mt-6 border-l-4 border-[#FC6600] pl-4 text-base leading-relaxed text-gray-600 md:text-lg max-w-xl">
-                We specialize in building high-performance, custom web applications, e-commerce storefronts, and blazing-fast Next.js solutions tailored for business growth, perfected with AI technology.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-8 border-t border-gray-300 pt-8 max-w-xl">
-                <div>
-                  <h3 className="text-3xl font-semibold text-gray-600 md:text-5xl">5k+</h3>
-                  <p className="mt-1 text-sm text-gray-500">Happy Clients</p>
+
+              {/* Partner Logos */}
+              <div ref={partnersRef} className="mt-6 max-w-3xl">
+                {/* Animated border line */}
+                <div className="relative h-px mb-6 bg-transparent overflow-hidden">
+                  <span
+                    ref={partnersBorderRef}
+                    className="absolute inset-0 bg-gray-300"
+                    style={{ transform: "scaleX(0)", transformOrigin: "left center" }}
+                  />
                 </div>
-                <div>
-                  <h3 className="text-3xl font-semibold text-gray-600 md:text-5xl">9+</h3>
-                  <p className="mt-1 text-sm text-gray-500">Years Experience</p>
+                <div className="flex flex-wrap gap-8">
+                  {
+                    Object.keys(googlepartner).map((key) => (
+                      <div key={key} className="partner-logo flex items-center gap-3" style={{ opacity: 0 }}>
+                        <Image width={1200} height={1200} src={googlepartner[key]} alt={key} className="w-40 h-14 object-contain" />
+                      </div>
+                    ))
+                  }
                 </div>
               </div>
             </div>
-            <div className="lg:col-span-5 relative w-full max-w-2xl mx-auto lg:mx-0">
+            <div ref={contactFormRef} className=" lg:col-span-4 relative w-full max-w-[320px] mx-auto lg:mx-0 lg:justify-self-end" style={{ opacity: 0 }}>
               <ContactForm source="hero_section_v2" />
             </div>
           </div>

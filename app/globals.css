@@ -2,6 +2,14 @@
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
+@font-face {
+  font-family: 'Ethnocentric';
+  src: url('/fonts/ethnocentric.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -21,7 +29,27 @@ textarea {
 }
 
 @theme inline {
+  --font-ethnocentric: 'Ethnocentric', sans-serif;
   --animate-marquee: marquee 75s linear infinite;
+  --animate-shine-diagonal: shine-diagonal 3s infinite linear;
+}
+
+@keyframes shine-diagonal {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+@keyframes cube-roll-right {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
 }
 
 @keyframes marquee {

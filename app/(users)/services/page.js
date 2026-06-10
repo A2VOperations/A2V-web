@@ -356,7 +356,7 @@ function WorkingProcess() {
       {/* Background radial gradient */}
       <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-orange-200/40 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-[120px] pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-24">
           <span className="text-[#FC6600] font-black uppercase tracking-[0.2em] text-sm mb-4 inline-block">Work Process</span>
@@ -367,12 +367,12 @@ function WorkingProcess() {
           {/* Dotted connecting line */}
           <div className="absolute top-[48px] left-0 w-full h-[160px] hidden lg:block z-0">
             <svg className="w-full h-full" preserveAspectRatio="none">
-              <path 
-                d="M 12.5% 0 L 37.5% 100 L 62.5% 0 L 87.5% 100" 
-                fill="none" 
-                stroke="#FC6600" 
-                strokeWidth="2" 
-                strokeDasharray="6 6" 
+              <path
+                d="M 12.5% 0 L 37.5% 100 L 62.5% 0 L 87.5% 100"
+                fill="none"
+                stroke="#FC6600"
+                strokeWidth="2"
+                strokeDasharray="6 6"
                 className="opacity-40"
               />
             </svg>
@@ -528,7 +528,7 @@ export default function ServicesPage() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     unoptimized
                   />
-                  <div 
+                  <div
                     className="absolute top-4 left-4 p-3 bg-white rounded-xl shadow-md border border-slate-100/50"
                     style={{ color: accentColorMap[service.accent] || "#FC6600" }}
                   >
@@ -893,5 +893,6 @@ export default function ServicesPage() {
     </main>
   );
 }
-
+
+
 

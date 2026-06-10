@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Topbar from "./topBar";
 import Image from "next/image";
 import { siteConfig } from "./config";
+import gsap from "gsap";
 
 // ── Menu Data ──────────────────────────────────────────────────────────────
 
@@ -43,6 +44,23 @@ export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const cubeRef = useRef(null);
+
+  useEffect(() => {
+    if (!cubeRef.current) return;
+    
+    let currentAngle = 0;
+    const interval = setInterval(() => {
+      currentAngle += 90; // Rotate to next face
+      gsap.to(cubeRef.current, {
+        rotateY: currentAngle,
+        duration: 1, // 1 second roll
+        ease: "power2.inOut",
+      });
+    }, 3000); // Waits 2s, then 1s animation = 3s total loop
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -57,6 +75,12 @@ export default function Navbar() {
 
   if (pathname.startsWith("/admin")) return null;
 
+  const logo = {
+    Image1: "/images/A2V  Groups Logo.png",
+    Image2: "/images/A2V  Groups Logo1.png",
+    Image3: "/images/A2V  Groups Logo2.png",
+  }
+
   return (
     <>
       <div className={`fixed top-0 left-0 w-full z-[100] bg-white transition-all duration-300 ${scrolled ? "-translate-y-[40px]" : "translate-y-0"}`}>
@@ -67,8 +91,25 @@ export default function Navbar() {
           <nav className="flex items-center h-[72px] lg:h-[90px] px-4 sm:px-6 lg:px-0">
 
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 shrink-0 no-underline group lg:pl-14 lg:pr-14 lg:border-r-2 lg:border-black/20 lg:h-full">
-              <Image src="/images/A2V Group.png" alt="Logo" width={130} height={150} priority />
+            <Link href="/" className="flex flex-col justify-center items-center lg:pl-14 lg:pr-14 lg:border-r-2 lg:border-black/20 lg:h-full [perspective:1000px]">
+              <div ref={cubeRef} className="relative w-[130px] h-[130px] [transform-style:preserve-3d]">
+                {/* Front */}
+                <div className="absolute inset-0 bg-white [backface-visibility:hidden]" style={{ transform: 'rotateY(0deg) translateZ(65px)' }}>
+                  <Image src={logo.Image1} alt="Logo" fill className="object-contain" priority />
+                </div>
+                {/* Right */}
+                <div className="absolute inset-0 bg-white [backface-visibility:hidden]" style={{ transform: 'rotateY(90deg) translateZ(65px)' }}>
+                  <Image src={logo.Image2} alt="Logo" fill className="object-contain" priority />
+                </div>
+                {/* Back */}
+                <div className="absolute inset-0 bg-white [backface-visibility:hidden]" style={{ transform: 'rotateY(180deg) translateZ(65px)' }}>
+                  <Image src={logo.Image3} alt="Logo" fill className="object-contain" priority />
+                </div>
+                {/* Left */}
+                <div className="absolute inset-0 bg-white [backface-visibility:hidden]" style={{ transform: 'rotateY(-90deg) translateZ(65px)' }}>
+                  <Image src={logo.Image2} alt="Logo" fill className="object-contain" priority />
+                </div>
+              </div>
             </Link>
 
             {/* Desktop Nav Links */}

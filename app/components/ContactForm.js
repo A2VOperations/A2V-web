@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
 import ContactSuccessPopup from "./ContactSuccessPopup";
 import { siteConfig } from "../config";
 import { useValidation } from "../context/ValidationContext";
@@ -18,6 +19,23 @@ export default function ContactForm({ source = "homepage" }) {
   const [showPopup, setShowPopup] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
+  const freeRef = useRef(null);
+
+  // Looping pop animation on the FREE badge
+  useEffect(() => {
+    if (!freeRef.current) return;
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 1.2 });
+    tl.to(freeRef.current, {
+      scale: 1.2,
+      duration: 0.22,
+      ease: "back.out(2)",
+    }).to(freeRef.current, {
+      scale: 1,
+      duration: 0.18,
+      ease: "power2.inOut",
+    });
+    return () => tl.kill();
+  }, []);
 
   useEffect(() => {
     const sourceToSubject = {
@@ -105,23 +123,23 @@ export default function ContactForm({ source = "homepage" }) {
         isOpen={showPopup}
         onClose={() => setShowPopup(false)}
       />
-      <div className="flex flex-wrap gap-5 items-center w-full max-md:max-w-full mb-10">
+      <div className="flex flex-wrap gap-5 items-center w-full max-md:max-w-full mb-5">
         <div className="flex flex-col justify-center  items-center text-center self-stretch my-auto min-w-[240px]">
-          <div className="text-[24px] text-gray-800 font-semibold text-center">
-            Let’s Create Something Extra-ordinary together
+          <div className="text-[22px] text-gray-800 font-semibold text-center">
+            Start With a <span ref={freeRef} className="inline-block bg-orange-500 text-white px-1">FREE</span>  Website Demo
           </div>
         </div>
 
       </div>
 
-      <div className="grid grid-cols-2 gap-6 mb-10">
+      <div className="grid grid-cols-2 gap-3 mb-5">
         <div className="relative col-span-2 sm:col-span-1">
           <input
             type="text"
             id="floating_outlined_name"
             value={form.name}
             onChange={set("name")}
-            className={`block w-full text-sm h-[50px] px-4 text-slate-900 bg-white rounded-[8px] border ${errors.name ? "border-red-500" : "border-violet-200"} appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px]`}
+            className={`block w-full text-sm h-[40px] px-4 text-slate-900 bg-white rounded-[8px] border ${errors.name ? "border-red-500" : "border-violet-200"} appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px]`}
             placeholder="Full Name"
           />
           <label
@@ -138,7 +156,7 @@ export default function ContactForm({ source = "homepage" }) {
             id="floating_outlined_email"
             value={form.email}
             onChange={set("email")}
-            className={`block w-full text-sm h-[50px] px-4 text-slate-900 bg-white rounded-[8px] border ${errors.email ? "border-red-500" : "border-violet-200"} appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px]`}
+            className={`block w-full text-sm h-[40px] px-4 text-slate-900 bg-white rounded-[8px] border ${errors.email ? "border-red-500" : "border-violet-200"} appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px]`}
             placeholder="Email Address "
           />
           <label
@@ -155,7 +173,7 @@ export default function ContactForm({ source = "homepage" }) {
             id="floating_outlined_phone"
             value={form.phone}
             onChange={set("phone")}
-            className={`block w-full text-sm h-[50px] px-4 text-slate-900 bg-white rounded-[8px] border ${errors.phone ? "border-red-500" : "border-violet-200"} appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px]`}
+            className={`block w-full text-sm h-[40px] px-4 text-slate-900 bg-white rounded-[8px] border ${errors.phone ? "border-red-500" : "border-violet-200"} appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px]`}
             placeholder="Phone Number"
           />
           <label
@@ -171,7 +189,7 @@ export default function ContactForm({ source = "homepage" }) {
             id="floating_outlined_subject"
             value={form.subject}
             onChange={set("subject")}
-            className={`block w-full text-sm h-[50px] px-4 text-slate-900 bg-white rounded-[8px] border ${errors.subject ? "border-red-500" : "border-violet-200"} appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px] bg-none`}
+            className={`block w-full text-sm h-[40px] px-4 text-slate-900 bg-white rounded-[8px] border ${errors.subject ? "border-red-500" : "border-violet-200"} appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 overflow-ellipsis overflow-hidden text-nowrap pr-[48px] bg-none`}
           >
             <option value="" disabled hidden></option>
             {siteConfig.formServices.map((cat) => (
@@ -197,8 +215,8 @@ export default function ContactForm({ source = "homepage" }) {
             id="floating_outlined_message"
             value={form.message}
             onChange={set("message")}
-            rows={4}
-            className={`block w-full text-sm py-4 px-4 text-slate-900 bg-white rounded-[8px] border ${errors.message ? "border-red-500" : "border-violet-200"} appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 pr-[48px] resize-none`}
+            rows={1}
+            className={`block w-full text-40 py-4 px-4 text-slate-900 bg-white rounded-[8px] border ${errors.message ? "border-red-500" : "border-violet-200"} appearance-none focus:border-transparent focus:outline focus:outline-2 focus:outline-primary focus:ring-0 hover:border-brand-500-secondary- peer invalid:border-error-500 invalid:focus:border-error-500 pr-[48px] resize-none`}
             placeholder="Message"
           />
           <label

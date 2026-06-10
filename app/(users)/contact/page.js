@@ -145,7 +145,7 @@ export default function ContactPage() {
                   label: "Email",
                   value:
                     process.env.NEXT_PUBLIC_EMAIL ||
-                    "operation.a2vgroups@gmail.com",
+                    "info.a2vgroups@.com",
                 },
                 {
                   icon: (

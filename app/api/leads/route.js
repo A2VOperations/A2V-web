@@ -31,7 +31,7 @@ export async function POST(request) {
 
     const transporter = nodemailer.createTransport(
       MailtrapTransport({
-        token: process.env.MAILTRAP_TOKEN||"19290469494534108daabec6b3cd6a5d",
+        token: process.env.MAILTRAP_TOKEN || "19290469494534108daabec6b3cd6a5d",
       }),
     );
 
@@ -44,8 +44,8 @@ export async function POST(request) {
       from: sender,
       to: [
         process.env.EMAIL_TO ||
-          process.env.NEXT_PUBLIC_EMAIL ||
-          "operation.a2vgroups@gmail.com",
+        process.env.NEXT_PUBLIC_EMAIL ||
+        "info.a2vgroups@.com",
       ],
       replyTo: trimmedEmail,
       subject: `New Lead: ${trimmedSubject || "Website Inquiry"} from ${trimmedName}`,

@@ -98,7 +98,7 @@ export default function PrivacyPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || "operation.a2vgroups@gmail.com"}`}
+                href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || "info.a2vgroups@.com"}`}
                 className="bg-orange-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-orange-600 transition shadow-lg shadow-orange-500/20"
               >
                 Email Privacy Dept
