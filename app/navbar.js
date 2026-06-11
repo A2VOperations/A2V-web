@@ -77,15 +77,15 @@ export default function Navbar() {
 
   const logo = {
     Image1: "/images/A2V  Groups Logo.png",
-    Image2: "/images/A2V  Groups Logo1.png",
+    // Image2: "/images/A2V  Groups Logo1.png",
     Image3: "/images/A2V  Groups Logo2.png",
   }
 
   const cubeFaces = [
     { src: logo.Image1, rotateY: 0 },
-    { src: logo.Image2, rotateY: 90 },
-    { src: logo.Image3, rotateY: 180 },
-    { src: logo.Image2, rotateY: -90 },
+    { src: logo.Image3, rotateY: 90 },
+    { src: logo.Image1, rotateY: 180 },
+    { src: logo.Image3, rotateY: -90 },
   ];
 
   return (

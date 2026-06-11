@@ -7,6 +7,7 @@ import Footer from "./footer";
 
 import ScrollToTop from "./scroller";
 import Popup from "./components/popup";
+import WhatsAppButton from "./components/whatsapp";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
           <ValidationProvider>
             <Navbar />
             {/* <Popup /> */}
+            <WhatsAppButton />
             {children}
             <Footer />
             <ScrollToTop />

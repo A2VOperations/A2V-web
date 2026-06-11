@@ -52,53 +52,54 @@ export default function ProblemSolutionPage() {
   };
 
   return (
-    <div className="font-sans mx-auto max-w-7xl">
-      <h2 className="sr-only">Problem and solution section for information websites, portfolio websites, and e-commerce stores</h2>
-      
+    <div className="mx-auto max-w-7xl relative isolate">
+
+      <div className="absolute -left-32 bottom-0 w-96 h-96 rounded-full bg-orange-50 opacity-80"></div>
+
       <div className="text-center mb-12 flex flex-col items-center">
         <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Sound Familiar?</span>
         <h2 className="text-4xl md:text-5xl font-black text-slate-900 max-w-2xl">
-          Pick your struggle — <span className="text-orange-500 italic">we\&apos;ve got the fix.</span>
+          Pick your struggle — <span className="text-orange-500 italic">we&apos;ve got the fix</span>
         </h2>
       </div>
 
       <div className="flex gap-3 justify-center mb-12 flex-wrap">
-        <button 
+        <button
           className={`px-6 py-3 rounded-full border text-sm cursor-pointer flex items-center gap-2 transition-all duration-300 shadow-sm
-            ${activeTab === 'info' 
-              ? 'bg-orange-500 text-white border-orange-500 font-bold shadow-md shadow-orange-500/20' 
+            ${activeTab === 'info'
+              ? 'bg-orange-500 text-white border-orange-500 font-bold shadow-md shadow-orange-500/20'
               : 'bg-white border-slate-200 text-slate-600 hover:border-orange-500 hover:text-orange-500'
-            }`} 
+            }`}
           onClick={() => setActiveTab('info')}
         >
           <i className="ti ti-info-circle text-lg" aria-hidden="true"></i> Information Website
         </button>
-        <button 
+        <button
           className={`px-6 py-3 rounded-full border text-sm cursor-pointer flex items-center gap-2 transition-all duration-300 shadow-sm
-            ${activeTab === 'portfolio' 
-              ? 'bg-orange-500 text-white border-orange-500 font-bold shadow-md shadow-orange-500/20' 
+            ${activeTab === 'portfolio'
+              ? 'bg-orange-500 text-white border-orange-500 font-bold shadow-md shadow-orange-500/20'
               : 'bg-white border-slate-200 text-slate-600 hover:border-orange-500 hover:text-orange-500'
-            }`} 
+            }`}
           onClick={() => setActiveTab('portfolio')}
         >
           <i className="ti ti-briefcase text-lg" aria-hidden="true"></i> Portfolio Website
         </button>
-        <button 
+        <button
           className={`px-6 py-3 rounded-full border text-sm cursor-pointer flex items-center gap-2 transition-all duration-300 shadow-sm
-            ${activeTab === 'ecom' 
-              ? 'bg-orange-500 text-white border-orange-500 font-bold shadow-md shadow-orange-500/20' 
+            ${activeTab === 'ecom'
+              ? 'bg-orange-500 text-white border-orange-500 font-bold shadow-md shadow-orange-500/20'
               : 'bg-white border-slate-200 text-slate-600 hover:border-orange-500 hover:text-orange-500'
-            }`} 
+            }`}
           onClick={() => setActiveTab('ecom')}
         >
           <i className="ti ti-shopping-cart text-lg" aria-hidden="true"></i> E-Commerce Website
         </button>
-        <button 
+        <button
           className={`px-6 py-3 rounded-full border text-sm cursor-pointer flex items-center gap-2 transition-all duration-300 shadow-sm
-            ${activeTab === 'marketing' 
-              ? 'bg-orange-500 text-white border-orange-500 font-bold shadow-md shadow-orange-500/20' 
+            ${activeTab === 'marketing'
+              ? 'bg-orange-500 text-white border-orange-500 font-bold shadow-md shadow-orange-500/20'
               : 'bg-white border-slate-200 text-slate-600 hover:border-orange-500 hover:text-orange-500'
-            }`} 
+            }`}
           onClick={() => setActiveTab('marketing')}
         >
           <i className="ti ti-announcement text-lg" aria-hidden="true"></i> Digital Marketing
@@ -111,15 +112,15 @@ export default function ProblemSolutionPage() {
             <div className="inline-block text-[10px] font-black uppercase tracking-[0.25em] text-orange-500 mb-6 bg-orange-50 px-3 py-1.5 rounded-full self-start">
               {badge}
             </div>
-            
+
             <div className="text-3xl mb-6 text-orange-500 group-hover:scale-110 transition-transform duration-300 origin-left">
               <i className={`ti ${c.icon}`} aria-hidden="true"></i>
             </div>
-            
+
             <div className="text-slate-900 font-medium text-lg mb-6 leading-relaxed italic border-l-4 border-orange-500 pl-4">
               {c.problem}
             </div>
-            
+
             <div className="mt-auto pt-4 border-t border-slate-50">
               <span className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-400 mb-2 block">
                 Our Solution
@@ -136,8 +137,8 @@ export default function ProblemSolutionPage() {
         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-orange-400 to-orange-600"></div>
         <h3 className="text-2xl font-bold text-slate-900 mb-3">Not sure which service you need?</h3>
         <p className="text-base text-slate-500 mb-8">Let&apos;s talk about your business goals and find the perfect fit.</p>
-        <button 
-          className="inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase hover:bg-orange-500 transition-colors shadow-lg shadow-slate-900/20 hover:shadow-orange-500/30" 
+        <button
+          className="inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase hover:bg-orange-500 transition-colors shadow-lg shadow-slate-900/20 hover:shadow-orange-500/30"
           onClick={handleConsultation}
         >
           Get a free consultation <span className="text-lg leading-none">↗</span>

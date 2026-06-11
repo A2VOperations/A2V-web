@@ -20,6 +20,9 @@ import { siteConfig } from "../config";
 import ClientLogos from "../components/ClientLogos";
 import ProblemSolutionSection from './home/problemSolution/page';
 import { Code, Layout, Search, Megaphone, TrendingUp, Presentation, ShieldCheck, Rocket, Zap, Brain } from "lucide-react";
+import HomeAbout from "./home/homeAbout/page";
+import HeroCarousel from "./home/heroCarousel/page";
+import Banner from "./home/banner/page"
 
 /* ── Reusable outlined-circle nav button pair ── */
 const NavButtons = ({ onPrev, onNext, dark = false }) => {
@@ -673,6 +676,15 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      <HeroCarousel />
+
+      <Banner />
+      {/* about home */}
+
+      <section >
+        <HomeAbout />
       </section>
 
       {/* ══════════════════════════════════════
