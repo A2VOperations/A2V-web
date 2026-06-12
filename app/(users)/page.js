@@ -21,8 +21,8 @@ import ClientLogos from "../components/ClientLogos";
 import ProblemSolutionSection from './home/problemSolution/page';
 import { Code, Layout, Search, Megaphone, TrendingUp, Presentation, ShieldCheck, Rocket, Zap, Brain } from "lucide-react";
 import HomeAbout from "./home/homeAbout/page";
-import HeroCarousel from "../components/marquee";
-import HeroCarousel2 from "./home/heroCarousel/page2";
+import HeroCarousel from "./home/heroCarousel/marquee1";
+import HeroCarousel2 from "./home/heroCarousel/marquee2";
 import Banner from "./home/banner/page1"
 
 /* ── Reusable outlined-circle nav button pair ── */
@@ -630,7 +630,7 @@ export default function Home() {
                 {/* Sub-heading with Highlighting */}
                 <h2 className="mt-3 text-2xl font-medium leading-tight text-black sm:text-5xl xl:text-5xl flex flex-wrap items-center gap-x-3" style={{ opacity: 0 }}>
                   <SlideRightText text="and" delay={0.6} />{" "}
-                  <span className="inline-block bg-[#F68C34] px-3 px-1 text-white">
+                  <span className="inline-block bg-[#F68C34] px-1 text-white">
                     <SlideRightText text="CUSTOM WEB" delay={0.7} />
                   </span>{" "}
                   <SlideRightText text="Platforms" delay={1.0} />

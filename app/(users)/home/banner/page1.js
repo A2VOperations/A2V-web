@@ -4,11 +4,11 @@ import React from 'react'
 
 const Banner = () => {
     return (
-        <section className='relative w-full overflow-hidden py-32 mt-1'>
+        <section className='relative w-full overflow-hidden py-32 mt-5'>
             {/* Grid Background */}
-            <div className='absolute inset-0 z-190'>
-                <div className='w-full h-10 bg-white absolute top-0 left-0 opacity-100'></div>
-            </div>
+            {/* <div className='absolute inset-0 z-190'>
+                <div className='w-full h-4 bg-white absolute top-0 left-0 opacity-100'></div>
+            </div> */}
             <div className='absolute inset-0 z-0' style={{
                 backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.09) 1px, transparent 1px)',
                 backgroundSize: '40px 40px'
@@ -31,7 +31,7 @@ const Banner = () => {
 
                     {/* Main Heading */}
                     <h1 className='text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-black tracking-tight leading-[1.1] mb-8'>
-                        We Build <span className='text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600'>Digital Products</span><br />
+                        We Build <span className='text-transparent bg-clip-text bg-linear-to-r from-orange-400 to-orange-600'>Digital Products</span><br />
                         That Grow Business
                     </h1>
 
