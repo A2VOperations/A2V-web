@@ -25,7 +25,7 @@ const Banner = () => {
                     <div className='flex items-center gap-2 rounded-full border border-white/10 bg-[#1C2030]/50 px-4 py-2 mb-10'>
                         <span className='h-2 w-2 rounded-full bg-[#10B981]'></span>
                         <p className='text-sm font-medium text-white/60 tracking-wide'>
-                            IN <span className='text-white font-semibold'>India&apos;s #1</span> IT Solution Company Since 2011
+                            In <span className='text-white font-semibold'>India&apos;s #1</span> IT Solution Company Since 2011
                         </p>
                     </div>
 
