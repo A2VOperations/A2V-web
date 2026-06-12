@@ -13,7 +13,7 @@ const stats = [
 
 // Repeat enough times so the seam never shows
 const repeated = [...stats, ...stats, ...stats, ...stats]
-
+  
 export default function HeroTicker() {
   const trackRef = useRef(null)
 
