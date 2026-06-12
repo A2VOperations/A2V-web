@@ -2,14 +2,14 @@
 import React, { useRef } from 'react'
 
 const stats = [
-  { value: '7,000+', label: 'Projects' },
-  { value: '5,000+', label: 'Clients' },
-  { value: '50+', label: 'Locations' },
-  { value: '500', label: 'Developers' },
-  { value: '10', label: 'Industries' },
-  { value: '5', label: 'Years' },
-  { value: '100%', label: 'Satisfaction' },
-]
+  { value: '12K+', label: 'Success Stories' },
+  { value: '8K+', label: 'Trusted Clients' },
+  { value: '80+', label: 'Global Presence' },
+  { value: '500+', label: 'Industry Experts' },
+  { value: '30+', label: 'Solutions Delivered' },
+  { value: '10+', label: 'Years Strong' },
+  { value: '99%', label: 'Customer Happiness' },
+];
 
 // Repeat enough times so the seam never shows
 const repeated = [...stats, ...stats, ...stats, ...stats]

@@ -25,20 +25,19 @@ const Banner = () => {
                     <div className='flex items-center gap-2 rounded-full border border-white/10 bg-[#1C2030]/50 px-4 py-2 mb-10'>
                         <span className='h-2 w-2 rounded-full bg-[#10B981]'></span>
                         <p className='text-sm font-medium text-white/60 tracking-wide'>
-                            IN <span className='text-white font-semibold'>India&apos;s #1</span> Digital Agency Since 2009
+                            IN <span className='text-white font-semibold'>India&apos;s #1</span> IT Solution Company Since 2011
                         </p>
                     </div>
 
                     {/* Main Heading */}
                     <h1 className='text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-black tracking-tight leading-[1.1] mb-8'>
-                        We Build <span className='text-transparent bg-clip-text bg-linear-to-r from-orange-400 to-orange-600'>Digital Products</span><br />
-                        That Grow Business
+                        We Build <span className='text-transparent bg-clip-text bg-linear-to-r from-orange-400 to-orange-600'>AI-Powered</span><br />
+                        Digital Growth Solutions
                     </h1>
 
                     {/* Subheading */}
-                    <p className='text-lg md:text-xl lg:text-[1.35rem] text-black/60 max-w-3xl font-light leading-relaxed mb-12'>
-                        <span className='font-semibold text-black'>15+ years</span> of transforming ideas into powerful digital products. From <br className='hidden md:block' />
-                        websites to apps — <span className='font-semibold text-black'>7000+ projects</span> delivered with <span className='font-semibold text-black'>1.2s load speeds</span>.
+                    <p className='text-lg md:text-xl lg:text-lg text-black/60 max-w-3xl font-medium  italic mb-12'>&quot;
+                        <span className='font-semibold text-black'>15+ years</span> of delivering innovative digital solutions. With <span className='font-semibold text-black'>7000+ projects</span> completed, we build high-performance websites and marketing systems engineered for growth, speed, and results — achieving load times as fast as <span className='font-semibold text-black'>1.2s load speeds</span>.&quot;
                     </p>
 
                     {/* Buttons */}
