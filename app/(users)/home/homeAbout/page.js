@@ -1,8 +1,7 @@
 "use client";
 
 import React from 'react';
-import CountUp from 'react-countup';
-import { Code, PenTool, Megaphone, Headphones, Users, Briefcase, Trophy, ShieldCheck } from 'lucide-react';
+import {  ShieldCheck, Play, CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
 
 export default function HomeAbout() {
@@ -10,7 +9,7 @@ export default function HomeAbout() {
 
     <section className="relative isolate overflow-hidden w-full py-20">
       {/* Background Decorative Elements - Preserved from previous iteration */}
-      <div className="absolute top-10 right-10 -z-10 hidden lg:block">
+      {/* <div className="absolute top-10 right-10 -z-10 hidden lg:block">
         <div className="grid grid-cols-6 gap-3">
           {[...Array(36)].map((_, i) => (
             <span
@@ -20,11 +19,11 @@ export default function HomeAbout() {
             />
           ))}
         </div>
-      </div>
+      </div> */}
 
       <div className="absolute top-40 right-40 w-24 h-24 border border-orange-200 rounded-full -z-10 hidden lg:block animate-bounce" style={{ animationDuration: '6s' }}></div>
 
-      <div className="absolute -bottom-20 -right-20 -z-10 opacity-50 animate-pulse" style={{ animationDuration: '5s' }}>
+      {/* <div className="absolute -bottom-20 -right-20 -z-10 opacity-50 animate-pulse" style={{ animationDuration: '5s' }}>
         {[...Array(10)].map((_, i) => (
           <div
             key={i}
@@ -37,13 +36,13 @@ export default function HomeAbout() {
             }}
           />
         ))}
-      </div>
+      </div> */}
 
-      <div className="absolute top-20 left-1/4 text-orange-300 text-4xl font-light -z-10 hidden lg:block animate-spin" style={{ animationDuration: '10s' }}>
+      {/* <div className="absolute top-20 left-1/4 text-orange-300 text-4xl font-light -z-10 hidden lg:block animate-spin" style={{ animationDuration: '10s' }}>
         ×
-      </div>
+      </div> */}
 
-      <svg
+      {/* <svg
         width="30"
         height="30"
         viewBox="0 0 24 24"
@@ -55,9 +54,9 @@ export default function HomeAbout() {
           stroke="#FDBA74"
           strokeWidth="2"
         />
-      </svg>
+      </svg> */}
 
-      <svg
+      {/* <svg
         className="absolute top-0 left-0 bottom-20 -z-10 opacity-50 animate-pulse"
         width="700"
         height="200"
@@ -78,132 +77,112 @@ export default function HomeAbout() {
             strokeWidth="1"
           />
         ))}
-      </svg>
+      </svg> */}
 
-      <div className="absolute -left-22 -bottom-12 w-96 h-96 rounded-full bg-orange-200/50 opacity-80 -z-10 animate-pulse" style={{ animationDuration: '8s' }}></div>
+      {/* <div className="absolute -left-22 -bottom-12 w-96 h-96 rounded-full bg-orange-200/50 opacity-80 -z-10 animate-pulse" style={{ animationDuration: '8s' }}></div> */}
 
       {/* Main Content Container */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 lg:gap-12 items-center">
-          {/* Left Side: Text and Services */}
-          <div className='col-span-3'>
-            <div className="flex items-center gap-4 mb-6">
-              <span className="text-orange-500 font-bold tracking-wider text-sm uppercase">About Us</span>
-              <div className="h-0.5 w-12 bg-orange-500 rounded-full"></div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+          {/* Left Side: Images */}
+          <div className="relative lg:pr-8 ">
+            {/* Dotted pattern */}
+            <div className="absolute -bottom-20 -left-10 w-48 h-48 -z-10 opacity-30 animate-move-lr" style={{
+              backgroundImage: 'radial-gradient(#9ca3af 2px, transparent 2px)',
+              backgroundSize: '16px 16px'
+            }}></div>
+
+              <div className="absolute -bottom-5 -left-50 w-24 h-48 -z-10 opacity-80 rounded-r-full animate-move-lr" style={{
+              backgroundImage: 'radial-gradient(#374151 2px, transparent 2px)',
+              backgroundSize: '16px 16px',
+              backgroundPosition: '0 0'
+            }}></div>
+
+            {/* Orange bar at the top right */}
+            <div className="absolute top-1 right-24 w-6 h-75 bg-orange-500 -z-10 animate-move-ud"></div>
+
+            {/* Main large image */}
+            <div className="w-10/12 rounded-2xl overflow-hidden shadow-lg border-2 border-white">
+              <Image src="/home/homeAbout.png" alt="About" width={300} height={600} className="w-full object-cover h-[350px] lg:h-[450px] " />
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-[2.75rem] font-bold text-gray-900 mb-6 leading-[1.2]">
-              We Build Digital Solutions <br /> That Drive <span className="bg-orange-500 text-white px-2">Real Results</span>
+            {/* Overlapping smaller image */}
+            <div className="absolute -bottom-35 -right-8 w-3/5 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.15)] border-8 border-white bg-white z-10">
+              <Image src="/home/homeAbout.png" alt="Team" width={300} height={300} className="w-full object-cover h-[200px] lg:h-[280px]" />
+
+
+            </div>
+            {/* Play Button Overlay */}
+            <div className="absolute top-100 left-60 z-50 flex items-center justify-center bg-transparent">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl cursor-pointer hover:scale-105 transition-transform">
+                <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.1)]">
+                  <Play className="w-5 h-5 text-[#1A1F2C] ml-1 fill-current" />
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Badge */}
+            <div className="absolute top-10 -right-4 bg-white py-5 px-6 rounded-[2.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.08)] flex items-center gap-4 border-r-4 border-b-4 border-orange-500 z-20 w-max md:flex">
+              <div className="w-12 h-12 rounded-full border-2 border-gray-800 flex items-center justify-center relative">
+                <ShieldCheck className="text-gray-800 w-6 h-6" />
+              </div>
+              <div >
+                <div className="text-2xl font-black text-gray-900 leading-none mb-1">4,356+</div>
+                <div className="text-lg font-bold text-gray-800 uppercase tracking-wider">Satisfied Client</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side: Text */}
+          <div className="mt-24 lg:mt-0 lg:pl-4">
+            <div className="flex items-center gap-4 mb-4">
+              <span className="text-orange-500 font-bold uppercase text-sm tracking-wider">About Company</span>
+              <div className="h-0.5 w-12 bg-orange-500"></div>
+            </div>
+
+            <h2 className="text-4xl lg:text-3xl font-extrabold text-[#1A1F2C] mb-3 leading-tight uppercase">
+              Driving Business Growth <br /> Through Digital Excellence
             </h2>
 
-            <p className="text-gray-600 mb-10 text-md max-w-xl leading-relaxed">
-              At A2V Groups, we help businesses grow online with powerful websites,
-              creative designs, and result-driven digital marketing strategies.
-              Our team combines technology, creativity, and data to build solutions
-              that not only look great — but perform even better.
+            <p className="text-orange-500 text-lg italic font-medium mb-3">
+              &quot;We Create Digital Experiences That Matter — Together With You&quot;.
             </p>
 
-            {/* Services Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-4 gap-y-10 gap-x-6">
-              <div className="flex flex-col gap-1">
-                <div className="text-orange-500 mb-1">
-                  <Code size={36} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-bold text-gray-900 text-md">Web Development</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">Fast, secure & scalable web solutions</p>
-              </div>
-              <div className="flex flex-col gap-1">
-                <div className="text-orange-500 mb-1">
-                  <PenTool size={36} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-bold text-gray-900 text-md">Graphic Designing</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">Creative designs that captivate your brand</p>
-              </div>
-              <div className="flex flex-col gap-1">
-                <div className="text-orange-500 mb-1">
-                  <Megaphone size={36} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-bold text-gray-900 text-md">Digital Marketing</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">Smart strategies that grow your business</p>
-              </div>
-              <div className="flex flex-col gap-1">
-                <div className="text-orange-500 mb-1">
-                  <Headphones size={36} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-bold text-gray-900 text-md">Dedicated Support</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">We&apos;re here to support you, always</p>
-              </div>
-            </div>
-          </div>
+            <p className="text-gray-600 mb-5 leading-relaxed">
+              We help businesses stand out in a competitive digital landscape through
+              modern design, strong branding, and performance-driven digital strategies.
+            </p>
 
-          {/* Right Side: Image */}
-          <div className="col-span-2 relative mt-12 lg:mt-0">
-            {/* Orange rounded background shape (acting as solid shadow) */}
-            <div className="absolute inset-0 bg-orange-500 rounded-4xl rounded-tr-[4rem] -z-10 translate-x-6 -translate-y-6"></div>
-
-            {/* Main Image */}
-            <div className="relative rounded-4xl overflow-hidden shadow-2xl aspect-4/3 bg-gray-100">
-              <Image src="/home/homeAbout.png" alt="Team Collaboration" width={500} height={500} className="w-full h-full object-cover" />
+            <div className="flex flex-wrap gap-3 mb-5">
+              <button className="px-6 py-3 rounded-lg font-bold text-sm bg-white text-gray-900 shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-md transition-all">OUR MISSION</button>
+              <button className="px-6 py-3 rounded-lg font-bold text-sm bg-white text-gray-900 shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-md transition-all">OUR VISION</button>
+              <button className="px-6 py-3 rounded-lg font-bold text-sm bg-orange-500 text-white shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]">OUR COMMITMENT</button>
             </div>
 
-            {/* Experience Badge */}
-            <div className="absolute top-[10%] -left-8 bg-white rounded-2xl shadow-xl flex flex-col items-center justify-center w-32 h-32 border border-gray-50 z-10">
-              <span className="text-4xl font-bold text-orange-500 mb-2">10+</span>
-              <span className="text-gray-600 text-xs uppercase tracking-wider text-center font-semibold">Years of<br />Experience</span>
-            </div>
-          </div>
-        </div>
+            <p className="text-gray-600 mb-5 leading-relaxed">
+              We are a full-service digital agency focused on creating innovative digital
+              solutions that help businesses grow and succeed online.
+            </p>
 
-        {/* Stats Banner */}
-        <div className="mt-10 bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] p-8 lg:p-8 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 divide-y-0 lg:divide-x divide-gray-300">
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-5 lg:justify-center">
-              <div className="text-orange-500">
-                <Users size={40} strokeWidth={1.5} />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[2rem] font-bold text-orange-500 flex items-center leading-none mb-1">
-                  <CountUp end={150} duration={2.5} enableScrollSpy scrollSpyOnce />+
-                </span>
-                <span className="text-gray-600 text-sm font-medium">Happy Clients</span>
-              </div>
-            </div>
+            <ul className="flex flex-col gap-3 mb-6">
+              {[
+                "Deliver innovative and reliable digital solutions tailored to business needs.",
+                "Empower brands with modern technology, strategy, and creative expertise.",
+                "Drive sustainable growth, performance, and long-term digital success.",
+                "Build trust through quality work, transparency, and client satisfaction."
+              ].map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <div className="mt-1 min-w-[24px] h-[24px] bg-orange-500 rounded-full flex items-center justify-center text-white">
+                    <CheckCircle2 size={16} strokeWidth={3} />
+                  </div>
+                  <span className="text-gray-700">{item}</span>
+                </li>
+              ))}
+            </ul>
 
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-5 lg:justify-center">
-              <div className="text-orange-500">
-                <Briefcase size={40} strokeWidth={1.5} />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[2rem] font-bold text-orange-500 flex items-center leading-none mb-1">
-                  <CountUp end={250} duration={2.5} enableScrollSpy scrollSpyOnce />+
-                </span>
-                <span className="text-gray-600 text-sm font-medium">Projects Completed</span>
-              </div>
-            </div>
-
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-5 lg:justify-center">
-              <div className="text-orange-500">
-                <Trophy size={40} strokeWidth={1.5} />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[2rem] font-bold text-orange-500 flex items-center leading-none mb-1">
-                  <CountUp end={98} duration={2.5} enableScrollSpy scrollSpyOnce />%
-                </span>
-                <span className="text-gray-600 text-sm font-medium">Client Satisfaction</span>
-              </div>
-            </div>
-
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-5 lg:justify-center">
-              <div className="text-orange-500">
-                <ShieldCheck size={40} strokeWidth={1.5} />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[2rem] font-bold text-orange-500 flex items-center leading-none mb-1">
-                  24/7
-                </span>
-                <span className="text-gray-600 text-sm font-medium">Support Available</span>
-              </div>
-            </div>
+            <button className="px-8 py-3.5 bg-orange-500 text-white rounded-full font-bold hover:bg-orange-600 transition-colors shadow-[0_8px_20px_-6px_rgba(249,115,22,0.5)]">
+              Read More
+            </button>
           </div>
         </div>
       </div>

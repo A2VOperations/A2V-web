@@ -96,3 +96,21 @@ textarea {
     opacity: 0.1;
   }
 }
+
+@keyframes move-left-right {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(30px); }
+}
+
+.animate-move-lr {
+  animation: move-left-right 4s ease-in-out infinite alternate;
+}
+
+@keyframes move-up-down {
+  0% { transform: translateY(-20px); }
+  100% { transform: translateY(20px); }
+}
+
+.animate-move-ud {
+  animation: move-up-down 3s ease-in-out infinite alternate;
+}
