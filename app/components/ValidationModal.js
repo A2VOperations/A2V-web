@@ -60,7 +60,7 @@ export default function ValidationModal({ isOpen, onClose, title, message, error
             onClick={onClose}
             className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-red-600 py-4 text-sm font-bold text-white shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-95 transition-all duration-200"
           >
-            I'll Fix It
+            I&apos;ll Fix It
           </button>
         </div>
       </div>

@@ -5,10 +5,7 @@ import React from 'react'
 const Banner = () => {
     return (
         <section className='relative w-full overflow-hidden py-32 mt-5'>
-            {/* Grid Background */}
-            {/* <div className='absolute inset-0 z-190'>
-                <div className='w-full h-4 bg-white absolute top-0 left-0 opacity-100'></div>
-            </div> */}
+
             <div className='absolute inset-0 z-0' style={{
                 backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.09) 1px, transparent 1px)',
                 backgroundSize: '40px 40px'
@@ -37,7 +34,7 @@ const Banner = () => {
 
                     {/* Subheading */}
                     <p className='text-lg md:text-xl lg:text-lg text-black/60 max-w-3xl font-medium  italic mb-12'>&quot;
-                        <span className='font-semibold text-black'>15+ years</span> of delivering innovative digital solutions. With <span className='font-semibold text-black'>7000+ projects</span> completed, we build high-performance websites and marketing systems engineered for growth, speed, and results — achieving load times as fast as <span className='font-semibold text-black'>1.2s load speeds</span>.&quot;
+                        Your all-in-one partner for digital excellence. Combining seamless web experiences, magnetic brand identities, and strategic marketing to turn visitors into loyal customers.
                     </p>
 
                     {/* Buttons */}
