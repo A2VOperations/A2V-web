@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ShieldCheck, Play, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Play, CheckCircle2, X } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function HomeAbout() {
   const [activeTab, setActiveTab] = useState('commitment');
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const tabContent = {
     mission: {
@@ -135,18 +137,21 @@ export default function HomeAbout() {
 
             {/* Main large image */}
             <div className="w-10/12 rounded-2xl overflow-hidden shadow-lg border-2 border-white">
-              <Image src="/home/homeAbout.png" alt="About" width={300} height={600} className="w-full object-cover h-[350px] lg:h-[450px] " />
+              <Image src="/home/home-about1.png" alt="About" width={300} height={600} className="w-full object-cover h-[350px] lg:h-[450px] " />
             </div>
 
             {/* Overlapping smaller image */}
             <div className="absolute -bottom-35 -right-8 w-3/5 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.15)] border-8 border-white bg-white z-10">
-              <Image src="/home/homeAbout.png" alt="Team" width={300} height={300} className="w-full object-cover h-[200px] lg:h-[280px]" />
+              <Image src="/home/home-About.png" alt="Team" width={300} height={300} className="w-full object-cover h-[200px] lg:h-[280px]" />
 
 
             </div>
             {/* Play Button Overlay */}
             <div className="absolute top-100 left-60 z-50 flex items-center justify-center bg-transparent">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl cursor-pointer hover:scale-105 transition-transform">
+              <div
+                onClick={() => setIsVideoOpen(true)}
+                className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl cursor-pointer hover:scale-105 transition-transform"
+              >
                 <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.1)]">
                   <Play className="w-5 h-5 text-[#1A1F2C] ml-1 fill-current" />
                 </div>
@@ -154,12 +159,12 @@ export default function HomeAbout() {
             </div>
 
             {/* Floating Badge */}
-            <div className="absolute top-10 -right-4 bg-white py-5 px-6 rounded-[2.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.08)] flex items-center gap-4 border-r-4 border-b-4 border-orange-500 z-20 w-max md:flex">
+            <div className="absolute top-10 -right-10 bg-white py-5 px-6 rounded-[3.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.08)] flex items-center gap-4 border-r-4 border-b-4 border-orange-500 z-20 w-max md:flex">
               <div className="w-12 h-12 rounded-full border-2 border-gray-800 flex items-center justify-center relative">
                 <ShieldCheck className="text-gray-800 w-6 h-6" />
               </div>
               <div >
-                <div className="text-2xl font-black text-gray-900 leading-none mb-1">4,356+</div>
+                <div className="text-2xl font-black text-gray-900 leading-none mb-1">4,000+</div>
                 <div className="text-lg font-bold text-gray-800 uppercase tracking-wider">Satisfied Client</div>
               </div>
             </div>
@@ -187,17 +192,17 @@ export default function HomeAbout() {
             </p>
 
             <div className="flex flex-wrap gap-3 mb-5">
-              <button 
+              <button
                 onClick={() => setActiveTab('mission')}
                 className={`px-6 py-3 rounded-lg font-bold text-sm transition-all ${activeTab === 'mission' ? 'bg-orange-500 text-white shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]' : 'bg-white text-gray-900 shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-md'}`}>
                 OUR MISSION
               </button>
-              <button 
+              <button
                 onClick={() => setActiveTab('vision')}
                 className={`px-6 py-3 rounded-lg font-bold text-sm transition-all ${activeTab === 'vision' ? 'bg-orange-500 text-white shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]' : 'bg-white text-gray-900 shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-md'}`}>
                 OUR VISION
               </button>
-              <button 
+              <button
                 onClick={() => setActiveTab('commitment')}
                 className={`px-6 py-3 rounded-lg font-bold text-sm transition-all ${activeTab === 'commitment' ? 'bg-orange-500 text-white shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]' : 'bg-white text-gray-900 shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-md'}`}>
                 OUR COMMITMENT
@@ -219,12 +224,46 @@ export default function HomeAbout() {
               ))}
             </ul>
 
-            <button className="px-8 py-3.5 bg-orange-500 text-white rounded-full font-bold hover:bg-orange-600 transition-colors shadow-[0_8px_20px_-6px_rgba(249,115,22,0.5)]">
+            <Link href={"/about"} className="px-8 py-3.5 bg-orange-500 text-white rounded-full font-bold hover:bg-orange-600 transition-colors shadow-[0_8px_20px_-6px_rgba(249,115,22,0.5)]">
               Read More
-            </button>
+            </Link>
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {isVideoOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 px-4">
+          <div className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsVideoOpen(false)}
+              className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black text-white rounded-full transition-colors"
+              aria-label="Close video"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Video Element */}
+            <video
+              className="w-full h-auto max-h-[80vh]"
+              controls
+              autoPlay
+              playsInline
+              onClick={(e) => e.stopPropagation()}
+            >
+              <source src="/home/Video Project 2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          {/* Backdrop click to close */}
+          <div
+            className="absolute inset-0 -z-10 cursor-pointer"
+            onClick={() => setIsVideoOpen(false)}
+          />
+        </div>
+      )}
     </section>
   );
 }
