@@ -1,10 +1,42 @@
 "use client";
 
-import React from 'react';
-import {  ShieldCheck, Play, CheckCircle2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { ShieldCheck, Play, CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
 
 export default function HomeAbout() {
+  const [activeTab, setActiveTab] = useState('commitment');
+
+  const tabContent = {
+    mission: {
+      description: "Building innovative digital solutions that empower businesses to grow, compete, and succeed in the digital world.",
+      list: [
+        "Deliver customized web, mobile, and digital solutions tailored to every business.",
+        "Create visually impactful designs that strengthen brand identity and engagement.",
+        "Develop high-performance, scalable, and secure digital products.",
+        "Build long-term partnerships through quality, transparency, and reliable support."
+      ]
+    },
+    vision: {
+      description: "To become a trusted global digital solutions partner, transforming businesses with innovation, creativity, and technology.",
+      list: [
+        "Lead digital transformation with future-ready technologies.",
+        "Help businesses of all sizes achieve sustainable digital growth.",
+        "Inspire innovation through creative design and strategic thinking.",
+        "Set new standards for excellence in customer experience and digital solutions."
+      ]
+    },
+    commitment: {
+      description: "Whether you're launching a startup or scaling your enterprise, we're committed to delivering solutions that create lasting business value.",
+      list: [
+        "Deliver high-quality digital solutions with precision and reliability.",
+        "Ensure transparent communication and on-time project delivery.",
+        "Focus on measurable results that drive business growth and success.",
+        "Provide continuous support to help clients evolve with changing technology."
+      ]
+    }
+  };
+
   return (
 
     <section className="relative isolate overflow-hidden w-full py-20">
@@ -92,7 +124,7 @@ export default function HomeAbout() {
               backgroundSize: '16px 16px'
             }}></div>
 
-              <div className="absolute -bottom-5 -left-50 w-24 h-48 -z-10 opacity-80 rounded-r-full animate-move-lr" style={{
+            <div className="absolute -bottom-5 -left-50 w-24 h-48 -z-10 opacity-80 rounded-r-full animate-move-lr" style={{
               backgroundImage: 'radial-gradient(#374151 2px, transparent 2px)',
               backgroundSize: '16px 16px',
               backgroundPosition: '0 0'
@@ -140,8 +172,9 @@ export default function HomeAbout() {
               <div className="h-0.5 w-12 bg-orange-500"></div>
             </div>
 
-            <h2 className="text-4xl lg:text-3xl font-extrabold text-[#1A1F2C] mb-3 leading-tight uppercase">
-              Driving Business Growth <br /> Through Digital Excellence
+            <h2 className="text-3xl lg:text-3xl font-extrabold text-[#1A1F2C] mb-3 leading-tight uppercase">
+              Your Vision, Our
+              Technology — Building Digital Growth Since 2013
             </h2>
 
             <p className="text-orange-500 text-lg italic font-medium mb-3">
@@ -154,23 +187,29 @@ export default function HomeAbout() {
             </p>
 
             <div className="flex flex-wrap gap-3 mb-5">
-              <button className="px-6 py-3 rounded-lg font-bold text-sm bg-white text-gray-900 shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-md transition-all">OUR MISSION</button>
-              <button className="px-6 py-3 rounded-lg font-bold text-sm bg-white text-gray-900 shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-md transition-all">OUR VISION</button>
-              <button className="px-6 py-3 rounded-lg font-bold text-sm bg-orange-500 text-white shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]">OUR COMMITMENT</button>
+              <button 
+                onClick={() => setActiveTab('mission')}
+                className={`px-6 py-3 rounded-lg font-bold text-sm transition-all ${activeTab === 'mission' ? 'bg-orange-500 text-white shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]' : 'bg-white text-gray-900 shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-md'}`}>
+                OUR MISSION
+              </button>
+              <button 
+                onClick={() => setActiveTab('vision')}
+                className={`px-6 py-3 rounded-lg font-bold text-sm transition-all ${activeTab === 'vision' ? 'bg-orange-500 text-white shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]' : 'bg-white text-gray-900 shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-md'}`}>
+                OUR VISION
+              </button>
+              <button 
+                onClick={() => setActiveTab('commitment')}
+                className={`px-6 py-3 rounded-lg font-bold text-sm transition-all ${activeTab === 'commitment' ? 'bg-orange-500 text-white shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]' : 'bg-white text-gray-900 shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-md'}`}>
+                OUR COMMITMENT
+              </button>
             </div>
 
             <p className="text-gray-600 mb-5 leading-relaxed">
-              We are a full-service digital agency focused on creating innovative digital
-              solutions that help businesses grow and succeed online.
+              {tabContent[activeTab].description}
             </p>
 
             <ul className="flex flex-col gap-3 mb-6">
-              {[
-                "Deliver innovative and reliable digital solutions tailored to business needs.",
-                "Empower brands with modern technology, strategy, and creative expertise.",
-                "Drive sustainable growth, performance, and long-term digital success.",
-                "Build trust through quality work, transparency, and client satisfaction."
-              ].map((item, index) => (
+              {tabContent[activeTab].list.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <div className="mt-1 min-w-[24px] h-[24px] bg-orange-500 rounded-full flex items-center justify-center text-white">
                     <CheckCircle2 size={16} strokeWidth={3} />
