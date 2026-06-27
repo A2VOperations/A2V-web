@@ -11,30 +11,30 @@ export default function HomeAbout() {
 
   const tabContent = {
     mission: {
-      description: "Building innovative digital solutions that empower businesses to grow, compete, and succeed in the digital world.",
+      description: "To empower businesses with innovative technology, automation, and strategic branding solutions that drive sustainable growth and long-term success.",
       list: [
-        "Deliver customized web, mobile, and digital solutions tailored to every business.",
-        "Create visually impactful designs that strengthen brand identity and engagement.",
-        "Develop high-performance, scalable, and secure digital products.",
-        "Build long-term partnerships through quality, transparency, and reliable support."
+        "Build powerful digital platforms for scalability.",
+        "Strengthen brand presence and visual identity.",
+        "Automate business processes for smarter operations.",
+        "Generate more leads and scale operations efficiently."
       ]
     },
     vision: {
-      description: "To become a trusted global digital solutions partner, transforming businesses with innovation, creativity, and technology.",
+      description: "To become a trusted global technology and digital solutions partner, helping businesses transform digitally and build powerful brands in the modern business world.",
       list: [
-        "Lead digital transformation with future-ready technologies.",
-        "Help businesses of all sizes achieve sustainable digital growth.",
-        "Inspire innovation through creative design and strategic thinking.",
-        "Set new standards for excellence in customer experience and digital solutions."
+        "Provide end-to-end business solutions under one roof.",
+        "Help startups, SMEs, and growing companies build a strong digital foundation.",
+        "Launch our upcoming technology academy to empower students and professionals.",
+        "Deliver business solutions that create real growth and long-term value."
       ]
     },
     commitment: {
-      description: "Whether you're launching a startup or scaling your enterprise, we're committed to delivering solutions that create lasting business value.",
+      description: "At A2V Groups, our goal is simple: Help businesses grow smarter, faster, and stronger with the right technology and strategy.",
       list: [
-        "Deliver high-quality digital solutions with precision and reliability.",
-        "Ensure transparent communication and on-time project delivery.",
-        "Focus on measurable results that drive business growth and success.",
-        "Provide continuous support to help clients evolve with changing technology."
+        "Website, Web App & SaaS Product Development.",
+        "CRM & ERP Business Automation.",
+        "Digital Marketing & Growth Strategy.",
+        "Graphic Design & Professional Printing Solutions."
       ]
     }
   };
@@ -133,11 +133,11 @@ export default function HomeAbout() {
             }}></div>
 
             {/* Orange bar at the top right */}
-            <div className="absolute top-1 right-24 w-6 h-75 bg-orange-500 -z-10 animate-move-ud"></div>
+            <div className="absolute top-1 right-2 w-6 h-80 bg-orange-500 -z-10 animate-move-ud"></div>
 
             {/* Main large image */}
-            <div className="w-10/12 rounded-2xl overflow-hidden shadow-lg border-2 border-white">
-              <Image src="/home/home-about1.png" alt="About" width={300} height={600} className="w-full object-cover h-[350px] lg:h-[450px] " />
+            <div className="rounded-2xl overflow-hidden shadow-lg border-2 border-white">
+              <Image src="/home/about-pho.png" alt="About" width={450} height={450} className="w-full object-cover h-[450px] lg:h-[450px] " />
             </div>
 
             {/* Overlapping smaller image */}
@@ -147,13 +147,21 @@ export default function HomeAbout() {
 
             </div>
             {/* Play Button Overlay */}
-            <div className="absolute top-100 left-60 z-50 flex items-center justify-center bg-transparent">
-              <div
-                onClick={() => setIsVideoOpen(true)}
-                className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl cursor-pointer hover:scale-105 transition-transform"
-              >
-                <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.1)]">
-                  <Play className="w-5 h-5 text-[#1A1F2C] ml-1 fill-current" />
+            <div className="absolute top-100 left-60 z-50 flex items-center justify-center">
+              <div className="relative group flex items-center justify-center">
+                {/* Glowing animated rings */}
+                <div className="absolute w-16 h-16 rounded-full bg-orange-500/40 animate-ping" style={{ animationDuration: '2.5s' }}></div>
+                <div className="absolute w-20 h-20 rounded-full bg-orange-400/20 animate-pulse group-hover:scale-125 transition-transform duration-500"></div>
+
+                {/* The main button */}
+                <div
+                  onClick={() => setIsVideoOpen(true)}
+                  className="relative w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(249,115,22,0.5)] cursor-pointer group-hover:scale-110 group-hover:shadow-[0_0_40px_rgba(249,115,22,0.8)] transition-all duration-300 z-10 overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-tr from-orange-100 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-inner group-hover:bg-transparent transition-all duration-300">
+                    <Play className="w-6 h-6 text-orange-500 ml-1 fill-current group-hover:text-orange-600 filter drop-shadow-md transition-colors duration-300" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -173,22 +181,20 @@ export default function HomeAbout() {
           {/* Right Side: Text */}
           <div className="mt-24 lg:mt-0 lg:pl-4">
             <div className="flex items-center gap-4 mb-4">
-              <span className="text-orange-500 font-bold uppercase text-sm tracking-wider">About Company</span>
+              <span className="text-orange-500 font-bold uppercase text-sm tracking-wider">About A2V Groups</span>
               <div className="h-0.5 w-12 bg-orange-500"></div>
             </div>
 
             <h2 className="text-3xl lg:text-3xl font-extrabold text-[#1A1F2C] mb-3 leading-tight uppercase">
-              Your Vision, Our
-              Technology — Building Digital Growth Since 2013
+              Transforming Businesses Through Smart Technology & Powerful Branding
             </h2>
 
             <p className="text-orange-500 text-lg italic font-medium mb-3">
-              &quot;We Create Digital Experiences That Matter — Together With You&quot;.
+              &quot;Every business deserves innovative digital solutions, strong brand identity, and streamlined operations to compete in today’s fast-changing market.&quot;
             </p>
 
             <p className="text-gray-600 mb-5 leading-relaxed">
-              We help businesses stand out in a competitive digital landscape through
-              modern design, strong branding, and performance-driven digital strategies.
+              Founded by Ravinder Singh, A2V Groups provides end-to-end IT solutions. By combining technology, automation, marketing strategy, and creative branding, we help startups, SMEs, and growing companies build a strong digital foundation.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-5">

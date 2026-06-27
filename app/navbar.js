@@ -22,11 +22,6 @@ const navItems = [
 
 // ── Small SVG helpers ──────────────────────────────────────────────────────
 
-const ChevronIcon = ({ className = "" }) => (
-  <svg className={`w-3 h-3 transition-transform duration-300 ${className}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-  </svg>
-);
 const ArrowIcon = ({ className = "" }) => (
   <svg className={`w-3 h-3 ${className}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -49,17 +44,18 @@ export default function Navbar() {
   useEffect(() => {
     if (!cubeRef.current) return;
     
-    let currentAngle = 0;
-    const interval = setInterval(() => {
-      currentAngle += 90; // Rotate to next face
-      gsap.to(cubeRef.current, {
-        rotateY: currentAngle,
-        duration: 2, // 1 second roll
-        ease: "power2.inOut",
-      });
-    }, 3000); // Waits 2s, then 1s animation = 3s total loop
+    const tl = gsap.timeline({ repeat: -1 });
 
-    return () => clearInterval(interval);
+    for (let i = 1; i <= 4; i++) {
+      tl.to(cubeRef.current, {
+        rotateY: i * 90,
+        duration: 2, // 2 second roll
+        ease: "power2.inOut",
+        delay: 1, // 1 second wait on each face
+      });
+    }
+
+    return () => tl.kill();
   }, []);
 
   useEffect(() => {
@@ -90,7 +86,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className={`fixed top-0 left-0 w-full z-[100] bg-white transition-all duration-300 ${scrolled ? "-translate-y-[40px]" : "translate-y-0"}`}>
+      <div className={`fixed top-0 left-0 w-full z-100 bg-white transition-all duration-300 ${scrolled ? "-translate-y-[40px]" : "translate-y-0"}`}>
         <Topbar />
         <header className={`w-full bg-white transition-shadow duration-300 ${scrolled ? "shadow-[0_4px_24px_rgba(0,0,0,0.10)]" : "border-b-2 border-black/20"}`}>
 
@@ -98,12 +94,12 @@ export default function Navbar() {
           <nav className="flex items-center h-[72px] lg:h-[90px] px-4 sm:px-6 lg:px-0">
 
             {/* Logo */}
-            <Link href="/" className="flex flex-col justify-center items-center lg:py-2 lg:pl-14 lg:pr-14 lg:border-r-2 lg:border-black/20 lg:h-full [perspective:1000px]">
-              <div ref={cubeRef} className="relative w-[130px] h-[130px] [transform-style:preserve-3d]">
+            <Link href="/" className="flex flex-col justify-center items-center lg:py-2 lg:pl-14 lg:pr-14 lg:border-r-2 lg:border-black/20 lg:h-full perspective-[1000px]">
+              <div ref={cubeRef} className="relative w-[130px] h-[130px] transform-3d">
                 {cubeFaces.map((face, index) => (
-                  <div key={index} className="absolute inset-0 bg-white overflow-hidden [backface-visibility:hidden]" style={{ transform: `rotateY(${face.rotateY}deg) translateZ(65px)` }}>
+                  <div key={index} className="absolute inset-0 bg-white overflow-hidden backface-hidden" style={{ transform: `rotateY(${face.rotateY}deg) translateZ(65px)` }}>
                     <Image src={face.src} alt={`Logo Face ${index + 1}`} fill className="object-contain" priority />
-                    <div className="pointer-events-none absolute top-[-50%] bottom-[-50%] w-[40px] bg-gradient-to-r from-transparent via-white/80 to-transparent -skew-x-[20deg] animate-shine-diagonal z-20" />
+                    <div className="pointer-events-none absolute top-[-50%] bottom-[-50%] w-[40px] bg-linear-to-r from-transparent via-white/80 to-transparent -skew-x-20 animate-shine-diagonal z-20" />
                   </div>
                 ))}
               </div>
@@ -161,7 +157,7 @@ export default function Navbar() {
       </div>
 
       {/* ── Mobile Slide-in Drawer ── */}
-      <div className={`lg:hidden fixed inset-0 bg-white z-[10001] flex flex-col transition-all duration-300 ease-in-out ${mobileOpen ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 translate-x-full pointer-events-none"}`}>
+      <div className={`lg:hidden fixed inset-0 bg-white z-10001 flex flex-col transition-all duration-300 ease-in-out ${mobileOpen ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 translate-x-full pointer-events-none"}`}>
 
         {/* Drawer header */}
         <div className="flex items-center justify-between px-4 h-[72px] border-b border-gray-100 shrink-0">
@@ -237,7 +233,7 @@ export default function Navbar() {
 
       {/* Backdrops */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-[10000]" onClick={() => setMobileOpen(false)} />
+        <div className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-10000" onClick={() => setMobileOpen(false)} />
       )}
 
       <div className="h-[110px] lg:h-[130px]" />
