@@ -19,7 +19,7 @@ import Link from "next/link";
 import { siteConfig } from "../config";
 import ClientLogos from "../components/ClientLogos";
 import ProblemSolutionSection from './home/problemSolution/page';
-import { Code, Layout, Search, Megaphone, TrendingUp, Presentation, ShieldCheck, Rocket, Zap, Brain } from "lucide-react";
+import { Code, Layout, Search, Megaphone, TrendingUp, Presentation, ShieldCheck, Rocket, Zap, Brain, Smartphone, Palette, Bot, Sparkles, ShoppingCart, Cloud } from "lucide-react";
 import HomeAbout from "./home/homeAbout/page";
 import HeroCarousel from "./home/heroCarousel/marquee1";
 import HeroCarousel2 from "./home/heroCarousel/marquee2";
@@ -288,6 +288,49 @@ export default function Home() {
       ease: "power3.out",
     });
   }, []);
+
+  const services = [
+    {
+      label: "Web Development",
+      icon: <Code size="1em" strokeWidth={1.5} />,
+      desc: "Fast, scalable websites built with modern frameworks for lasting impact.",
+    },
+    {
+      label: "Mobile Apps",
+      icon: <Smartphone size="1em" strokeWidth={1.5} />,
+      desc: "Native and cross-platform apps designed for seamless user experiences.",
+    },
+    {
+      label: "UI/UX Design",
+      icon: <Palette size="1em" strokeWidth={1.5} />,
+      desc: "Intuitive interfaces that delight users and convert visitors into customers.",
+    },
+    {
+      label: "AI Automation",
+      icon: <Bot size="1em" strokeWidth={1.5} />,
+      desc: "Smart workflows and AI integrations that save time and scale your business.",
+    },
+    {
+      label: "Digital Marketing",
+      icon: <Megaphone size="1em" strokeWidth={1.5} />,
+      desc: "Data-driven campaigns across SEO, social, and paid ads that drive real growth.",
+    },
+    {
+      label: "Branding & Print",
+      icon: <Sparkles size="1em" strokeWidth={1.5} />,
+      desc: "Memorable brand identities and premium print materials that make you stand out.",
+    },
+    {
+      label: "E-Commerce Solutions",
+      icon: <ShoppingCart size="1em" strokeWidth={1.5} />,
+      desc: "End-to-end online stores designed to maximize conversions and drive sales.",
+    },
+    {
+      label: "Cloud Services",
+      icon: <Cloud size="1em" strokeWidth={1.5} />,
+      desc: "Reliable hosting, server management, and scalable cloud infrastructure.",
+    },
+  ];
 
   /* ── DATA ── */
   const growthPanels = [
@@ -689,6 +732,97 @@ export default function Home() {
         <HomeAbout />
       </section>
 
+
+      {/* ══════════════════════════════════════
+          HERO PRODUCTS — Below Hero
+      ══════════════════════════════════════ */}
+      <section className="relative bg-[#fdf6ef] py-20 px-4 sm:px-6 lg:px-14 border-b border-slate-100">
+
+        {/* Scoped styles for pseudo-element animation only */}
+        <style>{`
+        .svc-card::before,
+        .svc-card::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          background: #f97316;
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          z-index: 1;
+        }
+        .svc-card::before {
+          top: 0; right: 0;
+          border-radius: 0 0 0 100%;
+        }
+        .svc-card::after {
+          bottom: 0; left: 0;
+          border-radius: 0 100% 0 0;
+        }
+        .svc-card:hover::before,
+        .svc-card:hover::after {
+          width: 100%;
+          height: 100%;
+          border-radius: 0;
+        }
+      `}</style>
+
+        <div className="relative max-w-7xl mx-auto">
+
+          {/* <div className="h-80 w-310 rounded-4xl absolute border-3 border-orange-500 top-95 " /> */}
+
+
+          {/* Header */}
+          <div className="text-center mb-12">
+            <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">
+              Premium Products
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900">
+              Our Expert{" "}
+              <span className="text-orange-500">Services</span>
+            </h2>
+            <p className="text-gray-500 font-medium text-base mt-6 max-w-3xl mx-auto leading-relaxed">
+              A2V Groups provides end-to-end digital solutions including Web
+              Development, Mobile Apps, UI/UX Design, AI Automation, Digital
+              Marketing, Branding, and Printing—helping businesses build a
+              stronger digital presence and achieve sustainable growth.
+            </p>
+          </div>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-5xl mx-auto">
+            {services.map((service) => (
+              <div
+                key={service.label}
+                className="svc-card group relative overflow-hidden rounded-lg bg-white cursor-pointer flex justify-center items-center border-r-3 border-b-3 border-orange-500"
+                style={{ aspectRatio: "4/4", maxHeight: "290px" }}
+              >
+                {/* Default view */}
+                <div className="relative z-10 flex flex-col items-center justify-center px-3 transition-opacity duration-300 group-hover:opacity-0 pointer-events-none">
+                  <span className="text-orange-500 text-4xl mb-3">{service.icon}</span>
+                  <span className="text-orange-500 text-lg font-bold text-center">
+                    {service.label}
+                  </span>
+                </div>
+
+                {/* Hover content */}
+                <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-150 pointer-events-none">
+                  <span className="text-white text-4xl mb-2">{service.icon}</span>
+                  <p className="text-white font-bold text-lg text-center leading-tight">
+                    {service.label}
+                  </p>
+                  <p className="text-white/80 text-[13px] text-center mt-1 leading-relaxed">
+                    {service.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+
+
       {/* ══════════════════════════════════════
           PROBLEM + SOLUTION SECTION
           (REPLACING YOUR OLD CTA) – below Hero
@@ -697,86 +831,6 @@ export default function Home() {
         <ProblemSolutionSection />
       </section>
 
-      {/* ══════════════════════════════════════
-          HERO PRODUCTS — Below Hero
-      ══════════════════════════════════════ */}
-      <section className="relative bg-white py-20 px-4 sm:px-6 lg:px-14 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div>
-              <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Premium Products</span>
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900">
-                Our Hero <span className="text-orange-500">Services</span>
-              </h2>
-            </div>
-            <NavButtons
-              onPrev={() => productsSwiperRef.current?.slidePrev()}
-              onNext={() => productsSwiperRef.current?.slideNext()}
-            />
-          </div>
-
-          <Swiper
-            modules={[Autoplay]}
-            spaceBetween={24}
-            slidesPerView={1}
-            loop
-            grabCursor={true}
-            touchEventsTarget="container"
-            autoplay={{ delay: 4500, disableOnInteraction: false }}
-            onSwiper={(s) => { productsSwiperRef.current = s; }}
-            breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1280: { slidesPerView: 3 },
-            }}
-          >
-            {heroProducts.map((product, idx) => (
-              <SwiperSlide key={idx}>
-                <div className="group relative overflow-hidden bg-slate-50 border border-slate-100 h-full flex flex-col">
-                  <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={product.image}
-                      alt={product.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      unoptimized
-                    />
-                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <Link
-                        href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(product.wa)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-white/30 text-white px-6 py-3 font-bold text-sm shadow-xl"
-                      >
-                        Inquire Now
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="p-8 flex-1 flex flex-col">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">
-                      {product.title}
-                    </h3>
-                    <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
-                      {product.desc}
-                    </p>
-                    <div className="mt-auto">
-                      <Link
-                        href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}?text=${encodeURIComponent(product.wa)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-orange-500 font-bold text-xs uppercase tracking-widest"
-                      >
-                        Reach Us <span className="group-hover:translate-x-1 transition-transform">→</span>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section>
 
       {/* ══════════════════════════════════════
           COMPONENT SECTIONS
