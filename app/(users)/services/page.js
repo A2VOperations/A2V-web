@@ -352,7 +352,7 @@ function WorkingProcess() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-orange-50/50 via-white to-blue-50/30 overflow-hidden relative">
+    <section className="py-24 bg-linear-to-br from-orange-50/50 via-white to-blue-50/30 overflow-hidden relative">
       {/* Background radial gradient */}
       <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-orange-200/40 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-[120px] pointer-events-none" />
@@ -517,7 +517,7 @@ export default function ServicesPage() {
             return (
               <div
                 key={i}
-                className="group relative overflow-hidden bg-white border border-slate-100 flex flex-col shadow-lg hover:shadow-2xl transition-all duration-500 p-8 rounded-[2rem]"
+                className="group relative overflow-hidden bg-white border border-slate-100 flex flex-col shadow-lg hover:shadow-2xl transition-all duration-500 p-8 rounded-4xl"
               >
                 {/* Card Image Background / Thumbnail */}
                 <div className="relative h-48 w-full rounded-2xl overflow-hidden mb-6 bg-slate-50 border border-slate-100">

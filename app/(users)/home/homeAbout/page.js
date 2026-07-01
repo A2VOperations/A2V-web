@@ -158,7 +158,7 @@ export default function HomeAbout() {
                   onClick={() => setIsVideoOpen(true)}
                   className="relative w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(249,115,22,0.5)] cursor-pointer group-hover:scale-110 group-hover:shadow-[0_0_40px_rgba(249,115,22,0.8)] transition-all duration-300 z-10 overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-tr from-orange-100 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-linear-to-tr from-orange-100 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-inner group-hover:bg-transparent transition-all duration-300">
                     <Play className="w-6 h-6 text-orange-500 ml-1 fill-current group-hover:text-orange-600 filter drop-shadow-md transition-colors duration-300" />
                   </div>
@@ -239,7 +239,7 @@ export default function HomeAbout() {
 
       {/* Video Modal */}
       {isVideoOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 px-4">
+        <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/80 px-4">
           <div className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl">
             {/* Close Button */}
             <button

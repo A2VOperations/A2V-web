@@ -7,7 +7,7 @@ export default function ValidationModal({ isOpen, onClose, title, message, error
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[20000] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-20000 flex items-center justify-center p-4">
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" 
@@ -58,7 +58,7 @@ export default function ValidationModal({ isOpen, onClose, title, message, error
         <div className="mt-8">
           <button
             onClick={onClose}
-            className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-red-600 py-4 text-sm font-bold text-white shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-95 transition-all duration-200"
+            className="w-full rounded-2xl bg-linear-to-r from-orange-500 to-red-600 py-4 text-sm font-bold text-white shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-95 transition-all duration-200"
           >
             I&apos;ll Fix It
           </button>
